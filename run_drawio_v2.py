@@ -63,6 +63,26 @@ def resolve_asset_refs(descriptions, assets, dataset_root: Path):
     return out
 
 
+def crop_to_canvas(driver, full_png: Path, out_png: Path):
+    """Cut the drawing area out of a full-window screenshot."""
+    from PIL import Image
+    rect = driver.execute_script("""
+    const c = document.querySelector('.geDiagramContainer');
+    if (!c) return null;
+    const r = c.getBoundingClientRect();
+    return {x: r.x, y: r.y, w: r.width, h: r.height, dpr: window.devicePixelRatio || 1,
+            iw: window.innerWidth};
+    """)
+    if not rect:
+        return None
+    img = Image.open(full_png)
+    scale = img.width / float(rect["iw"]) if rect["iw"] else 1.0
+    box = (int(rect["x"] * scale), int(rect["y"] * scale),
+           int((rect["x"] + rect["w"]) * scale), int((rect["y"] + rect["h"]) * scale))
+    img.crop(box).save(out_png)
+    return out_png
+
+
 def run_one(executor_cls, driver, parser, scenario_path: Path, dataset_root: Path,
             out_dir: Path) -> dict:
     import cell_tracker
@@ -88,12 +108,17 @@ def run_one(executor_cls, driver, parser, scenario_path: Path, dataset_root: Pat
         (case_dir / "traceback.txt").write_text(traceback.format_exc(), encoding="utf-8")
 
     shot = case_dir / "after.png"
+    canvas_shot = None
     try:
         import rpa_env
         rpa_env.settle_for_screenshot(driver)
         rpa_env.fit_page(driver)
         rpa_env.settle_for_screenshot(driver)
         driver.save_screenshot(str(shot))
+        # A second image cropped to the drawing area alone. The judge compares it
+        # against a reference that is only a diagram, and a full editor screenshot
+        # hands it a shape palette, a toolbar and a format panel to explain away.
+        canvas_shot = crop_to_canvas(driver, shot, case_dir / "canvas.png")
     except Exception as exc:
         (case_dir / "screenshot_error.txt").write_text(repr(exc), encoding="utf-8")
         shot = None
@@ -120,6 +145,7 @@ def run_one(executor_cls, driver, parser, scenario_path: Path, dataset_root: Pat
         "labels": report.get("labels"),
         "total_sec": round(time.time() - t0, 1),
         "screenshot": str(shot) if shot else None,
+        "canvas": str(canvas_shot) if canvas_shot else None,
     }
 
 

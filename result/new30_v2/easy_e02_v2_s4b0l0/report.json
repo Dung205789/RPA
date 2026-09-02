@@ -1,0 +1,480 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "ok",
+      "detail": {
+        "url": "https://app.diagrams.net/?lang=en&splash=0",
+        "seconds": 7.1
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 1.0,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 2.74
+      }
+    },
+    {
+      "n": 3,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "dx": 0,
+        "dy": -22,
+        "wanted": 150,
+        "seconds": 3.17
+      }
+    },
+    {
+      "n": 4,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "dx": 0,
+        "dy": -23,
+        "wanted": 150,
+        "seconds": 3.88
+      }
+    },
+    {
+      "n": 5,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\document.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 1.0,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 3.33
+      }
+    },
+    {
+      "n": 6,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 1.0,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 7,
+      "description": "Move the element created in step 6 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "dx": 0,
+        "dy": 23,
+        "wanted": 150,
+        "seconds": 2.9
+      }
+    },
+    {
+      "n": 8,
+      "description": "Move the element created in step 6 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -143,
+        "wanted": 150,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 9,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 1.0,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 2.8
+      }
+    },
+    {
+      "n": 10,
+      "description": "Move the element created in step 9 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "dx": 0,
+        "dy": 23,
+        "wanted": 150,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 11,
+      "description": "Move the element created in step 9 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -143,
+        "wanted": 150,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 12,
+      "description": "Move the element created in step 9 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "dx": 0,
+        "dy": 23,
+        "wanted": 150,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 13,
+      "description": "Double click on the element created in step 2",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 2",
+        "seconds": 2.28
+      }
+    },
+    {
+      "n": 14,
+      "description": "Fill \"Visitor arrives\" into the element created in step 2",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 2",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            788,
+            487
+          ]
+        ],
+        "target_box": [
+          779,
+          483,
+          18,
+          9
+        ],
+        "seconds": 1.5
+      }
+    },
+    {
+      "n": 15,
+      "description": "Double click on the element created in step 5",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 5",
+        "seconds": 2.28
+      }
+    },
+    {
+      "n": 16,
+      "description": "Fill \"Show the form\" into the element created in step 5",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 5",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            788,
+            485
+          ]
+        ],
+        "target_box": [
+          779,
+          481,
+          18,
+          12
+        ],
+        "seconds": 1.48
+      }
+    },
+    {
+      "n": 17,
+      "description": "Double click on the element created in step 6",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 6",
+        "seconds": 2.3
+      }
+    },
+    {
+      "n": 18,
+      "description": "Fill \"Validate the email\" into the element created in step 6",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 6",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            788,
+            487
+          ]
+        ],
+        "target_box": [
+          779,
+          483,
+          18,
+          9
+        ],
+        "seconds": 1.53
+      }
+    },
+    {
+      "n": 19,
+      "description": "Double click on the element created in step 9",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 9",
+        "seconds": 2.32
+      }
+    },
+    {
+      "n": 20,
+      "description": "Fill \"Account active\" into the element created in step 9",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 9",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            788,
+            488
+          ]
+        ],
+        "target_box": [
+          779,
+          483,
+          18,
+          9
+        ],
+        "seconds": 1.5
+      }
+    },
+    {
+      "n": 21,
+      "description": "Connect the element created in step 2 to the element created in step 5",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 4,
+        "after": 5,
+        "seconds": 6.13
+      }
+    },
+    {
+      "n": 22,
+      "description": "Connect the element created in step 5 to the element created in step 6",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 5,
+        "after": 6,
+        "seconds": 6.28
+      }
+    },
+    {
+      "n": 23,
+      "description": "Connect the element created in step 6 to the element created in step 9",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 6,
+        "after": 7,
+        "seconds": 6.43
+      }
+    }
+  ],
+  "counts": {
+    "ok": 18,
+    "failed": 5,
+    "error": 0,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 0.7826,
+  "total_sec": 77.0,
+  "cells": [
+    {
+      "cx": 794,
+      "cy": 1834,
+      "h": 454,
+      "index": 0,
+      "kind": "edge",
+      "mx": 1381,
+      "my": 1856,
+      "p1": [
+        788,
+        2061
+      ],
+      "p2": [
+        788,
+        1608
+      ],
+      "tags": "path,path,path",
+      "w": 13,
+      "x": 788,
+      "y": 1607,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 2065,
+      "h": 9,
+      "index": 1,
+      "kind": "rect",
+      "mx": 1375,
+      "my": 2087,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 18,
+      "x": 779,
+      "y": 2061,
+      "zoom": 1
+    },
+    {
+      "cx": 794,
+      "cy": 1384,
+      "h": 451,
+      "index": 2,
+      "kind": "edge",
+      "mx": 1381,
+      "my": 1406,
+      "p1": [
+        788,
+        1609
+      ],
+      "p2": [
+        788,
+        1160
+      ],
+      "tags": "path,path,path",
+      "w": 13,
+      "x": 788,
+      "y": 1158,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 1615,
+      "h": 12,
+      "index": 3,
+      "kind": "path",
+      "mx": 1375,
+      "my": 1637,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 18,
+      "x": 779,
+      "y": 1609,
+      "zoom": 1
+    },
+    {
+      "cx": 794,
+      "cy": 1006,
+      "h": 311,
+      "index": 4,
+      "kind": "edge",
+      "mx": 1381,
+      "my": 1028,
+      "p1": [
+        788,
+        1161
+      ],
+      "p2": [
+        788,
+        852
+      ],
+      "tags": "path,path,path",
+      "w": 13,
+      "x": 788,
+      "y": 850,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 1165,
+      "h": 9,
+      "index": 5,
+      "kind": "rect",
+      "mx": 1375,
+      "my": 1187,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 18,
+      "x": 779,
+      "y": 1161,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 858,
+      "h": 9,
+      "index": 6,
+      "kind": "rect",
+      "mx": 1375,
+      "my": 880,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 18,
+      "x": 779,
+      "y": 853,
+      "zoom": 1
+    }
+  ],
+  "n_vertices": 4,
+  "n_edges": 3,
+  "labels": [
+    "Visitor arrives",
+    "Show the form",
+    "Validate the email",
+    "Account active"
+  ]
+}

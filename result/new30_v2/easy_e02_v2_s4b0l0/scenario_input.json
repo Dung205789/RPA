@@ -1,0 +1,28 @@
+{
+  "id": "easy_e02_v2_s4b0l0",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png]",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\document.png]",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+    "Move the element created in step 6 down",
+    "Move the element created in step 6 down",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png]",
+    "Move the element created in step 9 down",
+    "Move the element created in step 9 down",
+    "Move the element created in step 9 down",
+    "Double click on the element created in step 2",
+    "Fill \"Visitor arrives\" into the element created in step 2",
+    "Double click on the element created in step 5",
+    "Fill \"Show the form\" into the element created in step 5",
+    "Double click on the element created in step 6",
+    "Fill \"Validate the email\" into the element created in step 6",
+    "Double click on the element created in step 9",
+    "Fill \"Account active\" into the element created in step 9",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 6",
+    "Connect the element created in step 6 to the element created in step 9"
+  ]
+}

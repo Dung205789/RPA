@@ -75,8 +75,16 @@ class LLMClient:
     def vision(self, prompt: str, image_path: str, max_tokens: int = 4096,
                retries: int = 2) -> dict:
         """Ask a question about one image. Returns {"text", "provider", "model"}."""
-        data = base64.b64encode(Path(image_path).read_bytes()).decode("ascii")
-        media = "image/png" if str(image_path).lower().endswith(".png") else "image/jpeg"
+        return self.vision_multi(prompt, [image_path], max_tokens, retries)
+
+    def vision_multi(self, prompt: str, image_paths, max_tokens: int = 4096,
+                     retries: int = 2) -> dict:
+        """Ask a question about several images at once (reference vs produced)."""
+        images = []
+        for p in image_paths:
+            images.append((
+                base64.b64encode(Path(p).read_bytes()).decode("ascii"),
+                "image/png" if str(p).lower().endswith(".png") else "image/jpeg"))
         last = None
         for provider in self.providers:
             key = self._key_for(provider)
@@ -88,7 +96,7 @@ class LLMClient:
                 try:
                     t0 = time.time()
                     text = getattr(self, "_call_" + provider)(
-                        key, model, prompt, data, media, max_tokens)
+                        key, model, prompt, images, max_tokens)
                     self.calls.append({"provider": provider, "model": model,
                                        "seconds": round(time.time() - t0, 2)})
                     self.log("[llm] %s/%s ok in %.1fs" % (provider, model, time.time() - t0))
@@ -108,12 +116,14 @@ class LLMClient:
                 "anthropic": self.env.get("ANTHROPIC_API_KEY")}.get(provider)
 
     # ---- providers ---------------------------------------------------------
-    def _call_gemini(self, key, model, prompt, b64, media, max_tokens):
+    def _call_gemini(self, key, model, prompt, images, max_tokens):
         url = ("https://generativelanguage.googleapis.com/v1beta/models/"
                "%s:generateContent" % model)
+        parts = [{"text": prompt}]
+        for b64, media in images:
+            parts.append({"inline_data": {"mime_type": media, "data": b64}})
         body = {
-            "contents": [{"parts": [{"text": prompt},
-                                    {"inline_data": {"mime_type": media, "data": b64}}]}],
+            "contents": [{"parts": parts}],
             "generationConfig": {"temperature": 0, "maxOutputTokens": max_tokens},
         }
         r = requests.post(url, params={"key": key}, json=body, timeout=180)
@@ -123,30 +133,32 @@ class LLMClient:
         parts = data["candidates"][0]["content"]["parts"]
         return "".join(p.get("text", "") for p in parts)
 
-    def _call_openai(self, key, model, prompt, b64, media, max_tokens):
+    def _call_openai(self, key, model, prompt, images, max_tokens):
+        content = [{"type": "text", "text": prompt}]
+        for b64, media in images:
+            content.append({"type": "image_url",
+                            "image_url": {"url": "data:%s;base64,%s" % (media, b64)}})
         r = requests.post(
             "https://api.openai.com/v1/chat/completions",
             headers={"Authorization": "Bearer %s" % key},
             json={"model": model,
-                  "messages": [{"role": "user", "content": [
-                      {"type": "text", "text": prompt},
-                      {"type": "image_url",
-                       "image_url": {"url": "data:%s;base64,%s" % (media, b64)}}]}],
+                  "messages": [{"role": "user", "content": content}],
                   "max_completion_tokens": max_tokens},
             timeout=180)
         if r.status_code != 200:
             raise RuntimeError("%s %s" % (r.status_code, r.text[:300]))
         return r.json()["choices"][0]["message"]["content"]
 
-    def _call_anthropic(self, key, model, prompt, b64, media, max_tokens):
+    def _call_anthropic(self, key, model, prompt, images, max_tokens):
+        content = [{"type": "text", "text": prompt}]
+        for b64, media in images:
+            content.append({"type": "image", "source": {"type": "base64",
+                                                        "media_type": media, "data": b64}})
         r = requests.post(
             "https://api.anthropic.com/v1/messages",
             headers={"x-api-key": key, "anthropic-version": "2023-06-01"},
             json={"model": model, "max_tokens": max_tokens,
-                  "messages": [{"role": "user", "content": [
-                      {"type": "text", "text": prompt},
-                      {"type": "image", "source": {"type": "base64",
-                                                   "media_type": media, "data": b64}}]}]},
+                  "messages": [{"role": "user", "content": content}]},
             timeout=180)
         if r.status_code != 200:
             raise RuntimeError("%s %s" % (r.status_code, r.text[:300]))
