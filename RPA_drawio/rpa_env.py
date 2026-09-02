@@ -291,6 +291,48 @@ def deselect_all(driver) -> None:
     time.sleep(0.3)
 
 
+def settle_for_screenshot(driver) -> None:
+    """Leave the editor in a state fit to be judged from a picture.
+
+    Whatever is still selected draws grips over the diagram, and draw.io floats a
+    style toolbar next to the selection that covers neighbouring shapes — in
+    scenario_050 it sat squarely on top of the "Take bus" box. Since the run is
+    scored by looking at the screenshot, clearing that is part of finishing, not
+    cosmetics.
+    """
+    from selenium.webdriver.common.action_chains import ActionChains
+    from selenium.webdriver.common.keys import Keys
+    try:
+        ActionChains(driver).send_keys(Keys.ESCAPE).perform()
+        time.sleep(0.3)
+        deselect_all(driver)
+        # park the pointer off the canvas so nothing is hovered
+        header = driver.find_element("css selector", ".geDiagramContainer")
+        ActionChains(driver).move_to_element_with_offset(
+            header, -int(header.size["width"] * 0.45),
+            -int(header.size["height"] * 0.45)).perform()
+        time.sleep(0.6)
+    except Exception:
+        pass
+
+
+def fit_page(driver) -> None:
+    """Zoom so the whole diagram is in frame before the screenshot is taken.
+
+    A scenario can push shapes well outside the viewport; a picture that shows
+    only part of the drawing cannot be judged against the reference. Ctrl+Shift+H
+    is draw.io's own Reset View / Fit Page.
+    """
+    from selenium.webdriver.common.action_chains import ActionChains
+    from selenium.webdriver.common.keys import Keys
+    try:
+        (ActionChains(driver).key_down(Keys.CONTROL).key_down(Keys.SHIFT)
+         .send_keys("h").key_up(Keys.SHIFT).key_up(Keys.CONTROL).perform())
+        time.sleep(1.0)
+    except Exception:
+        pass
+
+
 def open_clean_drawio(driver, url: str = DRAWIO_URL, log=None) -> dict:
     """Put the editor into a known-empty state: no drafts, English UI, palette up.
 

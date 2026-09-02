@@ -27,41 +27,62 @@ watching the order hold.
 """
 from __future__ import annotations
 
-# A "cell" is a shape or an edge that belongs to the diagram. Three things have to
-# be excluded, and each exclusion is here because it was observed polluting the set:
-#   - the handler layer (selection preview + the eight resize handles + rotate),
-#   - label groups (they carry the text; the shape's own group has none),
-#   - decoration groups with no geometry primitive of their own.
+# A "cell" is a shape or an edge that belongs to the diagram.
+#
+# mxGraph lays the canvas out as a root <g> holding four sibling panes, in this
+# order (dumped from a live editor, 2026-09-03):
+#
+#   layer 0  empty
+#   layer 1  CONTENT  - <g style="visibility: visible; opacity: 1; cursor: move">
+#                        wrapping one <rect>/<ellipse>/<path> per vertex, plus
+#                        <g style="visibility: visible"> with three <path>s per edge,
+#                        plus a text-bearing <g> per label
+#   layer 2  HANDLERS - the selection preview and the eight resize handles and the
+#                        rotate grip, each <g style="cursor: *"> wrapping an <image>
+#   layer 3  empty
+#
+# Two earlier rules for telling content from handlers both failed:
+#   * "reject any <g> whose style names a cursor" — real vertices carry
+#     `cursor: move` too, so this deleted the whole diagram once a shape had been
+#     hovered;
+#   * "reject any layer containing a resize/crosshair style" — a transient during
+#     the connect drag flagged the content layer as well, and cell detection
+#     collapsed from 6 cells to 0 mid-scenario, which took three connect steps
+#     down with it.
+#
+# What is stable is the *ordering*: the handler pane always follows the content
+# pane, and handlers only exist while something in the content pane is selected.
+# So the content pane is simply the first pane that yields any cell at all.
 _CELLS_JS = r"""
 const svg = document.querySelector('.geDiagramContainer svg');
 if (!svg) return [];
 const root = svg.querySelector('g');
 if (!root) return [];
-const layers = Array.from(root.children).filter(c => c.tagName.toLowerCase() === 'g');
-
-// The handler layer is the one that owns resize/rotate affordances. Identifying it
-// by what it contains, rather than by a fixed index, survives draw.io reshuffling
-// its layers between builds.
-const isHandlerLayer = (l) =>
-  Array.from(l.querySelectorAll('*')).some(e => {
-    const st = e.getAttribute('style') || '';
-    return st.includes('resize') || st.includes('crosshair');
-  });
-
 const GEO = new Set(['rect','ellipse','path','polygon','polyline','line','image']);
-const out = [];
-layers.filter(l => !isHandlerLayer(l)).forEach(layer => {
-  Array.from(layer.children).forEach(g => {
-    if (g.tagName.toLowerCase() !== 'g') return;
-    if (g.textContent.trim().length > 0) return;      // a label group, not a cell
-    if (g.querySelector('foreignObject')) return;
-    const geo = Array.from(g.children)
-        .filter(c => GEO.has(c.tagName.toLowerCase()));
-    if (geo.length === 0) return;
-    out.push(g);
-  });
+
+const cellsOf = (layer) => Array.from(layer.children).filter(g => {
+  if (g.tagName.toLowerCase() !== 'g') return false;
+  const st = g.getAttribute('style') || '';
+  if (!st.includes('visibility: visible')) return false;
+  if (g.textContent.trim().length > 0) return false;   // a label group, not a cell
+  if (g.querySelector('foreignObject')) return false;
+  if (!Array.from(g.children).some(c => GEO.has(c.tagName.toLowerCase()))) return false;
+  // Degenerate boxes are page rules and alignment guides, never diagram cells.
+  const r = g.getBoundingClientRect();
+  return r.width > 0 && r.height > 0;
 });
-return out;
+
+// Pick the pane holding the most cells rather than the first one holding any.
+// A single alignment guide appearing in an earlier pane was enough to make the
+// first-match rule return one bogus 850x0 "edge" and drop the whole diagram —
+// which is what took scenario_050 from step 16 onwards down.
+const layers = Array.from(root.children).filter(c => c.tagName.toLowerCase() === 'g');
+let best = [];
+for (const layer of layers) {
+  const found = cellsOf(layer);
+  if (found.length > best.length) best = found;
+}
+return best;
 """
 
 # Positions come back twice over: in viewport coordinates (what ActionChains needs)
@@ -75,6 +96,16 @@ const GEO = new Set(['rect','ellipse','path','polygon','polyline','line','image'
 const cont = document.querySelector('.geDiagramContainer');
 const sx = cont ? cont.scrollLeft : 0;
 const sy = cont ? cont.scrollTop : 0;
+// mxGraph writes the current zoom into the canvas root's transform. Reading it
+// there is exact, and it has to be divided out of every displacement: after a
+// "Fit Page" step the editor sat at ~65%, so a 150-unit nudge measured 97 screen
+// pixels and every move looked like it had fallen short.
+const root = document.querySelector('.geDiagramContainer svg > g');
+let zoom = 1;
+if (root) {
+  const m = /scale\(\s*([0-9.]+)/.exec(root.getAttribute('transform') || '');
+  if (m) zoom = parseFloat(m[1]) || 1;
+}
 return arguments[0].map((g, i) => {
   const r = g.getBoundingClientRect();
   const geo = Array.from(g.children).filter(c => GEO.has(c.tagName.toLowerCase()));
@@ -82,34 +113,85 @@ return arguments[0].map((g, i) => {
   // An mxGraph edge renders as several <path> elements (wide invisible hit area,
   // the visible stroke, the arrow marker); a vertex owns exactly one primitive.
   const isEdge = tags.length > 1 && tags.every(t => t === 'path');
+  // For an edge, where the line actually starts and ends. That is what says which
+  // two shapes it joins, and it survives draw.io rebuilding the node.
+  let p1 = null, p2 = null;
+  if (isEdge) {
+    let best = null, bestLen = -1;
+    for (const p of geo) {
+      let L = 0;
+      try { L = p.getTotalLength(); } catch (e) { continue; }
+      if (L > bestLen) { bestLen = L; best = p; }
+    }
+    if (best && bestLen > 0) {
+      const m = best.getScreenCTM();
+      const a = best.getPointAtLength(0), b = best.getPointAtLength(bestLen);
+      if (m) {
+        p1 = [Math.round(a.x*m.a + a.y*m.c + m.e), Math.round(a.x*m.b + a.y*m.d + m.f)];
+        p2 = [Math.round(b.x*m.a + b.y*m.c + m.e), Math.round(b.x*m.b + b.y*m.d + m.f)];
+      }
+    }
+  }
   return {
+    p1: p1, p2: p2,
     index: i,
     kind: isEdge ? 'edge' : (tags[0] || 'unknown'),
     tags: tags.join(','),
     x: Math.round(r.x), y: Math.round(r.y),
     w: Math.round(r.width), h: Math.round(r.height),
     cx: Math.round(r.x + r.width / 2), cy: Math.round(r.y + r.height / 2),
-    mx: Math.round(r.x + r.width / 2 + sx), my: Math.round(r.y + r.height / 2 + sy)
+    // model coordinates: scroll added back, zoom divided out
+    mx: Math.round((r.x + r.width / 2 + sx) / zoom),
+    my: Math.round((r.y + r.height / 2 + sy) / zoom),
+    zoom: zoom
   };
 });
 """
 
-# Text that draw.io has painted on the canvas, with the box it sits in. Used to
-# check that a Fill actually landed on the intended shape.
+# Text draw.io has painted on the canvas, with where it sits. Used to check that a
+# Fill landed, and landed on the cell it was aimed at.
+#
+# The box has to come from the element that actually renders the glyphs. Reading
+# it off the wrapping <g> gives the whole canvas: label groups carry the canvas
+# transform, so every label reported the same nonsensical position (-723, -235).
+# draw.io draws labels either as an HTML <div> inside a <foreignObject>, or as a
+# plain SVG <text>, so both are collected.
 _LABELS_JS = r"""
-const svg = document.querySelector('.geDiagramContainer svg');
-if (!svg) return [];
+const cont = document.querySelector('.geDiagramContainer');
+if (!cont) return [];
 const out = [];
-svg.querySelectorAll('g').forEach(g => {
-  const t = g.textContent.trim();
+const seen = new Set();
+const add = (el) => {
+  if (seen.has(el)) return;
+  const t = (el.textContent || '').trim();
   if (!t) return;
-  if (Array.from(g.children).some(c => c.tagName.toLowerCase() === 'g')) return; // keep the innermost
-  const r = g.getBoundingClientRect();
+  if (el.isContentEditable) return;           // the open editor is not a label yet
+  // Keep the deepest element that still holds the whole string. "No element
+  // children" is too strict: draw.io's innermost label div contains empty spans,
+  // so that test rejected every level of the chain and reported no labels at all
+  // for a shape that visibly had one.
+  const nested = Array.from(el.querySelectorAll('*'))
+      .some(c => (c.textContent || '').trim() === t);
+  if (nested) return;
+  const r = el.getBoundingClientRect();
+  if (r.width === 0 && r.height === 0) return;
+  seen.add(el);
   out.push({text: t, x: Math.round(r.x), y: Math.round(r.y),
-            cx: Math.round(r.x + r.width/2), cy: Math.round(r.y + r.height/2)});
-});
+            w: Math.round(r.width), h: Math.round(r.height),
+            cx: Math.round(r.x + r.width / 2), cy: Math.round(r.y + r.height / 2)});
+};
+// mxGraph draws vertex/edge labels as HTML, positioned over the canvas, and only
+// sometimes inside the SVG as a <foreignObject> or <text>. Searching the SVG
+// alone missed every label on an ellipse, diamond or parallelogram — the text was
+// plainly on screen while canvas_labels() reported none, which made four
+// correctly-labelled shapes in scenario_050 look like failures.
+cont.querySelectorAll('div, span, text').forEach(add);
 return out;
 """
+
+
+def _d2(p, q) -> float:
+    return (p[0] - q[0]) ** 2 + (p[1] - q[1]) ** 2
 
 
 def cell_elements(driver) -> list:
@@ -204,7 +286,53 @@ class CellTracker:
         return self._resolve(self.step_to_cell.get(step_num))
 
     def element_for_connector(self, from_step: int, to_step: int):
-        return self._resolve(self.connector_to_cell.get((from_step, to_step)))
+        """Resolve a connector by the two shapes it joins, not by its DOM node.
+
+        Node handles are enough for shapes but not for edges: labelling one edge
+        makes mxGraph re-render the others, and once a handle goes stale the
+        nearest-position fallback picks whichever edge happens to be closest —
+        which is how scenario_050's "YES" ended up on the first edge of the chart
+        instead of on the decision's right-hand branch. An edge's endpoints say
+        unambiguously which pair it belongs to.
+        """
+        entry = self.connector_to_cell.get((from_step, to_step))
+        src = self.step_to_cell.get(from_step)
+        dst = self.step_to_cell.get(to_step)
+        if src is None or dst is None:
+            return self._resolve(entry)
+
+        _, src_info = self._resolve(src)
+        _, dst_info = self._resolve(dst)
+        if src_info is None or dst_info is None:
+            return self._resolve(entry)
+
+        els = cell_elements(self.driver)
+        if not els:
+            return None, None
+        infos = cell_info(self.driver, els)
+
+        def cost(info):
+            if info["kind"] != "edge" or not info.get("p1") or not info.get("p2"):
+                return None
+            a, b = info["p1"], info["p2"]
+            sc = (src_info["cx"], src_info["cy"])
+            dc = (dst_info["cx"], dst_info["cy"])
+            fwd = _d2(a, sc) + _d2(b, dc)
+            rev = _d2(a, dc) + _d2(b, sc)   # draw.io may report the path reversed
+            return min(fwd, rev)
+
+        best = None
+        for el, info in zip(els, infos):
+            c = cost(info)
+            if c is None:
+                continue
+            if best is None or c < best[0]:
+                best = (c, el, info)
+        if best is None:
+            return self._resolve(entry)
+        if entry is not None:
+            entry["el"], entry["info"] = best[1], best[2]
+        return best[1], best[2]
 
     def _resolve(self, entry):
         """Refresh a remembered cell's geometry, falling back to nearest-match."""

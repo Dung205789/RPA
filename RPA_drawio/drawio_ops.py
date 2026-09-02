@@ -55,9 +55,45 @@ def known_cells(driver) -> list:
     return cell_tracker.cell_elements(driver)
 
 
+_CENTER_ON_JS = r"""
+const cont = document.querySelector('.geDiagramContainer');
+if (!cont) return null;
+const cr = cont.getBoundingClientRect();
+let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+for (const g of arguments[0]) {
+  if (!g) continue;
+  const r = g.getBoundingClientRect();
+  minX = Math.min(minX, r.x); minY = Math.min(minY, r.y);
+  maxX = Math.max(maxX, r.x + r.width); maxY = Math.max(maxY, r.y + r.height);
+}
+if (!isFinite(minX)) return null;
+const wantX = (minX + maxX) / 2, wantY = (minY + maxY) / 2;
+cont.scrollLeft += wantX - (cr.x + cr.width / 2);
+cont.scrollTop  += wantY - (cr.y + cr.height / 2);
+return {scrollLeft: cont.scrollLeft, scrollTop: cont.scrollTop};
+"""
+
+
+def ensure_visible(driver, *elements) -> None:
+    """Scroll the canvas so the given cells sit in the middle of the viewport.
+
+    Cells that have been nudged a few hundred pixels leave the visible area, and
+    once they do, point-based clicks fall outside the container and Selenium's own
+    scroll-into-view is not reliable enough to recover: in scenario_050 the four
+    shapes that had been moved up or down never received their labels, while the
+    two that only moved sideways did. Centring them first removes the whole class
+    of failure.
+    """
+    driver.execute_script(_CENTER_ON_JS, [e for e in elements if e is not None])
+    time.sleep(0.3)
+
+
 def select_cell(driver, element) -> None:
     """Click a cell so keyboard nudges apply to it."""
-    ActionChains(driver).move_to_element(element).click().perform()
+    ensure_visible(driver, element)
+    pt = point_on_cell(driver, element)
+    if not _act_at_point(driver, pt["x"], pt["y"]):
+        ActionChains(driver).move_to_element(element).click().perform()
     time.sleep(0.3)
 
 
@@ -72,32 +108,101 @@ def _info_of(driver, element):
     return None
 
 
-def move_cell(driver, element, direction: str, distance_px: int = MOVE_STEP_PX) -> dict:
-    """Nudge one cell, and report the displacement actually observed.
+def move_cell(driver, element, direction: str, distance_px: int = MOVE_STEP_PX,
+              measure: bool = True) -> dict:
+    """Nudge one cell.
 
-    Verification matters: the old executor issued the key presses and assumed they
-    landed. If the click missed the shape the presses went to the canvas and the
-    step silently did nothing, which is invisible in a screenshot taken at the end.
+    With ``measure=True`` the displacement is read here, comparing the element's
+    own geometry before and after. Callers that own a tracker should pass
+    ``measure=False`` and compare through it instead: draw.io occasionally rebuilds
+    a cell's DOM node when it scrolls back into view, and a raw handle comparison
+    then reports the shape as gone when it is plainly still on the canvas.
 
-    Displacement is read in scroll-corrected coordinates, because clicking a cell
-    makes Selenium scroll it into view and that pans the whole canvas.
+    Displacement is read in scroll-corrected coordinates either way, because
+    clicking a cell makes Selenium scroll it into view and that pans the canvas.
     """
     key = _ARROW.get((direction or "").lower())
     if key is None:
         return {"ok": False, "reason": "unknown direction %r" % direction}
 
-    before = _info_of(driver, element)
-    if before is None:
+    before = _info_of(driver, element) if measure else None
+    if measure and before is None:
         return {"ok": False, "reason": "cell not on canvas"}
     select_cell(driver, element)
     _press_arrow(driver, key, max(1, round(distance_px / PX_PER_ARROW_PRESS)))
     time.sleep(0.5)
+    if not measure:
+        return {"ok": True, "measured": False}
     after = _info_of(driver, element)
     if after is None:
         return {"ok": False, "reason": "cell disappeared during move"}
     dx, dy = after["mx"] - before["mx"], after["my"] - before["my"]
     return {"ok": (abs(dx) + abs(dy)) >= distance_px // 2, "dx": dx, "dy": dy,
             "wanted": distance_px}
+
+
+_POINT_ON_CELL_JS = r"""
+const g = arguments[0];
+const paths = Array.from(g.querySelectorAll('path'));
+// Only an edge gets the on-the-path treatment. A vertex drawn as a single <path>
+// (diamond, parallelogram, hexagon…) has its path midpoint on the *outline*, and
+// double-clicking the outline does not open the label editor — measured: the
+// diamond's point landed on its bottom vertex, the parallelogram's on its right
+// edge, and neither took a label, while rectangles did.
+const isEdge = paths.length > 1 && g.children.length === paths.length;
+if (isEdge) {
+  // Pick the longest path (the drawn stroke, not the arrow marker) and take its
+  // midpoint. An edge's bounding-box centre is not on the edge at all once the
+  // route turns a corner, so double-clicking there lands on empty canvas.
+  let best = null, bestLen = -1;
+  for (const p of paths) {
+    let len = 0;
+    try { len = p.getTotalLength(); } catch (e) { continue; }
+    if (len > bestLen) { bestLen = len; best = p; }
+  }
+  if (best && bestLen > 0) {
+    const frac = (typeof arguments[1] === 'number') ? arguments[1] : 0.5;
+    const pt = best.getPointAtLength(bestLen * frac);
+    const m = best.getScreenCTM();
+    if (m) {
+      return {x: pt.x * m.a + pt.y * m.c + m.e, y: pt.x * m.b + pt.y * m.d + m.f, on: 'path'};
+    }
+  }
+}
+const r = g.getBoundingClientRect();
+return {x: r.x + r.width / 2, y: r.y + r.height / 2, on: 'box'};
+"""
+
+
+def point_on_cell(driver, element, frac: float = 0.5) -> dict:
+    """A viewport point that really lies on the cell.
+
+    ``frac`` picks how far along an edge's path to sample, so a caller can try a
+    different spot when the first one turns out to select the wrong cell.
+    """
+    return driver.execute_script(_POINT_ON_CELL_JS, element, frac)
+
+
+def _act_at_point(driver, x: float, y: float, double: bool = False) -> bool:
+    """Click (or double-click) an absolute viewport point.
+
+    Offsets are taken from the canvas container's centre because Selenium 4
+    measures ``move_to_element_with_offset`` from an element's centre, and using
+    ``body`` as the anchor put the target out of bounds.
+    """
+    container = driver.find_element("css selector", ".geDiagramContainer")
+    rect = driver.execute_script("""
+    const r = arguments[0].getBoundingClientRect();
+    return {x: r.x, y: r.y, w: r.width, h: r.height};
+    """, container)
+    dx = int(round(x - (rect["x"] + rect["w"] / 2.0)))
+    dy = int(round(y - (rect["y"] + rect["h"] / 2.0)))
+    if abs(dx) > rect["w"] / 2 or abs(dy) > rect["h"] / 2:
+        return False
+    chain = ActionChains(driver).move_to_element_with_offset(container, dx, dy).pause(0.2)
+    (chain.double_click() if double else chain.click()).perform()
+    time.sleep(0.6)
+    return True
 
 
 def label_cell(driver, element, text: str) -> dict:
@@ -109,28 +214,107 @@ def label_cell(driver, element, text: str) -> dict:
     draw.io's own behaviour. Select-all first so a re-label replaces rather than
     appends.
     """
-    ActionChains(driver).move_to_element(element).double_click().perform()
-    time.sleep(0.9)
+    open_editor_on(driver, element)
     ActionChains(driver).key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).perform()
     time.sleep(0.15)
     ActionChains(driver).send_keys(text).perform()
     time.sleep(0.4)
     ActionChains(driver).send_keys(Keys.ESCAPE).perform()
     time.sleep(0.8)
-    return _label_result(driver, text)
+    return _label_result(driver, text, near=_info_of(driver, element))
 
 
-def open_editor_on(driver, element) -> None:
+def open_editor_on(driver, element) -> dict:
     """Double-click a cell to start editing its label, leaving the editor open.
 
     The corpus splits labelling into two steps ("Double click on X" then
-    "Fill ..."), so the two halves have to be callable separately.
+    "Fill ..."), so the two halves have to be callable separately. The click goes
+    to a point on the cell rather than to its bounding-box centre, which for a
+    routed connector is usually empty canvas — that is how "NO"/"YES" ended up on
+    the wrong edge of scenario_050.
     """
-    ActionChains(driver).move_to_element(element).double_click().perform()
+    ensure_visible(driver, element)
+    # Select, then F2, then *check the editor opened on the cell we meant*.
+    #
+    # A precise double-click is what the corpus's wording describes, but on a
+    # connector it has to land inside a 5px-tall line at whatever zoom the
+    # scenario left behind, and a near-miss silently edits the neighbouring shape
+    # instead: scenario_050 typed the edge label "YES" over the "Take subway" box
+    # and lost that box's own label, while every step still reported success.
+    # Comparing the editor's position against the target's is what turns that into
+    # something the run can notice and retry.
+    target = _info_of(driver, element)
+    want_kind = "edge" if (target and target["kind"] == "edge") else "vertex"
+    for attempt, frac in enumerate((0.5, 0.35, 0.65, 0.2, 0.8)):
+        pt = point_on_cell(driver, element, frac)
+        if not _act_at_point(driver, pt["x"], pt["y"]):
+            ActionChains(driver).move_to_element(element).click().perform()
+            time.sleep(0.3)
+        if selected_kind(driver) != want_kind:
+            continue          # the click landed on the neighbour; try another spot
+        ActionChains(driver).send_keys(Keys.F2).perform()
+        time.sleep(0.8)
+        box = editor_box(driver)
+        if box and _editor_matches(box, target):
+            return {"via": "select+F2", "attempt": attempt, "editor": True}
+        if box:
+            ActionChains(driver).send_keys(Keys.ESCAPE).perform()
+            time.sleep(0.4)
+    # last resort: the plain gesture the corpus names
+    pt = point_on_cell(driver, element)
+    if not _act_at_point(driver, pt["x"], pt["y"], double=True):
+        ActionChains(driver).move_to_element(element).double_click().perform()
     time.sleep(0.9)
+    return {"via": "double-click-fallback", "editor": editor_is_open(driver)}
 
 
-def type_into_open_editor(driver, text: str) -> dict:
+def selected_kind(driver):
+    """Whether draw.io currently has a vertex, an edge, or nothing selected.
+
+    Read from the affordances it draws: a selected vertex gets eight corner/side
+    resize grips (``nw-resize`` and friends) plus a rotate grip; a selected edge
+    gets endpoint grips instead (``col-resize``/``pointer``). This is the check
+    that separates "clicked the connector" from "clicked the box next to it" —
+    comparing positions was not enough, because a short connector's midpoint sits
+    within tolerance of its target shape's centre, and the edge label "YES"
+    overwrote the "Take subway" box's own label while every check passed.
+    """
+    return driver.execute_script("""
+    const svg = document.querySelector('.geDiagramContainer svg');
+    if (!svg) return null;
+    const styles = Array.from(svg.querySelectorAll('g'))
+        .map(g => g.getAttribute('style') || '');
+    if (styles.some(s => s.includes('nw-resize'))) return 'vertex';
+    if (styles.some(s => s.includes('col-resize') || s.includes('row-resize'))) return 'edge';
+    return null;
+    """)
+
+
+def editor_is_open(driver) -> bool:
+    return bool(driver.execute_script(
+        "return !!document.querySelector('[contenteditable=\"true\"]');"))
+
+
+def editor_box(driver):
+    return driver.execute_script("""
+    const e = document.querySelector('[contenteditable="true"]');
+    if (!e) return null;
+    const r = e.getBoundingClientRect();
+    return {x: r.x, y: r.y, w: r.width, h: r.height,
+            cx: r.x + r.width / 2, cy: r.y + r.height / 2};
+    """)
+
+
+def _editor_matches(box, target) -> bool:
+    """Is the open editor sitting on the cell we aimed at?"""
+    if target is None:
+        return True
+    tol = max(40, target["w"] / 2 + 20, target["h"] / 2 + 20)
+    return (abs(box["cx"] - (target["x"] + target["w"] / 2)) <= tol
+            and abs(box["cy"] - (target["y"] + target["h"] / 2)) <= tol)
+
+
+def type_into_open_editor(driver, text: str, near: dict | None = None) -> dict:
     """Type into the label editor a previous step opened, then commit."""
     ActionChains(driver).key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).perform()
     time.sleep(0.15)
@@ -138,13 +322,31 @@ def type_into_open_editor(driver, text: str) -> dict:
     time.sleep(0.4)
     ActionChains(driver).send_keys(Keys.ESCAPE).perform()
     time.sleep(0.8)
-    return _label_result(driver, text)
+    return _label_result(driver, text, near=near)
 
 
-def _label_result(driver, text: str) -> dict:
-    labels = [l["text"] for l in cell_tracker.canvas_labels(driver)]
+def _label_result(driver, text: str, near: dict | None = None) -> dict:
+    """Did the text land, and did it land on the intended cell?
+
+    Checking only that the string appears somewhere on the canvas is too weak: in
+    scenario_050 the edge labels "NO" and "YES" were both typed onto the wrong
+    connector and the step still reported success. When the caller knows which
+    cell it aimed at, the label has to sit inside that cell's box.
+    """
+    labels = cell_tracker.canvas_labels(driver)
     want = " ".join(text.split())
-    return {"ok": any(want in " ".join(l.split()) for l in labels), "labels": labels}
+    hits = [l for l in labels if want in " ".join(l["text"].split())]
+    if not hits:
+        return {"ok": False, "labels": [l["text"] for l in labels]}
+    if near is None:
+        return {"ok": True, "placement": "unchecked"}
+    pad = 12
+    x0, x1 = near["x"] - pad, near["x"] + near["w"] + pad
+    y0, y1 = near["y"] - pad, near["y"] + near["h"] + pad
+    on_target = any(x0 <= h["cx"] <= x1 and y0 <= h["cy"] <= y1 for h in hits)
+    return {"ok": on_target, "placement": "on-target" if on_target else "elsewhere",
+            "label_at": [(h["cx"], h["cy"]) for h in hits],
+            "target_box": [near["x"], near["y"], near["w"], near["h"]]}
 
 
 def _border_point(info: dict, toward: dict) -> tuple:
@@ -172,7 +374,9 @@ def connect_cells(driver, src_el, dst_el) -> dict:
          the target's centre, which makes a floating connection to that shape.
     """
     before = known_cells(driver)
+    ensure_visible(driver, src_el, dst_el)
     rpa_env.deselect_all(driver)
+    ensure_visible(driver, src_el, dst_el)
     src_info = _info_of(driver, src_el)
     dst_info = _info_of(driver, dst_el)
     if src_info is None or dst_info is None:

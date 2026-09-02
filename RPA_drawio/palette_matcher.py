@@ -40,9 +40,49 @@ return out;
 """
 
 
+# Not every bracketed image in the corpus is a shape. Checking what the old
+# 100-case corpus actually references: object2.png is the toolbar's "100% v" zoom
+# control, help.png is a menu item, 65.png/o61.png… are ribbon icons. Restricting
+# the search to the shape palette therefore mis-resolves those steps — measured on
+# scenario_050, where "Click on [object2.png]" was forced onto palette entry 32 and
+# inserted a random shape instead of opening the zoom menu.
+#
+# So the candidate set is every small visible leaf-ish control on the page, with
+# the palette entries always included. One screenshot still covers all of them.
+_UI_CANDIDATES_JS = r"""
+const out = [];
+const seen = new Set();
+const push = (el, isPalette) => {
+  if (seen.has(el)) return;
+  seen.add(el);
+  if (el.offsetParent === null) return;
+  const r = el.getBoundingClientRect();
+  if (r.width < 8 || r.height < 8 || r.width > 260 || r.height > 140) return;
+  if (r.x < 0 || r.y < 0) return;
+  out.push({x: r.x, y: r.y, w: r.width, h: r.height,
+            tag: el.tagName.toLowerCase(),
+            title: el.getAttribute('title') || '',
+            text: (el.textContent || '').trim().slice(0, 30),
+            palette: !!isPalette, idx: out.length});
+};
+document.querySelectorAll('.geSidebarContainer a.geItem').forEach(e => push(e, true));
+document.querySelectorAll('a, button, img, span, div, input, li, td').forEach(el => {
+  // leaf-ish only: a control, not the panel that contains it
+  if (el.querySelectorAll('*').length > 3) return;
+  push(el, false);
+});
+return out;
+"""
+
+
 def palette_entries(driver) -> list:
     """Boxes of the visible palette entries, in sidebar order."""
     return driver.execute_script(_ENTRIES_JS) or []
+
+
+def ui_candidates(driver) -> list:
+    """Every small visible control on the page, palette entries first."""
+    return driver.execute_script(_UI_CANDIDATES_JS) or []
 
 
 def _page_screenshot(driver) -> np.ndarray:
@@ -156,3 +196,75 @@ def find_palette_entry(driver, template_path: str, top_k: int = 3,
     best = ranked[0]
     return {"ok": True, "index": best["index"], "score": best["score"],
             "element": best["element"], "ranked": ranked}
+
+
+def find_icon(driver, template_path: str, top_k: int = 4, log=None) -> dict:
+    """Best-matching control anywhere on the page for ``template_path``.
+
+    Same comparison as :func:`find_palette_entry`, over a wider candidate set, so
+    one call resolves both "click this shape in the palette" and "click this
+    toolbar button" without the caller having to know which kind of icon it holds.
+    """
+    if log is None:
+        def log(*a, **k):
+            pass
+
+    template = cv2.imread(template_path, cv2.IMREAD_COLOR)
+    if template is None:
+        return {"ok": False, "reason": "cannot read template %s" % template_path}
+    t_mask = _ink_mask(template)
+
+    cands = ui_candidates(driver)
+    if not cands:
+        return {"ok": False, "reason": "no candidate controls visible"}
+
+    shot = _page_screenshot(driver)
+    css_width = driver.execute_script("return window.innerWidth;")
+    scale = shot.shape[1] / float(css_width) if css_width else 1.0
+
+    scored = []
+    for c in cands:
+        x0, y0 = int(c["x"] * scale), int(c["y"] * scale)
+        x1, y1 = int((c["x"] + c["w"]) * scale), int((c["y"] + c["h"]) * scale)
+        crop = shot[max(0, y0):y1, max(0, x0):x1]
+        if crop.size == 0:
+            continue
+        # An icon and its control should be a similar shape; a 200x20 menu strip is
+        # not a 47x33 button however its ink lands.
+        ar_t = template.shape[1] / float(template.shape[0])
+        ar_c = c["w"] / float(c["h"]) if c["h"] else 99.0
+        if max(ar_t, ar_c) / max(1e-6, min(ar_t, ar_c)) > 3.0:
+            continue
+        scored.append((_similarity(t_mask, _ink_mask(crop)), c))
+
+    if not scored:
+        return {"ok": False, "reason": "no usable crops"}
+    scored.sort(key=lambda p: p[0], reverse=True)
+
+    ranked = []
+    for score, c in scored[:top_k]:
+        el = _element_at(driver, c)
+        if el is not None:
+            ranked.append({"score": round(score, 4), "element": el,
+                           "tag": c["tag"], "title": c["title"],
+                           "text": c["text"], "palette": c["palette"],
+                           "box": [round(c["x"]), round(c["y"]),
+                                   round(c["w"]), round(c["h"])]})
+    log("[icon] %s -> %s" % (os.path.basename(template_path),
+                             [(r["score"], r["tag"], r["title"] or r["text"]) for r in ranked]))
+    if not ranked:
+        return {"ok": False, "reason": "candidates could not be re-acquired"}
+    return {"ok": True, "score": ranked[0]["score"],
+            "element": ranked[0]["element"], "ranked": ranked}
+
+
+def _element_at(driver, cand: dict):
+    """Re-acquire a candidate as a WebElement from its centre point.
+
+    Matching works on a screenshot, so the winner is known by geometry; going back
+    through ``elementFromPoint`` is what turns that back into something clickable.
+    """
+    cx = cand["x"] + cand["w"] / 2.0
+    cy = cand["y"] + cand["h"] / 2.0
+    return driver.execute_script(
+        "return document.elementFromPoint(arguments[0], arguments[1]);", cx, cy)
