@@ -45,7 +45,7 @@ IMAGE 2 is the RESULT: what an automation robot actually drew on a canvas.
 Compare them and return ONE JSON object, nothing else:
 
 {
-  "reference": {"shapes": <int>, "arrows": <int>},
+  "reference": {"shapes": <int>, "arrows": <int>, "labelled_arrows": <int>},
   "result":    {"shapes": <int>, "arrows": <int>},
   "shapes_matched": <int>,
   "shape_types_matched": <int>,
@@ -71,7 +71,9 @@ How to count, strictly:
   surrounding whitespace. Different wording is not a match.
 - "arrows_matched": arrows in the RESULT that join the same pair of shapes, in
   the same direction, as an arrow in the REFERENCE.
-- "arrow_labels_matched": of those, how many carry the same text on the arrow.
+- "reference.labelled_arrows": how many arrows in the REFERENCE carry text.
+- "arrow_labels_matched": of the matched arrows, how many carry the same text as
+  the reference arrow does. Count only arrows the reference actually labels.
 - "layout_similarity": is the arrangement recognisably the same picture — the
   same rough top-to-bottom order, branches on the same side? 1.0 identical
   arrangement, 0.0 unrelated. Exact pixel positions do not matter; overlapping or
@@ -188,8 +190,13 @@ def _summarise(rows):
         "shape_type_accuracy": _rate(tot("shape_types_matched"), tot("shapes_matched")),
         "label_accuracy": _rate(tot("labels_matched"), ref_shapes),
         "arrow_recall": _rate(tot("arrows_matched"), ref_arrows),
-        "arrow_label_accuracy": _rate(tot("arrow_labels_matched"), tot("arrows_matched")),
+        # Denominated by the arrows the reference actually labels: most arrows in
+        # a flowchart carry no text, and dividing by every matched arrow scored a
+        # pair of identical images at 0.33.
+        "arrow_label_accuracy": _rate(tot("arrow_labels_matched"),
+                                      tot("reference", "labelled_arrows")),
         "totals": {"reference_shapes": ref_shapes, "reference_arrows": ref_arrows,
+                   "reference_labelled_arrows": tot("reference", "labelled_arrows"),
                    "result_shapes": tot("result", "shapes"),
                    "result_arrows": tot("result", "arrows")},
         "cases": rows,

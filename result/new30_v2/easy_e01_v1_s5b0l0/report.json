@@ -1,0 +1,617 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "ok",
+      "detail": {
+        "url": "https://app.diagrams.net/?lang=en&splash=0",
+        "seconds": 8.67
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 1.0,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 3.12
+      }
+    },
+    {
+      "n": 3,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "seconds": 2.91
+      }
+    },
+    {
+      "n": 4,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "seconds": 2.8
+      }
+    },
+    {
+      "n": 5,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 950,
+        "wanted": 150,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 6,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 1.0,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 3.46
+      }
+    },
+    {
+      "n": 7,
+      "description": "Move the element created in step 6 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "seconds": 4.29
+      }
+    },
+    {
+      "n": 8,
+      "description": "Move the element created in step 6 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "seconds": 3.38
+      }
+    },
+    {
+      "n": 9,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.0,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 2.81
+      }
+    },
+    {
+      "n": 10,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 1.0,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 2.86
+      }
+    },
+    {
+      "n": 11,
+      "description": "Move the element created in step 10 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 150,
+        "wanted": 150,
+        "seconds": 2.78
+      }
+    },
+    {
+      "n": 12,
+      "description": "Move the element created in step 10 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 150,
+        "wanted": 150,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 13,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 1.0,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 2.7
+      }
+    },
+    {
+      "n": 14,
+      "description": "Move the element created in step 13 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 150,
+        "wanted": 150,
+        "seconds": 2.89
+      }
+    },
+    {
+      "n": 15,
+      "description": "Move the element created in step 13 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 150,
+        "wanted": 150,
+        "seconds": 2.81
+      }
+    },
+    {
+      "n": 16,
+      "description": "Move the element created in step 13 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 150,
+        "wanted": 150,
+        "seconds": 2.69
+      }
+    },
+    {
+      "n": 17,
+      "description": "Double click on the element created in step 2",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 2",
+        "seconds": 2.35
+      }
+    },
+    {
+      "n": 18,
+      "description": "Fill \"Lamp does not work\" into the element created in step 2",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 2",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.6
+      }
+    },
+    {
+      "n": 19,
+      "description": "Double click on the element created in step 6",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 6",
+        "seconds": 2.35
+      }
+    },
+    {
+      "n": 20,
+      "description": "Fill \"Check the socket\" into the element created in step 6",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 6",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.53
+      }
+    },
+    {
+      "n": 21,
+      "description": "Double click on the element created in step 9",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 9",
+        "seconds": 2.39
+      }
+    },
+    {
+      "n": 22,
+      "description": "Fill \"Plug it in\" into the element created in step 9",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 9",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.49
+      }
+    },
+    {
+      "n": 23,
+      "description": "Double click on the element created in step 10",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 10",
+        "seconds": 2.32
+      }
+    },
+    {
+      "n": 24,
+      "description": "Fill \"Replace the bulb\" into the element created in step 10",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 10",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.5
+      }
+    },
+    {
+      "n": 25,
+      "description": "Double click on the element created in step 13",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 13",
+        "seconds": 2.31
+      }
+    },
+    {
+      "n": 26,
+      "description": "Fill \"Lamp works\" into the element created in step 13",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 13",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.45
+      }
+    },
+    {
+      "n": 27,
+      "description": "Connect the element created in step 2 to the element created in step 6",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 5,
+        "after": 6,
+        "seconds": 6.1
+      }
+    },
+    {
+      "n": 28,
+      "description": "Connect the element created in step 6 to the element created in step 9",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 6,
+        "after": 7,
+        "seconds": 6.05
+      }
+    },
+    {
+      "n": 29,
+      "description": "Connect the element created in step 9 to the element created in step 10",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 7,
+        "after": 8,
+        "seconds": 6.05
+      }
+    },
+    {
+      "n": 30,
+      "description": "Connect the element created in step 10 to the element created in step 13",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 8,
+        "after": 9,
+        "seconds": 6.1
+      }
+    }
+  ],
+  "counts": {
+    "ok": 30,
+    "failed": 0,
+    "error": 0,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 1.0,
+  "total_sec": 102.8,
+  "cells": [
+    {
+      "cx": 788,
+      "cy": 1033,
+      "h": 60,
+      "index": 0,
+      "kind": "rect",
+      "mx": 1509,
+      "my": 1768,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 120,
+      "x": 728,
+      "y": 1003,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 417,
+      "h": 610,
+      "index": 1,
+      "kind": "edge",
+      "mx": 1509,
+      "my": 1152,
+      "p1": [
+        788,
+        113
+      ],
+      "p2": [
+        788,
+        717
+      ],
+      "tags": "path,path,path",
+      "w": 7,
+      "x": 784,
+      "y": 113,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 83,
+      "h": 60,
+      "index": 2,
+      "kind": "rect",
+      "mx": 1509,
+      "my": 818,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 120,
+      "x": 728,
+      "y": 53,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 853,
+      "h": 882,
+      "index": 3,
+      "kind": "edge",
+      "mx": 1509,
+      "my": 1588,
+      "p1": [
+        788,
+        413
+      ],
+      "p2": [
+        788,
+        1289
+      ],
+      "tags": "path,path,path",
+      "w": 7,
+      "x": 784,
+      "y": 413,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 383,
+      "h": 60,
+      "index": 4,
+      "kind": "rect",
+      "mx": 1509,
+      "my": 1118,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 120,
+      "x": 728,
+      "y": 353,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 857,
+      "h": 289,
+      "index": 5,
+      "kind": "edge",
+      "mx": 1509,
+      "my": 1592,
+      "p1": [
+        788,
+        713
+      ],
+      "p2": [
+        788,
+        996
+      ],
+      "tags": "path,path,path",
+      "w": 7,
+      "x": 784,
+      "y": 713,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 683,
+      "h": 60,
+      "index": 6,
+      "kind": "rect",
+      "mx": 1509,
+      "my": 1418,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 120,
+      "x": 728,
+      "y": 653,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 833,
+      "h": 60,
+      "index": 7,
+      "kind": "rect",
+      "mx": 1509,
+      "my": 1568,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 120,
+      "x": 728,
+      "y": 803,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 543,
+      "h": 919,
+      "index": 8,
+      "kind": "edge",
+      "mx": 1509,
+      "my": 1278,
+      "p1": [
+        788,
+        1003
+      ],
+      "p2": [
+        788,
+        89
+      ],
+      "tags": "path,path,path",
+      "w": 7,
+      "x": 784,
+      "y": 84,
+      "zoom": 1
+    }
+  ],
+  "n_vertices": 5,
+  "n_edges": 4,
+  "labels": [
+    "Lamp does not work",
+    "Check the socket",
+    "Plug it in",
+    "Replace the bulb",
+    "Lamp works"
+  ]
+}

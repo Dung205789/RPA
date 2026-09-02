@@ -64,6 +64,15 @@ trạng thái thực tế đo được tại thời điểm nhận việc.
 | 5 | Chấm điểm: bộ mới có gold sẵn; bộ cũ phải tự dựng gold | |
 | 6 | Sau khi bộ cũ + 30 case đạt, mới chạy 500 case × 3 web | drawio trước |
 
+### Quyết định đã chốt (hỏi/đáp 2026-09-03)
+
+| Câu hỏi | Trả lời |
+|---------|---------|
+| Thước đo output RPA | **Chấm bằng VLM nhìn ảnh.** Không dùng scorer XML của SVG_agent. |
+| Chuẩn cho 100 case cũ | **Cả hai**: tỉ lệ step chạy đúng cho toàn bộ 100 case, + gold ở mức hình cho nhóm case có vẽ. |
+| Provider LLM | **Gemini trước, hết quota sang OpenAI, Claude để cuối.** |
+| Phạm vi trước mắt | **Toàn bộ 100 case drawio cũ + 30 case drawio mới.** Chưa chạy 500 case. |
+
 ### Luật bắt buộc (mục 6 của yêu cầu)
 - Không hard-code, không fix cứng theo từng case.
 - Không leakage: module ảnh→text **chỉ được đọc file PNG**, tuyệt đối không đọc
