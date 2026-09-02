@@ -1,0 +1,95 @@
+{
+  "id": "hard_h08_v5_s9b2l1",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Double click on the element created in step 2",
+    "Fill \"Model loaded\" into the element created in step 2",
+    "Click on [diamond.png]",
+    "Move the element created in step 5 down",
+    "Double click on the element created in step 5",
+    "Fill \"Bed level?\" into the element created in step 5",
+    "Click on [rectangle.png]",
+    "Move the element created in step 9 left",
+    "Move the element created in step 9 left",
+    "Move the element created in step 9 down",
+    "Double click on the element created in step 9",
+    "Fill \"Slice the model\" into the element created in step 9",
+    "Click on [rectangle.png]",
+    "Move the element created in step 15 right",
+    "Move the element created in step 15 right",
+    "Move the element created in step 15 right",
+    "Move the element created in step 15 right",
+    "Double click on the element created in step 15",
+    "Fill \"Heat the nozzle\" into the element created in step 15",
+    "Click on [rectangle.png]",
+    "Move the element created in step 22 down",
+    "Double click on the element created in step 22",
+    "Fill \"Level the bed\" into the element created in step 22",
+    "Click on [rectangle.png]",
+    "Move the element created in step 26 left",
+    "Move the element created in step 26 left",
+    "Move the element created in step 26 down",
+    "Double click on the element created in step 26",
+    "Fill \"Adjust the screws\" into the element created in step 26",
+    "Click on [rectangle.png]",
+    "Move the element created in step 32 down",
+    "Double click on the element created in step 32",
+    "Fill \"Clean the plate\" into the element created in step 32",
+    "Click on [diamond.png]",
+    "Move the element created in step 36 down",
+    "Double click on the element created in step 36",
+    "Fill \"First layer stuck?\" into the element created in step 36",
+    "Click on [ellipse.png]",
+    "Move the element created in step 40 down",
+    "Double click on the element created in step 40",
+    "Fill \"Part finished\" into the element created in step 40",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 9",
+    "Double click on connector_from_step5_to_step9",
+    "Fill \"Level\"",
+    "Connect the element created in step 5 to the element created in step 15",
+    "Double click on connector_from_step5_to_step15",
+    "Fill \"Off\"",
+    "Connect the element created in step 15 to the element created in step 22",
+    "Connect the element created in step 9 to the element created in step 26",
+    "Connect the element created in step 22 to the element created in step 26",
+    "Connect the element created in step 26 to the element created in step 32",
+    "Connect the element created in step 32 to the element created in step 36",
+    "Connect the element created in step 36 to the element created in step 26",
+    "Double click on connector_from_step36_to_step26",
+    "Fill \"Peeling\"",
+    "Connect the element created in step 36 to the element created in step 40",
+    "Double click on connector_from_step36_to_step40",
+    "Fill \"Stuck\""
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png"
+    },
+    "diamond.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\diamond.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png"
+    }
+  },
+  "_source": "SVG_agent data/datasets, converted via existing VLM parse (src/understand/constraints.parse_task) + new deterministic step translator",
+  "_unsupported_shapes": [
+    {
+      "id": "D",
+      "type": "hexagon"
+    },
+    {
+      "id": "E",
+      "type": "hexagon"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "scenario_015",
+  "url": "https://nhandan.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open website \"https://nhandan.vn/\"",
+    "Click on Đăng nhập button",
+    "Click on Email đã đăng ký với Nhân Dân",
+    "Fill \"thht200603@gmail.com\"  into Email đã đăng ký với Nhân Dân input",
+    "Click on Mật khẩu tài khoản",
+    "Fill \"123456789\" into Mật khẩu tài khoản input"
+  ],
+  "assets": {}
+}

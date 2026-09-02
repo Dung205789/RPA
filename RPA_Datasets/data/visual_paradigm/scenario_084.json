@@ -1,0 +1,16 @@
+{
+  "id": "scenario_084",
+  "url": "https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=Flowchart&width=11&height=8.5&unit=inch",
+  "environment": {
+    "theme": "dark"
+  },
+  "descriptions": [
+    "Click on [parallelogram_dark.png]"
+  ],
+  "assets": {
+    "parallelogram_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/parallelogram_dark.png"
+    }
+  }
+}

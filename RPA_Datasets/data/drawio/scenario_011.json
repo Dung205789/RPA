@@ -1,0 +1,18 @@
+{
+  "id": "scenario_011",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [help.png]",
+    "Click on Get Desktop..."
+  ],
+  "assets": {
+    "help.png": {
+      "type": "image",
+      "path": "images/drawio/help.png"
+    }
+  }
+}

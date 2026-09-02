@@ -1,0 +1,13 @@
+{
+  "id": "scenario_010",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://tuoitre.vn/\"",
+    "Click on Thế giới button",
+    "Click on Kiều bào button"
+  ],
+  "assets": {}
+}

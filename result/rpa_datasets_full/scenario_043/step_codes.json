@@ -1,0 +1,8 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"//body/div[3]/div[1]/div[4]/div[1]/a[10]\")).click();",
+  "WebElement object5 = driver.findElement(By.xpath(\"//not-found\"));\nobject5.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_LEFT).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object10 = driver.findElement(By.xpath(\"//not-found\"));\nobject10.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_LEFT).keyUp(Keys.SHIFT).perform(); }",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[1]\")).click();",
+  "WebElement object11 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(28)\"));\nWebElement relatedObject1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(29)\"));\nactions.moveToElement(object11, 0, object11.getSize().getHeight() / 2)\n        .clickAndHold()\n        .moveToElement(relatedObject1, 0, -relatedObject1.getSize().getHeight() / 2)\n        .release()\n        .perform();"
+]

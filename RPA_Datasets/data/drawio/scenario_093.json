@@ -1,0 +1,22 @@
+{
+  "id": "scenario_093",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [flowchart.png]",
+    "Click on [o92.png]"
+  ],
+  "assets": {
+    "flowchart.png": {
+      "type": "image",
+      "path": "images/drawio/flowchart.png"
+    },
+    "o92.png": {
+      "type": "image",
+      "path": "images/drawio/o92.png"
+    }
+  }
+}

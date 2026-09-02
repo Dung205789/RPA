@@ -1,0 +1,12 @@
+{
+  "id": "scenario_032",
+  "url": "https://app.diagrams.net/",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+    "Double click on the element created in step 2",
+    "Fill \"test_abc\" into the element created in step 2",
+    "Press ESC",
+    "Move the element created in step 2 to the right"
+  ]
+}

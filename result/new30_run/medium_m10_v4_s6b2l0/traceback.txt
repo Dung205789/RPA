@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "D:\SVG_agent\documents\run_rpa_drawio_batch.py", line 111, in run_one
+    full_script, step_codes = gen.generate_script_with_steps(url, steps)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SVG_Agent\documents\RPA_drawio\generator.py", line 939, in generate_script_with_steps
+    driver = setup_chrome_driver(use_existing=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SVG_Agent\documents\RPA_drawio\by_text.py", line 40, in setup_chrome_driver
+    driver = webdriver.Chrome(options=chrome_options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SVG_agent\documents\RPA_drawio\venv_rpa\Lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 45, in __init__
+    super().__init__(
+  File "D:\SVG_agent\documents\RPA_drawio\venv_rpa\Lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 55, in __init__
+    self.service.start()
+  File "D:\SVG_agent\documents\RPA_drawio\venv_rpa\Lib\site-packages\selenium\webdriver\common\service.py", line 113, in start
+    self.assert_process_still_running()
+  File "D:\SVG_agent\documents\RPA_drawio\venv_rpa\Lib\site-packages\selenium\webdriver\common\service.py", line 132, in assert_process_still_running
+    raise WebDriverException(f"Service {self._path} unexpectedly exited. Status code was: {return_code}")
+selenium.common.exceptions.WebDriverException: Message: Service C:\Users\Admin\.cache\selenium\chromedriver\win64\151.0.7922.138\chromedriver.exe unexpectedly exited. Status code was: 3221225794
+

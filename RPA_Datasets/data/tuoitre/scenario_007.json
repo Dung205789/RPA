@@ -1,0 +1,13 @@
+{
+  "id": "scenario_007",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://tuoitre.vn/\"",
+    "Click on Pháp luật button",
+    "Click on Tư vấn button"
+  ],
+  "assets": {}
+}

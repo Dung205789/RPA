@@ -1,0 +1,14 @@
+{
+  "id": "scenario_007",
+  "url": "https://vnexpress.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"http://vnexpress.net/\"",
+    "Click on search button",
+    "Fill \"Nam Định\"",
+    "Press Enter"
+  ],
+  "assets": {}
+}

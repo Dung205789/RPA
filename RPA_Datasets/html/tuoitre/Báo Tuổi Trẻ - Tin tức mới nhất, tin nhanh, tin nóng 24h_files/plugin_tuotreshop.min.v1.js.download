@@ -1,0 +1,113 @@
+﻿var tuoitreshop = {
+    domainShop: 'https://tuoitreshop.vn',
+    init: function () {
+        var me = this;
+        var htmlTemplate = `<div class="box-product-tto">
+                                        <div class="box-top">
+                                            <h3 class="title-tn">
+                                                <span class="icon">
+                                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.0002 8.00024C12.0002 10.2094 10.2094 12.0002 8.00024 12.0002C5.79111 12.0002 4.00024 10.2094 4.00024 8.00024C4.00024 5.79111 5.79111 4.00024 8.00024 4.00024C10.2094 4.00024 12.0002 5.79111 12.0002 8.00024Z"
+                                                            fill="#F10204" />
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                            d="M8.00024 10.6669C9.473 10.6669 10.6669 9.473 10.6669 8.00024C10.6669 6.52748 9.473 5.33358 8.00024 5.33358C6.52748 5.33358 5.33358 6.52748 5.33358 8.00024C5.33358 9.473 6.52748 10.6669 8.00024 10.6669ZM8.00024 12.0002C10.2094 12.0002 12.0002 10.2094 12.0002 8.00024C12.0002 5.79111 10.2094 4.00024 8.00024 4.00024C5.79111 4.00024 4.00024 5.79111 4.00024 8.00024C4.00024 10.2094 5.79111 12.0002 8.00024 12.0002Z"
+                                                            fill="#FF7772" />
+                                                    </svg>
+                                                </span>
+                                                <p class="text">
+                                                    SẢN PHẨM LƯU NIỆM <span class="bold">TUỔI TRẺ</span>
+                                                </p>
+                                            </h3>
+
+                                            <a href="https://tuoitreshop.vn/" target="_blank" rel="nofollow" title="Xem tất cả" class="views">Xem tất cả
+                                            </a>
+                                        </div>
+
+
+                                        <div class="box-category" data-layout="140">
+                                            <div class="box-category-middle">
+                                                <div class="swiper product-tto-sw">
+                                                    <div class="swiper-wrapper">
+                                                          {{#ItemShop}}
+                                                    </div>
+                                                    <div class="product-tto-pagination"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`;
+        $.ajax({
+            url: `${me.domainShop}/get-data-by-tag/0/1.htm`,
+            method: "GET",
+            dataType: "json",
+            success: function (res) {
+
+                if (res && res.data && res.data.length > 0) {
+                    let html = "";
+                    res.data.slice(0, 10).forEach(item => {
+                        let title = escapeHtml(item.Title);
+                        let url = escapeHtml(me.domainShop + item.Url);
+                        let thumb = escapeHtml(item.ThumbImage);
+                        html += `
+                            <div class="swiper-slide">
+                                <div class="box-category-item">
+                                    <a class="box-category-link-with-avatar img-resize" target="_blank" rel="nofollow"
+                                        data-newstype="0"
+                                        title="${title}"
+                                        href="${url}">
+                                        <img data-type="avatar"
+                                            src="${thumb}"
+                                            alt="${title}"
+                                            class="lozad box-category-avatar loaded"
+                                            data-loaded="true">
+                                    </a>
+                                    <div class="box-category-content">
+                                        <div class="box-content-title">
+                                            <h3 class="box-title-text">
+                                                <a class="box-category-link-title" data-type="0" target="_blank" rel="nofollow"
+                                                    title="${title}"
+                                                    href="${url}">${title}</a>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    htmlTemplate = htmlTemplate.replace('{{#ItemShop}}', html);
+                    $("#product-list-plugin").html(htmlTemplate);
+
+                    $('.box-product-tto .box-category[data-layout="140"] .box-category-middle .box-category-item .box-category-link-title').trimLine(2);
+                    var swiperShop = new Swiper(".product-tto-sw", {
+                        slidesPerView: "auto",
+                        spaceBetween: 24,
+
+                        autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false,
+                        },
+
+                        pagination: {
+                            el: ".product-tto-pagination",
+                        },
+                    });
+                } else {
+                }
+            },
+            error: function () {
+
+            }
+        });
+
+        function escapeHtml(text) {
+            if (typeof text !== "string") return "";
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+    }
+}

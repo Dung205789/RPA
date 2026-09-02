@@ -1,0 +1,17 @@
+{
+  "id": "scenario_086",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [o86.png]"
+  ],
+  "assets": {
+    "o86.png": {
+      "type": "image",
+      "path": "images/drawio/o86.png"
+    }
+  }
+}

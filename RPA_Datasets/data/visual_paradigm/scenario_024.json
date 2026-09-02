@@ -1,0 +1,20 @@
+{
+  "id": "scenario_024",
+  "url": "https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=Flowchart&width=11&height=8.5&unit=inch",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [object1.png]",
+    "Click on Language",
+    "Click on English",
+    "Click on OK",
+    "Press F5"
+  ],
+  "assets": {
+    "object1.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/object1.png"
+    }
+  }
+}

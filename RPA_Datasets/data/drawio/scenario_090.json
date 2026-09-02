@@ -1,0 +1,81 @@
+{
+  "id": "scenario_090",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Click on [rectangle.png]",
+    "Move the element created in step 6 up",
+    "Move the element created in step 6 up",
+    "Click on [diamond.png]",
+    "Move the element created in step 9 up",
+    "Click on [ellipse.png]",
+    "Move the element created in step 11 up",
+    "Move the element created in step 11 to the right",
+    "Click on [parallelogram.png]",
+    "Click on [ellipse.png]",
+    "Move the element created in step 15 down",
+    "Move the element created in step 15 to the left",
+    "Click on [rectangle.png]",
+    "Move the element created in step 18 down",
+    "Click on [ellipse.png]",
+    "Move the element created in step 20 down",
+    "Move the element created in step 20 down",
+    "Double click on the element created in step 2",
+    "Fill \"Start\" into the element created in step 2",
+    "Double click on the element created in step 6",
+    "Fill \"Process\" into the element created in step 6",
+    "Double click on the element created in step 9",
+    "Fill \"Decision\" into the element created in step 9",
+    "Double click on the element created in step 11",
+    "Fill \"A\" into the element created in step 11",
+    "Double click on the element created in step 14",
+    "Fill \"Data\" into the element created in step 14",
+    "Double click on the element created in step 15",
+    "Fill \"A\" into the element created in step 15",
+    "Double click on the element created in step 18",
+    "Fill \"Document\" into the element created in step 18",
+    "Double click on the element created in step 20",
+    "Fill \"End\" into the element created in step 20",
+    "Connect the element created in step 2 to the element created in step 6",
+    "Connect the element created in step 6 to the element created in step 9",
+    "Connect the element created in step 9 to the element created in step 11",
+    "Double click on connector_from_step9_to_step11",
+    "Fill \"NO\"",
+    "Connect the element created in step 9 to the element created in step 14",
+    "Double click on connector_from_step9_to_step14",
+    "Fill \"YES\"",
+    "Connect the element created in step 14 to the element created in step 18",
+    "Connect the element created in step 15 to the element created in step 18",
+    "Connect the element created in step 18 to the element created in step 20",
+    "Click on File",
+    "Click on Export as",
+    "Click on PNG...",
+    "Click on Export",
+    "Click on Save"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/drawio/ellipse.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/drawio/rectangle.png"
+    },
+    "diamond.png": {
+      "type": "image",
+      "path": "images/drawio/diamond.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "images/drawio/parallelogram.png"
+    }
+  }
+}

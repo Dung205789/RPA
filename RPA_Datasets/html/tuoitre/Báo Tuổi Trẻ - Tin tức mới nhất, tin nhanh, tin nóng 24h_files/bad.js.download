@@ -1,0 +1,15 @@
+window.isAdblockExt = false;
+(function() {
+    try {
+        var b = document.getElementById("ads-block-ext");
+        if ("undefined" == typeof b || null == b) {
+            var a = document.createElement("div");
+            a.id = "ads-block-ext";
+            a.style.display = "none";
+			a.dataset.isadsblockext = false;
+            document.getElementsByTagName("body")[0].appendChild(a)
+        }
+    } catch (e) {
+        console.log("ads-block-ext: ", e);
+    }
+})();

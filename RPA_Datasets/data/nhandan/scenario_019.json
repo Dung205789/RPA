@@ -1,0 +1,12 @@
+{
+  "id": "scenario_019",
+  "url": "https://nhandan.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://nhandan.vn/\"",
+    "Click on Theo dõi sát tình hình, kịp thời có các đối sách phù hợp để phát triển ngoại giao kinh tế mạnh mẽ "
+  ],
+  "assets": {}
+}

@@ -1,0 +1,59 @@
+{
+  "id": "scenario_072",
+  "url": "https://lucid.app/lucidchart/1c4ff465-461c-469f-a6b3-6548e407db94/edit?viewport_loc=-437%2C-210%2C2558%2C1200%2C0_0&invitationId=inv_153b2d8c-b2ce-440d-85c2-ec2fe651d53a",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [ellipse.png]",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Press ESC",
+    "Click on [ellipse.png]",
+    "Move the element created in step 6 down",
+    "Move the element created in step 6 down",
+    "Press ESC",
+    "Click on [rectangle.png]",
+    "Move the element created in step 10 up",
+    "Move the element created in step 10 up",
+    "Press ESC",
+    "Click on [rectangle.png]",
+    "Move the element created in step 14 up",
+    "Press ESC",
+    "Click on [rectangle.png]",
+    "Move the element created in step 17 right",
+    "Press ESC",
+    "Click on [rectangle.png]",
+    "Move the element created in step 20 down",
+    "Press ESC",
+    "Move the element created in step 17 left",
+    "Double click on the element created in step 1",
+    "Fill \"Start\"",
+    "Double click on the element created in step 10",
+    "Fill \"Process step 1\"",
+    "Double click on the element created in step 14",
+    "Fill \"Process step 2\"",
+    "Double click on the element created in step 17",
+    "Fill \"Process step 3\"",
+    "Double click on the element created in step 20",
+    "Fill \"Process step 4\"",
+    "Double click on the element created in step 6",
+    "Fill \"End\"",
+    "Connect the element created in step 1 to the element created in step 10",
+    "Connect the element created in step 10 to the element created in step 14",
+    "Connect the element created in step 14 to the element created in step 17",
+    "Connect the element created in step 17 to the element created in step 20",
+    "Connect the element created in step 20 to the element created in step 6"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/lucid_chart/ellipse.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/lucid_chart/rectangle.png"
+    }
+  }
+}

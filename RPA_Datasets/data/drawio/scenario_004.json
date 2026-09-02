@@ -1,0 +1,19 @@
+{
+  "id": "scenario_004",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [help.png]",
+    "Fill \"a\"",
+    "Press Enter"
+  ],
+  "assets": {
+    "help.png": {
+      "type": "image",
+      "path": "images/drawio/help.png"
+    }
+  }
+}

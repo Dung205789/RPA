@@ -1,0 +1,69 @@
+{
+  "id": "scenario_100",
+  "url": "https://lucid.app/lucidchart/1c4ff465-461c-469f-a6b3-6548e407db94/edit?viewport_loc=-437%2C-210%2C2558%2C1200%2C0_0&invitationId=inv_153b2d8c-b2ce-440d-85c2-ec2fe651d53a",
+  "environment": {
+    "theme": "dark"
+  },
+  "descriptions": [
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Press ESC",
+    "Click on [diamond_dark.png]",
+    "Move the element created in step 5 up",
+    "Press ESC",
+    "Click on [rectangle_dark.png]",
+    "Move the element created in step 8 right",
+    "Move the element created in step 8 up",
+    "Press ESC",
+    "Click on [diamond_dark.png]",
+    "Press ESC",
+    "Click on [rectangle_dark.png]",
+    "Move the element created in step 14 right",
+    "Press ESC",
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 17 right",
+    "Move the element created in step 17 right",
+    "Move the element created in step 17 up",
+    "Press ESC",
+    "Click on [rectangle_dark.png]",
+    "Move the element created in step 22 down",
+    "Press ESC",
+    "Double click on the element created in step 1",
+    "Fill \"Start\"",
+    "Double click on the element created in step 5",
+    "Fill \"Happy?\"",
+    "Double click on the element created in step 8",
+    "Fill \"Great day!\"",
+    "Double click on the element created in step 17",
+    "Fill \"Stop\"",
+    "Double click on the element created in step 12",
+    "Fill \"Want happy?\"",
+    "Double click on the element created in step 14",
+    "Fill \"Already happy\"",
+    "Double click on the element created in step 22",
+    "Fill \"Restart\"",
+    "Connect the element created in step 1 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 8",
+    "Connect the element created in step 5 to the element created in step 12",
+    "Connect the element created in step 8 to the element created in step 17",
+    "Connect the element created in step 12 to the element created in step 14",
+    "Connect the element created in step 12 to the element created in step 22",
+    "Connect the element created in step 14 to the element created in step 17",
+    "Connect the element created in step 22 to the element created in step 1"
+  ],
+  "assets": {
+    "ellipse_dark.png": {
+      "type": "image",
+      "path": "images/lucid_chart/ellipse_dark.png"
+    },
+    "diamond_dark.png": {
+      "type": "image",
+      "path": "images/lucid_chart/diamond_dark.png"
+    },
+    "rectangle_dark.png": {
+      "type": "image",
+      "path": "images/lucid_chart/rectangle_dark.png"
+    }
+  }
+}

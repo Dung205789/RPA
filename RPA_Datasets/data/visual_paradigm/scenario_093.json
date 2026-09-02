@@ -1,0 +1,77 @@
+{
+  "id": "scenario_093",
+  "url": "https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=Flowchart&width=11&height=8.5&unit=inch",
+  "environment": {
+    "theme": "dark"
+  },
+  "descriptions": [
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Click on [rectangle_dark.png]",
+    "Move the element created in step 5 up",
+    "Move the element created in step 5 up",
+    "Click on [diamond_dark.png]",
+    "Move the element created in step 8 up",
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 10 right",
+    "Move the element created in step 10 up",
+    "Click on [parallelogram_dark.png]",
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 14 left",
+    "Move the element created in step 14 down",
+    "Click on [rectangle_dark.png]",
+    "Move the element created in step 17 down",
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 19 down",
+    "Move the element created in step 19 down",
+    "Double click on the element created in step 1",
+    "Fill \"Start\"",
+    "Double click on the element created in step 5",
+    "Fill \"Process\"",
+    "Double click on the element created in step 8",
+    "Fill \"Decision\"",
+    "Double click on the element created in step 10",
+    "Fill \"A\"",
+    "Double click on the element created in step 13",
+    "Fill \"Data\"",
+    "Double click on the element created in step 14",
+    "Fill \"A\"",
+    "Double click on the element created in step 17",
+    "Fill \"Document\"",
+    "Double click on the element created in step 19",
+    "Fill \"End\"",
+    "Connect the element created in step 1 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 8",
+    "Connect the element created in step 8 to the element created in step 10",
+    "Connect the element created in step 8 to the element created in step 13",
+    "Connect the element created in step 13 to the element created in step 17",
+    "Connect the element created in step 14 to the element created in step 17",
+    "Connect the element created in step 17 to the element created in step 19",
+    "Double click on connector_from_step8_to_step13",
+    "Fill \"YES\"",
+    "Press ESC",
+    "Double click on connector_from_step8_to_step10",
+    "Fill \"NO\"",
+    "Press ESC"
+  ],
+  "assets": {
+    "ellipse_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/ellipse_dark.png"
+    },
+    "rectangle_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/rectangle_dark.png"
+    },
+    "diamond_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/diamond_dark.png"
+    },
+    "parallelogram_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/parallelogram_dark.png"
+    }
+  }
+}

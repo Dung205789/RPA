@@ -1,0 +1,13 @@
+{
+  "id": "scenario_003",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://tuoitre.vn/\"",
+    "Click on Du lịch button",
+    "Click on Mách bạn button"
+  ],
+  "assets": {}
+}

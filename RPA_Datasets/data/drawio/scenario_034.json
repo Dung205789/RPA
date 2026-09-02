@@ -1,0 +1,18 @@
+{
+  "id": "scenario_034",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Extend the right edge of the element created in step 2"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/drawio/ellipse.png"
+    }
+  }
+}

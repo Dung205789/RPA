@@ -1,0 +1,6 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"/html/body/div[4]/div[2]/div[1]/div[2]/div/div[3]/button\")).click();",
+  "WebElement textBox = driver.switchTo().activeElement();\ntextBox.sendKeys(\"data:image/ jpeg ; <UNK> <UNK> <UNK> <UNK> AoHE9/Pzvj/APNj/wBmNarUfmS7jhX6Snz/AMy02FgMr2xhzGlxoGR4Y2+lnQKve0VjefJdyZIx15 pifl1 fWt3IxHqTgWx+t+sBzRnFdgG1WbzJPuC008 <UNK> <UNK> QLagp8bXtLXta9rhTmuAc1w6EHiomExMxO8OLb7bBds/FuLWZcNK/PhXj2R+lkBvRwPDwAK1mfH6O28dnacM1ldTh5 <UNK>\");",
+  "driver.findElement(By.xpath(\"//not-found\")).click();"
+]

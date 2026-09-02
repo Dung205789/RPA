@@ -1,0 +1,5 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"/html/body/div[1]/div[2]/a\")).click();",
+  "driver.findElement(By.xpath(\"//not-found\")).click();"
+]

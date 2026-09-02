@@ -1,0 +1,16 @@
+{
+  "id": "scenario_014",
+  "url": "https://bing.com/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [o10.png]"
+  ],
+  "assets": {
+    "o10.png": {
+      "type": "image",
+      "path": "images/bing/o10.png"
+    }
+  }
+}

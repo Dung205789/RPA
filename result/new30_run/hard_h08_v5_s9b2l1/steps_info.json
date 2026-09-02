@@ -1,0 +1,266 @@
+[
+  {
+    "step_num": 1,
+    "action": "open"
+  },
+  {
+    "step_num": 2,
+    "action": "click"
+  },
+  {
+    "step_num": 3,
+    "action": "double click"
+  },
+  {
+    "step_num": 4,
+    "action": "fill"
+  },
+  {
+    "step_num": 5,
+    "action": "click"
+  },
+  {
+    "step_num": 6,
+    "action": "move"
+  },
+  {
+    "step_num": 7,
+    "action": "double click"
+  },
+  {
+    "step_num": 8,
+    "action": "fill"
+  },
+  {
+    "step_num": 9,
+    "action": "click"
+  },
+  {
+    "step_num": 10,
+    "action": "move"
+  },
+  {
+    "step_num": 11,
+    "action": "move"
+  },
+  {
+    "step_num": 12,
+    "action": "move"
+  },
+  {
+    "step_num": 13,
+    "action": "double click"
+  },
+  {
+    "step_num": 14,
+    "action": "fill"
+  },
+  {
+    "step_num": 15,
+    "action": "click"
+  },
+  {
+    "step_num": 16,
+    "action": "move"
+  },
+  {
+    "step_num": 17,
+    "action": "move"
+  },
+  {
+    "step_num": 18,
+    "action": "move"
+  },
+  {
+    "step_num": 19,
+    "action": "move"
+  },
+  {
+    "step_num": 20,
+    "action": "double click"
+  },
+  {
+    "step_num": 21,
+    "action": "fill"
+  },
+  {
+    "step_num": 22,
+    "action": "click"
+  },
+  {
+    "step_num": 23,
+    "action": "move"
+  },
+  {
+    "step_num": 24,
+    "action": "double click"
+  },
+  {
+    "step_num": 25,
+    "action": "fill"
+  },
+  {
+    "step_num": 26,
+    "action": "click"
+  },
+  {
+    "step_num": 27,
+    "action": "move"
+  },
+  {
+    "step_num": 28,
+    "action": "move"
+  },
+  {
+    "step_num": 29,
+    "action": "move"
+  },
+  {
+    "step_num": 30,
+    "action": "double click"
+  },
+  {
+    "step_num": 31,
+    "action": "fill"
+  },
+  {
+    "step_num": 32,
+    "action": "click"
+  },
+  {
+    "step_num": 33,
+    "action": "move"
+  },
+  {
+    "step_num": 34,
+    "action": "double click"
+  },
+  {
+    "step_num": 35,
+    "action": "fill"
+  },
+  {
+    "step_num": 36,
+    "action": "click"
+  },
+  {
+    "step_num": 37,
+    "action": "move"
+  },
+  {
+    "step_num": 38,
+    "action": "double click"
+  },
+  {
+    "step_num": 39,
+    "action": "fill"
+  },
+  {
+    "step_num": 40,
+    "action": "click"
+  },
+  {
+    "step_num": 41,
+    "action": "move"
+  },
+  {
+    "step_num": 42,
+    "action": "double click"
+  },
+  {
+    "step_num": 43,
+    "action": "fill"
+  },
+  {
+    "step_num": 44,
+    "action": "connect",
+    "from_step": 2,
+    "to_step": 5
+  },
+  {
+    "step_num": 45,
+    "action": "connect",
+    "from_step": 5,
+    "to_step": 9
+  },
+  {
+    "step_num": 46,
+    "action": "double click"
+  },
+  {
+    "step_num": 47,
+    "action": "fill"
+  },
+  {
+    "step_num": 48,
+    "action": "connect",
+    "from_step": 5,
+    "to_step": 15
+  },
+  {
+    "step_num": 49,
+    "action": "double click"
+  },
+  {
+    "step_num": 50,
+    "action": "fill"
+  },
+  {
+    "step_num": 51,
+    "action": "connect",
+    "from_step": 15,
+    "to_step": 22
+  },
+  {
+    "step_num": 52,
+    "action": "connect",
+    "from_step": 9,
+    "to_step": 26
+  },
+  {
+    "step_num": 53,
+    "action": "connect",
+    "from_step": 22,
+    "to_step": 26
+  },
+  {
+    "step_num": 54,
+    "action": "connect",
+    "from_step": 26,
+    "to_step": 32
+  },
+  {
+    "step_num": 55,
+    "action": "connect",
+    "from_step": 32,
+    "to_step": 36
+  },
+  {
+    "step_num": 56,
+    "action": "connect",
+    "from_step": 36,
+    "to_step": 26
+  },
+  {
+    "step_num": 57,
+    "action": "double click"
+  },
+  {
+    "step_num": 58,
+    "action": "fill"
+  },
+  {
+    "step_num": 59,
+    "action": "connect",
+    "from_step": 36,
+    "to_step": 40
+  },
+  {
+    "step_num": 60,
+    "action": "double click"
+  },
+  {
+    "step_num": 61,
+    "action": "fill"
+  }
+]

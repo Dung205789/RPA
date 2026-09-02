@@ -1,0 +1,39 @@
+{
+  "id": "easy_e06_v6_s4b0l0",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [rectangle.png]",
+    "Double click on the element created in step 2",
+    "Fill \"Nightly timer fires\" into the element created in step 2",
+    "Click on [rectangle.png]",
+    "Move the element created in step 5 down",
+    "Move the element created in step 5 down",
+    "Double click on the element created in step 5",
+    "Fill \"List changed files\" into the element created in step 5",
+    "Click on [rectangle.png]",
+    "Move the element created in step 10 down",
+    "Move the element created in step 10 down",
+    "Double click on the element created in step 10",
+    "Fill \"Compress the archive\" into the element created in step 10",
+    "Click on [rectangle.png]",
+    "Move the element created in step 15 down",
+    "Move the element created in step 15 down",
+    "Double click on the element created in step 15",
+    "Fill \"Backup complete\" into the element created in step 15",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 10",
+    "Connect the element created in step 10 to the element created in step 15"
+  ],
+  "assets": {
+    "rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png"
+    }
+  },
+  "_source": "SVG_agent data/datasets, converted via existing VLM parse (src/understand/constraints.parse_task) + new deterministic step translator",
+  "_unsupported_shapes": []
+}

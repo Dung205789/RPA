@@ -1,0 +1,12 @@
+{
+  "id": "scenario_021",
+  "url": "https://nhandan.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://nhandan.vn/\"",
+    "Click on Truyện ngắn: Giò lan phi điệp"
+  ],
+  "assets": {}
+}

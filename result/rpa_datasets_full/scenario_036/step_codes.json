@@ -1,0 +1,5 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[5]\")).click();",
+  "WebElement object1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(23)\"));\nactions.click(object1).perform();\nactions.sendKeys(Keys.DELETE).perform();"
+]

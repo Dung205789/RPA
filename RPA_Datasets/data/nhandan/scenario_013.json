@@ -1,0 +1,13 @@
+{
+  "id": "scenario_013",
+  "url": "https://nhandan.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open website \"https://nhandan.vn/\"",
+    "Click on Nhân dân hàng tháng button",
+    "Click on Đời sống - Xã hội button"
+  ],
+  "assets": {}
+}

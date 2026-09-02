@@ -1,0 +1,6 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"/html/body/div[4]/div[2]/div[1]/div[2]/div/div[3]/button\")).click();",
+  "WebElement textBox = driver.switchTo().activeElement();\ntextBox.sendKeys(\"http://localhost:8123/uploads/stepImg/objectImg/objectImg__148__22__20251022.jpg\");",
+  "driver.findElement(By.xpath(\"//not-found\")).click();"
+]

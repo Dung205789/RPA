@@ -1,0 +1,24 @@
+{
+  "id": "scenario_060",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on Style",
+    "Click on Sketch checkbox",
+    "Click on [diamond.png]",
+    "Click on [rectangle.png]"
+  ],
+  "assets": {
+    "diamond.png": {
+      "type": "image",
+      "path": "images/drawio/diamond.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/drawio/rectangle.png"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "scenario_006",
+  "url": "https://bing.com/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://www.bing.com/\"",
+    "Click on Copilot"
+  ],
+  "assets": {}
+}

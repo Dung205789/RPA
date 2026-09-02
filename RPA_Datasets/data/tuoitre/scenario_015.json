@@ -1,0 +1,12 @@
+{
+  "id": "scenario_015",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://tuoitre.vn/\"",
+    "Click on Đăng ký"
+  ],
+  "assets": {}
+}

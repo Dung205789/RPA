@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://s.eclick.vn/delivery/sync_retar.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Dfp Retargeting FO</title>
+</head>
+<body>
+<script>
+var isStore=0,enc=function(a){try{return"function"==typeof encodeURIComponent?encodeURIComponent(a):escape(a)}catch(c){return a}},dec=function(a){try{return"function"==typeof decodeURIComponent?decodeURIComponent(a):unescape(a)}catch(c){return a}};try{isStore=window.localStorage&&"function"==typeof window.localStorage.setItem?1:0}catch(a){}function addEvent(a,c,d){a.addEventListener?a.addEventListener(c,d,!1):a.attachEvent&&a.attachEvent("on"+c,d)}
+function getCookies(a){a=("; "+document.cookie).split("; "+a+"=");return 2==a.length?dec(a.pop().split(";").shift()):""}function setCookie(a,c,d,e,f,g){var h;d&&(h=new Date,h.setTime(h.getTime()+1E3*d));document.cookie=a+"="+enc(c)+(d?";expires="+h.toGMTString():"")+";path="+(e||"/")+(f?";domain="+f:"")+(g?";secure":"")}
+function setCoookieRoot(a,c,d){var e=document.domain.split(".");if(1<e.length&&c)for(var f="."+e[e.length-1],g=e.length-2;0<=g&&(f="."+e[g]+f,setCookie(a,c,d,"/",f),getCookies(a)!=c);g--);}function getStorage(a){if(!isStore)return!1;a=""+dec(window.localStorage.getItem(a));a=a.split(";ex=");if(2==a.length&&0<a[1]){var c=new Date;c=c.valueOf();return c<=a[1]?a[0]:""}return a[0]}
+function setStorage(a,c,d){if(!isStore)return!1;var e=["fosp_aid","orig_aid","myvne_user_id"].indexOf(a);d=parseInt(d);0<d&&0>e&&(e=new Date,e.setTime(e.getTime()+1E3*d),e=e.valueOf(),c=c+";ex="+e);window.localStorage.setItem(a,enc(c))}function q(a,c,d){a.addEventListener?a.addEventListener(c,d,!1):a.attachEvent&&a.attachEvent("on"+c,d)}
+function getParameterByName(a,c){c=void 0===c?window.location.href:c;a=a.replace(/[\[\]]/g,"\\$&");var d=(new RegExp("[?&]"+a+"(=([^&#]*)|&|#|$)")).exec(c);return d?d[2]?dec(d[2].replace(/\+/g," ")):"":null}var oldObj={},old_ret=isStore?getStorage("foret"):getCookies("foret");""!=old_ret&&(oldObj=JSON.parse(old_ret));oldObj=oldObj||{};var t={id:"",ad:[],rm:[],exp:0},_foret=getParameterByName("foret");
+if(_foret&&""!=_foret){var b=JSON.parse(_foret),dataRet=[];if(b&&b.id&&""!=b.id){b.ad=Array.isArray(b.ad)?b.ad:[];b.rm=Array.isArray(b.rm)?b.rm:[];b.exp=b.exp&&parseInt(b.exp)||0;Object.assign(t,b);if(0<b.rm.length)for(var i=0;i<b.rm.length;i++){var r=b.rm[i];oldObj.hasOwnProperty(r)&&delete oldObj[r]}if(0<b.ad.length)for(i=0;i<b.ad.length;i++)r=b.ad[i],oldObj[r]={id:r,exp:b.exp};oldObj[b.id]={id:b.id,exp:b.exp};isStore?setStorage("foret",JSON.stringify(oldObj),0):setCoookieRoot("foret",JSON.stringify(oldObj),
+0)}}else{var w=window!=window.top?window.top:window;w.postMessage(JSON.stringify({id:"elookup",type:"eadpre",values:oldObj}),"*")}
+function initEventRetar(a){var c={};try{if(c=JSON.parse(a.data),"elookup"===c.id&&"sync_user"===c.type&&"object"===typeof c.values){a.source.postMessage(JSON.stringify({id:"elookup",type:"eadpre",values:oldObj}),"*");var d=c.values.orig_aid||"",e=c.values.fosp_aid||"";9<d.length&&40>d.length&&setCookies("orig_aid",d);9<e.length&&40>e.length&&setCookies("fosp_aid",e)}}catch(f){}}addEvent(window,"message",initEventRetar);
+</script>
+
+</body></html>

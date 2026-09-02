@@ -1,0 +1,17 @@
+{
+  "id": "scenario_074",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [o74.png]"
+  ],
+  "assets": {
+    "o74.png": {
+      "type": "image",
+      "path": "images/drawio/o74.png"
+    }
+  }
+}

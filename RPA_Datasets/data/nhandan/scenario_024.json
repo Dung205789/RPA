@@ -1,0 +1,16 @@
+{
+  "id": "scenario_024",
+  "url": "https://nhandan.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [o24.png]"
+  ],
+  "assets": {
+    "o24.png": {
+      "type": "image",
+      "path": "images/nhandan/o24.png"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "scenario_001",
+  "url": "https://nhandan.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://nhandan.vn/\"",
+    "Click on Tin địa phương",
+    "Click on TP. Hà Nội"
+  ],
+  "assets": {}
+}

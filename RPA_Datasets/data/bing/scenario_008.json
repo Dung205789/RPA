@@ -1,0 +1,12 @@
+{
+  "id": "scenario_008",
+  "url": "https://bing.com/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"http://bing.com/\"",
+    "Click on Tổng Bí thư Tô Lâm: An ninh cơ sở là bộ phận quan trọng của an ninh quốc gia"
+  ],
+  "assets": {}
+}

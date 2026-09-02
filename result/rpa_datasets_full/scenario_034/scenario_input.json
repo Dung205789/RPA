@@ -1,0 +1,9 @@
+{
+  "id": "scenario_034",
+  "url": "https://app.diagrams.net/",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+    "Extend the right edge of the element created in step 2"
+  ]
+}

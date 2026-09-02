@@ -1,0 +1,110 @@
+[
+  {
+    "step_num": 1,
+    "action": "open"
+  },
+  {
+    "step_num": 2,
+    "action": "click"
+  },
+  {
+    "step_num": 3,
+    "action": "click"
+  },
+  {
+    "step_num": 4,
+    "action": "click"
+  },
+  {
+    "step_num": 5,
+    "action": "move"
+  },
+  {
+    "step_num": 6,
+    "action": "move"
+  },
+  {
+    "step_num": 7,
+    "action": "move"
+  },
+  {
+    "step_num": 8,
+    "action": "click"
+  },
+  {
+    "step_num": 9,
+    "action": "click"
+  },
+  {
+    "step_num": 10,
+    "action": "click"
+  },
+  {
+    "step_num": 11,
+    "action": "connect",
+    "from_step": 4,
+    "to_step": 10
+  },
+  {
+    "step_num": 12,
+    "action": "click"
+  },
+  {
+    "step_num": 13,
+    "action": "click"
+  },
+  {
+    "step_num": 14,
+    "action": "click"
+  },
+  {
+    "step_num": 15,
+    "action": "move"
+  },
+  {
+    "step_num": 16,
+    "action": "move"
+  },
+  {
+    "step_num": 17,
+    "action": "move"
+  },
+  {
+    "step_num": 18,
+    "action": "connect",
+    "from_step": 10,
+    "to_step": 14
+  },
+  {
+    "step_num": 19,
+    "action": "click"
+  },
+  {
+    "step_num": 20,
+    "action": "click"
+  },
+  {
+    "step_num": 21,
+    "action": "double click"
+  },
+  {
+    "step_num": 22,
+    "action": "fill"
+  },
+  {
+    "step_num": 23,
+    "action": "double click"
+  },
+  {
+    "step_num": 24,
+    "action": "fill"
+  },
+  {
+    "step_num": 25,
+    "action": "double click"
+  },
+  {
+    "step_num": 26,
+    "action": "fill"
+  }
+]

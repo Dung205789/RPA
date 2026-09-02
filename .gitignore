@@ -1,0 +1,26 @@
+# --- Snapshot repo for the RPA (robot) approach ---
+# Created 2026-09-03 to version the `documents/` folder of the SVG_agent working
+# tree (that folder is gitignored by the parent SVG_agent repo, so it had no
+# history of its own).
+
+# Python virtualenv shipped inside RPA_drawio (43k files, recreatable)
+venv_rpa/
+venv/
+__pycache__/
+*.pyc
+
+# Original per-project .git directories of the upstream repos
+# (thu03092004/RPA_Datasets, RPA_drawio, RPA_lucidchart, RPA_VisualParadigm).
+# Renamed aside so their file contents could be snapshotted flat here instead of
+# being recorded as empty gitlinks. Restore with:
+#   mv <proj>/_git_vendor_backup <proj>/.git
+_git_vendor_backup/
+
+# NLP/embedding model weights under RPA_drawio/src/main/resources/models/
+# (stanza en default.zip 500MB, sentence-transformers 449MB, several .pt >100MB).
+# Over GitHub's 100MB per-file limit; re-fetch with RPA_drawio/download_model.py.
+# (RPA_drawio/.gitignore already ignores src/ for the same reason.)
+RPA_drawio/src/
+
+# Chromedriver / selenium caches
+.cache/

@@ -1,0 +1,13 @@
+{
+  "id": "scenario_006",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://tuoitre.vn/\"",
+    "Click on Nhịp sống trẻ button",
+    "Click on Xu hướng button"
+  ],
+  "assets": {}
+}

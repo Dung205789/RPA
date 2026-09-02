@@ -1,0 +1,12 @@
+{
+  "id": "scenario_005",
+  "url": "https://bing.com/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://www.bing.com/\"",
+    "Click on Hình ảnh"
+  ],
+  "assets": {}
+}

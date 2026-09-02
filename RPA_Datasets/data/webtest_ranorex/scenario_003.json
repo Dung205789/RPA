@@ -1,0 +1,12 @@
+{
+  "id": "scenario_003",
+  "url": "http://webtest.ranorex.org/wp-login.php",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://webtest.ranorex.org/wp-login.php\"",
+    "Click on Back to Ranorex Webtest"
+  ],
+  "assets": {}
+}

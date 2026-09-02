@@ -1,0 +1,21 @@
+{
+  "id": "scenario_032",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Double click on the element created in step 2",
+    "Fill \"test_abc\" into the element created in step 2",
+    "Press ESC",
+    "Move the element created in step 2 to the right"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/drawio/ellipse.png"
+    }
+  }
+}

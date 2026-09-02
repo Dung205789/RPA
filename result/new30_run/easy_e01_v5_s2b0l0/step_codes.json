@@ -1,0 +1,14 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[5]\")).click();",
+  "WebElement object1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(1) > g:nth-child(1)\"));\nactions.doubleClick(object1).perform();",
+  "actions.sendKeys(\"Nightly timer fires\").perform();",
+  "driver.findElement(By.xpath(\"//not-found\")).click();",
+  "WebElement object6 = driver.findElement(By.xpath(\"//not-found\"));\nobject6.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object11 = driver.findElement(By.xpath(\"//not-found\"));\nobject11.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object16 = driver.findElement(By.xpath(\"//not-found\"));\nobject16.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object21 = driver.findElement(By.xpath(\"//not-found\"));\nobject21.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object26 = driver.findElement(By.xpath(\"//not-found\"));\nactions.doubleClick(object26).perform();",
+  "actions.sendKeys(\"Backup complete\").perform();",
+  "WebElement object27 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(1) > g:nth-child(1)\"));\nWebElement relatedObject1 = driver.findElement(By.xpath(\"//not-found\"));\nactions.moveToElement(object27, 0, object27.getSize().getHeight() / 2)\n        .clickAndHold()\n        .moveToElement(relatedObject1, 0, -relatedObject1.getSize().getHeight() / 2)\n        .release()\n        .perform();"
+]

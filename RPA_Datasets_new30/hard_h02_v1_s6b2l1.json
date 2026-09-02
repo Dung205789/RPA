@@ -1,0 +1,74 @@
+{
+  "id": "hard_h02_v1_s6b2l1",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Double click on the element created in step 2",
+    "Fill \"Lamp does not work\" into the element created in step 2",
+    "Click on [diamond.png]",
+    "Move the element created in step 5 down",
+    "Double click on the element created in step 5",
+    "Fill \"Plugged in?\" into the element created in step 5",
+    "Click on [diamond.png]",
+    "Move the element created in step 9 down",
+    "Move the element created in step 9 down",
+    "Double click on the element created in step 9",
+    "Fill \"Bulb burnt out?\" into the element created in step 9",
+    "Click on [rectangle.png]",
+    "Move the element created in step 14 right",
+    "Move the element created in step 14 right",
+    "Move the element created in step 14 down",
+    "Double click on the element created in step 14",
+    "Fill \"Check the socket\" into the element created in step 14",
+    "Click on [rectangle.png]",
+    "Move the element created in step 20 down",
+    "Double click on the element created in step 20",
+    "Fill \"Plug it in\" into the element created in step 20",
+    "Click on [ellipse.png]",
+    "Move the element created in step 24 left",
+    "Move the element created in step 24 left",
+    "Move the element created in step 24 down",
+    "Double click on the element created in step 24",
+    "Fill \"Lamp works\" into the element created in step 24",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 5",
+    "Double click on connector_from_step5_to_step5",
+    "Fill \"No\"",
+    "Connect the element created in step 5 to the element created in step 9",
+    "Double click on connector_from_step5_to_step9",
+    "Fill \"Yes\"",
+    "Connect the element created in step 9 to the element created in step 14",
+    "Double click on connector_from_step9_to_step14",
+    "Fill \"Burnt\"",
+    "Connect the element created in step 14 to the element created in step 20",
+    "Connect the element created in step 20 to the element created in step 24",
+    "Connect the element created in step 9 to the element created in step 24",
+    "Double click on connector_from_step9_to_step24",
+    "Fill \"Fine\""
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png"
+    },
+    "diamond.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\diamond.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png"
+    }
+  },
+  "_source": "SVG_agent data/datasets, converted via existing VLM parse (src/understand/constraints.parse_task) + new deterministic step translator",
+  "_unsupported_shapes": [
+    {
+      "id": "E",
+      "type": "trapezoid"
+    }
+  ]
+}

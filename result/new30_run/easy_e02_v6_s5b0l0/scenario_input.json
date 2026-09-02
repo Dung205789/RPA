@@ -1,0 +1,32 @@
+{
+  "id": "easy_e02_v6_s5b0l0",
+  "url": "https://app.diagrams.net/",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+    "Double click on the element created in step 2",
+    "Fill \"Model loaded\" into the element created in step 2",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+    "Move the element created in step 5 down",
+    "Double click on the element created in step 5",
+    "Fill \"Slice the model\" into the element created in step 5",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\parallelogram.png]",
+    "Move the element created in step 9 down",
+    "Move the element created in step 9 down",
+    "Double click on the element created in step 9",
+    "Fill \"Read the model file\" into the element created in step 9",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+    "Move the element created in step 14 down",
+    "Move the element created in step 14 down",
+    "Double click on the element created in step 14",
+    "Fill \"Heat the nozzle\" into the element created in step 14",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+    "Move the element created in step 19 down",
+    "Double click on the element created in step 19",
+    "Fill \"Part finished\" into the element created in step 19",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 9",
+    "Connect the element created in step 9 to the element created in step 14",
+    "Connect the element created in step 14 to the element created in step 19"
+  ]
+}

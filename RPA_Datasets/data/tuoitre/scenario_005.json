@@ -1,0 +1,13 @@
+{
+  "id": "scenario_005",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://tuoitre.vn/\"",
+    "Click on Sức khỏe button",
+    "Click on Dinh dưỡng button"
+  ],
+  "assets": {}
+}

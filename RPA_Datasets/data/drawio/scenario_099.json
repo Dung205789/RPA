@@ -1,0 +1,18 @@
+{
+  "id": "scenario_099",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on UML",
+    "Click on [o99.png]"
+  ],
+  "assets": {
+    "o99.png": {
+      "type": "image",
+      "path": "images/drawio/o99.png"
+    }
+  }
+}

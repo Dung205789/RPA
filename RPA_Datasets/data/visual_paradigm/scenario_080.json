@@ -1,0 +1,21 @@
+{
+  "id": "scenario_080",
+  "url": "https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=Flowchart&width=11&height=8.5&unit=inch",
+  "environment": {
+    "theme": "dark"
+  },
+  "descriptions": [
+    "Click on [user_dark.png]",
+    "Click on Log in",
+    "Fill \"nguyenthihoaithu3904@gmail.com\"",
+    "Click on Password",
+    "Fill \"123456\"",
+    "Click on Login button"
+  ],
+  "assets": {
+    "user_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/user_dark.png"
+    }
+  }
+}

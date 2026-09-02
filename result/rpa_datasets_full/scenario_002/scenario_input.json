@@ -1,0 +1,10 @@
+{
+  "id": "scenario_002",
+  "url": "https://app.diagrams.net/",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on File",
+    "Click on Save",
+    "Click on Save button"
+  ]
+}

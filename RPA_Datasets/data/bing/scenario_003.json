@@ -1,0 +1,14 @@
+{
+  "id": "scenario_003",
+  "url": "https://bing.com/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"http://bing.com/\"",
+    "'Click on Tiếng Việt",
+    "Click on keyboard",
+    "Click on English"
+  ],
+  "assets": {}
+}

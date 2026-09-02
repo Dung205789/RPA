@@ -1,0 +1,21 @@
+{
+  "id": "scenario_100",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on More Shapes",
+    "Click on Clipart",
+    "Click on Apply",
+    "Click on Clipart / Computer",
+    "Click on [o100.png]"
+  ],
+  "assets": {
+    "o100.png": {
+      "type": "image",
+      "path": "images/drawio/o100.png"
+    }
+  }
+}

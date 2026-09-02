@@ -1,0 +1,30 @@
+{
+  "id": "scenario_046",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Move the element created in step 2 to the left",
+    "Move the element created in step 2 to the left",
+    "Click on [rectangle.png]",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Double click on connector_from_step2_to_step5",
+    "Fill \"yes\"",
+    "Press ESC",
+    "Double click on the element created in step 2",
+    "Fill \"START\" into the element created in step 2"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/drawio/ellipse.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/drawio/rectangle.png"
+    }
+  }
+}

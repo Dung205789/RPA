@@ -1,0 +1,55 @@
+{
+  "id": "scenario_092",
+  "url": "https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=Flowchart&width=11&height=8.5&unit=inch",
+  "environment": {
+    "theme": "dark"
+  },
+  "descriptions": [
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Click on [parallelogram_dark.png]",
+    "Move the element created in step 5 up",
+    "Move the element created in step 5 up",
+    "Click on [parallelogram_dark.png]",
+    "Move the element created in step 8 up",
+    "Click on [rectangle_dark.png]",
+    "Click on [rectangle_dark.png]",
+    "Move the element created in step 11 down",
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 13 down",
+    "Move the element created in step 13 down",
+    "Double click on the element created in step 1",
+    "Fill \"Start\"",
+    "Double click on the element created in step 5",
+    "Fill \"Read A\"",
+    "Double click on the element created in step 8",
+    "Fill \"Read B\"",
+    "Double click on the element created in step 10",
+    "Fill \"Calculate Sum as A + B\"",
+    "Double click on the element created in step 11",
+    "Fill \"Print Sum\"",
+    "Double click on the element created in step 13",
+    "Fill \"End\"",
+    "Connect the element created in step 1 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 8",
+    "Connect the element created in step 8 to the element created in step 10",
+    "Connect the element created in step 10 to the element created in step 11",
+    "Connect the element created in step 11 to the element created in step 13"
+  ],
+  "assets": {
+    "ellipse_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/ellipse_dark.png"
+    },
+    "parallelogram_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/parallelogram_dark.png"
+    },
+    "rectangle_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/rectangle_dark.png"
+    }
+  }
+}

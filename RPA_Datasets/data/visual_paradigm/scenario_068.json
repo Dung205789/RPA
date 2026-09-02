@@ -1,0 +1,65 @@
+{
+  "id": "scenario_068",
+  "url": "https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=Flowchart&width=11&height=8.5&unit=inch",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [rectangle.png]",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Click on [rectangle.png]",
+    "Move the element created in step 5 up",
+    "Move the element created in step 5 up",
+    "Click on [rectangle.png]",
+    "Move the element created in step 8 up",
+    "Click on [rectangle.png]",
+    "Click on [rectangle.png]",
+    "Move the element created in step 11 down",
+    "Click on [ellipse.png]",
+    "Move the element created in step 13 down",
+    "Move the element created in step 13 down",
+    "Click on [rectangle.png]",
+    "Move the element created in step 16 down",
+    "Move the element created in step 16 down",
+    "Move the element created in step 16 down",
+    "Double click on the element created in step 1",
+    "Fill \"Generate initial population\"",
+    "Double click on the element created in step 5",
+    "Fill \"Evaluate the fitness for each agent\"",
+    "Double click on the element created in step 8",
+    "Fill \"Update the G_best and worst of the population\"",
+    "Double click on the element created in step 10",
+    "Fill \"Calculate M and a for each agent\"",
+    "Double click on the element created in step 11",
+    "Fill \"Update velocity and position\"",
+    "Double click on the element created in step 13",
+    "Fill \"Meeting end criterion?\"",
+    "Double click on the element created in step 16",
+    "Fill \"Return best solution\"",
+    "Connect the element created in step 1 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 8",
+    "Connect the element created in step 8 to the element created in step 10",
+    "Connect the element created in step 10 to the element created in step 11",
+    "Connect the element created in step 11 to the element created in step 13",
+    "Connect the element created in step 13 to the element created in step 16",
+    "Connect the element created in step 13 to the element created in step 5",
+    "Double click on connector_from_step13_to_step16",
+    "Fill \"YES\"",
+    "Press ESC",
+    "Double click on connector_from_step13_to_step5",
+    "Fill \"NO\"",
+    "Press ESC"
+  ],
+  "assets": {
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/rectangle.png"
+    },
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/ellipse.png"
+    }
+  }
+}

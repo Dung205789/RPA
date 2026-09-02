@@ -1,0 +1,12 @@
+{
+  "id": "scenario_005",
+  "url": "https://vnexpress.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://vnexpress.net/\"",
+    "Click on the Đời sống button"
+  ],
+  "assets": {}
+}

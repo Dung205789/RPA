@@ -1,0 +1,178 @@
+[
+  {
+    "step_num": 1,
+    "action": "open"
+  },
+  {
+    "step_num": 2,
+    "action": "click"
+  },
+  {
+    "step_num": 3,
+    "action": "double click"
+  },
+  {
+    "step_num": 4,
+    "action": "fill"
+  },
+  {
+    "step_num": 5,
+    "action": "click"
+  },
+  {
+    "step_num": 6,
+    "action": "move"
+  },
+  {
+    "step_num": 7,
+    "action": "double click"
+  },
+  {
+    "step_num": 8,
+    "action": "fill"
+  },
+  {
+    "step_num": 9,
+    "action": "click"
+  },
+  {
+    "step_num": 10,
+    "action": "move"
+  },
+  {
+    "step_num": 11,
+    "action": "move"
+  },
+  {
+    "step_num": 12,
+    "action": "move"
+  },
+  {
+    "step_num": 13,
+    "action": "move"
+  },
+  {
+    "step_num": 14,
+    "action": "double click"
+  },
+  {
+    "step_num": 15,
+    "action": "fill"
+  },
+  {
+    "step_num": 16,
+    "action": "click"
+  },
+  {
+    "step_num": 17,
+    "action": "move"
+  },
+  {
+    "step_num": 18,
+    "action": "double click"
+  },
+  {
+    "step_num": 19,
+    "action": "fill"
+  },
+  {
+    "step_num": 20,
+    "action": "click"
+  },
+  {
+    "step_num": 21,
+    "action": "move"
+  },
+  {
+    "step_num": 22,
+    "action": "double click"
+  },
+  {
+    "step_num": 23,
+    "action": "fill"
+  },
+  {
+    "step_num": 24,
+    "action": "click"
+  },
+  {
+    "step_num": 25,
+    "action": "move"
+  },
+  {
+    "step_num": 26,
+    "action": "move"
+  },
+  {
+    "step_num": 27,
+    "action": "move"
+  },
+  {
+    "step_num": 28,
+    "action": "move"
+  },
+  {
+    "step_num": 29,
+    "action": "move"
+  },
+  {
+    "step_num": 30,
+    "action": "double click"
+  },
+  {
+    "step_num": 31,
+    "action": "fill"
+  },
+  {
+    "step_num": 32,
+    "action": "connect",
+    "from_step": 2,
+    "to_step": 5
+  },
+  {
+    "step_num": 33,
+    "action": "connect",
+    "from_step": 5,
+    "to_step": 9
+  },
+  {
+    "step_num": 34,
+    "action": "double click"
+  },
+  {
+    "step_num": 35,
+    "action": "fill"
+  },
+  {
+    "step_num": 36,
+    "action": "connect",
+    "from_step": 9,
+    "to_step": 16
+  },
+  {
+    "step_num": 37,
+    "action": "connect",
+    "from_step": 16,
+    "to_step": 20
+  },
+  {
+    "step_num": 38,
+    "action": "connect",
+    "from_step": 20,
+    "to_step": 24
+  },
+  {
+    "step_num": 39,
+    "action": "connect",
+    "from_step": 5,
+    "to_step": 24
+  },
+  {
+    "step_num": 40,
+    "action": "double click"
+  },
+  {
+    "step_num": 41,
+    "action": "fill"
+  }
+]

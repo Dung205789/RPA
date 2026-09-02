@@ -1,0 +1,178 @@
+[
+  {
+    "step_num": 1,
+    "action": "open"
+  },
+  {
+    "step_num": 2,
+    "action": "click"
+  },
+  {
+    "step_num": 3,
+    "action": "click"
+  },
+  {
+    "step_num": 4,
+    "action": "click"
+  },
+  {
+    "step_num": 5,
+    "action": "move"
+  },
+  {
+    "step_num": 6,
+    "action": "move"
+  },
+  {
+    "step_num": 7,
+    "action": "move"
+  },
+  {
+    "step_num": 8,
+    "action": "move"
+  },
+  {
+    "step_num": 9,
+    "action": "extend"
+  },
+  {
+    "step_num": 10,
+    "action": "click"
+  },
+  {
+    "step_num": 11,
+    "action": "click"
+  },
+  {
+    "step_num": 12,
+    "action": "extend"
+  },
+  {
+    "step_num": 13,
+    "action": "click"
+  },
+  {
+    "step_num": 14,
+    "action": "click"
+  },
+  {
+    "step_num": 15,
+    "action": "click"
+  },
+  {
+    "step_num": 16,
+    "action": "move"
+  },
+  {
+    "step_num": 17,
+    "action": "move"
+  },
+  {
+    "step_num": 18,
+    "action": "move"
+  },
+  {
+    "step_num": 19,
+    "action": "move"
+  },
+  {
+    "step_num": 20,
+    "action": "click"
+  },
+  {
+    "step_num": 21,
+    "action": "click"
+  },
+  {
+    "step_num": 22,
+    "action": "click"
+  },
+  {
+    "step_num": 23,
+    "action": "move"
+  },
+  {
+    "step_num": 24,
+    "action": "move"
+  },
+  {
+    "step_num": 25,
+    "action": "click"
+  },
+  {
+    "step_num": 26,
+    "action": "click"
+  },
+  {
+    "step_num": 27,
+    "action": "click"
+  },
+  {
+    "step_num": 28,
+    "action": "move"
+  },
+  {
+    "step_num": 29,
+    "action": "connect",
+    "from_step": 15,
+    "to_step": 27
+  },
+  {
+    "step_num": 30,
+    "action": "click"
+  },
+  {
+    "step_num": 31,
+    "action": "click"
+  },
+  {
+    "step_num": 32,
+    "action": "click"
+  },
+  {
+    "step_num": 33,
+    "action": "move"
+  },
+  {
+    "step_num": 34,
+    "action": "connect",
+    "from_step": 15,
+    "to_step": 32
+  },
+  {
+    "step_num": 35,
+    "action": "double click"
+  },
+  {
+    "step_num": 36,
+    "action": "fill"
+  },
+  {
+    "step_num": 37,
+    "action": "double click"
+  },
+  {
+    "step_num": 38,
+    "action": "fill"
+  },
+  {
+    "step_num": 39,
+    "action": "double click"
+  },
+  {
+    "step_num": 40,
+    "action": "fill"
+  },
+  {
+    "step_num": 41,
+    "action": "move"
+  },
+  {
+    "step_num": 42,
+    "action": "move"
+  },
+  {
+    "step_num": 43,
+    "action": "move"
+  }
+]

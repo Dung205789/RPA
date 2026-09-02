@@ -1,0 +1,18 @@
+{
+  "id": "scenario_098",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on Entity Relation",
+    "Click on [o98.png]"
+  ],
+  "assets": {
+    "o98.png": {
+      "type": "image",
+      "path": "images/drawio/o98.png"
+    }
+  }
+}

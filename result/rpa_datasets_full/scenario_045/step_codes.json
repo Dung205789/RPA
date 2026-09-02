@@ -1,0 +1,10 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[5]\")).click();",
+  "WebElement object1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(32)\"));\nobject1.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_LEFT).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object6 = driver.findElement(By.xpath(\"//not-found\"));\nobject6.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_LEFT).keyUp(Keys.SHIFT).perform(); }",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[1]\")).click();",
+  "WebElement object7 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(32)\"));\nWebElement relatedObject1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(33)\"));\nactions.moveToElement(object7, 0, object7.getSize().getHeight() / 2)\n        .clickAndHold()\n        .moveToElement(relatedObject1, 0, -relatedObject1.getSize().getHeight() / 2)\n        .release()\n        .perform();",
+  "WebElement object12 = driver.findElement(By.xpath(\"//not-found\"));\nactions.doubleClick(object12).perform();",
+  "WebElement textBox = driver.switchTo().activeElement();\ntextBox.sendKeys(\"yes\");"
+]

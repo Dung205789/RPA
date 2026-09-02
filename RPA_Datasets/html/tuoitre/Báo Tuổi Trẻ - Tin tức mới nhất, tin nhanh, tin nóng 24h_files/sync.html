@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://quangcao.tuoitre.vn/customer/netcore/service/panel17/sync.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title></title>
+    <script data-attribute="netcore_smartech_websites">
+		var whitelist = ["https://raovat.tuoitre.vn","https://muctim.tuoitre.vn","https://eduzone.tuoitre.vn","https://diemthi.tuoitre.vn","https://epaper.tuoitre.vn","https://cuoituan.tuoitre.vn","https://cuoi.tuoitre.vn","https://beta-sso.tuoitre.vn","https://sso.tuoitre.vn","https://quangcao.tuoitre.vn","https://tuoitre.vn","https://tuoitrenews.vn","https://news.tuoitre.vn","https://stag-mediahub.tuoitre.vn","https://mediahub.tuoitre.vn"];  
+	</script>
+    <script data-attribute="netcore_smartech_script" src="./smartech-crossasset.js.download"></script>
+    <script>
+        (function() {
+
+            function isValidEmail(email) {
+				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				return emailRegex.test(email);
+			}
+
+			var storedIdty = localStorage.getItem("__idty");
+
+			if (storedIdty) {
+				try {
+					var idtyObj = JSON.parse(storedIdty);
+					if (isValidEmail(idtyObj['https://quangcao.tuoitre.vn'].idty)) {
+						localStorage.setItem("__idty", '');
+					}
+				} catch (error) {
+					console.error("Error parsing '__idty' JSON:", error);
+				}
+			}
+
+
+        })();
+    </script>
+</head>
+
+<body id="smartech_iframe">
+
+
+</body></html>

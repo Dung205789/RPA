@@ -1,0 +1,26 @@
+{
+  "id": "scenario_047",
+  "url": "https://app.diagrams.net/",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\object2.png]",
+    "Click on Fit Page",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+    "Move the element created in step 4 to the left",
+    "Move the element created in step 4 to the left",
+    "Move the element created in step 4 to the left",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\65.png]",
+    "Click on Fit Page",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+    "Connect the element created in step 4 to the element created in step 10",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\65.png]",
+    "Click on Fit Page",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+    "Move the element created in step 14 to the right",
+    "Move the element created in step 14 to the right",
+    "Move the element created in step 14 to the right",
+    "Connect the element created in step 10 to the element created in step 14",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\65.png]",
+    "Click on Fit Page"
+  ]
+}

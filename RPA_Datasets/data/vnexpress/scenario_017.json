@@ -1,0 +1,16 @@
+{
+  "id": "scenario_017",
+  "url": "https://vnexpress.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [o17.png]"
+  ],
+  "assets": {
+    "o17.png": {
+      "type": "image",
+      "path": "images/vnexpress/o17.png"
+    }
+  }
+}

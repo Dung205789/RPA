@@ -1,0 +1,12 @@
+{
+  "id": "scenario_037",
+  "url": "https://app.diagrams.net/",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+    "Move the element created in step 2 to the left",
+    "Move the element created in step 2 to the left",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+    "Connect the element created in step 2 to the element created in step 5"
+  ]
+}

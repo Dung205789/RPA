@@ -1,0 +1,80 @@
+{
+  "id": "scenario_096",
+  "url": "https://lucid.app/lucidchart/1c4ff465-461c-469f-a6b3-6548e407db94/edit?viewport_loc=-437%2C-210%2C2558%2C1200%2C0_0&invitationId=inv_153b2d8c-b2ce-440d-85c2-ec2fe651d53a",
+  "environment": {
+    "theme": "dark"
+  },
+  "descriptions": [
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Press ESC",
+    "Click on [rectangle_dark.png]",
+    "Move the element created in step 5 up",
+    "Press ESC",
+    "Click on [diamond_dark.png]",
+    "Press ESC",
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 10 to the right",
+    "Press ESC",
+    "Click on [parallelogram_dark.png]",
+    "Move the element created in step 13 down",
+    "Press ESC",
+    "Click on [rectangle_dark.png]",
+    "Move the element created in step 16 down",
+    "Move the element created in step 16 down",
+    "Press ESC",
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 20 to the left",
+    "Move the element created in step 20 down",
+    "Press ESC",
+    "Move the element created in step 8 left",
+    "Click on [ellipse_dark.png]",
+    "Move the element created in step 25 to the right",
+    "Move the element created in step 25 down",
+    "Move the element created in step 25 down",
+    "Press ESC",
+    "Move the element created in step 8 right",
+    "Double click on the element created in step 1",
+    "Fill \"Start Terminator\"",
+    "Double click on the element created in step 5",
+    "Fill \"Process\"",
+    "Double click on the element created in step 8",
+    "Fill \"Decision\"",
+    "Double click on the element created in step 10",
+    "Fill \"A\"",
+    "Double click on the element created in step 13",
+    "Fill \"Data\"",
+    "Double click on the element created in step 16",
+    "Fill \"Document\"",
+    "Double click on the element created in step 20",
+    "Fill \"A\"",
+    "Double click on the element created in step 25",
+    "Fill \"End Terminator\"",
+    "Connect the element created in step 1 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 8",
+    "Connect the element created in step 8 to the element created in step 13",
+    "Connect the element created in step 8 to the element created in step 10",
+    "Connect the element created in step 13 to the element created in step 16",
+    "Connect the element created in step 16 to the element created in step 25",
+    "Connect the element created in step 20 to the element created in step 16"
+  ],
+  "assets": {
+    "ellipse_dark.png": {
+      "type": "image",
+      "path": "images/lucid_chart/ellipse_dark.png"
+    },
+    "rectangle_dark.png": {
+      "type": "image",
+      "path": "images/lucid_chart/rectangle_dark.png"
+    },
+    "diamond_dark.png": {
+      "type": "image",
+      "path": "images/lucid_chart/diamond_dark.png"
+    },
+    "parallelogram_dark.png": {
+      "type": "image",
+      "path": "images/lucid_chart/parallelogram_dark.png"
+    }
+  }
+}

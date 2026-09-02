@@ -1,0 +1,17 @@
+{
+  "id": "scenario_017",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [rectangle.png]"
+  ],
+  "assets": {
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/drawio/rectangle.png"
+    }
+  }
+}

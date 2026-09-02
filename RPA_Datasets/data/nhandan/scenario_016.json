@@ -1,0 +1,16 @@
+{
+  "id": "scenario_016",
+  "url": "https://nhandan.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open website \"https://nhandan.vn/\"",
+    "Click on Đăng nhập button",
+    "Click on email field",
+    "Fill \"thht200603@gmail.com\" into email field",
+    "Click on \"Password\" text field",
+    "Fill \"123456789\" into password field"
+  ],
+  "assets": {}
+}

@@ -1,0 +1,36 @@
+[
+  {
+    "step_num": 1,
+    "action": "open"
+  },
+  {
+    "step_num": 2,
+    "action": "click"
+  },
+  {
+    "step_num": 3,
+    "action": "move"
+  },
+  {
+    "step_num": 4,
+    "action": "move"
+  },
+  {
+    "step_num": 5,
+    "action": "click"
+  },
+  {
+    "step_num": 6,
+    "action": "connect",
+    "from_step": 2,
+    "to_step": 5
+  },
+  {
+    "step_num": 7,
+    "action": "double click"
+  },
+  {
+    "step_num": 8,
+    "action": "fill"
+  }
+]

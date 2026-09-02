@@ -1,0 +1,12 @@
+{
+  "id": "scenario_018",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://tuoitre.vn/\"",
+    "Click on ‘Piano là nhạc cụ quan trọng nhất để Việt Nam hội nhập thế giới’"
+  ],
+  "assets": {}
+}

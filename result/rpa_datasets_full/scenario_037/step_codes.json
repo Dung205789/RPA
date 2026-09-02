@@ -1,0 +1,8 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[5]\")).click();",
+  "WebElement object1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(23)\"));\nobject1.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_LEFT).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object2 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(23)\"));\nobject2.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_LEFT).keyUp(Keys.SHIFT).perform(); }",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[1]\")).click();",
+  "WebElement object3 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(23)\"));\nWebElement relatedObject1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(24)\"));\nactions.moveToElement(object3, 0, object3.getSize().getHeight() / 2)\n        .clickAndHold()\n        .moveToElement(relatedObject1, 0, -relatedObject1.getSize().getHeight() / 2)\n        .release()\n        .perform();"
+]

@@ -1,0 +1,55 @@
+{
+  "id": "scenario_068",
+  "url": "https://lucid.app/lucidchart/1c4ff465-461c-469f-a6b3-6548e407db94/edit?viewport_loc=-437%2C-210%2C2558%2C1200%2C0_0&invitationId=inv_153b2d8c-b2ce-440d-85c2-ec2fe651d53a",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [ellipse.png]",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Press ESC",
+    "Click on [parallelogram.png]",
+    "Move the element created in step 5 up",
+    "Press ESC",
+    "Click on [rectangle.png]",
+    "Move the element created in step 8 left",
+    "Press ESC",
+    "Click on [parallelogram.png]",
+    "Move the element created in step 11 down",
+    "Press ESC",
+    "Click on [ellipse.png]",
+    "Move the element created in step 14 down",
+    "Move the element created in step 14 down",
+    "Press ESC",
+    "Move the element created in step 8 right",
+    "Double click on the element created in step 1",
+    "Fill \"Start\"",
+    "Double click on the element created in step 5",
+    "Fill \"Input X, Y\"",
+    "Double click on the element created in step 8",
+    "Fill \"SUM = X + Y\"",
+    "Double click on the element created in step 11",
+    "Fill \"Display SUM\"",
+    "Double click on the element created in step 14",
+    "Fill \"END\"",
+    "Connect the element created in step 1 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 8",
+    "Connect the element created in step 8 to the element created in step 11",
+    "Connect the element created in step 11 to the element created in step 14"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/lucid_chart/ellipse.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "images/lucid_chart/parallelogram.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/lucid_chart/rectangle.png"
+    }
+  }
+}

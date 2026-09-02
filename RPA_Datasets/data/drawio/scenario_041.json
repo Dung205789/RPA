@@ -1,0 +1,24 @@
+{
+  "id": "scenario_041",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [object2.png]",
+    "Click on Fit Page",
+    "Click on [parallelogram.png]",
+    "Move the element created in step 4 to the left"
+  ],
+  "assets": {
+    "object2.png": {
+      "type": "image",
+      "path": "images/drawio/object2.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "images/drawio/parallelogram.png"
+    }
+  }
+}

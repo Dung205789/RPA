@@ -1,0 +1,13 @@
+{
+  "id": "scenario_008",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://tuoitre.vn/\"",
+    "Click on Xe button",
+    "Click on Thị trường xe button"
+  ],
+  "assets": {}
+}

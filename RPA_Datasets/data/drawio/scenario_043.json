@@ -1,0 +1,25 @@
+{
+  "id": "scenario_043",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [parallelogram.png]",
+    "Move the element created in step 2 to the left",
+    "Move the element created in step 2 to the left",
+    "Click on [rectangle.png]",
+    "Connect the element created in step 2 to the element created in step 5"
+  ],
+  "assets": {
+    "parallelogram.png": {
+      "type": "image",
+      "path": "images/drawio/parallelogram.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/drawio/rectangle.png"
+    }
+  }
+}

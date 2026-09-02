@@ -1,0 +1,18 @@
+{
+  "id": "scenario_016",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [object5.png]",
+    "Click on Share to Google Drive"
+  ],
+  "assets": {
+    "object5.png": {
+      "type": "image",
+      "path": "images/drawio/object5.png"
+    }
+  }
+}

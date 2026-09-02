@@ -1,0 +1,70 @@
+{
+  "id": "scenario_067",
+  "url": "https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=Flowchart&width=11&height=8.5&unit=inch",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [ellipse.png]",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Move the element created in step 1 up",
+    "Click on [diamond.png]",
+    "Move the element created in step 5 up",
+    "Move the element created in step 5 up",
+    "Click on [rectangle.png]",
+    "Move the element created in step 8 left",
+    "Move the element created in step 8 up",
+    "Move the element created in step 8 up",
+    "Click on [diamond.png]",
+    "Move the element created in step 12 up",
+    "Click on [rectangle.png]",
+    "Move the element created in step 14 left",
+    "Click on [ellipse.png]",
+    "Double click on the element created in step 1",
+    "Fill \"Lunch time\"",
+    "Double click on the element created in step 5",
+    "Fill \"Hungry?\"",
+    "Double click on the element created in step 8",
+    "Fill \"Wait for 30 mins\"",
+    "Double click on the element created in step 12",
+    "Fill \"Restaurant?\"",
+    "Double click on the element created in step 14",
+    "Fill \"Cook by your self\"",
+    "Double click on the element created in step 16",
+    "Fill \"Full\"",
+    "Connect the element created in step 1 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 12",
+    "Connect the element created in step 5 to the element created in step 8",
+    "Connect the element created in step 8 to the element created in step 1",
+    "Connect the element created in step 12 to the element created in step 16",
+    "Connect the element created in step 14 to the element created in step 16",
+    "Connect the element created in step 12 to the element created in step 14",
+    "Double click on connector_from_step5_to_step8",
+    "Fill \"NO\"",
+    "Press ESC",
+    "Double click on connector_from_step5_to_step12",
+    "Fill \"YES\"",
+    "Press ESC",
+    "Double click on connector_from_step12_to_step14",
+    "Fill \"NO\"",
+    "Press ESC",
+    "Double click on connector_from_step12_to_step16",
+    "Fill \"YES\"",
+    "Press ESC"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/ellipse.png"
+    },
+    "diamond.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/diamond.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/rectangle.png"
+    }
+  }
+}

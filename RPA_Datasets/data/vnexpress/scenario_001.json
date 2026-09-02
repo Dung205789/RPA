@@ -1,0 +1,12 @@
+{
+  "id": "scenario_001",
+  "url": "https://vnexpress.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://vnexpress.net/\"",
+    "Click on International button"
+  ],
+  "assets": {}
+}

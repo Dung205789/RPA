@@ -1,0 +1,13 @@
+{
+  "id": "scenario_004",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://tuoitre.vn/\"",
+    "Click on Giải trí button",
+    "Click on TV Show button"
+  ],
+  "assets": {}
+}

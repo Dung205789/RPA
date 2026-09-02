@@ -1,0 +1,43 @@
+{
+  "id": "scenario_033",
+  "url": "https://lucid.app/lucidchart/1c4ff465-461c-469f-a6b3-6548e407db94/edit?viewport_loc=-437%2C-210%2C2558%2C1200%2C0_0&invitationId=inv_153b2d8c-b2ce-440d-85c2-ec2fe651d53a",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [diamond.png]",
+    "Click on [ellipse.png]",
+    "Click on [rectangle.png]",
+    "Click on [parallelogram.png]",
+    "Double click on element created in step 1",
+    "Fill \"đây là hình thoi\"",
+    "Double click on element created in step 2",
+    "Fill \"đây là hình ellipse\"",
+    "Double click on element created in step 3",
+    "Fill \"đây là hình chữ nhật\"",
+    "Double click on element created in step 4",
+    "Fill \"đây là hình bình hành\"",
+    "Move the element created in step 1 up",
+    "Move the element created in step 2 down",
+    "Move the element created in step 3 to the left",
+    "Move the element created in step 4 to the right"
+  ],
+  "assets": {
+    "diamond.png": {
+      "type": "image",
+      "path": "images/lucid_chart/diamond.png"
+    },
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/lucid_chart/ellipse.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/lucid_chart/rectangle.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "images/lucid_chart/parallelogram.png"
+    }
+  }
+}

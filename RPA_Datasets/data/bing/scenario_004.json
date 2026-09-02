@@ -1,0 +1,17 @@
+{
+  "id": "scenario_004",
+  "url": "https://bing.com/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"http://bing.com/\"",
+    "Click on Sign in",
+    "Fill \"nguyenthihoaithu3904@gmail.com\"",
+    "Click on Next button",
+    "Fill \"12345678\"",
+    "Click on Next button",
+    "Click on Yes button"
+  ],
+  "assets": {}
+}

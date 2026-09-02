@@ -1,0 +1,53 @@
+{
+  "id": "scenario_049",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [object2.png]",
+    "Click on Fit Page",
+    "Click on [ellipse.png]",
+    "Move the element created in step 4 to the left",
+    "Click on [65.png]",
+    "Click on Fit Page",
+    "Click on [rectangle.png]",
+    "Connect the element created in step 4 to the element created in step 8",
+    "Click on [65.png]",
+    "Click on Fit Page",
+    "Click on [ellipse.png]",
+    "Move the element created in step 12 to the right",
+    "Connect the element created in step 8 to the element created in step 12",
+    "Click on [65.png]",
+    "Click on Fit Page",
+    "Double click on the element created in step 4",
+    "Fill \"START\" into the element created in step 4",
+    "Double click on the element created in step 8",
+    "Fill \"EXECUTE\" into the element created in step 8",
+    "Double click on the element created in step 12",
+    "Fill \"END\" into the element created in step 12",
+    "Double click on connector_from_step4_to_step8",
+    "Fill \"begin\"",
+    "Double click on connector_from_step8_to_step12",
+    "Fill \"finish\""
+  ],
+  "assets": {
+    "object2.png": {
+      "type": "image",
+      "path": "images/drawio/object2.png"
+    },
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/drawio/ellipse.png"
+    },
+    "65.png": {
+      "type": "image",
+      "path": "images/drawio/65.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/drawio/rectangle.png"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "scenario_009",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on Extras",
+    "Click on Appearance",
+    "Click on Dark",
+    "Click on [ellipse.png]"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/drawio/ellipse.png"
+    }
+  }
+}

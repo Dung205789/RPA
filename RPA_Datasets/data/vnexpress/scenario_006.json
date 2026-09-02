@@ -1,0 +1,12 @@
+{
+  "id": "scenario_006",
+  "url": "https://vnexpress.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"http://vnexpress.net/\"",
+    "'Click on Góc nhìn"
+  ],
+  "assets": {}
+}

@@ -1,0 +1,47 @@
+{
+  "id": "scenario_047",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [object2.png]",
+    "Click on Fit Page",
+    "Click on [ellipse.png]",
+    "Move the element created in step 4 to the left",
+    "Move the element created in step 4 to the left",
+    "Move the element created in step 4 to the left",
+    "Click on [65.png]",
+    "Click on Fit Page",
+    "Click on [rectangle.png]",
+    "Connect the element created in step 4 to the element created in step 10",
+    "Click on [65.png]",
+    "Click on Fit Page",
+    "Click on [ellipse.png]",
+    "Move the element created in step 14 to the right",
+    "Move the element created in step 14 to the right",
+    "Move the element created in step 14 to the right",
+    "Connect the element created in step 10 to the element created in step 14",
+    "Click on [65.png]",
+    "Click on Fit Page"
+  ],
+  "assets": {
+    "object2.png": {
+      "type": "image",
+      "path": "images/drawio/object2.png"
+    },
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/drawio/ellipse.png"
+    },
+    "65.png": {
+      "type": "image",
+      "path": "images/drawio/65.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/drawio/rectangle.png"
+    }
+  }
+}

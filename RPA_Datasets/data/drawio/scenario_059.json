@@ -1,0 +1,13 @@
+{
+  "id": "scenario_059",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on US-Letter (8,5\" x 11\")",
+    "Click on A4 (210 mm x 297 mm)"
+  ],
+  "assets": {}
+}

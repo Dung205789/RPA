@@ -1,0 +1,23 @@
+{
+  "id": "scenario_098",
+  "url": "https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=Flowchart&width=11&height=8.5&unit=inch",
+  "environment": {
+    "theme": "dark"
+  },
+  "descriptions": [
+    "Click on [diamond_dark.png]",
+    "Move the element created in step 1 up",
+    "Click on [rectangle_dark.png]",
+    "Connect the element created in step 1 to the element created in step 3"
+  ],
+  "assets": {
+    "diamond_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/diamond_dark.png"
+    },
+    "rectangle_dark.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/rectangle_dark.png"
+    }
+  }
+}

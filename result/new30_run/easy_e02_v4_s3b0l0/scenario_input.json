@@ -1,0 +1,23 @@
+{
+  "id": "easy_e02_v4_s3b0l0",
+  "url": "https://app.diagrams.net/",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+    "Double click on the element created in step 2",
+    "Fill \"Patch submitted\" into the element created in step 2",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\parallelogram.png]",
+    "Move the element created in step 5 down",
+    "Move the element created in step 5 down",
+    "Move the element created in step 5 down",
+    "Double click on the element created in step 5",
+    "Fill \"Read the pull request\" into the element created in step 5",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+    "Move the element created in step 11 down",
+    "Move the element created in step 11 down",
+    "Double click on the element created in step 11",
+    "Fill \"Patch merged\" into the element created in step 11",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 11"
+  ]
+}

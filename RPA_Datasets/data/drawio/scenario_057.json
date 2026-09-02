@@ -1,0 +1,14 @@
+{
+  "id": "scenario_057",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on Change...",
+    "Fill \"http://localhost:8123/uploads/stepImg/objectImg/objectImg__148__22__20251022.jpg\"",
+    "Click Apply"
+  ],
+  "assets": {}
+}

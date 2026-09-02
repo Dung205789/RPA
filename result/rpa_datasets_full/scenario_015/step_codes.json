@@ -1,0 +1,5 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"/html/body/div[4]/div[2]/div[2]/div[2]/div/div[3]/span\")).click();",
+  "driver.findElement(By.xpath(\"/html/body/div[6]/a/img\")).click();\nArrayList<String> tab0 = new ArrayList<String>(driver.getWindowHandles());\ndriver.switchTo().window(tab0.get(1));"
+]

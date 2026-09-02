@@ -1,0 +1,12 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[1]\")).click();",
+  "WebElement object1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(104)\"));\nactions.doubleClick(object1).perform();",
+  "actions.sendKeys(\"Season starts\").perform();",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[1]\")).click();",
+  "WebElement object6 = driver.findElement(By.xpath(\"//not-found\"));\nobject6.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object11 = driver.findElement(By.xpath(\"//not-found\"));\nobject11.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object12 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(1) > g:nth-child(11)\"));\nactions.doubleClick(object12).perform();",
+  "actions.sendKeys(\"Crop stored\").perform();",
+  "WebElement object13 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(1) > g:nth-child(10)\"));\nWebElement relatedObject1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(1) > g:nth-child(11)\"));\nactions.moveToElement(object13, 0, object13.getSize().getHeight() / 2)\n        .clickAndHold()\n        .moveToElement(relatedObject1, 0, -relatedObject1.getSize().getHeight() / 2)\n        .release()\n        .perform();"
+]

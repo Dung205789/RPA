@@ -1,0 +1,13 @@
+{
+  "id": "scenario_004",
+  "url": "https://nhandan.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open website \"https://nhandan.vn/\"",
+    "Click on 中文 at the top bar",
+    "Click on 关键词"
+  ],
+  "assets": {}
+}

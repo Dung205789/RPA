@@ -1,0 +1,12 @@
+{
+  "id": "scenario_017",
+  "url": "https://nhandan.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open website \"https://nhandan.vn/\"",
+    "Click on Phát biểu chào mừng của Chủ tịch nước Lương Cường tại Lễ mở ký Công ước Hà Nội về chống tội phạm mạng"
+  ],
+  "assets": {}
+}

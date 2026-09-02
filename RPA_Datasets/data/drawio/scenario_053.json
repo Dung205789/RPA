@@ -1,0 +1,18 @@
+{
+  "id": "scenario_053",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [object20.png]",
+    "Click Container checkbox"
+  ],
+  "assets": {
+    "object20.png": {
+      "type": "image",
+      "path": "images/drawio/object20.png"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "scenario_050",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [object2.png]",
+    "Click on Fit Page",
+    "Click on [ellipse.png]",
+    "Move the element created in step 4 up",
+    "Move the element created in step 4 up",
+    "Move the element created in step 4 up",
+    "Click on [parallelogram.png]",
+    "Move the element created in step 8 up",
+    "Move the element created in step 8 up",
+    "Click on [diamond.png]",
+    "Move the element created in step 11 up",
+    "Click on [rectangle.png]",
+    "Move the element created in step 13 to the left",
+    "Click on [rectangle.png]",
+    "Move the element created in step 15 to the right",
+    "Move the element created in step 15 to the up",
+    "Click on [ellipse.png]",
+    "Move the element created in step 18 down",
+    "Double click on the element created in step 4",
+    "Fill \"Leave home\" into the element created in step 4",
+    "Double click on the element created in step 8",
+    "Fill \"Check timeline\" into the element created in step 8",
+    "Double click on the element created in step 11",
+    "Fill \"Before 7 am?\" into the element created in step 11",
+    "Double click on the element created in step 13",
+    "Fill \"Take bus\" into the element created in step 13",
+    "Double click on the element created in step 15",
+    "Fill \"Take subway\" into the element created in step 15",
+    "Double click on the element created in step 18",
+    "Fill \"Reach school\" into the element created in step 18",
+    "Connect the element created in step 4 to the element created in step 8",
+    "Connect the element created in step 8 to the element created in step 11",
+    "Connect the element created in step 11 to the element created in step 13",
+    "Connect the element created in step 11 to the element created in step 15",
+    "Double click on connector_from_step11_to_step13",
+    "Fill \"NO\"",
+    "Double click on connector_from_step11_to_step15",
+    "Fill \"YES\"",
+    "Connect the element created in step 13 to the element created in step 18",
+    "Connect the element created in step 15 to the element created in step 18"
+  ],
+  "assets": {
+    "object2.png": {
+      "type": "image",
+      "path": "images/drawio/object2.png"
+    },
+    "ellipse.png": {
+      "type": "image",
+      "path": "images/drawio/ellipse.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "images/drawio/parallelogram.png"
+    },
+    "diamond.png": {
+      "type": "image",
+      "path": "images/drawio/diamond.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "images/drawio/rectangle.png"
+    }
+  }
+}

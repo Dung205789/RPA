@@ -1,0 +1,4 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.switchTo().activeElement().sendKeys(Keys.ENTER);"
+]

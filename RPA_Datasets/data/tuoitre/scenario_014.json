@@ -1,0 +1,12 @@
+{
+  "id": "scenario_014",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://tuoitre.vn/\"",
+    "Click on Thủ tướng: Ngoại giao kinh tế phải chân thành, lấy đối thoại làm nền tảng"
+  ],
+  "assets": {}
+}

@@ -1,0 +1,12 @@
+{
+  "id": "scenario_001",
+  "url": "https://bing.com/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"http://bing.com/\"",
+    "Click on Search using voice"
+  ],
+  "assets": {}
+}

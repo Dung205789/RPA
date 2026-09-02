@@ -1,0 +1,19 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"//body/div[3]/div[1]/div[4]/div[1]/a[5]\")).click();",
+  "WebElement object1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(88)\"));\nactions.doubleClick(object1).perform();",
+  "actions.sendKeys(\"Patch submitted\").perform();",
+  "driver.findElement(By.xpath(\"//body/div[3]/div[1]/div[4]/div[1]/a[10]\")).click();",
+  "WebElement object2 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(90)\"));\nobject2.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object7 = driver.findElement(By.xpath(\"//not-found\"));\nobject7.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object12 = driver.findElement(By.xpath(\"//not-found\"));\nobject12.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object13 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(90)\"));\nactions.doubleClick(object13).perform();",
+  "actions.sendKeys(\"Read the pull request\").perform();",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[5]\")).click();",
+  "WebElement object14 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(92)\"));\nobject14.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object19 = driver.findElement(By.xpath(\"//not-found\"));\nobject19.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_DOWN).keyUp(Keys.SHIFT).perform(); }",
+  "WebElement object20 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(92)\"));\nactions.doubleClick(object20).perform();",
+  "actions.sendKeys(\"Patch merged\").perform();",
+  "WebElement object21 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(88)\"));\nWebElement relatedObject1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(90)\"));\nactions.moveToElement(object21, 0, object21.getSize().getHeight() / 2)\n        .clickAndHold()\n        .moveToElement(relatedObject1, 0, -relatedObject1.getSize().getHeight() / 2)\n        .release()\n        .perform();",
+  "WebElement object22 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(91)\"));\nWebElement relatedObject2 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(93)\"));\nactions.moveToElement(object22, 0, object22.getSize().getHeight() / 2)\n        .clickAndHold()\n        .moveToElement(relatedObject2, 0, -relatedObject2.getSize().getHeight() / 2)\n        .release()\n        .perform();"
+]

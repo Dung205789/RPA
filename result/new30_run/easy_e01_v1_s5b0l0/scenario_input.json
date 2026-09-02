@@ -1,0 +1,30 @@
+{
+  "id": "easy_e01_v1_s5b0l0",
+  "url": "https://app.diagrams.net/",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+    "Double click on the element created in step 2",
+    "Fill \"Lamp does not work\" into the element created in step 2",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+    "Move the element created in step 5 down",
+    "Double click on the element created in step 5",
+    "Fill \"Check the socket\" into the element created in step 5",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+    "Move the element created in step 9 down",
+    "Double click on the element created in step 9",
+    "Fill \"Plug it in\" into the element created in step 9",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+    "Move the element created in step 13 down",
+    "Double click on the element created in step 13",
+    "Fill \"Replace the bulb\" into the element created in step 13",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+    "Move the element created in step 17 down",
+    "Double click on the element created in step 17",
+    "Fill \"Lamp works\" into the element created in step 17",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 9",
+    "Connect the element created in step 9 to the element created in step 13",
+    "Connect the element created in step 13 to the element created in step 17"
+  ]
+}

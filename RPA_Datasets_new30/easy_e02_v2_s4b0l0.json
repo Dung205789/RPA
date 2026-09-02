@@ -1,0 +1,44 @@
+{
+  "id": "easy_e02_v2_s4b0l0",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [rectangle.png]",
+    "Double click on the element created in step 2",
+    "Fill \"Visitor arrives\" into the element created in step 2",
+    "Click on [rectangle.png]",
+    "Move the element created in step 5 down",
+    "Move the element created in step 5 down",
+    "Double click on the element created in step 5",
+    "Fill \"Show the form\" into the element created in step 5",
+    "Click on [rectangle.png]",
+    "Move the element created in step 10 down",
+    "Move the element created in step 10 down",
+    "Double click on the element created in step 10",
+    "Fill \"Validate the email\" into the element created in step 10",
+    "Click on [rectangle.png]",
+    "Move the element created in step 15 down",
+    "Move the element created in step 15 down",
+    "Double click on the element created in step 15",
+    "Fill \"Account active\" into the element created in step 15",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 10",
+    "Connect the element created in step 10 to the element created in step 15"
+  ],
+  "assets": {
+    "rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png"
+    }
+  },
+  "_source": "SVG_agent data/datasets, converted via existing VLM parse (src/understand/constraints.parse_task) + new deterministic step translator",
+  "_unsupported_shapes": [
+    {
+      "id": "B",
+      "type": "document"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "scenario_002",
+  "url": "https://vnexpress.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open the url \"https://vnexpress.net/\"",
+    "Click on the Thời sự button",
+    "Click on the Giao thông button"
+  ],
+  "assets": {}
+}

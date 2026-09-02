@@ -1,0 +1,12 @@
+{
+  "id": "scenario_033",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Press Enter"
+  ],
+  "assets": {}
+}

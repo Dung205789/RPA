@@ -1,0 +1,8 @@
+[
+  "driver.get(\"https://app.diagrams.net/\");",
+  "driver.findElement(By.xpath(\"/html/body/div[3]/div[1]/div[4]/div/a[5]\")).click();",
+  "WebElement object1 = driver.findElement(By.cssSelector(\".geDiagramContainer svg > g > g:nth-child(2) > g:nth-child(19)\"));\nactions.doubleClick(object1).perform();",
+  "actions.sendKeys(\"test_abc\").perform();",
+  "driver.switchTo().activeElement().sendKeys(Keys.ESCAPE);",
+  "WebElement object6 = driver.findElement(By.xpath(\"//not-found\"));\nobject6.click();\nThread.sleep(500);\nfor(int i=0; i<15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_RIGHT).keyUp(Keys.SHIFT).perform(); }"
+]

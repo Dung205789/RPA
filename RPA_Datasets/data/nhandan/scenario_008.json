@@ -1,0 +1,13 @@
+{
+  "id": "scenario_008",
+  "url": "https://nhandan.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open website \"https://nhandan.vn/\"",
+    "Click on Nhân dân cuối tuần button",
+    "Click on Nhân dân điện tử button"
+  ],
+  "assets": {}
+}

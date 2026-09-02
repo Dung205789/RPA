@@ -1,0 +1,19 @@
+{
+  "id": "scenario_021",
+  "url": "https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=Flowchart&width=11&height=8.5&unit=inch",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [file.png]",
+    "Click on Create New",
+    "Click on Smart Board",
+    "Click on Mind Map"
+  ],
+  "assets": {
+    "file.png": {
+      "type": "image",
+      "path": "images/visual_paradigm/file.png"
+    }
+  }
+}

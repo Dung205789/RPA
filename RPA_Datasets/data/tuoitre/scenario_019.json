@@ -1,0 +1,13 @@
+{
+  "id": "scenario_019",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://tuoitre.vn/\"",
+    "Click on Tuoitre Podcast",
+    "Click on Mực tím"
+  ],
+  "assets": {}
+}

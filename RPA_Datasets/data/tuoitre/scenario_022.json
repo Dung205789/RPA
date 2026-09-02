@@ -1,0 +1,16 @@
+{
+  "id": "scenario_022",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [o22.png]"
+  ],
+  "assets": {
+    "o22.png": {
+      "type": "image",
+      "path": "images/tuoitre/o22.png"
+    }
+  }
+}

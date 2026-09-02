@@ -1,0 +1,60 @@
+{
+  "id": "hard_h06_v2_s7b1l1",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [rectangle.png]",
+    "Double click on the element created in step 2",
+    "Fill \"Start\" into the element created in step 2",
+    "Click on [rectangle.png]",
+    "Move the element created in step 5 down",
+    "Double click on the element created in step 5",
+    "Fill \"Wait one minute\" into the element created in step 5",
+    "Click on [rectangle.png]",
+    "Move the element created in step 9 down",
+    "Double click on the element created in step 9",
+    "Fill \"Steep a bit longer\" into the element created in step 9",
+    "Click on [rectangle.png]",
+    "Move the element created in step 13 down",
+    "Double click on the element created in step 13",
+    "Fill \"Reheat the water\" into the element created in step 13",
+    "Click on [rectangle.png]",
+    "Move the element created in step 17 down",
+    "Double click on the element created in step 17",
+    "Fill \"Top up the water\" into the element created in step 17",
+    "Click on [diamond.png]",
+    "Move the element created in step 21 down",
+    "Double click on the element created in step 21",
+    "Fill \"Water boiled?\" into the element created in step 21",
+    "Click on [rectangle.png]",
+    "Move the element created in step 25 down",
+    "Double click on the element created in step 25",
+    "Fill \"Tea is ready\" into the element created in step 25",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 9",
+    "Connect the element created in step 9 to the element created in step 13",
+    "Connect the element created in step 13 to the element created in step 17",
+    "Connect the element created in step 17 to the element created in step 21",
+    "Connect the element created in step 21 to the element created in step 5",
+    "Double click on connector_from_step21_to_step5",
+    "Fill \"Not yet\"",
+    "Connect the element created in step 21 to the element created in step 25",
+    "Double click on connector_from_step21_to_step25",
+    "Fill \"Yes\""
+  ],
+  "assets": {
+    "rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png"
+    },
+    "diamond.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\diamond.png"
+    }
+  },
+  "_source": "SVG_agent data/datasets, converted via existing VLM parse (src/understand/constraints.parse_task) + new deterministic step translator",
+  "_unsupported_shapes": []
+}

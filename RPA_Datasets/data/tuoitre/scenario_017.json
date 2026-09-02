@@ -1,0 +1,12 @@
+{
+  "id": "scenario_017",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://tuoitre.vn/\"",
+    "Click on TP.HCM xem xét đề xuất làm metro và đường ven biển của tập đoàn Trung Quốc"
+  ],
+  "assets": {}
+}

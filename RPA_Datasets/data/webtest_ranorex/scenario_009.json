@@ -1,0 +1,16 @@
+{
+  "id": "scenario_009",
+  "url": "http://webtest.ranorex.org/wp-login.php",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [o9.png]"
+  ],
+  "assets": {
+    "o9.png": {
+      "type": "image",
+      "path": "images/webtest_ranorex/o9.png"
+    }
+  }
+}

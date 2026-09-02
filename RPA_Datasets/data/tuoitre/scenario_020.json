@@ -1,0 +1,16 @@
+{
+  "id": "scenario_020",
+  "url": "https://tuoitre.vn/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Click on [o20.png]"
+  ],
+  "assets": {
+    "o20.png": {
+      "type": "image",
+      "path": "images/tuoitre/o20.png"
+    }
+  }
+}
