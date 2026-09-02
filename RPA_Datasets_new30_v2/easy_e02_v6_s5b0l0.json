@@ -1,0 +1,70 @@
+{
+  "id": "easy_e02_v6_s5b0l0",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Click on [rounded_rectangle.png]",
+    "Move the element created in step 7 up",
+    "Move the element created in step 7 up",
+    "Click on [parallelogram.png]",
+    "Click on [hexagon.png]",
+    "Move the element created in step 11 down",
+    "Move the element created in step 11 down",
+    "Click on [ellipse.png]",
+    "Move the element created in step 14 down",
+    "Move the element created in step 14 down",
+    "Move the element created in step 14 down",
+    "Move the element created in step 14 down",
+    "Double click on the element created in step 2",
+    "Fill \"Model loaded\" into the element created in step 2",
+    "Double click on the element created in step 7",
+    "Fill \"Slice the model\" into the element created in step 7",
+    "Double click on the element created in step 10",
+    "Fill \"Read the model file\" into the element created in step 10",
+    "Double click on the element created in step 11",
+    "Fill \"Heat the nozzle\" into the element created in step 11",
+    "Double click on the element created in step 14",
+    "Fill \"Part finished\" into the element created in step 14",
+    "Connect the element created in step 2 to the element created in step 7",
+    "Connect the element created in step 7 to the element created in step 10",
+    "Connect the element created in step 10 to the element created in step 11",
+    "Connect the element created in step 11 to the element created in step 14"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png"
+    },
+    "rounded_rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png"
+    },
+    "hexagon.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\hexagon.png"
+    }
+  },
+  "_source": "image_to_scenario.py — VLM read of the PNG only, then a deterministic translation into the RPA_Datasets step language",
+  "_vlm": {
+    "provider": "gemini",
+    "model": "gemini-flash-lite-latest"
+  },
+  "_placement": {
+    "px_per_normalised_unit": 1416.7,
+    "move_step_px": 150,
+    "anchor_node": "n3"
+  },
+  "_unsupported_shapes": []
+}

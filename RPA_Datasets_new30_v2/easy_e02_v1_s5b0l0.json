@@ -1,0 +1,68 @@
+{
+  "id": "easy_e02_v1_s5b0l0",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Click on [parallelogram.png]",
+    "Move the element created in step 8 up",
+    "Move the element created in step 8 up",
+    "Move the element created in step 8 up",
+    "Click on [rounded_rectangle.png]",
+    "Click on [rounded_rectangle.png]",
+    "Move the element created in step 13 down",
+    "Move the element created in step 13 down",
+    "Click on [ellipse.png]",
+    "Move the element created in step 16 down",
+    "Move the element created in step 16 down",
+    "Move the element created in step 16 down",
+    "Move the element created in step 16 down",
+    "Double click on the element created in step 2",
+    "Fill \"Start\" into the element created in step 2",
+    "Double click on the element created in step 8",
+    "Fill \"Read the recipe\" into the element created in step 8",
+    "Double click on the element created in step 12",
+    "Fill \"Fill the kettle\" into the element created in step 12",
+    "Double click on the element created in step 13",
+    "Fill \"Switch it on\" into the element created in step 13",
+    "Double click on the element created in step 16",
+    "Fill \"Tea is ready\" into the element created in step 16",
+    "Connect the element created in step 2 to the element created in step 8",
+    "Connect the element created in step 8 to the element created in step 12",
+    "Connect the element created in step 12 to the element created in step 13",
+    "Connect the element created in step 13 to the element created in step 16"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png"
+    },
+    "rounded_rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+    }
+  },
+  "_source": "image_to_scenario.py — VLM read of the PNG only, then a deterministic translation into the RPA_Datasets step language",
+  "_vlm": {
+    "provider": "gemini",
+    "model": "gemini-flash-lite-latest"
+  },
+  "_placement": {
+    "px_per_normalised_unit": 1677.6,
+    "move_step_px": 150,
+    "anchor_node": "n3"
+  },
+  "_unsupported_shapes": []
+}

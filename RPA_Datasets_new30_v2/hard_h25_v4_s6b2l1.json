@@ -1,0 +1,91 @@
+{
+  "id": "hard_h25_v4_s6b2l1",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Click on [diamond.png]",
+    "Move the element created in step 7 up",
+    "Move the element created in step 7 up",
+    "Click on [diamond.png]",
+    "Click on [rounded_rectangle.png]",
+    "Move the element created in step 11 left",
+    "Move the element created in step 11 left",
+    "Move the element created in step 11 left",
+    "Move the element created in step 11 down",
+    "Move the element created in step 11 down",
+    "Click on [parallelogram.png]",
+    "Move the element created in step 17 right",
+    "Move the element created in step 17 right",
+    "Move the element created in step 17 right",
+    "Move the element created in step 17 down",
+    "Move the element created in step 17 down",
+    "Click on [ellipse.png]",
+    "Move the element created in step 23 down",
+    "Move the element created in step 23 down",
+    "Move the element created in step 23 down",
+    "Double click on the element created in step 2",
+    "Fill \"Nightly timer fires\" into the element created in step 2",
+    "Double click on the element created in step 7",
+    "Fill \"Disk space free?\" into the element created in step 7",
+    "Double click on the element created in step 10",
+    "Fill \"Upload succeeded?\" into the element created in step 10",
+    "Double click on the element created in step 11",
+    "Fill \"List changed files\" into the element created in step 11",
+    "Double click on the element created in step 17",
+    "Fill \"Read the file index\" into the element created in step 17",
+    "Double click on the element created in step 23",
+    "Fill \"Backup complete\" into the element created in step 23",
+    "Connect the element created in step 2 to the element created in step 7",
+    "Connect the element created in step 7 to the element created in step 7",
+    "Double click on connector_from_step7_to_step7",
+    "Fill \"Full\"",
+    "Connect the element created in step 7 to the element created in step 10",
+    "Double click on connector_from_step7_to_step10",
+    "Fill \"Enough\"",
+    "Connect the element created in step 10 to the element created in step 11",
+    "Double click on connector_from_step10_to_step11",
+    "Fill \"Yes\"",
+    "Connect the element created in step 10 to the element created in step 17",
+    "Double click on connector_from_step10_to_step17",
+    "Fill \"Failed\"",
+    "Connect the element created in step 11 to the element created in step 23",
+    "Connect the element created in step 17 to the element created in step 23"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png"
+    },
+    "diamond.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png"
+    },
+    "rounded_rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png"
+    }
+  },
+  "_source": "image_to_scenario.py — VLM read of the PNG only, then a deterministic translation into the RPA_Datasets step language",
+  "_vlm": {
+    "provider": "gemini",
+    "model": "gemini-flash-lite-latest"
+  },
+  "_placement": {
+    "px_per_normalised_unit": 1275.0,
+    "move_step_px": 150,
+    "anchor_node": "n3"
+  },
+  "_unsupported_shapes": []
+}

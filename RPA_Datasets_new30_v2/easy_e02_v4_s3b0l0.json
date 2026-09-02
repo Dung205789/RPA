@@ -1,0 +1,46 @@
+{
+  "id": "easy_e02_v4_s3b0l0",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Click on [parallelogram.png]",
+    "Click on [ellipse.png]",
+    "Move the element created in step 6 down",
+    "Move the element created in step 6 down",
+    "Double click on the element created in step 2",
+    "Fill \"Patch submitted\" into the element created in step 2",
+    "Double click on the element created in step 5",
+    "Fill \"Read the pull request\" into the element created in step 5",
+    "Double click on the element created in step 6",
+    "Fill \"Patch merged\" into the element created in step 6",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 6"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png"
+    }
+  },
+  "_source": "image_to_scenario.py — VLM read of the PNG only, then a deterministic translation into the RPA_Datasets step language",
+  "_vlm": {
+    "provider": "gemini",
+    "model": "gemini-flash-lite-latest"
+  },
+  "_placement": {
+    "px_per_normalised_unit": 796.9,
+    "move_step_px": 150,
+    "anchor_node": "n2"
+  },
+  "_unsupported_shapes": []
+}

@@ -67,6 +67,13 @@ const cellsOf = (layer) => Array.from(layer.children).filter(g => {
   if (g.textContent.trim().length > 0) return false;   // a label group, not a cell
   if (g.querySelector('foreignObject')) return false;
   if (!Array.from(g.children).some(c => GEO.has(c.tagName.toLowerCase()))) return false;
+  // Selection grips are <g style="cursor: *-resize|crosshair|pointer"><image/></g>.
+  // They qualify on every other test, and with a connector selected there were
+  // more of them in the handler pane than there were real cells in the content
+  // pane, so the "most cells" rule handed back three 18x18 grips and one edge and
+  // lost both rectangles. A clipart shape is also an <image>, but carries
+  // `cursor: move`, so keying on the grip cursors leaves it alone.
+  if (g.querySelector('image') && /resize|crosshair|pointer/.test(st)) return false;
   // Degenerate boxes are page rules and alignment guides, never diagram cells.
   const r = g.getBoundingClientRect();
   return r.width > 0 && r.height > 0;
@@ -112,7 +119,18 @@ return arguments[0].map((g, i) => {
   const tags = geo.map(c => c.tagName.toLowerCase());
   // An mxGraph edge renders as several <path> elements (wide invisible hit area,
   // the visible stroke, the arrow marker); a vertex owns exactly one primitive.
-  const isEdge = tags.length > 1 && tags.every(t => t === 'path');
+  // An edge is several <path>s whose longest one is an OPEN polyline; a vertex
+  // built from several paths (cylinder, document) has a closed outline as its
+  // longest path. Counting paths alone classified every cylinder as a connector.
+  let longest = null, longestLen = -1;
+  for (const p of geo) {
+    if (p.tagName.toLowerCase() !== 'path') continue;
+    let L = 0;
+    try { L = p.getTotalLength(); } catch (e) { continue; }
+    if (L > longestLen) { longestLen = L; longest = p; }
+  }
+  const longestClosed = longest ? /[Zz]/.test(longest.getAttribute('d') || '') : false;
+  const isEdge = tags.length > 1 && tags.every(t => t === 'path') && !longestClosed;
   // For an edge, where the line actually starts and ends. That is what says which
   // two shapes it joins, and it survives draw.io rebuilding the node.
   let p1 = null, p2 = null;

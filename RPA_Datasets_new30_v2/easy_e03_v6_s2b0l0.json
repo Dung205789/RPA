@@ -1,0 +1,36 @@
+{
+  "id": "easy_e03_v6_s2b0l0",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [rounded_rectangle.png]",
+    "Click on [rounded_rectangle.png]",
+    "Move the element created in step 3 down",
+    "Move the element created in step 3 down",
+    "Double click on the element created in step 2",
+    "Fill \"Season starts\" into the element created in step 2",
+    "Double click on the element created in step 3",
+    "Fill \"Crop stored\" into the element created in step 3",
+    "Connect the element created in step 2 to the element created in step 3"
+  ],
+  "assets": {
+    "rounded_rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+    }
+  },
+  "_source": "image_to_scenario.py — VLM read of the PNG only, then a deterministic translation into the RPA_Datasets step language",
+  "_vlm": {
+    "provider": "gemini",
+    "model": "gemini-flash-lite-latest"
+  },
+  "_placement": {
+    "px_per_normalised_unit": 472.2,
+    "move_step_px": 150,
+    "anchor_node": "n1"
+  },
+  "_unsupported_shapes": []
+}

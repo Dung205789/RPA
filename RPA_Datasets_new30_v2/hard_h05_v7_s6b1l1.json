@@ -1,0 +1,84 @@
+{
+  "id": "hard_h05_v7_s6b1l1",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [rounded_rectangle.png]",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Click on [parallelogram.png]",
+    "Move the element created in step 8 up",
+    "Move the element created in step 8 up",
+    "Move the element created in step 8 up",
+    "Move the element created in step 8 up",
+    "Click on [parallelogram.png]",
+    "Move the element created in step 13 up",
+    "Move the element created in step 13 up",
+    "Click on [rectangle.png]",
+    "Click on [diamond.png]",
+    "Move the element created in step 17 down",
+    "Move the element created in step 17 down",
+    "Click on [rounded_rectangle.png]",
+    "Move the element created in step 20 down",
+    "Move the element created in step 20 down",
+    "Move the element created in step 20 down",
+    "Move the element created in step 20 down",
+    "Double click on the element created in step 2",
+    "Fill \"Application filed\" into the element created in step 2",
+    "Double click on the element created in step 8",
+    "Fill \"Read the application\" into the element created in step 8",
+    "Double click on the element created in step 13",
+    "Fill \"Print the contract\" into the element created in step 13",
+    "Double click on the element created in step 16",
+    "Fill \"Check the identity\" into the element created in step 16",
+    "Double click on the element created in step 17",
+    "Fill \"Documents complete?\" into the element created in step 17",
+    "Double click on the element created in step 20",
+    "Fill \"Case closed\" into the element created in step 20",
+    "Connect the element created in step 2 to the element created in step 8",
+    "Connect the element created in step 8 to the element created in step 13",
+    "Connect the element created in step 13 to the element created in step 16",
+    "Connect the element created in step 16 to the element created in step 17",
+    "Connect the element created in step 17 to the element created in step 17",
+    "Double click on connector_from_step17_to_step17",
+    "Fill \"Missing\"",
+    "Connect the element created in step 17 to the element created in step 20",
+    "Double click on connector_from_step17_to_step20",
+    "Fill \"Complete\""
+  ],
+  "assets": {
+    "rounded_rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png"
+    },
+    "rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png"
+    },
+    "diamond.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png"
+    }
+  },
+  "_source": "image_to_scenario.py — VLM read of the PNG only, then a deterministic translation into the RPA_Datasets step language",
+  "_vlm": {
+    "provider": "gemini",
+    "model": "gemini-flash-lite-latest"
+  },
+  "_placement": {
+    "px_per_normalised_unit": 1593.8,
+    "move_step_px": 150,
+    "anchor_node": "n4"
+  },
+  "_unsupported_shapes": []
+}

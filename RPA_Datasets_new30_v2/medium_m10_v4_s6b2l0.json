@@ -1,0 +1,105 @@
+{
+  "id": "medium_m10_v4_s6b2l0",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [ellipse.png]",
+    "Move the element created in step 2 right",
+    "Move the element created in step 2 right",
+    "Move the element created in step 2 right",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Click on [diamond.png]",
+    "Move the element created in step 13 right",
+    "Move the element created in step 13 right",
+    "Move the element created in step 13 right",
+    "Move the element created in step 13 up",
+    "Move the element created in step 13 up",
+    "Move the element created in step 13 up",
+    "Move the element created in step 13 up",
+    "Move the element created in step 13 up",
+    "Click on [rounded_rectangle.png]",
+    "Move the element created in step 22 left",
+    "Move the element created in step 22 left",
+    "Move the element created in step 22 left",
+    "Move the element created in step 22 up",
+    "Move the element created in step 22 up",
+    "Move the element created in step 22 up",
+    "Click on [diamond.png]",
+    "Move the element created in step 29 left",
+    "Move the element created in step 29 left",
+    "Move the element created in step 29 left",
+    "Move the element created in step 29 up",
+    "Move the element created in step 29 up",
+    "Click on [hexagon.png]",
+    "Click on [ellipse.png]",
+    "Move the element created in step 36 right",
+    "Move the element created in step 36 right",
+    "Move the element created in step 36 right",
+    "Move the element created in step 36 down",
+    "Double click on the element created in step 2",
+    "Fill \"Model loaded\" into the element created in step 2",
+    "Double click on the element created in step 13",
+    "Fill \"Bed level?\" into the element created in step 13",
+    "Double click on the element created in step 22",
+    "Fill \"Slice the model\" into the element created in step 22",
+    "Double click on the element created in step 29",
+    "Fill \"First layer stuck?\" into the element created in step 29",
+    "Double click on the element created in step 35",
+    "Fill \"Heat the nozzle\" into the element created in step 35",
+    "Double click on the element created in step 36",
+    "Fill \"Part finished\" into the element created in step 36",
+    "Connect the element created in step 2 to the element created in step 13",
+    "Connect the element created in step 13 to the element created in step 22",
+    "Double click on connector_from_step13_to_step22",
+    "Fill \"Level\"",
+    "Connect the element created in step 13 to the element created in step 36",
+    "Double click on connector_from_step13_to_step36",
+    "Fill \"Off\"",
+    "Connect the element created in step 22 to the element created in step 29",
+    "Connect the element created in step 29 to the element created in step 35",
+    "Double click on connector_from_step29_to_step35",
+    "Fill \"Stuck\"",
+    "Connect the element created in step 29 to the element created in step 36",
+    "Double click on connector_from_step29_to_step36",
+    "Fill \"Peeling\"",
+    "Connect the element created in step 35 to the element created in step 36"
+  ],
+  "assets": {
+    "ellipse.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png"
+    },
+    "diamond.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png"
+    },
+    "rounded_rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+    },
+    "hexagon.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\hexagon.png"
+    }
+  },
+  "_source": "image_to_scenario.py — VLM read of the PNG only, then a deterministic translation into the RPA_Datasets step language",
+  "_vlm": {
+    "provider": "gemini",
+    "model": "gemini-flash-lite-latest"
+  },
+  "_placement": {
+    "px_per_normalised_unit": 1432.6,
+    "move_step_px": 150,
+    "anchor_node": "n5"
+  },
+  "_unsupported_shapes": []
+}

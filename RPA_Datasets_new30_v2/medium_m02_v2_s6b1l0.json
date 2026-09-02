@@ -1,0 +1,108 @@
+{
+  "id": "medium_m02_v2_s6b1l0",
+  "url": "https://app.diagrams.net/",
+  "environment": {
+    "theme": "light"
+  },
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [rounded_rectangle.png]",
+    "Move the element created in step 2 left",
+    "Move the element created in step 2 left",
+    "Move the element created in step 2 left",
+    "Move the element created in step 2 left",
+    "Move the element created in step 2 left",
+    "Move the element created in step 2 left",
+    "Move the element created in step 2 left",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Click on [diamond.png]",
+    "Move the element created in step 15 left",
+    "Move the element created in step 15 left",
+    "Move the element created in step 15 left",
+    "Move the element created in step 15 left",
+    "Move the element created in step 15 left",
+    "Move the element created in step 15 left",
+    "Move the element created in step 15 left",
+    "Move the element created in step 15 up",
+    "Move the element created in step 15 up",
+    "Move the element created in step 15 up",
+    "Click on [rounded_rectangle.png]",
+    "Click on [trapezoid.png]",
+    "Move the element created in step 27 down",
+    "Move the element created in step 27 down",
+    "Click on [parallelogram.png]",
+    "Move the element created in step 30 down",
+    "Move the element created in step 30 down",
+    "Move the element created in step 30 down",
+    "Move the element created in step 30 down",
+    "Click on [rounded_rectangle.png]",
+    "Move the element created in step 35 left",
+    "Move the element created in step 35 left",
+    "Move the element created in step 35 left",
+    "Move the element created in step 35 left",
+    "Move the element created in step 35 left",
+    "Move the element created in step 35 left",
+    "Move the element created in step 35 left",
+    "Move the element created in step 35 down",
+    "Move the element created in step 35 down",
+    "Move the element created in step 35 down",
+    "Move the element created in step 35 down",
+    "Move the element created in step 35 down",
+    "Move the element created in step 35 down",
+    "Double click on the element created in step 2",
+    "Fill \"Lamp does not work\" into the element created in step 2",
+    "Double click on the element created in step 15",
+    "Fill \"Plugged in?\" into the element created in step 15",
+    "Double click on the element created in step 26",
+    "Fill \"Check the socket\" into the element created in step 26",
+    "Double click on the element created in step 27",
+    "Fill \"Plug it in\" into the element created in step 27",
+    "Double click on the element created in step 30",
+    "Fill \"Read the manual\" into the element created in step 30",
+    "Double click on the element created in step 35",
+    "Fill \"Lamp works\" into the element created in step 35",
+    "Connect the element created in step 2 to the element created in step 15",
+    "Connect the element created in step 15 to the element created in step 26",
+    "Double click on connector_from_step15_to_step26",
+    "Fill \"Yes\"",
+    "Connect the element created in step 15 to the element created in step 35",
+    "Double click on connector_from_step15_to_step35",
+    "Fill \"No\"",
+    "Connect the element created in step 26 to the element created in step 27",
+    "Connect the element created in step 27 to the element created in step 30",
+    "Connect the element created in step 30 to the element created in step 35"
+  ],
+  "assets": {
+    "rounded_rectangle.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+    },
+    "diamond.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png"
+    },
+    "trapezoid.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\trapezoid.png"
+    },
+    "parallelogram.png": {
+      "type": "image",
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png"
+    }
+  },
+  "_source": "image_to_scenario.py — VLM read of the PNG only, then a deterministic translation into the RPA_Datasets step language",
+  "_vlm": {
+    "provider": "gemini",
+    "model": "gemini-flash-lite-latest"
+  },
+  "_placement": {
+    "px_per_normalised_unit": 1961.5,
+    "move_step_px": 150,
+    "anchor_node": "n3"
+  },
+  "_unsupported_shapes": []
+}
