@@ -100,18 +100,29 @@ return best;
 # a 150px nudge read as 78px.
 _INFO_JS = r"""
 const GEO = new Set(['rect','ellipse','path','polygon','polyline','line','image']);
-const cont = document.querySelector('.geDiagramContainer');
-const sx = cont ? cont.scrollLeft : 0;
-const sy = cont ? cont.scrollTop : 0;
-// mxGraph writes the current zoom into the canvas root's transform. Reading it
-// there is exact, and it has to be divided out of every displacement: after a
-// "Fit Page" step the editor sat at ~65%, so a 150-unit nudge measured 97 screen
-// pixels and every move looked like it had fallen short.
-const root = document.querySelector('.geDiagramContainer svg > g');
-let zoom = 1;
+// Model coordinates, derived from mxGraph's own canvas transform.
+//
+// getBoundingClientRect gives viewport pixels, which move when the container
+// scrolls. Adding scrollTop back was the first fix and is still not enough:
+// mxGraph rewrites its root <g> transform as the canvas grows, so a shape that
+// never moved can change position under a fixed scroll offset. A 150-unit nudge
+// then measured as 22, and correct moves were recorded as failures.
+//
+// The transform is `translate(tx,ty) scale(s)`, applied as
+// screen = origin + (t + s*model), so model = (screen - origin - t) / s. Taking
+// the origin from the <svg> element makes the result invariant to both scrolling
+// and mxGraph's own re-translations. Dividing out s also matters on its own: a
+// "Fit Page" step drops the editor to ~65%.
+const svg = document.querySelector('.geDiagramContainer svg');
+const root = svg ? svg.querySelector('g') : null;
+const sr = svg ? svg.getBoundingClientRect() : {x: 0, y: 0};
+let zoom = 1, tx = 0, ty = 0;
 if (root) {
-  const m = /scale\(\s*([0-9.]+)/.exec(root.getAttribute('transform') || '');
-  if (m) zoom = parseFloat(m[1]) || 1;
+  const tr = root.getAttribute('transform') || '';
+  const ms = /scale\(\s*([0-9.eE+-]+)/.exec(tr);
+  if (ms) zoom = parseFloat(ms[1]) || 1;
+  const mt = /translate\(\s*([0-9.eE+-]+)[ ,]+([0-9.eE+-]+)/.exec(tr);
+  if (mt) { tx = parseFloat(mt[1]) || 0; ty = parseFloat(mt[2]) || 0; }
 }
 return arguments[0].map((g, i) => {
   const r = g.getBoundingClientRect();
@@ -158,9 +169,8 @@ return arguments[0].map((g, i) => {
     x: Math.round(r.x), y: Math.round(r.y),
     w: Math.round(r.width), h: Math.round(r.height),
     cx: Math.round(r.x + r.width / 2), cy: Math.round(r.y + r.height / 2),
-    // model coordinates: scroll added back, zoom divided out
-    mx: Math.round((r.x + r.width / 2 + sx) / zoom),
-    my: Math.round((r.y + r.height / 2 + sy) / zoom),
+    mx: Math.round((r.x + r.width / 2 - sr.x - tx) / zoom),
+    my: Math.round((r.y + r.height / 2 - sr.y - ty) / zoom),
     zoom: zoom
   };
 });

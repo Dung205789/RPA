@@ -1,0 +1,15 @@
+{
+  "shapes": {
+    "4": {
+      "step": 4,
+      "type": "parallelogram",
+      "style": "shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;",
+      "w": 120,
+      "h": 60,
+      "dx": -1,
+      "dy": 0,
+      "label": ""
+    }
+  },
+  "edges": []
+}

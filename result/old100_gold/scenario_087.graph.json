@@ -1,0 +1,111 @@
+{
+  "shapes": {
+    "2": {
+      "step": 2,
+      "type": "rectangle",
+      "style": "rounded=0;whiteSpace=wrap;html=1;",
+      "w": 120,
+      "h": 60,
+      "dx": 0,
+      "dy": -3,
+      "label": "Generate initial population"
+    },
+    "6": {
+      "step": 6,
+      "type": "rectangle",
+      "style": "rounded=0;whiteSpace=wrap;html=1;",
+      "w": 120,
+      "h": 60,
+      "dx": 0,
+      "dy": -2,
+      "label": "Evaluate the fitness for each agent"
+    },
+    "9": {
+      "step": 9,
+      "type": "rectangle",
+      "style": "rounded=0;whiteSpace=wrap;html=1;",
+      "w": 120,
+      "h": 60,
+      "dx": 0,
+      "dy": -1,
+      "label": "Update the G, best and worst of the population."
+    },
+    "11": {
+      "step": 11,
+      "type": "rectangle",
+      "style": "rounded=0;whiteSpace=wrap;html=1;",
+      "w": 120,
+      "h": 60,
+      "dx": 0,
+      "dy": 0,
+      "label": "Calculate M and a for each agent"
+    },
+    "12": {
+      "step": 12,
+      "type": "rectangle",
+      "style": "rounded=0;whiteSpace=wrap;html=1;",
+      "w": 120,
+      "h": 60,
+      "dx": 0,
+      "dy": 1,
+      "label": "Update velocity and position"
+    },
+    "14": {
+      "step": 14,
+      "type": "ellipse",
+      "style": "ellipse;whiteSpace=wrap;html=1;",
+      "w": 120,
+      "h": 80,
+      "dx": 0,
+      "dy": 2,
+      "label": "Meeting end of criterion?"
+    },
+    "17": {
+      "step": 17,
+      "type": "rectangle",
+      "style": "rounded=0;whiteSpace=wrap;html=1;",
+      "w": 120,
+      "h": 60,
+      "dx": 0,
+      "dy": 3,
+      "label": "Return best solution"
+    }
+  },
+  "edges": [
+    {
+      "a": 2,
+      "b": 6,
+      "label": ""
+    },
+    {
+      "a": 6,
+      "b": 9,
+      "label": ""
+    },
+    {
+      "a": 9,
+      "b": 11,
+      "label": ""
+    },
+    {
+      "a": 11,
+      "b": 12,
+      "label": ""
+    },
+    {
+      "a": 12,
+      "b": 14,
+      "label": ""
+    },
+    {
+      "a": 14,
+      "b": 17,
+      "label": "YES"
+    },
+    {
+      "a": 14,
+      "b": 6,
+      "label": "NO"
+    }
+  ]
+}

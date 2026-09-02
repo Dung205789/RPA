@@ -1,0 +1,15 @@
+{
+  "shapes": {
+    "2": {
+      "step": 2,
+      "type": "rectangle",
+      "style": "rounded=0;whiteSpace=wrap;html=1;",
+      "w": 120,
+      "h": 60,
+      "dx": 0,
+      "dy": 0,
+      "label": ""
+    }
+  },
+  "edges": []
+}
