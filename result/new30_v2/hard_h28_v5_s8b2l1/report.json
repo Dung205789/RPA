@@ -1,0 +1,1570 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "ok",
+      "detail": {
+        "url": "https://app.diagrams.net/?lang=en&splash=0",
+        "seconds": 8.16
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.672,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.631,
+        "identified_as": "ellipse.png",
+        "seconds": 2.82
+      }
+    },
+    {
+      "n": 3,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 4,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.76
+      }
+    },
+    {
+      "n": 5,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.77
+      }
+    },
+    {
+      "n": 6,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.76
+      }
+    },
+    {
+      "n": 7,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 8,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.69
+      }
+    },
+    {
+      "n": 9,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.83
+      }
+    },
+    {
+      "n": 10,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.756,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.565,
+        "identified_as": "diamond.png",
+        "insert_correction": {
+          "dx": -600,
+          "dy": 1520
+        },
+        "seconds": 14.07
+      }
+    },
+    {
+      "n": 11,
+      "description": "Move the element created in step 10 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.68
+      }
+    },
+    {
+      "n": 12,
+      "description": "Move the element created in step 10 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 13,
+      "description": "Move the element created in step 10 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.7
+      }
+    },
+    {
+      "n": 14,
+      "description": "Move the element created in step 10 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.69
+      }
+    },
+    {
+      "n": 15,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.77,
+        "identified_as": "rectangle.png",
+        "insert_correction": {
+          "dx": -300,
+          "dy": 1520
+        },
+        "seconds": 13.39
+      }
+    },
+    {
+      "n": 16,
+      "description": "Move the element created in step 15 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -75,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.79
+      }
+    },
+    {
+      "n": 17,
+      "description": "Move the element created in step 15 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -75,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 18,
+      "description": "Move the element created in step 15 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -75,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 19,
+      "description": "Move the element created in step 15 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -75,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 20,
+      "description": "Move the element created in step 15 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -75,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.78
+      }
+    },
+    {
+      "n": 21,
+      "description": "Move the element created in step 15 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -75,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 22,
+      "description": "Move the element created in step 15 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -75,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 23,
+      "description": "Move the element created in step 15 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -75,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.79
+      }
+    },
+    {
+      "n": 24,
+      "description": "Move the element created in step 15 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.77
+      }
+    },
+    {
+      "n": 25,
+      "description": "Move the element created in step 15 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 26,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.77,
+        "identified_as": "rectangle.png",
+        "insert_correction": {
+          "dx": -100,
+          "dy": 760
+        },
+        "seconds": 10.47
+      }
+    },
+    {
+      "n": 27,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.77,
+        "identified_as": "rectangle.png",
+        "insert_correction": {
+          "dx": -50,
+          "dy": 760
+        },
+        "seconds": 10.05
+      }
+    },
+    {
+      "n": 28,
+      "description": "Move the element created in step 27 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 4,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 29,
+      "description": "Move the element created in step 27 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 4,
+        "seconds": 2.74
+      }
+    },
+    {
+      "n": 30,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.756,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.565,
+        "identified_as": "diamond.png",
+        "insert_correction": {
+          "dx": -50,
+          "dy": 760
+        },
+        "seconds": 10.04
+      }
+    },
+    {
+      "n": 31,
+      "description": "Move the element created in step 30 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 32,
+      "description": "Move the element created in step 30 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 2.71
+      }
+    },
+    {
+      "n": 33,
+      "description": "Move the element created in step 30 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 34,
+      "description": "Move the element created in step 30 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 2.76
+      }
+    },
+    {
+      "n": 35,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.77,
+        "identified_as": "rectangle.png",
+        "insert_correction": {
+          "dx": -20,
+          "dy": 760
+        },
+        "seconds": 10.03
+      }
+    },
+    {
+      "n": 36,
+      "description": "Move the element created in step 35 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.95
+      }
+    },
+    {
+      "n": 37,
+      "description": "Move the element created in step 35 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.78
+      }
+    },
+    {
+      "n": 38,
+      "description": "Move the element created in step 35 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 39,
+      "description": "Move the element created in step 35 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.69
+      }
+    },
+    {
+      "n": 40,
+      "description": "Move the element created in step 35 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.71
+      }
+    },
+    {
+      "n": 41,
+      "description": "Move the element created in step 35 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.79
+      }
+    },
+    {
+      "n": 42,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.672,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.631,
+        "identified_as": "ellipse.png",
+        "insert_correction": {
+          "dx": -20,
+          "dy": 380
+        },
+        "seconds": 8.63
+      }
+    },
+    {
+      "n": 43,
+      "description": "Move the element created in step 42 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 7,
+        "seconds": 2.74
+      }
+    },
+    {
+      "n": 44,
+      "description": "Move the element created in step 42 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 7,
+        "seconds": 2.84
+      }
+    },
+    {
+      "n": 45,
+      "description": "Move the element created in step 42 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 7,
+        "seconds": 2.92
+      }
+    },
+    {
+      "n": 46,
+      "description": "Move the element created in step 42 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 7,
+        "seconds": 2.79
+      }
+    },
+    {
+      "n": 47,
+      "description": "Move the element created in step 42 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 7,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 48,
+      "description": "Move the element created in step 42 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 7,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 49,
+      "description": "Move the element created in step 42 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 7,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 50,
+      "description": "Move the element created in step 42 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 7,
+        "seconds": 2.71
+      }
+    },
+    {
+      "n": 51,
+      "description": "Double click on the element created in step 2",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 2",
+        "seconds": 2.3
+      }
+    },
+    {
+      "n": 52,
+      "description": "Fill \"Patch submitted\" into the element created in step 2",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 2",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          467,
+          60,
+          40
+        ],
+        "seconds": 1.7
+      }
+    },
+    {
+      "n": 53,
+      "description": "Double click on the element created in step 10",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 10",
+        "seconds": 2.32
+      }
+    },
+    {
+      "n": 54,
+      "description": "Fill \"Tests pass?\" into the element created in step 10",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 10",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          768,
+          467,
+          40,
+          40
+        ],
+        "seconds": 1.67
+      }
+    },
+    {
+      "n": 55,
+      "description": "Double click on the element created in step 15",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 15",
+        "seconds": 2.29
+      }
+    },
+    {
+      "n": 56,
+      "description": "Fill \"Run the test suite\" into the element created in step 15",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 15",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          472,
+          60,
+          30
+        ],
+        "seconds": 1.51
+      }
+    },
+    {
+      "n": 57,
+      "description": "Double click on the element created in step 26",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 26",
+        "seconds": 2.29
+      }
+    },
+    {
+      "n": 58,
+      "description": "Fill \"Fix the failing test\" into the element created in step 26",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 26",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          472,
+          60,
+          30
+        ],
+        "seconds": 1.65
+      }
+    },
+    {
+      "n": 59,
+      "description": "Double click on the element created in step 27",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 27",
+        "seconds": 2.34
+      }
+    },
+    {
+      "n": 60,
+      "description": "Fill \"Address the comments\" into the element created in step 27",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 27",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          472,
+          60,
+          30
+        ],
+        "seconds": 1.58
+      }
+    },
+    {
+      "n": 61,
+      "description": "Double click on the element created in step 30",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 30",
+        "seconds": 2.36
+      }
+    },
+    {
+      "n": 62,
+      "description": "Fill \"Reviewer happy?\" into the element created in step 30",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 30",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          768,
+          467,
+          40,
+          40
+        ],
+        "seconds": 1.76
+      }
+    },
+    {
+      "n": 63,
+      "description": "Double click on the element created in step 35",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 35",
+        "seconds": 2.28
+      }
+    },
+    {
+      "n": 64,
+      "description": "Fill \"Assign a reviewer\" into the element created in step 35",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 35",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          472,
+          60,
+          30
+        ],
+        "seconds": 1.51
+      }
+    },
+    {
+      "n": 65,
+      "description": "Double click on the element created in step 42",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 42",
+        "seconds": 2.27
+      }
+    },
+    {
+      "n": 66,
+      "description": "Fill \"Patch merged\" into the element created in step 42",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 42",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          467,
+          60,
+          40
+        ],
+        "seconds": 1.61
+      }
+    },
+    {
+      "n": 67,
+      "description": "Connect the element created in step 2 to the element created in step 10",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 8,
+        "after": 9,
+        "seconds": 6.28
+      }
+    },
+    {
+      "n": 68,
+      "description": "Connect the element created in step 10 to the element created in step 15",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 9,
+        "after": 10,
+        "seconds": 6.16
+      }
+    },
+    {
+      "n": 69,
+      "description": "Double click on connector_from_step10_to_step15",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step10_to_step15",
+        "seconds": 2.32
+      }
+    },
+    {
+      "n": 70,
+      "description": "Fill \"Pass\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step10_to_step15",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            713,
+            413
+          ]
+        ],
+        "target_box": [
+          572,
+          413,
+          432,
+          150
+        ],
+        "seconds": 1.52
+      }
+    },
+    {
+      "n": 71,
+      "description": "Connect the element created in step 15 to the element created in step 26",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 10,
+        "after": 11,
+        "seconds": 6.14
+      }
+    },
+    {
+      "n": 72,
+      "description": "Connect the element created in step 10 to the element created in step 26",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 11,
+        "after": 12,
+        "seconds": 6.15
+      }
+    },
+    {
+      "n": 73,
+      "description": "Double click on connector_from_step10_to_step26",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step10_to_step26",
+        "seconds": 2.47
+      }
+    },
+    {
+      "n": 74,
+      "description": "Fill \"Fail\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step10_to_step26",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            795,
+            494
+          ]
+        ],
+        "target_box": [
+          763,
+          458,
+          52,
+          59
+        ],
+        "seconds": 1.53
+      }
+    },
+    {
+      "n": 75,
+      "description": "Connect the element created in step 26 to the element created in step 27",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "before": 12,
+        "after": 12,
+        "seconds": 6.14
+      }
+    },
+    {
+      "n": 76,
+      "description": "Connect the element created in step 27 to the element created in step 30",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "before": 12,
+        "after": 12,
+        "seconds": 6.04
+      }
+    },
+    {
+      "n": 77,
+      "description": "Connect the element created in step 30 to the element created in step 26",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 12,
+        "after": 13,
+        "seconds": 6.13
+      }
+    },
+    {
+      "n": 78,
+      "description": "Double click on connector_from_step30_to_step26",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step30_to_step26",
+        "seconds": 2.33
+      }
+    },
+    {
+      "n": 79,
+      "description": "Fill \"Changes needed\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step30_to_step26",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            782,
+            494
+          ]
+        ],
+        "target_box": [
+          775,
+          348,
+          27,
+          279
+        ],
+        "seconds": 1.54
+      }
+    },
+    {
+      "n": 80,
+      "description": "Connect the element created in step 30 to the element created in step 35",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 13,
+        "after": 14,
+        "seconds": 6.13
+      }
+    },
+    {
+      "n": 81,
+      "description": "Double click on connector_from_step30_to_step35",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step30_to_step35",
+        "seconds": 2.38
+      }
+    },
+    {
+      "n": 82,
+      "description": "Fill \"Approved\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step30_to_step35",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          780,
+          430,
+          17,
+          114
+        ],
+        "seconds": 1.53
+      }
+    },
+    {
+      "n": 83,
+      "description": "Connect the element created in step 35 to the element created in step 42",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 14,
+        "after": 15,
+        "seconds": 6.3
+      }
+    }
+  ],
+  "counts": {
+    "ok": 81,
+    "failed": 2,
+    "error": 0,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 0.9759,
+  "total_sec": 314.8,
+  "cells": [
+    {
+      "cx": 398,
+      "cy": 528,
+      "h": 40,
+      "index": 0,
+      "kind": "ellipse",
+      "mx": 1406,
+      "my": 856,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 60,
+      "x": 368,
+      "y": 508,
+      "zoom": 1
+    },
+    {
+      "cx": 698,
+      "cy": 513,
+      "h": 40,
+      "index": 1,
+      "kind": "path",
+      "mx": 1706,
+      "my": 841,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 40,
+      "x": 678,
+      "y": 493,
+      "zoom": 1
+    },
+    {
+      "cx": 248,
+      "cy": 663,
+      "h": 30,
+      "index": 2,
+      "kind": "rect",
+      "mx": 1256,
+      "my": 991,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 60,
+      "x": 218,
+      "y": 648,
+      "zoom": 1
+    },
+    {
+      "cx": 748,
+      "cy": 433,
+      "h": 30,
+      "index": 3,
+      "kind": "rect",
+      "mx": 1756,
+      "my": 761,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 60,
+      "x": 718,
+      "y": 418,
+      "zoom": 1
+    },
+    {
+      "cx": 773,
+      "cy": 583,
+      "h": 30,
+      "index": 4,
+      "kind": "rect",
+      "mx": 1781,
+      "my": 911,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 60,
+      "x": 743,
+      "y": 568,
+      "zoom": 1
+    },
+    {
+      "cx": 781,
+      "cy": 810,
+      "h": 114,
+      "index": 5,
+      "kind": "edge",
+      "mx": 1789,
+      "my": 1138,
+      "p1": [
+        773,
+        753
+      ],
+      "p2": [
+        788,
+        865
+      ],
+      "tags": "path,path,path",
+      "w": 17,
+      "x": 773,
+      "y": 753,
+      "zoom": 1
+    },
+    {
+      "cx": 773,
+      "cy": 733,
+      "h": 40,
+      "index": 6,
+      "kind": "path",
+      "mx": 1781,
+      "my": 1061,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 40,
+      "x": 753,
+      "y": 713,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 866,
+      "h": 15,
+      "index": 7,
+      "kind": "edge",
+      "mx": 1796,
+      "my": 1194,
+      "p1": [
+        788,
+        868
+      ],
+      "p2": [
+        788,
+        866
+      ],
+      "tags": "path,path,path",
+      "w": 4,
+      "x": 786,
+      "y": 858,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 883,
+      "h": 30,
+      "index": 8,
+      "kind": "rect",
+      "mx": 1796,
+      "my": 1211,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 60,
+      "x": 758,
+      "y": 868,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 843,
+      "h": 40,
+      "index": 9,
+      "kind": "ellipse",
+      "mx": 1796,
+      "my": 1171,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 60,
+      "x": 758,
+      "y": 823,
+      "zoom": 1
+    },
+    {
+      "cx": 562,
+      "cy": 520,
+      "h": 16,
+      "index": 10,
+      "kind": "edge",
+      "mx": 1570,
+      "my": 848,
+      "p1": [
+        428,
+        528
+      ],
+      "p2": [
+        694,
+        514
+      ],
+      "tags": "path,path,path",
+      "w": 269,
+      "x": 428,
+      "y": 512,
+      "zoom": 1
+    },
+    {
+      "cx": 462,
+      "cy": 588,
+      "h": 150,
+      "index": 11,
+      "kind": "edge",
+      "mx": 1470,
+      "my": 916,
+      "p1": [
+        678,
+        513
+      ],
+      "p2": [
+        248,
+        660
+      ],
+      "tags": "path,path,path",
+      "w": 432,
+      "x": 246,
+      "y": 513,
+      "zoom": 1
+    },
+    {
+      "cx": 513,
+      "cy": 549,
+      "h": 229,
+      "index": 12,
+      "kind": "edge",
+      "mx": 1521,
+      "my": 877,
+      "p1": [
+        278,
+        663
+      ],
+      "p2": [
+        748,
+        437
+      ],
+      "tags": "path,path,path",
+      "w": 472,
+      "x": 278,
+      "y": 434,
+      "zoom": 1
+    },
+    {
+      "cx": 723,
+      "cy": 464,
+      "h": 59,
+      "index": 13,
+      "kind": "edge",
+      "mx": 1731,
+      "my": 792,
+      "p1": [
+        698,
+        493
+      ],
+      "p2": [
+        748,
+        437
+      ],
+      "tags": "path,path,path",
+      "w": 52,
+      "x": 698,
+      "y": 434,
+      "zoom": 1
+    },
+    {
+      "cx": 759,
+      "cy": 574,
+      "h": 279,
+      "index": 14,
+      "kind": "edge",
+      "mx": 1767,
+      "my": 902,
+      "p1": [
+        773,
+        713
+      ],
+      "p2": [
+        748,
+        437
+      ],
+      "tags": "path,path,path",
+      "w": 27,
+      "x": 746,
+      "y": 434,
+      "zoom": 1
+    }
+  ],
+  "n_vertices": 8,
+  "n_edges": 7,
+  "labels": [
+    "Patch submitted",
+    "Tests pass ?",
+    "Run the test suite",
+    "Fix the failing test",
+    "Address the comments",
+    "Approved",
+    "Reviewer happy ?",
+    "Assign a reviewer",
+    "Patch merged",
+    "Pass",
+    "Fail",
+    "Changes needed"
+  ]
+}

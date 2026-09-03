@@ -1,0 +1,509 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "ok",
+      "detail": {
+        "url": "https://app.diagrams.net/?lang=en&splash=0",
+        "seconds": 8.0
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.8,
+        "identified_as": "rectangle.png",
+        "seconds": 2.93
+      }
+    },
+    {
+      "n": 3,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.71
+      }
+    },
+    {
+      "n": 4,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.68
+      }
+    },
+    {
+      "n": 5,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.8,
+        "identified_as": "rectangle.png",
+        "insert_correction": {
+          "dx": -320,
+          "dy": 20
+        },
+        "seconds": 8.35
+      }
+    },
+    {
+      "n": 6,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.8,
+        "identified_as": "rectangle.png",
+        "insert_correction": {
+          "dx": -130,
+          "dy": 20
+        },
+        "seconds": 7.75
+      }
+    },
+    {
+      "n": 7,
+      "description": "Move the element created in step 6 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "dx": 0,
+        "dy": 60,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.96
+      }
+    },
+    {
+      "n": 8,
+      "description": "Move the element created in step 6 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "dx": 0,
+        "dy": 60,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.99
+      }
+    },
+    {
+      "n": 9,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "drawn_match": 0.8,
+        "identified_as": "rectangle.png",
+        "insert_correction": {
+          "dx": -130,
+          "dy": 20
+        },
+        "seconds": 7.95
+      }
+    },
+    {
+      "n": 10,
+      "description": "Move the element created in step 9 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "dx": 0,
+        "dy": 60,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.85
+      }
+    },
+    {
+      "n": 11,
+      "description": "Move the element created in step 9 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "dx": 0,
+        "dy": 60,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 12,
+      "description": "Move the element created in step 9 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "dx": 0,
+        "dy": 60,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.71
+      }
+    },
+    {
+      "n": 13,
+      "description": "Double click on the element created in step 2",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 2",
+        "seconds": 2.27
+      }
+    },
+    {
+      "n": 14,
+      "description": "Fill \"Nightly timer fires\" into the element created in step 2",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 2",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          764,
+          476,
+          48,
+          24
+        ],
+        "seconds": 1.52
+      }
+    },
+    {
+      "n": 15,
+      "description": "Double click on the element created in step 5",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 5",
+        "seconds": 2.27
+      }
+    },
+    {
+      "n": 16,
+      "description": "Fill \"List changed files\" into the element created in step 5",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 5",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          764,
+          476,
+          48,
+          24
+        ],
+        "seconds": 1.51
+      }
+    },
+    {
+      "n": 17,
+      "description": "Double click on the element created in step 6",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 6",
+        "seconds": 2.3
+      }
+    },
+    {
+      "n": 18,
+      "description": "Fill \"Compress the archive\" into the element created in step 6",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 6",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          764,
+          476,
+          48,
+          24
+        ],
+        "seconds": 1.54
+      }
+    },
+    {
+      "n": 19,
+      "description": "Double click on the element created in step 9",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 9",
+        "seconds": 2.28
+      }
+    },
+    {
+      "n": 20,
+      "description": "Fill \"Backup complete\" into the element created in step 9",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 9",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          764,
+          476,
+          48,
+          24
+        ],
+        "seconds": 1.53
+      }
+    },
+    {
+      "n": 21,
+      "description": "Connect the element created in step 2 to the element created in step 5",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 4,
+        "after": 5,
+        "seconds": 6.02
+      }
+    },
+    {
+      "n": 22,
+      "description": "Connect the element created in step 5 to the element created in step 6",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 5,
+        "after": 6,
+        "seconds": 6.06
+      }
+    },
+    {
+      "n": 23,
+      "description": "Connect the element created in step 6 to the element created in step 9",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 6,
+        "after": 7,
+        "seconds": 6.09
+      }
+    }
+  ],
+  "counts": {
+    "ok": 18,
+    "failed": 5,
+    "error": 0,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 0.7826,
+  "total_sec": 90.7,
+  "cells": [
+    {
+      "cx": 616,
+      "cy": 524,
+      "h": 264,
+      "index": 0,
+      "kind": "edge",
+      "mx": 1288,
+      "my": 1005,
+      "p1": [
+        520,
+        392
+      ],
+      "p2": [
+        712,
+        653
+      ],
+      "tags": "path,path,path",
+      "w": 193,
+      "x": 520,
+      "y": 392,
+      "zoom": 1
+    },
+    {
+      "cx": 520,
+      "cy": 380,
+      "h": 24,
+      "index": 1,
+      "kind": "rect",
+      "mx": 1192,
+      "my": 861,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 48,
+      "x": 496,
+      "y": 368,
+      "zoom": 1
+    },
+    {
+      "cx": 750,
+      "cy": 728,
+      "h": 96,
+      "index": 2,
+      "kind": "edge",
+      "mx": 1422,
+      "my": 1209,
+      "p1": [
+        712,
+        680
+      ],
+      "p2": [
+        788,
+        773
+      ],
+      "tags": "path,path,path",
+      "w": 77,
+      "x": 712,
+      "y": 680,
+      "zoom": 1
+    },
+    {
+      "cx": 712,
+      "cy": 668,
+      "h": 24,
+      "index": 3,
+      "kind": "rect",
+      "mx": 1384,
+      "my": 1149,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 48,
+      "x": 688,
+      "y": 656,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 818,
+      "h": 36,
+      "index": 4,
+      "kind": "edge",
+      "mx": 1460,
+      "my": 1299,
+      "p1": [
+        788,
+        800
+      ],
+      "p2": [
+        788,
+        833
+      ],
+      "tags": "path,path,path",
+      "w": 3,
+      "x": 786,
+      "y": 800,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 788,
+      "h": 24,
+      "index": 5,
+      "kind": "rect",
+      "mx": 1460,
+      "my": 1269,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 48,
+      "x": 764,
+      "y": 776,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 848,
+      "h": 24,
+      "index": 6,
+      "kind": "rect",
+      "mx": 1460,
+      "my": 1329,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 48,
+      "x": 764,
+      "y": 836,
+      "zoom": 1
+    }
+  ],
+  "n_vertices": 4,
+  "n_edges": 3,
+  "labels": [
+    "Nightly timer fires",
+    "List changed files",
+    "Compress the archive",
+    "Backup complete"
+  ]
+}

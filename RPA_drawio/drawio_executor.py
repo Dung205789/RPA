@@ -54,6 +54,16 @@ CONNECTOR_RE = re.compile(r"connector_from_step(\d+)_to_step(\d+)", re.IGNORECAS
 IMAGE_RE = re.compile(r"\.(png|jpe?g|bmp|gif)$", re.IGNORECASE)
 
 
+def _is_shape_vocabulary(icon_dir: str) -> bool:
+    """Is this folder a small set of shape templates, or a mixed icon dump?"""
+    try:
+        pngs = [f for f in os.listdir(icon_dir)
+                if f.lower().endswith(".png") and not f.startswith("_")]
+    except OSError:
+        return False
+    return 0 < len(pngs) <= 15
+
+
 class StepResult(dict):
     """One row of the per-step report."""
 
@@ -198,7 +208,6 @@ class DrawioExecutor:
             match = palette_matcher.find_icon(self.driver, obj, log=self.log)
             if not match.get("ok"):
                 return "failed", {"reason": match.get("reason")}
-            best = None
             candidates = match["ranked"][:3]
             for ci, cand in enumerate(candidates):
                 known = drawio_ops.known_cells(self.driver)
@@ -228,49 +237,44 @@ class DrawioExecutor:
                 self.tracker.record_created(n, known)
                 self.displacement[n] = (0, 0)
                 el, info = self.tracker.element_for_step(n)
-                # Confirm the shape that appeared is the one the icon asked for.
-                # Two palette entries can be a couple of pixels apart at thumbnail
-                # size — a rectangle and a rounded rectangle score identically —
-                # so the check is made against the drawn shape, at the size the
-                # icon file was captured at.
-                ranking = (palette_matcher.identify_drawn_shape(
-                    self.driver, info, os.path.dirname(obj) or ".", log=self.log)
-                    if info is not None else [])
-                wanted = os.path.basename(obj)
-                drawn_match = next((r["score"] for r in ranking if r["icon"] == wanted), 0.0)
-                identified = ranking[0]["icon"] if ranking else None
-                if best is None or drawn_match > best[0]:
-                    best = (drawn_match, cand, n)
-                if identified == wanted:
-                    correction = self._align_to_origin(n, before_positions)
-                    self.java_lines.append("// click %s (%s, score %.2f)"
-                                           % (obj, cand["tag"], cand["score"]))
-                    detail = {"score": cand["score"], "palette": cand["palette"],
-                              "title": cand["title"] or cand["text"],
-                              "created_cell": True, "drawn_match": round(drawn_match, 3),
-                              "identified_as": identified}
-                    if correction:
-                        detail["insert_correction"] = correction
-                    return "ok", detail
-
-                self.log("[click] wanted %s but the shape drawn looks like %s; trying next"
-                         % (wanted, identified))
-                if el is not None and ci < len(candidates) - 1:
-                    drawio_ops.select_cell(self.driver, el)
-                    ActionChains(self.driver).send_keys(Keys.DELETE).perform()
-                    time.sleep(0.5)
-                    self.tracker.step_to_cell.pop(n, None)
-                    self.displacement.pop(n, None)
-
-            if best is not None and n in self.tracker.step_to_cell:
+                # Which shape did that actually draw? Reported, not enforced.
+                #
+                # Enforcing it was a mistake worth recording. The check ranks the
+                # drawn shape against every icon in the same folder, which works
+                # for RPA_drawio/shape_icons (nine shapes, nothing else) but not
+                # for RPA_Datasets/images/drawio, where 64 files are mostly
+                # toolbar and menu icons. A correctly drawn diamond resembled some
+                # ribbon glyph more than it resembled diamond.png, so the shape
+                # was deleted and retried — and since every later step refers back
+                # to it, one rejected insert took about ten steps down with it.
+                # scenario_050 fell from 41/41 to 30/41 that way.
+                identification = None
+                icon_dir = os.path.dirname(obj) or "."
+                # Only meaningful over a folder that *is* a shape vocabulary; over
+                # the old corpus's 64 mixed icons it would also be 64 comparisons
+                # per insert for an answer that means nothing.
+                if info is not None and _is_shape_vocabulary(icon_dir):
+                    ranking = palette_matcher.identify_drawn_shape(
+                        self.driver, info, icon_dir, log=self.log)
+                    wanted = os.path.basename(obj)
+                    identification = {
+                        "wanted": wanted,
+                        "identified_as": ranking[0]["icon"] if ranking else None,
+                        "drawn_match": next((r["score"] for r in ranking
+                                             if r["icon"] == wanted), 0.0),
+                    }
                 correction = self._align_to_origin(n, before_positions)
-                detail = {"score": best[1]["score"], "palette": best[1]["palette"],
-                          "created_cell": True, "drawn_match": round(best[0], 3),
-                          "note": "kept the closest shape available"}
+                self.java_lines.append("// click %s (%s, score %.2f)"
+                                       % (obj, cand["tag"], cand["score"]))
+                detail = {"score": cand["score"], "palette": cand["palette"],
+                          "title": cand["title"] or cand["text"], "created_cell": True}
+                if identification:
+                    detail.update(identification)
                 if correction:
                     detail["insert_correction"] = correction
                 return "ok", detail
-            return "failed", {"reason": "no candidate drew a matching shape",
+
+            return "failed", {"reason": "no candidate could be clicked",
                               "ranked": [(c["score"], c["tag"]) for c in match["ranked"]]}
 
         if kind in ("created", "connector"):
@@ -436,6 +440,51 @@ class DrawioExecutor:
         self.java_lines.append("actions.clickAndHold(src).moveToElement(dst).release().perform();")
         return ("ok" if res["ok"] else "failed"), res
 
+    def _do_resize(self, step, n, grow: bool):
+        """Grow or shrink a shape along one edge.
+
+        draw.io resizes the selection with Ctrl+Arrow, by the same 10px grid the
+        plain arrows move it on. The old corpus uses "extend"/"shrink" in a
+        handful of scenarios (scenario_051 among them); without a handler those
+        steps were reported as unsupported.
+        """
+        obj = (step.object or "").strip()
+        el, info, kind = self._resolve_object(obj)
+        if el is None:
+            return "failed", {"reason": "unknown reference %r" % obj}
+        direction = (step.value or "").lower()
+        key = drawio_ops._ARROW.get(direction)
+        if key is None:
+            return "failed", {"reason": "unknown direction %r" % step.value}
+        # Shrinking is the same gesture towards the opposite side.
+        if not grow:
+            opposite = {"left": "right", "right": "left", "up": "down", "top": "down",
+                        "down": "up", "bottom": "up"}
+            key = drawio_ops._ARROW[opposite[direction]]
+        before = drawio_ops._info_of(self.driver, el)
+        drawio_ops.select_cell(self.driver, el)
+        presses = drawio_ops.MOVE_STEP_PX // drawio_ops.PX_PER_ARROW_PRESS
+        for _ in range(presses):
+            (ActionChains(self.driver).key_down(Keys.CONTROL).send_keys(key)
+             .key_up(Keys.CONTROL).perform())
+            time.sleep(0.02)
+        time.sleep(0.5)
+        after = drawio_ops._info_of(self.driver, el)
+        if before is None or after is None:
+            return "failed", {"reason": "cell not measurable"}
+        dw, dh = after["w"] - before["w"], after["h"] - before["h"]
+        self.java_lines.append(
+            "for (int i = 0; i < %d; i++) { actions.keyDown(Keys.CONTROL)"
+            ".sendKeys(Keys.ARROW_%s).keyUp(Keys.CONTROL).perform(); }"
+            % (presses, direction.upper()))
+        return ("ok" if (abs(dw) + abs(dh)) > 0 else "failed"), {"dw": dw, "dh": dh}
+
+    def _do_extend(self, step, n):
+        return self._do_resize(step, n, grow=True)
+
+    def _do_shrink(self, step, n):
+        return self._do_resize(step, n, grow=False)
+
     def _do_delete(self, step, n):
         el, _, kind = self._resolve_object((step.object or "").strip())
         if el is None:
@@ -468,6 +517,10 @@ class DrawioExecutor:
         "link": _do_connect,
         "delete": _do_delete,
         "remove": _do_delete,
+        "extend": _do_extend,
+        "scale up": _do_extend,
+        "shrink": _do_shrink,
+        "scale down": _do_shrink,
         "press": _do_press,
     }
 
