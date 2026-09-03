@@ -15,7 +15,7 @@
     "Move the element created in step 7 up",
     "Move the element created in step 7 up",
     "Click on [diamond.png]",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 11 left",
     "Move the element created in step 11 left",
     "Move the element created in step 11 left",
@@ -68,9 +68,9 @@
       "type": "image",
       "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png"
     },
-    "rounded_rectangle.png": {
+    "rectangle.png": {
       "type": "image",
-      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png"
     },
     "parallelogram.png": {
       "type": "image",
@@ -87,5 +87,12 @@
     "move_step_px": 150,
     "anchor_node": "n3"
   },
-  "_unsupported_shapes": []
+  "_unsupported_shapes": [],
+  "_shape_substitutions": [
+    {
+      "id": "n4",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    }
+  ]
 }

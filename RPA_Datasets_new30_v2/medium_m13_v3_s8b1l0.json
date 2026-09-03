@@ -6,7 +6,7 @@
   },
   "descriptions": [
     "Open \"https://app.diagrams.net/\"",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 2 up",
     "Move the element created in step 2 up",
     "Move the element created in step 2 up",
@@ -29,7 +29,7 @@
     "Move the element created in step 18 right",
     "Move the element created in step 18 down",
     "Move the element created in step 18 down",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 25 right",
     "Move the element created in step 25 right",
     "Move the element created in step 25 right",
@@ -38,7 +38,7 @@
     "Move the element created in step 25 down",
     "Move the element created in step 25 down",
     "Move the element created in step 25 down",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 34 right",
     "Move the element created in step 34 right",
     "Move the element created in step 34 right",
@@ -48,7 +48,7 @@
     "Move the element created in step 34 down",
     "Move the element created in step 34 down",
     "Move the element created in step 34 down",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 44 down",
     "Move the element created in step 44 down",
     "Move the element created in step 44 down",
@@ -86,10 +86,6 @@
     "Connect the element created in step 34 to the element created in step 44"
   ],
   "assets": {
-    "rounded_rectangle.png": {
-      "type": "image",
-      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
-    },
     "rectangle.png": {
       "type": "image",
       "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png"
@@ -117,5 +113,27 @@
     "move_step_px": 150,
     "anchor_node": "n3"
   },
-  "_unsupported_shapes": []
+  "_unsupported_shapes": [],
+  "_shape_substitutions": [
+    {
+      "id": "n1",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    },
+    {
+      "id": "n6",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    },
+    {
+      "id": "n7",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    },
+    {
+      "id": "n8",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    }
+  ]
 }

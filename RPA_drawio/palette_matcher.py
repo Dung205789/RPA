@@ -116,28 +116,61 @@ def _ink_mask(bgr: np.ndarray, size: int = 40) -> np.ndarray:
     # 0.806 against the rectangle, the rounded rectangle and the square.
     h, w = binary.shape
     scale = float(size) / max(h, w)
+
+    # Thicken the outline in proportion to how much it is about to be shrunk.
+    # These shapes are drawn with a 1px stroke whatever their size, so a 130px-wide
+    # rendering downsampled to 40px averages that stroke away to about a third
+    # intensity and the threshold below erases it — a rectangle then had almost no
+    # ink left and scored 0.03 against a rectangle.
+    shrink = max(1, int(round(1.0 / scale))) if scale < 1 else 1
+    if shrink > 1:
+        binary = cv2.dilate(binary, np.ones((shrink, shrink), np.uint8))
+
     new_w, new_h = max(1, int(round(w * scale))), max(1, int(round(h * scale)))
     resized = cv2.resize(binary, (new_w, new_h), interpolation=cv2.INTER_AREA)
     canvas = np.zeros((size, size), dtype=np.uint8)
     y0 = (size - new_h) // 2
     x0 = (size - new_w) // 2
-    canvas[y0:y0 + new_h, x0:x0 + new_w] = (resized > 96).astype(np.uint8)
+    canvas[y0:y0 + new_h, x0:x0 + new_w] = (resized > 64).astype(np.uint8)
     return canvas
 
 
-def _similarity(a: np.ndarray, b: np.ndarray) -> float:
-    """Intersection-over-union of two ink masks, softened by a small dilation.
+def _iou(a: np.ndarray, b: np.ndarray) -> float:
+    inter = np.logical_and(a, b).sum()
+    union = np.logical_or(a, b).sum()
+    return float(inter) / float(union) if union else 0.0
 
-    The dilation is what lets a 1px outline and a 2px outline of the same shape
-    score highly: without it two rectangles drawn at different weights barely
-    overlap at all.
+
+def _corner_profile(mask: np.ndarray) -> np.ndarray:
+    """How much ink sits in each of the four corners of a shape's box.
+
+    This is the feature that separates a rectangle from a rounded rectangle: the
+    square one fills its corners, the rounded one leaves them empty. They are
+    otherwise the same picture once the outlines have been thickened for
+    comparison, and draw.io's palette puts them side by side — without this the
+    two tied exactly and the ranking fell back to palette order, so every rounded
+    rectangle in the corpus was drawn square.
+    """
+    n = mask.shape[0]
+    k = max(2, n // 5)
+    return np.array([
+        mask[:k, :k].mean(), mask[:k, -k:].mean(),
+        mask[-k:, :k].mean(), mask[-k:, -k:].mean(),
+    ], dtype=float)
+
+
+def _similarity(a: np.ndarray, b: np.ndarray) -> tuple:
+    """How alike two ink masks are: a tolerant score, then a finer tie-break.
+
+    The tolerant score dilates both masks first, which is what lets a 1px outline
+    and a 2px outline of the same shape agree — without it two shapes drawn at
+    different weights barely overlap at all. Dilation also erases small
+    differences, so ties are broken on the corner profile, which survives it.
     """
     kernel = np.ones((3, 3), np.uint8)
-    a_d = cv2.dilate(a, kernel)
-    b_d = cv2.dilate(b, kernel)
-    inter = np.logical_and(a_d, b_d).sum()
-    union = np.logical_or(a_d, b_d).sum()
-    return float(inter) / float(union) if union else 0.0
+    coarse = round(_iou(cv2.dilate(a, kernel), cv2.dilate(b, kernel)), 3)
+    corner_distance = float(np.abs(_corner_profile(a) - _corner_profile(b)).sum())
+    return (coarse, -corner_distance)
 
 
 def find_palette_entry(driver, template_path: str, top_k: int = 3,
@@ -187,15 +220,15 @@ def find_palette_entry(driver, template_path: str, top_k: int = 3,
     ranked = []
     for score, e in scored[:top_k]:
         if e["i"] < len(els):
-            ranked.append({"score": round(score, 4), "index": e["i"],
-                           "title": e["title"], "element": els[e["i"]]})
+            ranked.append({"score": round(score[0], 4), "strict": round(score[1], 4),
+                           "index": e["i"], "title": e["title"], "element": els[e["i"]]})
     log("[palette] %s -> %s" % (os.path.basename(template_path),
                                 [(r["index"], r["score"]) for r in ranked]))
     if not ranked:
         return {"ok": False, "reason": "top candidates out of range"}
     best = ranked[0]
     return {"ok": True, "index": best["index"], "score": best["score"],
-            "element": best["element"], "ranked": ranked}
+            "strict": best["strict"], "element": best["element"], "ranked": ranked}
 
 
 def find_icon(driver, template_path: str, top_k: int = 4, log=None) -> dict:
@@ -245,17 +278,82 @@ def find_icon(driver, template_path: str, top_k: int = 4, log=None) -> dict:
     for score, c in scored[:top_k]:
         el = _element_at(driver, c)
         if el is not None:
-            ranked.append({"score": round(score, 4), "element": el,
+            ranked.append({"score": round(score[0], 4), "strict": round(score[1], 4),
+                           "element": el,
                            "tag": c["tag"], "title": c["title"],
                            "text": c["text"], "palette": c["palette"],
                            "box": [round(c["x"]), round(c["y"]),
                                    round(c["w"]), round(c["h"])]})
     log("[icon] %s -> %s" % (os.path.basename(template_path),
-                             [(r["score"], r["tag"], r["title"] or r["text"]) for r in ranked]))
+                             [(r["score"], r["strict"], r["tag"]) for r in ranked]))
     if not ranked:
         return {"ok": False, "reason": "candidates could not be re-acquired"}
-    return {"ok": True, "score": ranked[0]["score"],
+    return {"ok": True, "score": ranked[0]["score"], "strict": ranked[0]["strict"],
             "element": ranked[0]["element"], "ranked": ranked}
+
+
+def identify_drawn_shape(driver, cell_info: dict, icon_dir, log=None) -> list:
+    """Rank the shape vocabulary against a shape just drawn on the canvas.
+
+    An absolute similarity threshold does not work here — a correct shape scores
+    around 0.7 because the canvas crop carries grid lines the icon file does not —
+    but the *ordering* is decisive. So a palette click is accepted when the shape
+    it produced looks more like the requested icon than like any other icon in the
+    set, which is exactly the question "did this draw the right shape".
+    """
+    import glob
+    shot = _page_screenshot(driver)
+    css_w = driver.execute_script("return window.innerWidth;")
+    scale = shot.shape[1] / float(css_w) if css_w else 1.0
+    pad = 6
+    x0 = int((cell_info["x"] - pad) * scale)
+    y0 = int((cell_info["y"] - pad) * scale)
+    x1 = int((cell_info["x"] + cell_info["w"] + pad) * scale)
+    y1 = int((cell_info["y"] + cell_info["h"] + pad) * scale)
+    crop = shot[max(0, y0):y1, max(0, x0):x1]
+    if crop.size == 0:
+        return []
+    drawn = _ink_mask(crop)
+
+    scored = []
+    for path in sorted(glob.glob(os.path.join(str(icon_dir), "*.png"))):
+        if os.path.basename(path).startswith("_"):
+            continue
+        template = cv2.imread(path, cv2.IMREAD_COLOR)
+        if template is None:
+            continue
+        scored.append((_similarity(_ink_mask(template), drawn), os.path.basename(path)))
+    scored.sort(key=lambda p: p[0], reverse=True)
+    if log:
+        log("[shape] drawn cell looks like %s"
+            % [(n, round(s[0], 3)) for s, n in scored[:3]])
+    return [{"icon": n, "score": round(s[0], 4)} for s, n in scored]
+
+
+def shape_matches_template(driver, cell_info: dict, template_path: str) -> float:
+    """How much a shape just drawn on the canvas looks like the icon that asked for it.
+
+    The icon files are themselves node-sized renderings, so this compares like
+    with like — unlike matching an icon against a 32px palette thumbnail, where a
+    rectangle and a rounded rectangle are separated by about two pixels and score
+    identically. Used to confirm a palette click produced the intended shape, and
+    to move on to the next candidate when it did not.
+    """
+    template = cv2.imread(template_path, cv2.IMREAD_COLOR)
+    if template is None:
+        return 0.0
+    shot = _page_screenshot(driver)
+    css_w = driver.execute_script("return window.innerWidth;")
+    scale = shot.shape[1] / float(css_w) if css_w else 1.0
+    pad = 6
+    x0 = int((cell_info["x"] - pad) * scale)
+    y0 = int((cell_info["y"] - pad) * scale)
+    x1 = int((cell_info["x"] + cell_info["w"] + pad) * scale)
+    y1 = int((cell_info["y"] + cell_info["h"] + pad) * scale)
+    crop = shot[max(0, y0):y1, max(0, x0):x1]
+    if crop.size == 0:
+        return 0.0
+    return _similarity(_ink_mask(template), _ink_mask(crop))[0]
 
 
 def _element_at(driver, cand: dict):

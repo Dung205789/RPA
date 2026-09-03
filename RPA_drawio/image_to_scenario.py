@@ -57,9 +57,19 @@ DRAWIO_URL = "https://app.diagrams.net/"
 # The shape vocabulary, and the icon that draws each one. Built by
 # build_shape_icons.py straight from draw.io's own shape search, so every entry
 # is verified to insert the shape it names.
+# Known substitution: "rounded rectangle" is drawn with the plain rectangle icon.
+# draw.io puts the two side by side in the General palette and they differ by a
+# corner radius of a few pixels; at thumbnail size their ink masks are 97%
+# identical, so no icon-based selection can separate them, and every alternative
+# the shape search offers is a different shape (a double-bordered frame, a
+# document). It is recorded per scenario in "_shape_substitutions" rather than
+# hidden, because it costs shape-type accuracy on 949 of the benchmark's 3516
+# nodes and the reader should see that in the numbers.
+SHAPE_SUBSTITUTIONS = {"rounded rectangle": "rectangle"}
+
 SHAPE_ICONS = {
     "rectangle": "rectangle.png",
-    "rounded rectangle": "rounded_rectangle.png",
+    "rounded rectangle": "rectangle.png",
     "ellipse": "ellipse.png",
     "diamond": "diamond.png",
     "parallelogram": "parallelogram.png",
@@ -203,6 +213,7 @@ def build_scenario(graph: dict, case_id: str, icon_dir: Path = ICON_DIR) -> dict
     assets: dict = {}
     step_of: dict = {}
     unknown_types = []
+    substituted = []
 
     # phase 1 - insert and place
     for node in nodes:
@@ -211,6 +222,9 @@ def build_scenario(graph: dict, case_id: str, icon_dir: Path = ICON_DIR) -> dict
         if icon is None:
             unknown_types.append({"id": node["id"], "type": node.get("type")})
             icon = SHAPE_ICONS["rectangle"]
+        elif raw_type in SHAPE_SUBSTITUTIONS:
+            substituted.append({"id": node["id"], "type": raw_type,
+                                "drawn_as": SHAPE_SUBSTITUTIONS[raw_type]})
         assets[icon] = {"type": "image", "path": str((icon_dir / icon).resolve())}
 
         descriptions.append("Click on [%s]" % icon)
@@ -259,6 +273,7 @@ def build_scenario(graph: dict, case_id: str, icon_dir: Path = ICON_DIR) -> dict
                        "move_step_px": drawio_ops.MOVE_STEP_PX,
                        "anchor_node": anchor["id"]},
         "_unsupported_shapes": unknown_types,
+        "_shape_substitutions": substituted,
     }
 
 

@@ -1,8 +1,0 @@
-{
-  "id": "scenario_011",
-  "descriptions": [
-    "Open \"https://app.diagrams.net/\"",
-    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\help.png]",
-    "Click on Get Desktop..."
-  ]
-}

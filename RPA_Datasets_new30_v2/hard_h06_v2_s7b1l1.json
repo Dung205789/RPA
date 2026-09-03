@@ -12,15 +12,15 @@
     "Move the element created in step 2 up",
     "Move the element created in step 2 up",
     "Move the element created in step 2 up",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 8 up",
     "Move the element created in step 8 up",
     "Move the element created in step 8 up",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 12 up",
     "Move the element created in step 12 up",
-    "Click on [rounded_rectangle.png]",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 16 down",
     "Move the element created in step 16 down",
     "Click on [diamond.png]",
@@ -64,9 +64,9 @@
       "type": "image",
       "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png"
     },
-    "rounded_rectangle.png": {
+    "rectangle.png": {
       "type": "image",
-      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png"
     },
     "diamond.png": {
       "type": "image",
@@ -83,5 +83,27 @@
     "move_step_px": 150,
     "anchor_node": "n4"
   },
-  "_unsupported_shapes": []
+  "_unsupported_shapes": [],
+  "_shape_substitutions": [
+    {
+      "id": "n2",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    },
+    {
+      "id": "n3",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    },
+    {
+      "id": "n4",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    },
+    {
+      "id": "n5",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    }
+  ]
 }

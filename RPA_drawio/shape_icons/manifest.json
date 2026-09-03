@@ -2,127 +2,127 @@
   "rectangle": {
     "query": "rectangle",
     "file": "rectangle.png",
-    "inserted": true,
+    "result_rank": 0,
     "cell_kind": "rect",
     "cell_size": [
       120,
       60
     ],
     "icon_px": [
-      38,
-      36
+      132,
+      72
     ]
   },
   "rounded_rectangle": {
     "query": "rounded rectangle",
     "file": "rounded_rectangle.png",
-    "inserted": true,
+    "result_rank": 1,
     "cell_kind": "rect",
     "cell_size": [
       120,
-      60
+      80
     ],
     "icon_px": [
-      38,
-      36
+      132,
+      92
     ]
   },
   "ellipse": {
     "query": "ellipse",
     "file": "ellipse.png",
-    "inserted": true,
+    "result_rank": 0,
     "cell_kind": "ellipse",
     "cell_size": [
       120,
       80
     ],
     "icon_px": [
-      38,
-      36
+      132,
+      92
     ]
   },
   "diamond": {
     "query": "rhombus",
     "file": "diamond.png",
-    "inserted": true,
+    "result_rank": 0,
     "cell_kind": "path",
     "cell_size": [
       80,
       80
     ],
     "icon_px": [
-      38,
-      36
+      92,
+      92
     ]
   },
   "parallelogram": {
     "query": "parallelogram",
     "file": "parallelogram.png",
-    "inserted": true,
+    "result_rank": 0,
     "cell_kind": "path",
     "cell_size": [
       120,
       60
     ],
     "icon_px": [
-      38,
-      36
+      132,
+      72
     ]
   },
   "hexagon": {
     "query": "hexagon",
     "file": "hexagon.png",
-    "inserted": true,
+    "result_rank": 0,
     "cell_kind": "path",
     "cell_size": [
       120,
       80
     ],
     "icon_px": [
-      38,
-      36
+      132,
+      92
     ]
   },
   "trapezoid": {
     "query": "trapezoid",
     "file": "trapezoid.png",
-    "inserted": true,
+    "result_rank": 0,
     "cell_kind": "path",
     "cell_size": [
       120,
       60
     ],
     "icon_px": [
-      38,
-      36
+      132,
+      72
     ]
   },
   "document": {
     "query": "document",
     "file": "document.png",
-    "inserted": true,
+    "result_rank": 0,
     "cell_kind": "path",
     "cell_size": [
       120,
       79
     ],
     "icon_px": [
-      38,
-      36
+      132,
+      91
     ]
   },
   "cylinder": {
     "query": "cylinder",
     "file": "cylinder.png",
-    "inserted": true,
-    "cell_kind": "edge",
+    "result_rank": 0,
+    "cell_kind": "path",
     "cell_size": [
       60,
       80
     ],
     "icon_px": [
-      38,
-      36
+      72,
+      92
     ]
   }
 }

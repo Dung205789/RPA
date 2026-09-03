@@ -34,6 +34,7 @@ honoured here:
 """
 from __future__ import annotations
 
+import os
 import re
 import time
 import traceback
@@ -70,6 +71,66 @@ class DrawioExecutor:
         self.origin = None
         self.editor_open_on = None      # which step's cell has its label editor open
         self.java_lines = []
+        # How far each shape has been nudged from the point it was inserted at,
+        # accumulated from the displacements actually observed. This is what makes
+        # the insertion point recoverable — see _insert_origin.
+        self.displacement: dict = {}
+
+    # ------------------------------------------------------- frame-safe geometry
+    def _positions(self) -> dict:
+        """Where every tracked shape is, all read in one frame.
+
+        Positions are only ever compared *within* one of these snapshots. draw.io
+        grows its canvas when content approaches the edge and re-anchors the view
+        when it does, which shifts every reported coordinate at once; differences
+        taken inside a single snapshot are immune to that, absolute values are not.
+        """
+        els = cell_tracker.cell_elements(self.driver)
+        if not els:
+            return {}
+        infos = cell_tracker.cell_info(self.driver, els)
+        by_el = dict(zip(els, infos))
+        out = {}
+        for step, entry in self.tracker.step_to_cell.items():
+            info = by_el.get(entry["el"])
+            if info is not None:
+                out[step] = info
+        return out
+
+    def _insert_origin(self, snapshot: dict):
+        """Where a freshly clicked shape *should* land, in the current frame.
+
+        draw.io drops every click-inserted shape at the centre of the view, so the
+        scenario language treats that as one fixed point and expresses all
+        placement as moves away from it. Restoring the container's scroll offset is
+        not enough to hold it: once the canvas grows, the same scroll number names a
+        different model point. Measured — after three upward nudges the insertion
+        point had slid a full page height, and the first shape of
+        easy_e01_v1_s5b0l0 ended up at the bottom of a chain it should have headed.
+
+        Each tracked shape knows how far it has been nudged, so each one implies
+        where the insertion point is now. The median of those estimates is robust
+        to any single shape having been mis-tracked.
+        """
+        estimates = []
+        for step, info in snapshot.items():
+            dx, dy = self.displacement.get(step, (0, 0))
+            estimates.append((info["mx"] - dx, info["my"] - dy))
+        if not estimates:
+            return None
+        xs = sorted(e[0] for e in estimates)
+        ys = sorted(e[1] for e in estimates)
+        mid = len(estimates) // 2
+        return xs[mid], ys[mid]
+
+    def _nudge(self, element, dx: int, dy: int) -> None:
+        """Move a cell by an exact model offset, using the arrow-key grid."""
+        if abs(dx) >= drawio_ops.PX_PER_ARROW_PRESS:
+            drawio_ops.move_cell(self.driver, element,
+                                 "right" if dx > 0 else "left", abs(dx), measure=False)
+        if abs(dy) >= drawio_ops.PX_PER_ARROW_PRESS:
+            drawio_ops.move_cell(self.driver, element,
+                                 "down" if dy > 0 else "up", abs(dy), measure=False)
 
     # ------------------------------------------------------------------ setup
     def prepare(self):
@@ -137,8 +198,11 @@ class DrawioExecutor:
             match = palette_matcher.find_icon(self.driver, obj, log=self.log)
             if not match.get("ok"):
                 return "failed", {"reason": match.get("reason")}
-            for cand in match["ranked"][:2]:
+            best = None
+            candidates = match["ranked"][:3]
+            for ci, cand in enumerate(candidates):
                 known = drawio_ops.known_cells(self.driver)
+                before_positions = self._positions()
                 if cand["palette"]:
                     res = drawio_ops.click_palette_entry(self.driver, cand["element"],
                                                          view_origin=self.origin)
@@ -150,16 +214,63 @@ class DrawioExecutor:
                     except Exception as exc:
                         res = {"ok": False, "reason": "%s: %s" % (type(exc).__name__, exc)}
                 created = len(drawio_ops.known_cells(self.driver)) > len(known)
-                if created:
-                    self.tracker.record_created(n, known)
-                if res.get("ok"):
+                if not created:
+                    if not res.get("ok"):
+                        self.log("[click] candidate %s failed, trying next" % cand["tag"])
+                        continue
+                    # a UI click (menu, toolbar) — nothing should have appeared
                     self.java_lines.append("// click %s (%s, score %.2f)"
                                            % (obj, cand["tag"], cand["score"]))
                     return "ok", {"score": cand["score"], "palette": cand["palette"],
                                   "title": cand["title"] or cand["text"],
-                                  "created_cell": created}
-                self.log("[click] candidate %s failed, trying next" % cand["tag"])
-            return "failed", {"reason": "no candidate could be clicked",
+                                  "created_cell": False}
+
+                self.tracker.record_created(n, known)
+                self.displacement[n] = (0, 0)
+                el, info = self.tracker.element_for_step(n)
+                # Confirm the shape that appeared is the one the icon asked for.
+                # Two palette entries can be a couple of pixels apart at thumbnail
+                # size — a rectangle and a rounded rectangle score identically —
+                # so the check is made against the drawn shape, at the size the
+                # icon file was captured at.
+                ranking = (palette_matcher.identify_drawn_shape(
+                    self.driver, info, os.path.dirname(obj) or ".", log=self.log)
+                    if info is not None else [])
+                wanted = os.path.basename(obj)
+                drawn_match = next((r["score"] for r in ranking if r["icon"] == wanted), 0.0)
+                identified = ranking[0]["icon"] if ranking else None
+                if best is None or drawn_match > best[0]:
+                    best = (drawn_match, cand, n)
+                if identified == wanted:
+                    correction = self._align_to_origin(n, before_positions)
+                    self.java_lines.append("// click %s (%s, score %.2f)"
+                                           % (obj, cand["tag"], cand["score"]))
+                    detail = {"score": cand["score"], "palette": cand["palette"],
+                              "title": cand["title"] or cand["text"],
+                              "created_cell": True, "drawn_match": round(drawn_match, 3),
+                              "identified_as": identified}
+                    if correction:
+                        detail["insert_correction"] = correction
+                    return "ok", detail
+
+                self.log("[click] wanted %s but the shape drawn looks like %s; trying next"
+                         % (wanted, identified))
+                if el is not None and ci < len(candidates) - 1:
+                    drawio_ops.select_cell(self.driver, el)
+                    ActionChains(self.driver).send_keys(Keys.DELETE).perform()
+                    time.sleep(0.5)
+                    self.tracker.step_to_cell.pop(n, None)
+                    self.displacement.pop(n, None)
+
+            if best is not None and n in self.tracker.step_to_cell:
+                correction = self._align_to_origin(n, before_positions)
+                detail = {"score": best[1]["score"], "palette": best[1]["palette"],
+                          "created_cell": True, "drawn_match": round(best[0], 3),
+                          "note": "kept the closest shape available"}
+                if correction:
+                    detail["insert_correction"] = correction
+                return "ok", detail
+            return "failed", {"reason": "no candidate drew a matching shape",
                               "ranked": [(c["score"], c["tag"]) for c in match["ranked"]]}
 
         if kind in ("created", "connector"):
@@ -174,6 +285,74 @@ class DrawioExecutor:
             self.java_lines.append('driver.findElement(By.xpath("%s")).click();' % res["xpath"])
             return "ok", res
         return "failed", res
+
+    _COMMANDED = {"left": (-1, 0), "right": (1, 0), "up": (0, -1), "top": (0, -1),
+                  "down": (0, 1), "bottom": (0, 1)}
+
+    def _displacement(self, moved_step, before: dict, after: dict,
+                      direction: str = "") -> dict:
+        """How far one shape moved, relative to the shapes that did not move.
+
+        With other shapes on the canvas this is a difference of differences, which
+        cancels any view shift draw.io performs while the move happens.
+
+        With the moved shape alone on the canvas there is nothing to be relative
+        to, and the measurement is not just noisy but meaningless: a lone shape's
+        absolute position on an unbounded canvas is defined only up to whatever
+        origin the editor currently happens to use, and growing the canvas moves
+        that origin. Measured, the third consecutive nudge of a lone shape read as
+        +250 or +950 depending on how far the canvas had grown. The keyboard nudge
+        itself is exact — verified at 10px per press against a fixed anchor shape —
+        so the commanded displacement is used and the row is flagged `assumed`.
+        """
+        want = drawio_ops.MOVE_STEP_PX
+        if moved_step is None or moved_step not in before or moved_step not in after:
+            return {"ok": False, "reason": "cell not measurable after move"}
+        others = [s for s in before if s != moved_step and s in after]
+        if not others:
+            vec = self._COMMANDED.get((direction or "").lower())
+            if vec is None:
+                return {"ok": False, "reason": "unknown direction %r" % direction}
+            return {"ok": True, "dx": vec[0] * want, "dy": vec[1] * want,
+                    "wanted": want, "relative_to": 0, "assumed": True}
+        dx = after[moved_step]["mx"] - before[moved_step]["mx"]
+        dy = after[moved_step]["my"] - before[moved_step]["my"]
+        # the view's own shift, read off the shapes that stayed put
+        shifts_x = sorted(after[s]["mx"] - before[s]["mx"] for s in others)
+        shifts_y = sorted(after[s]["my"] - before[s]["my"] for s in others)
+        mid = len(others) // 2
+        dx -= shifts_x[mid]
+        dy -= shifts_y[mid]
+        return {"ok": (abs(dx) + abs(dy)) >= want // 2, "dx": dx, "dy": dy,
+                "wanted": want, "relative_to": len(others)}
+
+    def _align_to_origin(self, n: int, before_positions: dict):
+        """Put a just-inserted shape back on the scenario's insertion point.
+
+        Only acts when there is already a shape to measure against — the first
+        shape of a scenario *defines* the point, and with nothing else on the
+        canvas any drift is both unobservable and harmless.
+        """
+        if not before_positions:
+            return None
+        after = self._positions()
+        target = self._insert_origin({k: v for k, v in after.items() if k != n})
+        new = after.get(n)
+        if target is None or new is None:
+            return None
+        dx = int(round((target[0] - new["mx"]) / drawio_ops.PX_PER_ARROW_PRESS)) \
+            * drawio_ops.PX_PER_ARROW_PRESS
+        dy = int(round((target[1] - new["my"]) / drawio_ops.PX_PER_ARROW_PRESS)) \
+            * drawio_ops.PX_PER_ARROW_PRESS
+        if abs(dx) < drawio_ops.PX_PER_ARROW_PRESS and abs(dy) < drawio_ops.PX_PER_ARROW_PRESS:
+            return None
+        el, _ = self.tracker.element_for_step(n)
+        if el is None:
+            return None
+        self.log("[insert] step %d landed %+d,%+d off the insertion point; correcting"
+                 % (n, -dx, -dy))
+        self._nudge(el, dx, dy)
+        return {"dx": dx, "dy": dy}
 
     def _do_double_click(self, step, n):
         obj = (step.object or "").strip()
@@ -217,20 +396,21 @@ class DrawioExecutor:
         el, info, kind = self._resolve_object(obj)
         if el is None:
             return "failed", {"reason": "unknown reference %r" % obj}
-        # Re-resolve through the tracker afterwards rather than comparing raw
-        # handles: draw.io sometimes rebuilds a cell's node when it scrolls back
-        # into view, and the tracker's position fallback recovers from that. The
-        # first version compared handles directly and reported "cell disappeared
-        # during move" for a shape that was plainly still on the canvas.
-        before = dict(info)
-        res = drawio_ops.move_cell(self.driver, el, step.value or "", measure=False)
-        after_el, after = self._resolve_object(obj)[0], self._resolve_object(obj)[1]
-        if after is None:
-            res = {"ok": False, "reason": "cell not recoverable after move"}
-        else:
-            dx, dy = after["mx"] - before["mx"], after["my"] - before["my"]
-            res = {"ok": (abs(dx) + abs(dy)) >= drawio_ops.MOVE_STEP_PX // 2,
-                   "dx": dx, "dy": dy, "wanted": drawio_ops.MOVE_STEP_PX}
+        # Measure the displacement against the other shapes on the canvas rather
+        # than against the cell's own earlier coordinates. draw.io re-anchors the
+        # whole view when the canvas grows, which moves every reported coordinate
+        # together; a self-comparison then reads that shift as movement — a 150px
+        # nudge was recorded as +950 in the wrong direction. A difference of
+        # differences cancels it.
+        m = CREATED_RE.search(obj)
+        moved_step = int(m.group(1)) if m else None
+        before = self._positions()
+        drawio_ops.move_cell(self.driver, el, step.value or "", measure=False)
+        after = self._positions()
+        res = self._displacement(moved_step, before, after, step.value or "")
+        if res.get("ok") and moved_step is not None:
+            px, py = self.displacement.get(moved_step, (0, 0))
+            self.displacement[moved_step] = (px + res["dx"], py + res["dy"])
         self.java_lines.append(
             "for (int i = 0; i < %d; i++) { actions.keyDown(Keys.SHIFT)"
             ".sendKeys(Keys.ARROW_%s).keyUp(Keys.SHIFT).perform(); }"

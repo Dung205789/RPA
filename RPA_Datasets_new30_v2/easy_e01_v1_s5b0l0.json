@@ -6,7 +6,7 @@
   },
   "descriptions": [
     "Open \"https://app.diagrams.net/\"",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 2 up",
     "Move the element created in step 2 up",
     "Move the element created in step 2 up",
@@ -17,7 +17,7 @@
     "Click on [rectangle.png]",
     "Move the element created in step 10 down",
     "Move the element created in step 10 down",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 13 down",
     "Move the element created in step 13 down",
     "Move the element created in step 13 down",
@@ -37,10 +37,6 @@
     "Connect the element created in step 10 to the element created in step 13"
   ],
   "assets": {
-    "rounded_rectangle.png": {
-      "type": "image",
-      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
-    },
     "rectangle.png": {
       "type": "image",
       "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png"
@@ -60,5 +56,17 @@
     "move_step_px": 150,
     "anchor_node": "n3"
   },
-  "_unsupported_shapes": []
+  "_unsupported_shapes": [],
+  "_shape_substitutions": [
+    {
+      "id": "n1",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    },
+    {
+      "id": "n5",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    }
+  ]
 }

@@ -128,5 +128,6 @@
     "move_step_px": 150,
     "anchor_node": "n4"
   },
-  "_unsupported_shapes": []
+  "_unsupported_shapes": [],
+  "_shape_substitutions": []
 }

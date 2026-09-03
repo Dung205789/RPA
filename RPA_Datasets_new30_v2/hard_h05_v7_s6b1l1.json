@@ -6,7 +6,7 @@
   },
   "descriptions": [
     "Open \"https://app.diagrams.net/\"",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 2 up",
     "Move the element created in step 2 up",
     "Move the element created in step 2 up",
@@ -24,7 +24,7 @@
     "Click on [diamond.png]",
     "Move the element created in step 17 down",
     "Move the element created in step 17 down",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 20 down",
     "Move the element created in step 20 down",
     "Move the element created in step 20 down",
@@ -53,17 +53,13 @@
     "Fill \"Complete\""
   ],
   "assets": {
-    "rounded_rectangle.png": {
+    "rectangle.png": {
       "type": "image",
-      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png"
     },
     "parallelogram.png": {
       "type": "image",
       "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png"
-    },
-    "rectangle.png": {
-      "type": "image",
-      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png"
     },
     "diamond.png": {
       "type": "image",
@@ -80,5 +76,17 @@
     "move_step_px": 150,
     "anchor_node": "n4"
   },
-  "_unsupported_shapes": []
+  "_unsupported_shapes": [],
+  "_shape_substitutions": [
+    {
+      "id": "n1",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    },
+    {
+      "id": "n6",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    }
+  ]
 }

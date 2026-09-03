@@ -6,14 +6,14 @@
   },
   "descriptions": [
     "Open \"https://app.diagrams.net/\"",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 2 up",
     "Move the element created in step 2 up",
     "Click on [document.png]",
     "Click on [rectangle.png]",
     "Move the element created in step 6 down",
     "Move the element created in step 6 down",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 9 down",
     "Move the element created in step 9 down",
     "Move the element created in step 9 down",
@@ -30,17 +30,13 @@
     "Connect the element created in step 6 to the element created in step 9"
   ],
   "assets": {
-    "rounded_rectangle.png": {
+    "rectangle.png": {
       "type": "image",
-      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png"
     },
     "document.png": {
       "type": "image",
       "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\document.png"
-    },
-    "rectangle.png": {
-      "type": "image",
-      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png"
     }
   },
   "_source": "image_to_scenario.py — VLM read of the PNG only, then a deterministic translation into the RPA_Datasets step language",
@@ -53,5 +49,17 @@
     "move_step_px": 150,
     "anchor_node": "n2"
   },
-  "_unsupported_shapes": []
+  "_unsupported_shapes": [],
+  "_shape_substitutions": [
+    {
+      "id": "n1",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    },
+    {
+      "id": "n4",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    }
+  ]
 }

@@ -6,8 +6,8 @@
   },
   "descriptions": [
     "Open \"https://app.diagrams.net/\"",
-    "Click on [rounded_rectangle.png]",
-    "Click on [rounded_rectangle.png]",
+    "Click on [rectangle.png]",
+    "Click on [rectangle.png]",
     "Move the element created in step 3 down",
     "Move the element created in step 3 down",
     "Double click on the element created in step 2",
@@ -17,9 +17,9 @@
     "Connect the element created in step 2 to the element created in step 3"
   ],
   "assets": {
-    "rounded_rectangle.png": {
+    "rectangle.png": {
       "type": "image",
-      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rounded_rectangle.png"
+      "path": "D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png"
     }
   },
   "_source": "image_to_scenario.py — VLM read of the PNG only, then a deterministic translation into the RPA_Datasets step language",
@@ -32,5 +32,17 @@
     "move_step_px": 150,
     "anchor_node": "n1"
   },
-  "_unsupported_shapes": []
+  "_unsupported_shapes": [],
+  "_shape_substitutions": [
+    {
+      "id": "n1",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    },
+    {
+      "id": "n2",
+      "type": "rounded rectangle",
+      "drawn_as": "rectangle"
+    }
+  ]
 }

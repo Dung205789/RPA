@@ -97,5 +97,6 @@
     "move_step_px": 150,
     "anchor_node": "n3"
   },
-  "_unsupported_shapes": []
+  "_unsupported_shapes": [],
+  "_shape_substitutions": []
 }
