@@ -83,6 +83,37 @@ def crop_to_canvas(driver, full_png: Path, out_png: Path):
     return out_png
 
 
+_DEAD_SESSION = ("invalid session id", "chrome not reachable", "no such window",
+                 "disconnected", "target window already closed",
+                 "unable to connect to renderer", "session deleted")
+
+
+def session_is_dead(exc: Exception) -> bool:
+    """Did the browser go away, as opposed to this scenario failing?"""
+    text = ("%s %s" % (type(exc).__name__, exc)).lower()
+    return any(marker in text for marker in _DEAD_SESSION)
+
+
+def restart_browser(port: int, log=print):
+    """Bring up a fresh Chrome and attach to it.
+
+    A batch has to survive the browser dying. On the first full run of the old
+    corpus Chrome went away during scenario_046 and every one of the 55 scenarios
+    after it failed instantly on `invalid session id` — 55 cases lost to one
+    crash. Detecting that and starting over costs a minute; not detecting it costs
+    the rest of the run.
+    """
+    import by_text
+    import rpa_env
+    rpa_env.kill_chrome_on_port(port)
+    time.sleep(2)
+    rpa_env.launch_chrome(port=port)
+    if not rpa_env.wait_for_debug_port(port):
+        raise RuntimeError("Chrome did not come back up on port %d" % port)
+    log("[harness] browser restarted on port %d" % port)
+    return by_text.setup_chrome_driver(use_existing=True)
+
+
 def run_one(executor_cls, driver, parser, scenario_path: Path, dataset_root: Path,
             out_dir: Path) -> dict:
     import cell_tracker
@@ -208,6 +239,20 @@ def main(argv=None):
                 row = {"id": p.stem, "status": "harness_error",
                        "error": "%s: %s" % (type(exc).__name__, exc)}
                 traceback.print_exc(file=sys.stderr)
+
+            # A dead browser is not this scenario's failure, it is the end of every
+            # scenario after it unless the batch restarts. Retry the case once on a
+            # fresh browser, so a crash costs one case instead of the rest of the run.
+            died = row.get("status") in ("exception", "harness_error") and any(
+                m in (row.get("error") or "").lower() for m in _DEAD_SESSION)
+            if died:
+                log("[harness]   browser died; restarting and retrying %s" % p.name)
+                try:
+                    driver = restart_browser(args.port, log=log)
+                    row = run_one(DrawioExecutor, driver, parser, p, dataset_root, out_dir)
+                except Exception as exc:
+                    row = {"id": p.stem, "status": "harness_error",
+                           "error": "restart failed: %s: %s" % (type(exc).__name__, exc)}
             log("[harness]   -> %s  steps %s/%s ok  vertices=%s edges=%s  %ss"
                 % (row.get("status"), row.get("n_ok"), row.get("n_steps"),
                    row.get("n_vertices"), row.get("n_edges"), row.get("total_sec")))
