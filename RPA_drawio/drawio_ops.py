@@ -349,29 +349,63 @@ def _label_result(driver, text: str, near: dict | None = None) -> dict:
             "target_box": [near["x"], near["y"], near["w"], near["h"]]}
 
 
-def _border_point(info: dict, toward: dict) -> tuple:
-    """Offset from a cell's centre to the middle of the border facing ``toward``.
-
-    Starting the drag on the border is what makes draw.io treat the gesture as
-    "draw a connector" rather than "move the shape".
-    """
+def _cardinal_toward(info: dict, toward: dict) -> tuple:
+    """Which of the four sides of ``info`` faces ``toward``, as a unit vector."""
     dx = toward["mx"] - info["mx"]
     dy = toward["my"] - info["my"]
     if abs(dy) >= abs(dx):
-        return (0, info["h"] // 2 if dy > 0 else -info["h"] // 2)
-    return (info["w"] // 2 if dx > 0 else -info["w"] // 2, 0)
+        return (0, 1 if dy > 0 else -1)
+    return (1 if dx > 0 else -1, 0)
+
+
+_EDGE_POINT_JS = r"""
+const g = arguments[0], dirx = arguments[1], diry = arguments[2];
+const geo = g.querySelector('rect,ellipse,path,polygon');
+const r = g.getBoundingClientRect();
+const cx = r.x + r.width / 2, cy = r.y + r.height / 2;
+const bx = cx + dirx * (r.width / 2), by = cy + diry * (r.height / 2);
+// rect/ellipse are convex and axis-aligned, so the bounding-box edge midpoint
+// really is on the outline. A path-based shape (diamond, parallelogram, hexagon,
+// trapezoid...) is not: a parallelogram's slanted right edge at vertical centre
+// sits inboard of the bounding box by half its slant, so that same point falls
+// in the shape's cut corner, outside the fill. draw.io does not show a
+// connection affordance there, and the drag starts a selection instead of an
+// edge — measured on a parallelogram, where this cost the connector outright.
+//
+// Rather than a per-shape slant constant, walk the segment from the bbox edge
+// toward the centre and ask the path itself, via isPointInFill, where its fill
+// actually starts. This is shape-agnostic: the same probe handles diamond,
+// hexagon and trapezoid without knowing any of their geometry in advance.
+if (!geo || geo.tagName.toLowerCase() !== 'path' || !geo.isPointInFill) {
+  return {x: bx, y: by};
+}
+const inv = geo.getScreenCTM().inverse();
+const inside = (px, py) => geo.isPointInFill(new DOMPoint(px, py).matrixTransform(inv));
+for (let t = 0; t <= 1.0; t += 0.02) {
+  const px = bx + (cx - bx) * t, py = by + (cy - by) * t;
+  if (inside(px, py)) return {x: px, y: py};
+}
+return {x: cx, y: cy};
+"""
+
+
+def _edge_point(driver, el, dirx: int, diry: int) -> dict:
+    return driver.execute_script(_EDGE_POINT_JS, el, dirx, diry)
 
 
 def connect_cells(driver, src_el, dst_el) -> dict:
     """Draw a connector from one shape to another.
 
-    Order of operations, all three of which were needed to make it work:
+    Order of operations, all four of which were needed to make it work:
       1. clear the selection — a selected shape's resize handles sit on the
          perimeter and turn the drag into a resize (observed: the shape stretched
          into a tall rectangle instead of an edge appearing),
       2. hover the source so draw.io materialises its connection points,
-      3. start the drag on the border facing the target, step off it, then land on
-         the target's centre, which makes a floating connection to that shape.
+      3. find a point that is actually on the shape's outline (see
+         ``_edge_point`` — the bounding box is not the outline for a slanted
+         shape),
+      4. start the drag there, step off it, then land on the target's centre,
+         which makes a floating connection to that shape.
     """
     before = known_cells(driver)
     ensure_visible(driver, src_el, dst_el)
@@ -384,11 +418,22 @@ def connect_cells(driver, src_el, dst_el) -> dict:
 
     ActionChains(driver).move_to_element(src_el).perform()
     time.sleep(0.7)
-    ox, oy = _border_point(src_info, dst_info)
-    lead_x = 0 if ox == 0 else (18 if ox > 0 else -18)
-    lead_y = 0 if oy == 0 else (18 if oy > 0 else -18)
+    dirx, diry = _cardinal_toward(src_info, dst_info)
+    edge = _edge_point(driver, src_el, dirx, diry)
+    lead_x, lead_y = (18 * dirx, 18 * diry) if dirx else (0, 18 * diry)
+    if diry == 0 and dirx == 0:
+        lead_x = lead_y = 0
+
+    container = driver.find_element("css selector", ".geDiagramContainer")
+    crect = driver.execute_script("""
+    const r = arguments[0].getBoundingClientRect();
+    return {x: r.x, y: r.y, w: r.width, h: r.height};
+    """, container)
+    ox = int(round(edge["x"] - (crect["x"] + crect["w"] / 2.0)))
+    oy = int(round(edge["y"] - (crect["y"] + crect["h"] / 2.0)))
+
     (ActionChains(driver)
-     .move_to_element_with_offset(src_el, ox, oy)
+     .move_to_element_with_offset(container, ox, oy)
      .pause(0.4)
      .click_and_hold()
      .pause(0.3)

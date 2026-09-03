@@ -165,13 +165,91 @@ class DrawioExecutor:
             return None, None, "image"
         return None, None, "text"
 
-    def _click_by_text(self, text: str) -> dict:
-        """Click a menu entry / labelled control found by its text.
+    def _click_visible_exact(self, text: str):
+        """A visible element whose own trimmed text is exactly ``text``.
 
-        Tries the candidate xpaths in order, the same fallback idea the original
-        executor had; the difference is that a failure is reported instead of
-        being retried against an unchanged page five times.
+        draw.io's DOM keeps inactive copies of format-panel labels around (the
+        same duplication that made Page View need special handling in rpa_env) —
+        clicking "Style" picked a same-text `<span>` with zero size while the real,
+        visible tab sat a few nodes over. by_text has no visibility notion at all,
+        so an exact/visible match is tried first and by_text is the fallback for
+        text that has no single exact-match element (most menu entries).
         """
+        return self.driver.execute_script("""
+        const want = arguments[0];
+        const cands = Array.from(document.querySelectorAll('*')).filter(e => {
+          if (e.children.length > 0) return false;   // innermost text node only
+          if ((e.textContent || '').trim() !== want) return false;
+          if (e.offsetParent === null) return false;
+          const r = e.getBoundingClientRect();
+          return r.width > 0 && r.height > 0;
+        });
+        return cands.length ? cands[0] : null;
+        """, text)
+
+    def _click_checkbox_by_label(self, label: str):
+        """A visible checkbox whose neighbouring text is ``label``.
+
+        Handles the corpus's "<Label> checkbox" phrasing generically: draw.io
+        renders a style checkbox as a bare `<input>` next to a text node, with no
+        single element whose text is "Sketch checkbox" for by_text to find at all.
+        """
+        return self.driver.execute_script("""
+        const want = arguments[0].toLowerCase();
+        const boxes = Array.from(document.querySelectorAll('input[type=checkbox]'))
+            .filter(e => e.offsetParent !== null);
+        for (const b of boxes) {
+          const scope = b.closest('div') || b.parentElement;
+          const t = (scope ? scope.textContent : '').trim().toLowerCase();
+          if (t === want || t.startsWith(want)) return b;
+        }
+        return null;
+        """, label)
+
+    def _click_element(self, el) -> bool:
+        """Click a found element, handling the one tag ActionChains cannot: an
+        unopened `<select>`'s `<option>`, which has no on-screen position until the
+        dropdown is open. Selected via its value instead of a pixel click."""
+        tag = (el.tag_name or "").lower()
+        if tag == "option":
+            ok = self.driver.execute_script("""
+            const opt = arguments[0], select = opt.closest('select');
+            if (!select) return false;
+            select.value = opt.value;
+            select.dispatchEvent(new Event('change', {bubbles: true}));
+            return true;
+            """, el)
+            time.sleep(0.5)
+            return bool(ok)
+        self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});", el)
+        time.sleep(0.2)
+        ActionChains(self.driver).move_to_element(el).click().perform()
+        time.sleep(0.8)
+        return True
+
+    def _click_by_text(self, text: str) -> dict:
+        """Click a menu entry / labelled control found by its text."""
+        checkbox_label = re.match(r"^(.+?)\s+checkbox$", text.strip(), re.IGNORECASE)
+        if checkbox_label:
+            el = self._click_checkbox_by_label(checkbox_label.group(1))
+            if el is not None:
+                try:
+                    if self._click_element(el):
+                        return {"ok": True, "via": "checkbox-label"}
+                except Exception as exc:
+                    self.log("[click-text] checkbox %r failed: %s" % (text, exc))
+
+        el = self._click_visible_exact(text)
+        if el is not None:
+            try:
+                if self._click_element(el):
+                    return {"ok": True, "via": "exact-visible"}
+            except Exception as exc:
+                self.log("[click-text] exact match for %r failed: %s" % (text, exc))
+
+        # Tries the candidate xpaths in order, the same fallback idea the original
+        # executor had; the difference is that a failure is reported instead of
+        # being retried against an unchanged page five times.
         xpaths = by_text.process_url_with_text(self.url, text, driver=self.driver,
                                                return_all=True) or []
         for xp in xpaths[:6]:
@@ -179,12 +257,8 @@ class DrawioExecutor:
                 continue
             try:
                 el = self.driver.find_element(By.XPATH, xp)
-                self.driver.execute_script(
-                    "arguments[0].scrollIntoView({block:'center'});", el)
-                time.sleep(0.2)
-                ActionChains(self.driver).move_to_element(el).click().perform()
-                time.sleep(0.8)
-                return {"ok": True, "xpath": xp}
+                if self._click_element(el):
+                    return {"ok": True, "xpath": xp}
             except Exception as exc:
                 self.log("[click-text] %s failed on %s: %s" % (text, xp, type(exc).__name__))
         return {"ok": False, "reason": "no candidate clickable for %r" % text,
@@ -286,7 +360,11 @@ class DrawioExecutor:
 
         res = self._click_by_text(obj)
         if res["ok"]:
-            self.java_lines.append('driver.findElement(By.xpath("%s")).click();' % res["xpath"])
+            if "xpath" in res:
+                self.java_lines.append(
+                    'driver.findElement(By.xpath("%s")).click();' % res["xpath"])
+            else:
+                self.java_lines.append("// click %r (%s)" % (obj, res.get("via")))
             return "ok", res
         return "failed", res
 
@@ -393,6 +471,29 @@ class DrawioExecutor:
             res = drawio_ops.label_cell(self.driver, el, text)
             self.java_lines.append('actions.doubleClick(cell).sendKeys("%s").perform();' % text)
             return ("ok" if res["ok"] else "failed"), res
+
+        if not obj:
+            # A bare "Fill" with no object and no shape editor open names no
+            # target because it has none: the previous step already put the
+            # keyboard focus somewhere (a search box, a dialog's text field,
+            # draw.io's own inline URL/image-data prompt), and "Fill" here means
+            # "type into that". This mirrors what the field actually is rather
+            # than assuming it is a canvas shape.
+            focus = self.driver.execute_script("""
+            const e = document.activeElement;
+            if (!e) return null;
+            const tag = e.tagName.toLowerCase();
+            const editable = tag === 'input' || tag === 'textarea' || e.isContentEditable;
+            return {tag: tag, editable: editable};
+            """)
+            if focus and focus.get("editable"):
+                ActionChains(self.driver).send_keys(text).perform()
+                time.sleep(0.3)
+                self.java_lines.append(
+                    'driver.switchTo().activeElement().sendKeys("%s");' % text)
+                return "ok", {"target": "active element (%s)" % focus["tag"]}
+            return "failed", {"reason": "no editor open and nothing editable focused",
+                              "focused_tag": focus.get("tag") if focus else None}
         return "failed", {"reason": "no editor open and no resolvable target for %r" % obj}
 
     def _do_move(self, step, n):
