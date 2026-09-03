@@ -1,0 +1,1082 @@
+{
+  "n_cases": 100,
+  "n_judged": 24,
+  "mean_overall": 0.75,
+  "mean_layout_similarity": 0.8146,
+  "shape_recall": 0.9559,
+  "shape_type_accuracy": 0.8615,
+  "label_accuracy": 0.8971,
+  "arrow_recall": 0.6667,
+  "arrow_label_accuracy": 0.6154,
+  "totals": {
+    "reference_shapes": 68,
+    "reference_arrows": 45,
+    "reference_labelled_arrows": 13,
+    "result_shapes": 81,
+    "result_arrows": 50
+  },
+  "cases": [
+    {
+      "id": "scenario_001",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_002",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_003",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_004",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_005",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_006",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_007",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_008",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "reference": {
+        "shapes": 1,
+        "arrows": 0,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 1,
+        "arrows": 0
+      },
+      "shapes_matched": 1,
+      "shape_types_matched": 1,
+      "labels_matched": 1,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 1.0,
+      "overall": 1.0,
+      "verdict": "The result perfectly matches the reference shape, though the background color differs.",
+      "problems": [],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_009",
+      "status": "judged"
+    },
+    {
+      "id": "scenario_010",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_011",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_012",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_013",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_014",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_015",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_016",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "reference": {
+        "shapes": 1,
+        "arrows": 0,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 3,
+        "arrows": 0
+      },
+      "shapes_matched": 1,
+      "shape_types_matched": 1,
+      "labels_matched": 1,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 1.0,
+      "overall": 0.8,
+      "verdict": "The result successfully drew the single rectangle, but included two extra small shapes overlapping its sides.",
+      "problems": [
+        "Extra shapes drawn on the left and right sides of the main rectangle"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_017",
+      "status": "judged"
+    },
+    {
+      "id": "scenario_018",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_019",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_020",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "reference": {
+        "shapes": 1,
+        "arrows": 0,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 1,
+        "arrows": 0
+      },
+      "shapes_matched": 1,
+      "shape_types_matched": 1,
+      "labels_matched": 1,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 1.0,
+      "overall": 1.0,
+      "verdict": "The result successfully reproduces the single shape present in the reference.",
+      "problems": [],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_021",
+      "status": "judged"
+    },
+    {
+      "id": "scenario_022",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_023",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_024",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_025",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_026",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_027",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_028",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_029",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_030",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_031",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "reference": {
+        "shapes": 1,
+        "arrows": 0,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 1,
+        "arrows": 0
+      },
+      "shapes_matched": 1,
+      "shape_types_matched": 1,
+      "labels_matched": 1,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 1.0,
+      "overall": 1.0,
+      "verdict": "The result perfectly matches the reference diagram containing a single shape.",
+      "problems": [],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_032",
+      "status": "judged"
+    },
+    {
+      "id": "scenario_033",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "reference": {
+        "shapes": 1,
+        "arrows": 0,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 1,
+        "arrows": 0
+      },
+      "shapes_matched": 1,
+      "shape_types_matched": 1,
+      "labels_matched": 1,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 1.0,
+      "overall": 1.0,
+      "verdict": "The result successfully reproduces the reference diagram containing a single oval shape.",
+      "problems": [],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_034",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 1,
+        "arrows": 0,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 1,
+        "arrows": 0
+      },
+      "shapes_matched": 1,
+      "shape_types_matched": 1,
+      "labels_matched": 1,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 1.0,
+      "overall": 1.0,
+      "verdict": "The result successfully reproduces the reference with an identical single oval shape.",
+      "problems": [],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_035",
+      "status": "judged"
+    },
+    {
+      "id": "scenario_036",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "reference": {
+        "shapes": 2,
+        "arrows": 1,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 2,
+        "arrows": 1
+      },
+      "shapes_matched": 2,
+      "shape_types_matched": 2,
+      "labels_matched": 2,
+      "arrows_matched": 1,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 1.0,
+      "overall": 0.95,
+      "verdict": "The result correctly reproduces all shapes and the connecting arrow, but adds extraneous vertical lines inside the rectangle and places an extra arrow head inside it.",
+      "problems": [
+        "Extraneous vertical lines inside the rectangle shape",
+        "Extra arrow head drawn inside the rectangle"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_037",
+      "status": "judged"
+    },
+    {
+      "id": "scenario_038",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_039",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_040",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "reference": {
+        "shapes": 1,
+        "arrows": 0,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 1,
+        "arrows": 0
+      },
+      "shapes_matched": 1,
+      "shape_types_matched": 1,
+      "labels_matched": 1,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 1.0,
+      "overall": 1.0,
+      "verdict": "The result successfully reproduces the single parallelogram shape from the reference image.",
+      "problems": [],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_041",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 2,
+        "arrows": 1,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 2,
+        "arrows": 1
+      },
+      "shapes_matched": 2,
+      "shape_types_matched": 2,
+      "labels_matched": 2,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.6,
+      "overall": 0.5,
+      "verdict": "The shapes are drawn correctly, but the connecting arrow takes a detour and enters the rectangle from the top instead of the left.",
+      "problems": [
+        "Arrow is routed horizontally then down into the top of the rectangle instead of directly between them"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_042",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 2,
+        "arrows": 1,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 2,
+        "arrows": 0
+      },
+      "shapes_matched": 2,
+      "shape_types_matched": 2,
+      "labels_matched": 2,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.8,
+      "overall": 0.5,
+      "verdict": "The result successfully includes the shapes but completely misses the connecting arrow.",
+      "problems": [
+        "Missing connecting arrow between shapes"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_043",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 2,
+        "arrows": 1,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 2,
+        "arrows": 1
+      },
+      "shapes_matched": 2,
+      "shape_types_matched": 2,
+      "labels_matched": 2,
+      "arrows_matched": 1,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 1.0,
+      "overall": 0.95,
+      "verdict": "The diagram is well reproduced, but the rectangle has internal vertical lines making it look like a data shape.",
+      "problems": [
+        "Rectangle shape has internal vertical lines at both ends"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_044",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 2,
+        "arrows": 1,
+        "labelled_arrows": 1
+      },
+      "result": {
+        "shapes": 2,
+        "arrows": 1
+      },
+      "shapes_matched": 2,
+      "shape_types_matched": 2,
+      "labels_matched": 2,
+      "arrows_matched": 1,
+      "arrow_labels_matched": 1,
+      "layout_similarity": 1.0,
+      "overall": 0.95,
+      "verdict": "The diagram is correctly reproduced except for extra inner vertical lines inside the rectangle shape.",
+      "problems": [
+        "extra vertical lines inside the rectangle shape"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_045",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 2,
+        "arrows": 1,
+        "labelled_arrows": 1
+      },
+      "result": {
+        "shapes": 2,
+        "arrows": 1
+      },
+      "shapes_matched": 2,
+      "shape_types_matched": 2,
+      "labels_matched": 1,
+      "arrows_matched": 1,
+      "arrow_labels_matched": 1,
+      "layout_similarity": 1.0,
+      "overall": 0.95,
+      "verdict": "The diagram is well reproduced, but the target rectangle shape contains an internal arrow/line artifact in the result.",
+      "problems": [
+        "Extra lines or arrow inside the rectangle shape"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_046",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 3,
+        "arrows": 2,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 3,
+        "arrows": 2
+      },
+      "shapes_matched": 3,
+      "shape_types_matched": 3,
+      "labels_matched": 3,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.4,
+      "overall": 0.5,
+      "verdict": "The result includes all correct shapes, but the layout and routing of the arrows do not match the reference diagram.",
+      "problems": [
+        "Arrows use right-angle routing instead of straight lines",
+        "Incorrect connection paths between shapes",
+        "Layout arrangement is staggered instead of horizontal"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_047",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 3,
+        "arrows": 2,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 3,
+        "arrows": 2
+      },
+      "shapes_matched": 3,
+      "shape_types_matched": 3,
+      "labels_matched": 3,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.6,
+      "overall": 0.6,
+      "verdict": "All shapes and labels are correct, but the arrows take bent paths instead of direct straight connections.",
+      "problems": [
+        "Arrow from START to EXECUTE has unnecessary right-angle bends instead of being a straight horizontal line",
+        "Arrow from EXECUTE to END has unnecessary right-angle bends instead of being a straight horizontal line"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_048",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 3,
+        "arrows": 2,
+        "labelled_arrows": 2
+      },
+      "result": {
+        "shapes": 3,
+        "arrows": 2
+      },
+      "shapes_matched": 3,
+      "shape_types_matched": 3,
+      "labels_matched": 3,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.2,
+      "overall": 0.35,
+      "verdict": "The result successfully includes all three shapes and their labels, but the layout and arrows are completely incorrect.",
+      "problems": [
+        "Layout is radically rearranged with shapes positioned differently and overlapping lines",
+        "Connectors and arrows do not link the correct shape pairs in the correct directions",
+        "Arrow connections and labels are misplaced"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_049",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 6,
+        "arrows": 6,
+        "labelled_arrows": 2
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 6
+      },
+      "shapes_matched": 6,
+      "shape_types_matched": 4,
+      "labels_matched": 6,
+      "arrows_matched": 5,
+      "arrow_labels_matched": 2,
+      "layout_similarity": 0.95,
+      "overall": 0.85,
+      "verdict": "The flowchart is mostly accurate, but the process shapes 'Take bus' and 'Take subway' incorrectly have a document outline instead of rectangles.",
+      "problems": [
+        "Shape 'Take bus' has incorrect outline type (document instead of rectangle)",
+        "Shape 'Take subway' has incorrect outline type (document instead of rectangle)",
+        "Arrow connection routing differs slightly at the bottom merge point"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_050",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 3,
+        "arrows": 0,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 5,
+        "arrows": 0
+      },
+      "shapes_matched": 1,
+      "shape_types_matched": 1,
+      "labels_matched": 1,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.1,
+      "overall": 0.2,
+      "verdict": "The result is missing most of the reference shapes, includes extra incorrect elements, and has a completely different layout.",
+      "problems": [
+        "Missing 'Login' shape",
+        "Missing top unnamed shape",
+        "Extra shapes and actor icon included",
+        "Incorrect layout arrangement"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_051",
+      "status": "judged"
+    },
+    {
+      "id": "scenario_052",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_053",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_054",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_055",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_056",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_057",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_058",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_059",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "reference": {
+        "shapes": 1,
+        "arrows": 0,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 3,
+        "arrows": 0
+      },
+      "shapes_matched": 1,
+      "shape_types_matched": 1,
+      "labels_matched": 0,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.8,
+      "overall": 0.3,
+      "verdict": "The result drew extra shapes overlapping the main shape instead of a single clean rectangle.",
+      "problems": [
+        "Extra shapes drawn around the main shape",
+        "Missing single clean outline structure"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_060",
+      "status": "judged"
+    },
+    {
+      "id": "scenario_061",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_062",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_063",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_064",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_065",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_066",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_067",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_068",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_069",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_070",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_071",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_072",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_073",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_074",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_075",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_076",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_077",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_078",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_079",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_080",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_081",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_082",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_083",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_084",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_085",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_086",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "reference": {
+        "shapes": 7,
+        "arrows": 6,
+        "labelled_arrows": 1
+      },
+      "result": {
+        "shapes": 7,
+        "arrows": 6
+      },
+      "shapes_matched": 7,
+      "shape_types_matched": 6,
+      "labels_matched": 6,
+      "arrows_matched": 6,
+      "arrow_labels_matched": 1,
+      "layout_similarity": 0.95,
+      "overall": 0.85,
+      "verdict": "The result successfully captures all shapes, arrows, and labels with correct vertical layout, though some shape border rendering artifacts and minor text typos are present.",
+      "problems": [
+        "Shape outline artifacts on multiple rectangle blocks",
+        "Typo in label 'CalculateM and a for each agent' instead of 'Calculate M and a for each agent'",
+        "Minor spacing/artifact issues around vertical connector lines"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_087",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 5,
+        "arrows": 4,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 4,
+        "arrows": 3
+      },
+      "shapes_matched": 4,
+      "shape_types_matched": 4,
+      "labels_matched": 3,
+      "arrows_matched": 3,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.85,
+      "overall": 0.75,
+      "verdict": "The result successfully captures most of the vertical flowchart structure and shapes, but omits 'Process step 2' entirely.",
+      "problems": [
+        "Missing shape 'Process step 2'",
+        "Missing connection arrow between Process step 1 and Process step 3"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_088",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 6,
+        "arrows": 5,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 5
+      },
+      "shapes_matched": 6,
+      "shape_types_matched": 4,
+      "labels_matched": 6,
+      "arrows_matched": 5,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.95,
+      "overall": 0.85,
+      "verdict": "The result successfully matches most shapes and arrows, but incorrectly uses a document shape instead of a rectangle for the two calculation and output steps.",
+      "problems": [
+        "Shape type incorrect for 'Calculate Sum as A + B': rendered as document instead of rectangle",
+        "Shape type incorrect for 'Print Sum': rendered as document instead of rectangle"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_089",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 7,
+        "arrows": 6,
+        "labelled_arrows": 2
+      },
+      "result": {
+        "shapes": 7,
+        "arrows": 6
+      },
+      "shapes_matched": 7,
+      "shape_types_matched": 5,
+      "labels_matched": 7,
+      "arrows_matched": 4,
+      "arrow_labels_matched": 1,
+      "layout_similarity": 0.85,
+      "overall": 0.75,
+      "verdict": "The result successfully captures all shapes and labels, but uses incorrect shape types for two processes, has incorrect arrow routing, and misplaces arrow labels.",
+      "problems": [
+        "Process shapes are drawn as sub-process symbols (with vertical double borders) instead of standard rectangles.",
+        "Arrow from Start to Process has unnecessary jagged corners.",
+        "Arrow from Process to Decision has unnecessary jagged corners.",
+        "NO arrow label is positioned incorrectly above the arrow instead of next to it.",
+        "Arrow from left shape 'A' connects directly to the side of the Document shape without an arrowhead."
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_090",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 5,
+        "arrows": 6,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 13,
+        "arrows": 13
+      },
+      "shapes_matched": 5,
+      "shape_types_matched": 3,
+      "labels_matched": 5,
+      "arrows_matched": 3,
+      "arrow_labels_matched": 2,
+      "layout_similarity": 0.5,
+      "overall": 0.4,
+      "verdict": "The result includes extra shapes, incorrect shape types for several elements, and extraneous arrows and labels not present in the reference.",
+      "problems": [
+        "Extra shapes added ('Start', 'Process', 'Decision', 'Data', 'End', extra ovals/documents).",
+        "Incorrect shape types used (e.g., 'Wait for 30 mins' drawn as a data/document shape instead of a rectangle).",
+        "Extraneous arrows and routing lines cluttering the diagram."
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "scenario_091",
+      "status": "judged"
+    },
+    {
+      "id": "scenario_092",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_093",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_094",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_095",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_096",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_097",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_098",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_099",
+      "status": "skipped",
+      "reason": "missing reference"
+    },
+    {
+      "id": "scenario_100",
+      "status": "skipped",
+      "reason": "missing reference"
+    }
+  ]
+}

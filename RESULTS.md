@@ -3,8 +3,9 @@
 Ghi lại toàn bộ những gì đo được, ngày 2026-09-03. Đối chiếu yêu cầu ở
 [REQUIREMENTS.md](REQUIREMENTS.md).
 
-> **Trạng thái**: đang chạy lượt chính thức. Bảng số sẽ được điền khi hai lượt
-> chạy (100 case cũ, 30 case mới) và bước chấm VLM hoàn tất.
+> **Trạng thái**: lượt chính thức của bộ 100 case cũ đã xong và đã chấm — xem
+> mục 7. Bộ 30 case của benchmark mới tạm gác lại: nó sẽ được chuyển sang đúng
+> format của bộ cũ, nên bộ cũ mới là thứ cần chạy được trước.
 
 ---
 
@@ -126,7 +127,7 @@ hình nếu phải tự sinh chỉ số sẽ sai; chỉ đọc ảnh thì không
 ## 5. Cách chấm
 
 * **30 case mới**: so `canvas.png` với chính ảnh đề bài trong `data/datasets`.
-* **100 case cũ**: bộ này không có gold. 25 case có vẽ hình được dựng ảnh tham
+* **100 case cũ**: bộ này không có gold. 24 case có vẽ hình được dựng ảnh tham
   chiếu bằng `scenario_to_gold.py` — suy diễn tất định từ chính lời kịch bản
   (icon nói hình gì, các bước Move nói dịch bao nhiêu, Fill nói chữ gì, Connect
   nói mũi tên nào), rồi để draw.io vẽ ra qua đường `#R<xml>`. 75 case còn lại chỉ
@@ -148,3 +149,66 @@ hình nếu phải tự sinh chỉ số sẽ sai; chỉ đọc ảnh thì không
 * Ảnh gold của bộ cũ đo **độ trung thành khi thực thi kịch bản**, không đánh giá
   bố cục của kịch bản gốc đẹp hay xấu.
 * Chưa chạy 500 case × 3 web; phạm vi hiện tại đúng như đã chốt.
+
+---
+
+## 7. Kết quả chính thức — bộ 100 case drawio cũ
+
+Lượt chạy: `result/old100_v2`. Chấm điểm: `result/old100_v2/judge.json`.
+
+### 7.1 Mức bước
+
+| | Code cũ (baseline) | Code đã sửa |
+|---|---|---|
+| Case chạy hết, không exception | 89/100 "ok" nhưng canvas gần như trắng | **100/100** |
+| Case đúng **toàn bộ** bước | không đo được | **89/100** |
+| Tỉ lệ bước thành công | không đo được — `generator.py` nuốt lỗi | **96.73%** (622/643) |
+| Case vẽ ra hình | ~0 | **48** |
+| Case vẽ được cạnh | ~0 | **33** |
+
+Baseline không có số ở mức bước để so, vì executor cũ không sinh ra loại số liệu
+này: nó ghi log lỗi rồi đi tiếp, và "ok" chỉ có nghĩa là không ném exception ở
+mức scenario.
+
+Trong lượt này Chrome chết đúng 1 lần; cơ chế khôi phục đã bật lại trình duyệt và
+chạy lại case đang dở, nên không mất case nào.
+
+### 7.2 Mức hình vẽ (chấm bằng VLM, 24 case có vẽ hình)
+
+75 case còn lại chỉ thao tác menu nên không có hình để so — chúng chỉ được chấm ở
+mức bước.
+
+| Chỉ số | Giá trị |
+|---|---|
+| Điểm tổng trung bình | **0.75** |
+| Giống về bố cục | **0.81** |
+| Tìm đúng hình | **0.96** (65/68) |
+| Đúng loại hình | **0.86** |
+| Đúng nhãn | **0.90** |
+| Tìm đúng cạnh | **0.67** (30/45) |
+| Đúng nhãn cạnh | **0.62** |
+
+Hiệu chuẩn bộ chấm: đưa cùng một ảnh cho cả hai vị trí → 1,00 ở mọi chỉ số; đưa
+ảnh trắng → 0,00.
+
+**Bộ chấm có dao động.** Chấm lại cùng một lượt cho ra `arrow_recall` 0,75 rồi
+0,67 — chênh khoảng ±0,08 ở các chỉ số về cạnh. Nên đọc các số này như khoảng ước
+lượng, không phải hằng số.
+
+### 7.3 Case đạt gần tuyệt đối
+
+`scenario_050` 0,98 (5/5 hình, 5 nhãn, 5/5 cạnh) · `scenario_087` 0,95 (7/7 hình,
+7 nhãn, 6/6 cạnh) · `scenario_089` 0,90 · `scenario_044`/`045` 0,95 ·
+`scenario_009`/`021`/`032`/`034`/`035`/`041` 1,00.
+
+### 7.4 Còn hỏng ở đâu
+
+21 bước hỏng trên 11 case. Phần lớn là mất đúng 1 bước menu. Hai case đáng chú ý:
+
+* `scenario_051` (34/43) — **không phải lỗi executor**. Bước 22 của chính kịch bản
+  click `object7.png`, vốn là một nút trên thanh công cụ chứ không phải shape, nên
+  "element created in step 22" mà 9 bước sau tham chiếu không hề tồn tại.
+* `scenario_088` (30/32) — hỏng 2 bước nối.
+
+**Cạnh vẫn là mặt yếu nhất** (recall ~0,67-0,75 so với ~0,96 của hình). Đây là chỗ
+đáng cải thiện tiếp theo.

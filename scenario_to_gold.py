@@ -81,6 +81,8 @@ DBL_CONN_RE = re.compile(r"^Double click on connector_from_step(\d+)_to_step(\d+
                          re.IGNORECASE)
 CONNECT_RE = re.compile(r"^Connect the element created in step (\d+) to the element "
                         r"created in step (\d+)", re.IGNORECASE)
+DELETE_RE = re.compile(r"^(?:Delete|Remove) the element created in step (\d+)",
+                       re.IGNORECASE)
 
 _DIR = {"up": (0, -1), "top": (0, -1), "down": (0, 1), "bottom": (0, 1),
         "left": (-1, 0), "right": (1, 0)}
@@ -103,6 +105,17 @@ def expected_graph(descriptions: list) -> dict:
                 style, w, h = SHAPE_STYLES[stem]
                 shapes[n] = {"step": n, "type": stem, "style": style,
                              "w": w, "h": h, "dx": 0, "dy": 0, "label": ""}
+            continue
+
+        m = DELETE_RE.match(d)
+        if m:
+            # A scenario can ask for a shape and then delete it again, and then
+            # the empty canvas is the correct answer. scenario_036 does exactly
+            # that; without this the reference showed an ellipse, the run's blank
+            # canvas was scored 0.00, and the run had been right all along.
+            step = int(m.group(1))
+            shapes.pop(step, None)
+            edges[:] = [e for e in edges if e["a"] != step and e["b"] != step]
             continue
 
         m = MOVE_RE.match(d)
