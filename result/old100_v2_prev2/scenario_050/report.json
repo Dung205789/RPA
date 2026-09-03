@@ -1,0 +1,876 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "ok",
+      "detail": {
+        "url": "https://app.diagrams.net/?lang=en&splash=0",
+        "seconds": 7.19
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\object2.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.817,
+        "palette": false,
+        "title": "Zoom (Alt+Mousewheel)",
+        "created_cell": false,
+        "seconds": 1.5
+      }
+    },
+    {
+      "n": 3,
+      "description": "Click on Fit Page",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "xpath": "/html/body/div[11]/table/tbody/tr[15]/td[2]",
+        "seconds": 2.56
+      }
+    },
+    {
+      "n": 4,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.854,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 2.71
+      }
+    },
+    {
+      "n": 5,
+      "description": "Move the element created in step 4 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.78
+      }
+    },
+    {
+      "n": 6,
+      "description": "Move the element created in step 4 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.74
+      }
+    },
+    {
+      "n": 7,
+      "description": "Move the element created in step 4 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 8,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\parallelogram.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 1.0,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "insert_correction": {
+          "dx": 850,
+          "dy": 1100
+        },
+        "seconds": 14.09
+      }
+    },
+    {
+      "n": 9,
+      "description": "Move the element created in step 8 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.85
+      }
+    },
+    {
+      "n": 10,
+      "description": "Move the element created in step 8 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.78
+      }
+    },
+    {
+      "n": 11,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\diamond.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.965,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "insert_correction": {
+          "dx": 850,
+          "dy": 1100
+        },
+        "seconds": 13.36
+      }
+    },
+    {
+      "n": 12,
+      "description": "Move the element created in step 11 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.71
+      }
+    },
+    {
+      "n": 13,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.657,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "insert_correction": {
+          "dx": 850,
+          "dy": 1100
+        },
+        "seconds": 13.26
+      }
+    },
+    {
+      "n": 14,
+      "description": "Move the element created in step 13 to the left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.7
+      }
+    },
+    {
+      "n": 15,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.657,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "insert_correction": {
+          "dx": 850,
+          "dy": 1100
+        },
+        "seconds": 13.2
+      }
+    },
+    {
+      "n": 16,
+      "description": "Move the element created in step 15 to the right",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 4,
+        "seconds": 2.82
+      }
+    },
+    {
+      "n": 17,
+      "description": "Move the element created in step 15 to the up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 4,
+        "seconds": 2.8
+      }
+    },
+    {
+      "n": 18,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.854,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "insert_correction": {
+          "dx": 850,
+          "dy": 1100
+        },
+        "seconds": 13.26
+      }
+    },
+    {
+      "n": 19,
+      "description": "Move the element created in step 18 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 150,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 2.71
+      }
+    },
+    {
+      "n": 20,
+      "description": "Double click on the element created in step 4",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 4",
+        "seconds": 2.34
+      }
+    },
+    {
+      "n": 21,
+      "description": "Fill \"Leave home\" into the element created in step 4",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 4",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          448,
+          120,
+          80
+        ],
+        "seconds": 1.53
+      }
+    },
+    {
+      "n": 22,
+      "description": "Double click on the element created in step 8",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 8",
+        "seconds": 2.35
+      }
+    },
+    {
+      "n": 23,
+      "description": "Fill \"Check timeline\" into the element created in step 8",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 8",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.5
+      }
+    },
+    {
+      "n": 24,
+      "description": "Double click on the element created in step 11",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 11",
+        "seconds": 2.37
+      }
+    },
+    {
+      "n": 25,
+      "description": "Fill \"Before 7 am?\" into the element created in step 11",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 11",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          748,
+          448,
+          80,
+          80
+        ],
+        "seconds": 1.54
+      }
+    },
+    {
+      "n": 26,
+      "description": "Double click on the element created in step 13",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 13",
+        "seconds": 2.33
+      }
+    },
+    {
+      "n": 27,
+      "description": "Fill \"Take bus\" into the element created in step 13",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 13",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.45
+      }
+    },
+    {
+      "n": 28,
+      "description": "Double click on the element created in step 15",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 15",
+        "seconds": 2.34
+      }
+    },
+    {
+      "n": 29,
+      "description": "Fill \"Take subway\" into the element created in step 15",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 15",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.45
+      }
+    },
+    {
+      "n": 30,
+      "description": "Double click on the element created in step 18",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 18",
+        "seconds": 2.33
+      }
+    },
+    {
+      "n": 31,
+      "description": "Fill \"Reach school\" into the element created in step 18",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 18",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          448,
+          120,
+          80
+        ],
+        "seconds": 1.49
+      }
+    },
+    {
+      "n": 32,
+      "description": "Connect the element created in step 4 to the element created in step 8",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 6,
+        "after": 7,
+        "seconds": 6.11
+      }
+    },
+    {
+      "n": 33,
+      "description": "Connect the element created in step 8 to the element created in step 11",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 7,
+        "after": 8,
+        "seconds": 6.12
+      }
+    },
+    {
+      "n": 34,
+      "description": "Connect the element created in step 11 to the element created in step 13",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 8,
+        "after": 9,
+        "seconds": 6.09
+      }
+    },
+    {
+      "n": 35,
+      "description": "Connect the element created in step 11 to the element created in step 15",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 9,
+        "after": 10,
+        "seconds": 6.14
+      }
+    },
+    {
+      "n": 36,
+      "description": "Double click on connector_from_step11_to_step13",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step11_to_step13",
+        "seconds": 2.33
+      }
+    },
+    {
+      "n": 37,
+      "description": "Fill \"NO\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step11_to_step13",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            790,
+            489
+          ]
+        ],
+        "target_box": [
+          711,
+          449,
+          154,
+          79
+        ],
+        "seconds": 1.46
+      }
+    },
+    {
+      "n": 38,
+      "description": "Double click on connector_from_step11_to_step15",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step11_to_step15",
+        "seconds": 3.47
+      }
+    },
+    {
+      "n": 39,
+      "description": "Fill \"YES\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step11_to_step15",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            789,
+            488
+          ]
+        ],
+        "target_box": [
+          734,
+          484,
+          109,
+          7
+        ],
+        "seconds": 1.47
+      }
+    },
+    {
+      "n": 40,
+      "description": "Connect the element created in step 13 to the element created in step 18",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 10,
+        "after": 11,
+        "seconds": 6.21
+      }
+    },
+    {
+      "n": 41,
+      "description": "Connect the element created in step 15 to the element created in step 18",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 11,
+        "after": 12,
+        "seconds": 6.16
+      }
+    }
+  ],
+  "counts": {
+    "ok": 41,
+    "failed": 0,
+    "error": 0,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 1.0,
+  "total_sec": 182.0,
+  "cells": [
+    {
+      "cx": 713,
+      "cy": 302,
+      "h": 79,
+      "index": 0,
+      "kind": "edge",
+      "mx": 1504,
+      "my": 1848,
+      "p1": [
+        713,
+        263
+      ],
+      "p2": [
+        713,
+        336
+      ],
+      "tags": "path,path,path",
+      "w": 7,
+      "x": 709,
+      "y": 263,
+      "zoom": 1
+    },
+    {
+      "cx": 713,
+      "cy": 223,
+      "h": 80,
+      "index": 1,
+      "kind": "ellipse",
+      "mx": 1504,
+      "my": 1769,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 120,
+      "x": 653,
+      "y": 183,
+      "zoom": 1
+    },
+    {
+      "cx": 713,
+      "cy": 442,
+      "h": 79,
+      "index": 2,
+      "kind": "edge",
+      "mx": 1504,
+      "my": 1988,
+      "p1": [
+        713,
+        403
+      ],
+      "p2": [
+        713,
+        476
+      ],
+      "tags": "path,path,path",
+      "w": 7,
+      "x": 709,
+      "y": 403,
+      "zoom": 1
+    },
+    {
+      "cx": 713,
+      "cy": 373,
+      "h": 60,
+      "index": 3,
+      "kind": "path",
+      "mx": 1504,
+      "my": 1919,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 120,
+      "x": 653,
+      "y": 343,
+      "zoom": 1
+    },
+    {
+      "cx": 636,
+      "cy": 602,
+      "h": 79,
+      "index": 4,
+      "kind": "edge",
+      "mx": 1427,
+      "my": 2148,
+      "p1": [
+        713,
+        563
+      ],
+      "p2": [
+        563,
+        636
+      ],
+      "tags": "path,path,path",
+      "w": 154,
+      "x": 559,
+      "y": 563,
+      "zoom": 1
+    },
+    {
+      "cx": 713,
+      "cy": 523,
+      "h": 80,
+      "index": 5,
+      "kind": "path",
+      "mx": 1504,
+      "my": 2069,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 80,
+      "x": 673,
+      "y": 483,
+      "zoom": 1
+    },
+    {
+      "cx": 563,
+      "cy": 673,
+      "h": 60,
+      "index": 6,
+      "kind": "rect",
+      "mx": 1354,
+      "my": 2219,
+      "p1": null,
+      "p2": null,
+      "tags": "rect,path,path",
+      "w": 120,
+      "x": 503,
+      "y": 643,
+      "zoom": 1
+    },
+    {
+      "cx": 863,
+      "cy": 523,
+      "h": 60,
+      "index": 7,
+      "kind": "rect",
+      "mx": 1654,
+      "my": 2069,
+      "p1": null,
+      "p2": null,
+      "tags": "rect,path,path",
+      "w": 120,
+      "x": 803,
+      "y": 493,
+      "zoom": 1
+    },
+    {
+      "cx": 713,
+      "cy": 823,
+      "h": 80,
+      "index": 8,
+      "kind": "ellipse",
+      "mx": 1504,
+      "my": 2369,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 120,
+      "x": 653,
+      "y": 783,
+      "zoom": 1
+    },
+    {
+      "cx": 807,
+      "cy": 523,
+      "h": 7,
+      "index": 9,
+      "kind": "edge",
+      "mx": 1598,
+      "my": 2069,
+      "p1": [
+        753,
+        523
+      ],
+      "p2": [
+        856,
+        523
+      ],
+      "tags": "path,path,path",
+      "w": 109,
+      "x": 753,
+      "y": 519,
+      "zoom": 1
+    },
+    {
+      "cx": 639,
+      "cy": 762,
+      "h": 119,
+      "index": 10,
+      "kind": "edge",
+      "mx": 1430,
+      "my": 2308,
+      "p1": [
+        563,
+        703
+      ],
+      "p2": [
+        713,
+        816
+      ],
+      "tags": "path,path,path",
+      "w": 154,
+      "x": 563,
+      "y": 703,
+      "zoom": 1
+    },
+    {
+      "cx": 786,
+      "cy": 687,
+      "h": 269,
+      "index": 11,
+      "kind": "edge",
+      "mx": 1577,
+      "my": 2233,
+      "p1": [
+        863,
+        553
+      ],
+      "p2": [
+        713,
+        816
+      ],
+      "tags": "path,path,path",
+      "w": 154,
+      "x": 709,
+      "y": 553,
+      "zoom": 1
+    }
+  ],
+  "n_vertices": 6,
+  "n_edges": 6,
+  "labels": [
+    "Leave home",
+    "Check timeline",
+    "NO",
+    "Before 7 am ?",
+    "Take bus",
+    "Take subway",
+    "Reach school",
+    "YES"
+  ]
+}

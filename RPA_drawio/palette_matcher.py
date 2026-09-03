@@ -102,6 +102,15 @@ def _ink_mask(bgr: np.ndarray, size: int = 40) -> np.ndarray:
     # Otsu picks the ink/paper split per image, so a faint template and a crisp
     # palette entry still binarise the same way.
     _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+    # Ink is the minority of an icon, whichever way round the colours are. In
+    # draw.io's Dark appearance the palette draws light strokes on a dark ground,
+    # so the threshold above selects the background instead and the mask becomes
+    # the negative of the shape. scenario_009 switches to Dark and then clicks an
+    # ellipse; matched against light-mode templates it selected a text placeholder
+    # and scored 0.00. Flipping when the "ink" covers most of the tile makes the
+    # comparison independent of the theme.
+    if binary.mean() > 127:
+        binary = 255 - binary
     ys, xs = np.nonzero(binary)
     if len(xs) == 0:
         return np.zeros((size, size), dtype=np.uint8)
