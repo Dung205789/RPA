@@ -356,21 +356,64 @@ def settle_for_screenshot(driver) -> None:
         pass
 
 
-def fit_page(driver) -> None:
-    """Zoom so the whole diagram is in frame before the screenshot is taken.
+def _content_box(driver):
+    """Bounding box of everything drawn, and the viewport it has to fit into."""
+    import cell_tracker
+    els = cell_tracker.cell_elements(driver)
+    if not els:
+        return None
+    infos = cell_tracker.cell_info(driver, els)
+    x0 = min(i["x"] for i in infos)
+    y0 = min(i["y"] for i in infos)
+    x1 = max(i["x"] + i["w"] for i in infos)
+    y1 = max(i["y"] + i["h"] for i in infos)
+    cont = driver.execute_script("""
+    const c = document.querySelector('.geDiagramContainer');
+    const r = c.getBoundingClientRect();
+    return {w: r.width, h: r.height};
+    """)
+    return {"w": x1 - x0, "h": y1 - y0, "view_w": cont["w"], "view_h": cont["h"]}
 
-    A scenario can push shapes well outside the viewport; a picture that shows
-    only part of the drawing cannot be judged against the reference. Ctrl+Shift+H
-    is draw.io's own Reset View / Fit Page.
+
+def fit_page(driver, max_steps: int = 8) -> dict:
+    """Zoom out until the whole diagram is in frame, then centre it.
+
+    The screenshot is what the run gets judged on, so a picture showing part of
+    the drawing is a lost case regardless of what was drawn. Ctrl+Shift+H looked
+    like the right tool and is not: on medium_m21_v4_s7b1l0 it left the canvas
+    zoomed so far in that a single diamond filled the frame, while the run had in
+    fact drawn all seven shapes and seven arrows.
+
+    Zooming out one step at a time and measuring after each is unglamorous but it
+    is checkable, which the shortcut was not.
     """
     from selenium.webdriver.common.action_chains import ActionChains
     from selenium.webdriver.common.keys import Keys
+    import cell_tracker
+
+    steps = 0
     try:
-        (ActionChains(driver).key_down(Keys.CONTROL).key_down(Keys.SHIFT)
-         .send_keys("h").key_up(Keys.SHIFT).key_up(Keys.CONTROL).perform())
-        time.sleep(1.0)
-    except Exception:
-        pass
+        for _ in range(max_steps):
+            box = _content_box(driver)
+            if box is None:
+                return {"fitted": False, "reason": "nothing drawn"}
+            if box["w"] <= box["view_w"] * 0.92 and box["h"] <= box["view_h"] * 0.92:
+                break
+            (ActionChains(driver).key_down(Keys.CONTROL).send_keys(Keys.SUBTRACT)
+             .key_up(Keys.CONTROL).perform())
+            steps += 1
+            time.sleep(0.6)
+        # centre what is now visible
+        els = cell_tracker.cell_elements(driver)
+        if els:
+            import drawio_ops
+            drawio_ops.ensure_visible(driver, *els)
+        box = _content_box(driver)
+        return {"fitted": bool(box and box["w"] <= box["view_w"]
+                               and box["h"] <= box["view_h"]),
+                "zoom_out_steps": steps, "box": box}
+    except Exception as exc:
+        return {"fitted": False, "reason": "%s: %s" % (type(exc).__name__, exc)}
 
 
 def open_clean_drawio(driver, url: str = DRAWIO_URL, log=None) -> dict:

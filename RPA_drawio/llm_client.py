@@ -176,4 +176,16 @@ def extract_json(text: str):
     end = text.rfind("}")
     if start == -1 or end == -1:
         raise ValueError("no JSON object in reply: %r" % text[:200])
-    return json.loads(text[start:end + 1])
+    body = text[start:end + 1]
+    try:
+        return json.loads(body)
+    except json.JSONDecodeError:
+        # Small syntax slips are common in long replies and cost a whole case if
+        # they are treated as fatal. Repair the two that actually occur — a
+        # trailing comma before a closing bracket, and an unescaped newline inside
+        # a string — and only then give up.
+        repaired = re.sub(r",\s*([}\]])", r"\1", body)
+        repaired = re.sub(r'"((?:[^"\\]|\\.)*)"',
+                          lambda m: '"%s"' % m.group(1).replace("\n", " "), repaired,
+                          flags=re.S)
+        return json.loads(repaired)

@@ -1,0 +1,10 @@
+{
+  "id": "scenario_060",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on Style",
+    "Click on Sketch checkbox",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\diamond.png]",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\rectangle.png]"
+  ]
+}

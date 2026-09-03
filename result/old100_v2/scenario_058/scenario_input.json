@@ -1,0 +1,10 @@
+{
+  "id": "scenario_058",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on Background Color checkbox",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\object23.png]",
+    "Fill \"000000\"",
+    "Click on Apply"
+  ]
+}

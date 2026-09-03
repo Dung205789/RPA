@@ -1,0 +1,119 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "ok",
+      "detail": {
+        "url": "https://app.diagrams.net/?lang=en&splash=0",
+        "seconds": 8.39
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_Datasets\\images\\drawio\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.854,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "seconds": 2.91
+      }
+    },
+    {
+      "n": 3,
+      "description": "Double click on the element created in step 2",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 2",
+        "seconds": 2.38
+      }
+    },
+    {
+      "n": 4,
+      "description": "Fill \"test_abc\" into the element created in step 2",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 2",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          728,
+          448,
+          120,
+          80
+        ],
+        "seconds": 1.51
+      }
+    },
+    {
+      "n": 5,
+      "description": "Press ESC",
+      "action": "press",
+      "status": "ok",
+      "detail": {
+        "seconds": 0.44
+      }
+    },
+    {
+      "n": 6,
+      "description": "Move the element created in step 2 to the right",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 3.14
+      }
+    }
+  ],
+  "counts": {
+    "ok": 6,
+    "failed": 0,
+    "error": 0,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 1.0,
+  "total_sec": 19.7,
+  "cells": [
+    {
+      "cx": 938,
+      "cy": 488,
+      "h": 80,
+      "index": 0,
+      "kind": "ellipse",
+      "mx": 1254,
+      "my": 1119,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 120,
+      "x": 878,
+      "y": 448,
+      "zoom": 1
+    }
+  ],
+  "n_vertices": 1,
+  "n_edges": 0,
+  "labels": [
+    "test_abc"
+  ]
+}
