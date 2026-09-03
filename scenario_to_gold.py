@@ -190,6 +190,11 @@ def render_xml(driver, xml: str, log=print) -> bool:
     if rpa_env.editor_state(driver).get("dialogs"):
         rpa_env.dismiss_dialogs(driver)
         time.sleep(0.8)
+    # Match the runs, which draw with Page View off, so the reference and the
+    # result differ in the diagram and not in whether a sheet outline is present.
+    rpa_env.deselect_all(driver)
+    rpa_env.set_page_view(driver, False)
+    time.sleep(0.5)
     return len(cell_tracker.cell_elements(driver)) > 0
 
 
