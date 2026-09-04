@@ -18,7 +18,7 @@ baseline runs turned out to be measuring:
   counted as the next one's work.
 
 Usage:
-  python run_drawio_v2.py --scenarios "RPA_Datasets_new30/*.json" \
+  python run_drawio_v2.py --scenarios "RPA_Datasets_new30_v2/*.json" \
       --dataset-root RPA_Datasets --out result/new30_v2 [--limit N] [--port 9222]
 """
 from __future__ import annotations
