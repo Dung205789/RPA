@@ -7,7 +7,8 @@ public class GeneratedTest {
         Actions actions = new Actions(driver);
 
         driver.get("https://app.diagrams.net/?lang=en&splash=0");
-        driver.findElement(By.xpath("/html/body/div[4]/div[2]/div[1]/div[2]/div/div[2]/span")).click();
+        // click 'Style' (exact-visible)
+        // click 'Sketch checkbox' (checkbox-label)
         // click D:\SVG_Agent\documents\RPA_Datasets\images\drawio\diamond.png (a, score 0.96)
         // click D:\SVG_Agent\documents\RPA_Datasets\images\drawio\rectangle.png (a, score 0.66)
 

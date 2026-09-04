@@ -7,7 +7,7 @@ public class GeneratedTest {
         Actions actions = new Actions(driver);
 
         driver.get("https://app.diagrams.net/?lang=en&splash=0");
-        driver.findElement(By.xpath("/html/body/div[3]/div[1]/a[14]/span[2]")).click();
+        // click 'Flowchart' (exact-visible)
         // click D:\SVG_Agent\documents\RPA_Datasets\images\drawio\o92.png (a, score 0.70)
 
         driver.quit();

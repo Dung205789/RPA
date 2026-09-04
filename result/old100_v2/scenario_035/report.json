@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 6.77
+        "seconds": 6.82
       }
     },
     {
@@ -20,7 +20,7 @@
         "palette": true,
         "title": "",
         "created_cell": true,
-        "seconds": 2.73
+        "seconds": 2.66
       }
     },
     {
@@ -31,7 +31,7 @@
       "detail": {
         "dw": -15,
         "dh": 0,
-        "seconds": 3.17
+        "seconds": 3.13
       }
     }
   ],

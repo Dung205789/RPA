@@ -8,7 +8,7 @@ public class GeneratedTest {
 
         driver.get("https://app.diagrams.net/?lang=en&splash=0");
         // click D:\SVG_Agent\documents\RPA_Datasets\images\drawio\object2.png (input, score 0.82)
-        driver.findElement(By.xpath("/html/body/div[11]/table/tbody/tr[15]/td[2]")).click();
+        // click 'Fit Page' (exact-visible)
         // click D:\SVG_Agent\documents\RPA_Datasets\images\drawio\ellipse.png (a, score 0.85)
         for (int i = 0; i < 15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_UP).keyUp(Keys.SHIFT).perform(); }
         for (int i = 0; i < 15; i++) { actions.keyDown(Keys.SHIFT).sendKeys(Keys.ARROW_UP).keyUp(Keys.SHIFT).perform(); }

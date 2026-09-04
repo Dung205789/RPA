@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 10.25
+        "seconds": 4.92
       }
     },
     {
@@ -20,7 +20,7 @@
         "palette": false,
         "title": "Drag to reorder",
         "created_cell": false,
-        "seconds": 1.59
+        "seconds": 1.49
       }
     },
     {
@@ -33,7 +33,7 @@
         "palette": true,
         "title": "",
         "created_cell": true,
-        "seconds": 3.05
+        "seconds": 2.69
       }
     }
   ],
@@ -47,7 +47,7 @@
     "skipped": 0
   },
   "step_success_rate": 1.0,
-  "total_sec": 15.4,
+  "total_sec": 9.4,
   "cells": [
     {
       "cx": 784,

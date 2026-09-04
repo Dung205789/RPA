@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 5.13
+        "seconds": 5.15
       }
     },
     {
@@ -20,7 +20,7 @@
         "palette": false,
         "title": "Format (Ctrl+Shift+P)",
         "created_cell": false,
-        "seconds": 1.55
+        "seconds": 1.51
       }
     }
   ],

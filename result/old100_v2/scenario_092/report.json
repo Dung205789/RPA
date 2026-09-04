@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 12.43
+        "seconds": 7.71
       }
     },
     {
@@ -17,8 +17,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[3]/div[1]/a[14]/span[2]",
-        "seconds": 2.71
+        "via": "exact-visible",
+        "seconds": 1.3
       }
     },
     {
@@ -31,7 +31,7 @@
         "palette": true,
         "title": "",
         "created_cell": true,
-        "seconds": 3.05
+        "seconds": 2.71
       }
     }
   ],
@@ -45,7 +45,7 @@
     "skipped": 0
   },
   "step_success_rate": 1.0,
-  "total_sec": 18.7,
+  "total_sec": 12.0,
   "cells": [
     {
       "cx": 783,

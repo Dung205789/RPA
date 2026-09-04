@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 6.92
+        "seconds": 4.89
       }
     },
     {
@@ -17,8 +17,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[1]/div[1]/a[5]",
-        "seconds": 2.62
+        "via": "exact-visible",
+        "seconds": 1.31
       }
     },
     {
@@ -28,8 +28,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[10]/table/tbody/tr[3]/td[2]",
-        "seconds": 2.56
+        "via": "exact-visible",
+        "seconds": 1.3
       }
     },
     {
@@ -39,8 +39,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[11]/table/tbody/tr[3]/td[2]",
-        "seconds": 3.04
+        "via": "exact-visible",
+        "seconds": 1.32
       }
     },
     {
@@ -53,7 +53,7 @@
         "palette": true,
         "title": "",
         "created_cell": true,
-        "seconds": 2.81
+        "seconds": 2.68
       }
     }
   ],
@@ -67,7 +67,7 @@
     "skipped": 0
   },
   "step_success_rate": 1.0,
-  "total_sec": 18.6,
+  "total_sec": 11.9,
   "cells": [
     {
       "cx": 784,

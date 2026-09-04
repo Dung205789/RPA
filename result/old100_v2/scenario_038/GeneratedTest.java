@@ -8,7 +8,7 @@ public class GeneratedTest {
 
         driver.get("https://app.diagrams.net/?lang=en&splash=0");
         // click D:\SVG_Agent\documents\RPA_Datasets\images\drawio\object2.png (input, score 0.82)
-        driver.findElement(By.xpath("/html/body/div[10]/table/tbody/tr[15]/td[2]")).click();
+        // click 'Fit Page' (exact-visible)
 
         driver.quit();
     }

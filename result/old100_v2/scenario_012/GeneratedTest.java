@@ -8,7 +8,7 @@ public class GeneratedTest {
 
         driver.get("https://app.diagrams.net/?lang=en&splash=0");
         // click D:\SVG_Agent\documents\RPA_Datasets\images\drawio\object1.png (a, score 0.89)
-        driver.findElement(By.xpath("/html/body/div[10]/table/tbody/tr[3]/td[2]")).click();
+        // click 'Ruler' (exact-visible)
 
         driver.quit();
     }

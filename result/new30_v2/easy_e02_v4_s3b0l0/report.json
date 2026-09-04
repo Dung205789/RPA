@@ -1,0 +1,366 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "ok",
+      "detail": {
+        "url": "https://app.diagrams.net/?lang=en&splash=0",
+        "seconds": 6.6
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.672,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "ellipse.png",
+        "identified_as": "ellipse.png",
+        "drawn_match": 0.709,
+        "seconds": 2.82
+      }
+    },
+    {
+      "n": 3,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.79
+      }
+    },
+    {
+      "n": 4,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.78
+      }
+    },
+    {
+      "n": 5,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.622,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "parallelogram.png",
+        "identified_as": "parallelogram.png",
+        "drawn_match": 0.817,
+        "insert_correction": {
+          "dx": -260,
+          "dy": -160
+        },
+        "seconds": 8.6
+      }
+    },
+    {
+      "n": 6,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.672,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "ellipse.png",
+        "identified_as": "ellipse.png",
+        "drawn_match": 0.709,
+        "insert_correction": {
+          "dx": -170,
+          "dy": -100
+        },
+        "seconds": 8.1
+      }
+    },
+    {
+      "n": 7,
+      "description": "Move the element created in step 6 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 97,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.79
+      }
+    },
+    {
+      "n": 8,
+      "description": "Move the element created in step 6 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 98,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.74
+      }
+    },
+    {
+      "n": 9,
+      "description": "Double click on the element created in step 2",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 2",
+        "seconds": 2.34
+      }
+    },
+    {
+      "n": 10,
+      "description": "Fill \"Patch submitted\" into the element created in step 2",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 2",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          749,
+          462,
+          78,
+          52
+        ],
+        "seconds": 1.53
+      }
+    },
+    {
+      "n": 11,
+      "description": "Double click on the element created in step 5",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 5",
+        "seconds": 2.41
+      }
+    },
+    {
+      "n": 12,
+      "description": "Fill \"Read the pull request\" into the element created in step 5",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 5",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          749,
+          468,
+          78,
+          39
+        ],
+        "seconds": 1.47
+      }
+    },
+    {
+      "n": 13,
+      "description": "Double click on the element created in step 6",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 6",
+        "seconds": 2.36
+      }
+    },
+    {
+      "n": 14,
+      "description": "Fill \"Patch merged\" into the element created in step 6",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 6",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            788,
+            488
+          ]
+        ],
+        "target_box": [
+          749,
+          462,
+          78,
+          52
+        ],
+        "seconds": 1.55
+      }
+    },
+    {
+      "n": 15,
+      "description": "Connect the element created in step 2 to the element created in step 5",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 3,
+        "after": 4,
+        "seconds": 6.17
+      }
+    },
+    {
+      "n": 16,
+      "description": "Connect the element created in step 5 to the element created in step 6",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 4,
+        "after": 5,
+        "seconds": 6.09
+      }
+    }
+  ],
+  "counts": {
+    "ok": 16,
+    "failed": 0,
+    "error": 0,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 1.0,
+  "total_sec": 62.7,
+  "cells": [
+    {
+      "cx": 714,
+      "cy": 427,
+      "h": 305,
+      "index": 0,
+      "kind": "edge",
+      "mx": 1330,
+      "my": 962,
+      "p1": [
+        668,
+        275
+      ],
+      "p2": [
+        759,
+        576
+      ],
+      "tags": "path,path,path",
+      "w": 93,
+      "x": 668,
+      "y": 275,
+      "zoom": 1
+    },
+    {
+      "cx": 668,
+      "cy": 249,
+      "h": 52,
+      "index": 1,
+      "kind": "ellipse",
+      "mx": 1284,
+      "my": 784,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 78,
+      "x": 629,
+      "y": 223,
+      "zoom": 1
+    },
+    {
+      "cx": 789,
+      "cy": 713,
+      "h": 188,
+      "index": 2,
+      "kind": "edge",
+      "mx": 1405,
+      "my": 1248,
+      "p1": [
+        759,
+        619
+      ],
+      "p2": [
+        817,
+        804
+      ],
+      "tags": "path,path,path",
+      "w": 61,
+      "x": 759,
+      "y": 619,
+      "zoom": 1
+    },
+    {
+      "cx": 759,
+      "cy": 600,
+      "h": 39,
+      "index": 3,
+      "kind": "path",
+      "mx": 1375,
+      "my": 1135,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 78,
+      "x": 720,
+      "y": 580,
+      "zoom": 1
+    },
+    {
+      "cx": 817,
+      "cy": 834,
+      "h": 52,
+      "index": 4,
+      "kind": "ellipse",
+      "mx": 1433,
+      "my": 1369,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 78,
+      "x": 778,
+      "y": 808,
+      "zoom": 1
+    }
+  ],
+  "n_vertices": 3,
+  "n_edges": 2,
+  "labels": [
+    "Patch submitted",
+    "Read the pull request",
+    "Patch merged"
+  ]
+}

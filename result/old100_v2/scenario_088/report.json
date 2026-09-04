@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 11.81
+        "seconds": 6.72
       }
     },
     {
@@ -20,7 +20,7 @@
         "palette": true,
         "title": "",
         "created_cell": true,
-        "seconds": 2.96
+        "seconds": 2.67
       }
     },
     {
@@ -35,7 +35,7 @@
         "wanted": 150,
         "relative_to": 0,
         "assumed": true,
-        "seconds": 3.02
+        "seconds": 2.7
       }
     },
     {
@@ -50,7 +50,7 @@
         "wanted": 150,
         "relative_to": 0,
         "assumed": true,
-        "seconds": 3.03
+        "seconds": 2.69
       }
     },
     {
@@ -65,7 +65,7 @@
         "wanted": 150,
         "relative_to": 0,
         "assumed": true,
-        "seconds": 3.2
+        "seconds": 2.7
       }
     },
     {
@@ -82,7 +82,7 @@
           "dx": 0,
           "dy": 410
         },
-        "seconds": 7.56
+        "seconds": 6.14
       }
     },
     {
@@ -96,7 +96,7 @@
         "dy": -113,
         "wanted": 150,
         "relative_to": 1,
-        "seconds": 3.26
+        "seconds": 2.75
       }
     },
     {
@@ -110,7 +110,7 @@
         "dy": -112,
         "wanted": 150,
         "relative_to": 1,
-        "seconds": 3.34
+        "seconds": 2.7
       }
     },
     {
@@ -127,7 +127,7 @@
           "dx": 0,
           "dy": 410
         },
-        "seconds": 7.4
+        "seconds": 6.14
       }
     },
     {
@@ -141,7 +141,7 @@
         "dy": -113,
         "wanted": 150,
         "relative_to": 2,
-        "seconds": 3.11
+        "seconds": 2.71
       }
     },
     {
@@ -158,7 +158,7 @@
           "dx": 0,
           "dy": 310
         },
-        "seconds": 7.43
+        "seconds": 5.88
       }
     },
     {
@@ -175,7 +175,7 @@
           "dx": 0,
           "dy": 310
         },
-        "seconds": 6.89
+        "seconds": 5.9
       }
     },
     {
@@ -189,7 +189,7 @@
         "dy": 112,
         "wanted": 150,
         "relative_to": 4,
-        "seconds": 3.42
+        "seconds": 2.7
       }
     },
     {
@@ -206,7 +206,7 @@
           "dx": 0,
           "dy": 310
         },
-        "seconds": 6.89
+        "seconds": 5.86
       }
     },
     {
@@ -220,7 +220,7 @@
         "dy": 112,
         "wanted": 150,
         "relative_to": 5,
-        "seconds": 3.25
+        "seconds": 2.7
       }
     },
     {
@@ -230,7 +230,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 2",
-        "seconds": 2.47
+        "seconds": 2.29
       }
     },
     {
@@ -254,7 +254,7 @@
           90,
           60
         ],
-        "seconds": 1.6
+        "seconds": 1.48
       }
     },
     {
@@ -264,7 +264,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 6",
-        "seconds": 2.51
+        "seconds": 2.26
       }
     },
     {
@@ -288,7 +288,7 @@
           90,
           45
         ],
-        "seconds": 1.63
+        "seconds": 1.47
       }
     },
     {
@@ -298,7 +298,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 9",
-        "seconds": 2.5
+        "seconds": 2.28
       }
     },
     {
@@ -322,7 +322,7 @@
           90,
           45
         ],
-        "seconds": 1.59
+        "seconds": 1.46
       }
     },
     {
@@ -332,7 +332,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 11",
-        "seconds": 2.49
+        "seconds": 2.27
       }
     },
     {
@@ -356,7 +356,7 @@
           90,
           45
         ],
-        "seconds": 1.6
+        "seconds": 1.47
       }
     },
     {
@@ -366,7 +366,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 12",
-        "seconds": 2.56
+        "seconds": 2.27
       }
     },
     {
@@ -390,7 +390,7 @@
           90,
           45
         ],
-        "seconds": 1.99
+        "seconds": 1.53
       }
     },
     {
@@ -400,7 +400,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 14",
-        "seconds": 2.41
+        "seconds": 2.26
       }
     },
     {
@@ -424,7 +424,7 @@
           90,
           60
         ],
-        "seconds": 1.59
+        "seconds": 1.46
       }
     },
     {
@@ -436,7 +436,7 @@
         "ok": true,
         "before": 6,
         "after": 7,
-        "seconds": 6.41
+        "seconds": 6.08
       }
     },
     {
@@ -448,7 +448,7 @@
         "ok": true,
         "before": 7,
         "after": 8,
-        "seconds": 6.48
+        "seconds": 6.09
       }
     },
     {
@@ -460,7 +460,7 @@
         "ok": true,
         "before": 8,
         "after": 9,
-        "seconds": 6.42
+        "seconds": 6.08
       }
     },
     {
@@ -472,7 +472,7 @@
         "ok": true,
         "before": 9,
         "after": 10,
-        "seconds": 6.49
+        "seconds": 6.19
       }
     },
     {
@@ -484,7 +484,7 @@
         "ok": false,
         "before": 10,
         "after": 10,
-        "seconds": 6.44
+        "seconds": 6.08
       }
     }
   ],
@@ -498,7 +498,7 @@
     "skipped": 0
   },
   "step_success_rate": 0.9375,
-  "total_sec": 140.0,
+  "total_sec": 118.1,
   "cells": [
     {
       "cx": 788,

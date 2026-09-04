@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 12.08
+        "seconds": 7.01
       }
     },
     {
@@ -17,8 +17,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[3]/div[1]/a[20]/span[2]",
-        "seconds": 2.91
+        "via": "exact-visible",
+        "seconds": 1.3
       }
     },
     {
@@ -31,7 +31,7 @@
         "palette": true,
         "title": "TablePK,FK1Row 1PK,FK2Row 2Row",
         "created_cell": true,
-        "seconds": 3.06
+        "seconds": 2.78
       }
     }
   ],
@@ -45,7 +45,7 @@
     "skipped": 0
   },
   "step_success_rate": 1.0,
-  "total_sec": 18.4,
+  "total_sec": 11.3,
   "cells": [
     {
       "cx": 784,

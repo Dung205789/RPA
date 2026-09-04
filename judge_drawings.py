@@ -96,9 +96,32 @@ def find_reference(case_id: str, pattern: str):
     return Path(hits[0]) if hits else None
 
 
+# The judge is asked for exactly these keys; a reply has occasionally used a
+# slightly different name for one of them (observed: "arrows_arrows" instead of
+# "arrows_matched" on one of 30 cases). Accepting the near-miss here is what
+# keeps one model typo from silently zeroing a real count in the aggregate.
+_KEY_ALIASES = {
+    "arrows_matched": ("arrows_arrows", "matched_arrows"),
+    "shapes_matched": ("matched_shapes",),
+    "labels_matched": ("matched_labels",),
+    "shape_types_matched": ("types_matched", "shape_type_matched"),
+    "arrow_labels_matched": ("matched_arrow_labels",),
+}
+
+
+def _normalise_keys(verdict: dict) -> dict:
+    for canonical, aliases in _KEY_ALIASES.items():
+        if verdict.get(canonical) is None:
+            for alias in aliases:
+                if alias in verdict:
+                    verdict[canonical] = verdict[alias]
+                    break
+    return verdict
+
+
 def judge_case(client: LLMClient, reference: Path, produced: Path) -> dict:
     reply = client.vision_multi(PROMPT, [str(reference), str(produced)], max_tokens=2048)
-    verdict = extract_json(reply["text"])
+    verdict = _normalise_keys(extract_json(reply["text"]))
     verdict["_judge"] = {"provider": reply["provider"], "model": reply["model"]}
     return verdict
 

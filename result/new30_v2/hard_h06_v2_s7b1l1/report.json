@@ -1,0 +1,1029 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "ok",
+      "detail": {
+        "url": "https://app.diagrams.net/?lang=en&splash=0",
+        "seconds": 6.78
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.672,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "ellipse.png",
+        "identified_as": "ellipse.png",
+        "drawn_match": 0.631,
+        "seconds": 2.82
+      }
+    },
+    {
+      "n": 3,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 4,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.7
+      }
+    },
+    {
+      "n": 5,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 6,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 7,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.74
+      }
+    },
+    {
+      "n": 8,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "rectangle.png",
+        "identified_as": "rectangle.png",
+        "drawn_match": 0.77,
+        "insert_correction": {
+          "dx": -600,
+          "dy": 380
+        },
+        "seconds": 10.19
+      }
+    },
+    {
+      "n": 9,
+      "description": "Move the element created in step 8 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.68
+      }
+    },
+    {
+      "n": 10,
+      "description": "Move the element created in step 8 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.75
+      }
+    },
+    {
+      "n": 11,
+      "description": "Move the element created in step 8 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.77
+      }
+    },
+    {
+      "n": 12,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "rectangle.png",
+        "identified_as": "rectangle.png",
+        "drawn_match": 0.77,
+        "insert_correction": {
+          "dx": -300,
+          "dy": 380
+        },
+        "seconds": 9.4
+      }
+    },
+    {
+      "n": 13,
+      "description": "Move the element created in step 12 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.71
+      }
+    },
+    {
+      "n": 14,
+      "description": "Move the element created in step 12 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -75,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.69
+      }
+    },
+    {
+      "n": 15,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "rectangle.png",
+        "identified_as": "rectangle.png",
+        "drawn_match": 0.77,
+        "insert_correction": {
+          "dx": -300,
+          "dy": 190
+        },
+        "seconds": 8.85
+      }
+    },
+    {
+      "n": 16,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "rectangle.png",
+        "identified_as": "rectangle.png",
+        "drawn_match": 0.77,
+        "insert_correction": {
+          "dx": -150,
+          "dy": 190
+        },
+        "seconds": 8.62
+      }
+    },
+    {
+      "n": 17,
+      "description": "Move the element created in step 16 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 4,
+        "seconds": 3.0
+      }
+    },
+    {
+      "n": 18,
+      "description": "Move the element created in step 16 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 4,
+        "seconds": 2.98
+      }
+    },
+    {
+      "n": 19,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.756,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "diamond.png",
+        "identified_as": "diamond.png",
+        "drawn_match": 0.565,
+        "insert_correction": {
+          "dx": -150,
+          "dy": 190
+        },
+        "seconds": 12.72
+      }
+    },
+    {
+      "n": 20,
+      "description": "Move the element created in step 19 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 3.07
+      }
+    },
+    {
+      "n": 21,
+      "description": "Move the element created in step 19 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 2.89
+      }
+    },
+    {
+      "n": 22,
+      "description": "Move the element created in step 19 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 2.89
+      }
+    },
+    {
+      "n": 23,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.672,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "ellipse.png",
+        "identified_as": "ellipse.png",
+        "drawn_match": 0.631,
+        "insert_correction": {
+          "dx": -150,
+          "dy": 190
+        },
+        "seconds": 8.81
+      }
+    },
+    {
+      "n": 24,
+      "description": "Move the element created in step 23 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.88
+      }
+    },
+    {
+      "n": 25,
+      "description": "Move the element created in step 23 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.86
+      }
+    },
+    {
+      "n": 26,
+      "description": "Move the element created in step 23 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.81
+      }
+    },
+    {
+      "n": 27,
+      "description": "Move the element created in step 23 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 28,
+      "description": "Move the element created in step 23 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 75,
+        "wanted": 150,
+        "relative_to": 6,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 29,
+      "description": "Double click on the element created in step 2",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 2",
+        "seconds": 2.28
+      }
+    },
+    {
+      "n": 30,
+      "description": "Fill \"Start\" into the element created in step 2",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 2",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          467,
+          60,
+          40
+        ],
+        "seconds": 1.44
+      }
+    },
+    {
+      "n": 31,
+      "description": "Double click on the element created in step 8",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 8",
+        "seconds": 2.31
+      }
+    },
+    {
+      "n": 32,
+      "description": "Fill \"Wait one minute\" into the element created in step 8",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 8",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          472,
+          60,
+          30
+        ],
+        "seconds": 1.48
+      }
+    },
+    {
+      "n": 33,
+      "description": "Double click on the element created in step 12",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 12",
+        "seconds": 2.29
+      }
+    },
+    {
+      "n": 34,
+      "description": "Fill \"Steep a bit longer\" into the element created in step 12",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 12",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          472,
+          60,
+          30
+        ],
+        "seconds": 1.47
+      }
+    },
+    {
+      "n": 35,
+      "description": "Double click on the element created in step 15",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 15",
+        "seconds": 2.37
+      }
+    },
+    {
+      "n": 36,
+      "description": "Fill \"Reheat the water\" into the element created in step 15",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 15",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          472,
+          60,
+          30
+        ],
+        "seconds": 1.46
+      }
+    },
+    {
+      "n": 37,
+      "description": "Double click on the element created in step 16",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 16",
+        "seconds": 2.27
+      }
+    },
+    {
+      "n": 38,
+      "description": "Fill \"Top up the water\" into the element created in step 16",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 16",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          472,
+          60,
+          30
+        ],
+        "seconds": 1.48
+      }
+    },
+    {
+      "n": 39,
+      "description": "Double click on the element created in step 19",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 19",
+        "seconds": 2.32
+      }
+    },
+    {
+      "n": 40,
+      "description": "Fill \"Water boiled?\" into the element created in step 19",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 19",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          768,
+          467,
+          40,
+          40
+        ],
+        "seconds": 1.58
+      }
+    },
+    {
+      "n": 41,
+      "description": "Double click on the element created in step 23",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 23",
+        "seconds": 2.29
+      }
+    },
+    {
+      "n": 42,
+      "description": "Fill \"Tea is ready\" into the element created in step 23",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 23",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          758,
+          467,
+          60,
+          40
+        ],
+        "seconds": 1.53
+      }
+    },
+    {
+      "n": 43,
+      "description": "Connect the element created in step 2 to the element created in step 8",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "before": 7,
+        "after": 7,
+        "seconds": 6.06
+      }
+    },
+    {
+      "n": 44,
+      "description": "Connect the element created in step 8 to the element created in step 12",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 7,
+        "after": 8,
+        "seconds": 6.14
+      }
+    },
+    {
+      "n": 45,
+      "description": "Connect the element created in step 12 to the element created in step 15",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "before": 8,
+        "after": 8,
+        "seconds": 6.16
+      }
+    },
+    {
+      "n": 46,
+      "description": "Connect the element created in step 15 to the element created in step 16",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "before": 8,
+        "after": 8,
+        "seconds": 6.04
+      }
+    },
+    {
+      "n": 47,
+      "description": "Connect the element created in step 16 to the element created in step 19",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "before": 8,
+        "after": 8,
+        "seconds": 6.02
+      }
+    },
+    {
+      "n": 48,
+      "description": "Connect the element created in step 19 to the element created in step 8",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 8,
+        "after": 9,
+        "seconds": 6.13
+      }
+    },
+    {
+      "n": 49,
+      "description": "Double click on connector_from_step19_to_step8",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step19_to_step8",
+        "seconds": 2.37
+      }
+    },
+    {
+      "n": 50,
+      "description": "Fill \"Not yet\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step19_to_step8",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            781,
+            494
+          ]
+        ],
+        "target_box": [
+          675,
+          320,
+          227,
+          334
+        ],
+        "seconds": 1.47
+      }
+    },
+    {
+      "n": 51,
+      "description": "Connect the element created in step 19 to the element created in step 23",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 9,
+        "after": 10,
+        "seconds": 6.21
+      }
+    },
+    {
+      "n": 52,
+      "description": "Double click on connector_from_step19_to_step23",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step19_to_step23",
+        "seconds": 2.34
+      }
+    },
+    {
+      "n": 53,
+      "description": "Fill \"Yes\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step19_to_step23",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          786,
+          433,
+          4,
+          109
+        ],
+        "seconds": 1.47
+      }
+    }
+  ],
+  "counts": {
+    "ok": 49,
+    "failed": 4,
+    "error": 0,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 0.9245,
+  "total_sec": 208.9,
+  "cells": [
+    {
+      "cx": 263,
+      "cy": -282,
+      "h": 40,
+      "index": 0,
+      "kind": "ellipse",
+      "mx": 1206,
+      "my": 883,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 60,
+      "x": 233,
+      "y": -302,
+      "zoom": 1
+    },
+    {
+      "cx": 563,
+      "cy": 58,
+      "h": 30,
+      "index": 1,
+      "kind": "rect",
+      "mx": 1506,
+      "my": 1223,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 60,
+      "x": 533,
+      "y": 43,
+      "zoom": 1
+    },
+    {
+      "cx": 713,
+      "cy": 133,
+      "h": 30,
+      "index": 2,
+      "kind": "rect",
+      "mx": 1656,
+      "my": 1298,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 60,
+      "x": 683,
+      "y": 118,
+      "zoom": 1
+    },
+    {
+      "cx": 713,
+      "cy": 188,
+      "h": 30,
+      "index": 3,
+      "kind": "rect",
+      "mx": 1656,
+      "my": 1353,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 60,
+      "x": 683,
+      "y": 173,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 338,
+      "h": 30,
+      "index": 4,
+      "kind": "rect",
+      "mx": 1731,
+      "my": 1503,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 60,
+      "x": 758,
+      "y": 323,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 488,
+      "h": 109,
+      "index": 5,
+      "kind": "edge",
+      "mx": 1731,
+      "my": 1653,
+      "p1": [
+        788,
+        433
+      ],
+      "p2": [
+        788,
+        540
+      ],
+      "tags": "path,path,path",
+      "w": 4,
+      "x": 786,
+      "y": 433,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 413,
+      "h": 40,
+      "index": 6,
+      "kind": "path",
+      "mx": 1731,
+      "my": 1578,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 40,
+      "x": 768,
+      "y": 393,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 563,
+      "h": 40,
+      "index": 7,
+      "kind": "ellipse",
+      "mx": 1731,
+      "my": 1728,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 60,
+      "x": 758,
+      "y": 543,
+      "zoom": 1
+    },
+    {
+      "cx": 653,
+      "cy": 95,
+      "h": 75,
+      "index": 8,
+      "kind": "edge",
+      "mx": 1596,
+      "my": 1260,
+      "p1": [
+        593,
+        58
+      ],
+      "p2": [
+        713,
+        130
+      ],
+      "tags": "path,path,path",
+      "w": 122,
+      "x": 593,
+      "y": 58,
+      "zoom": 1
+    },
+    {
+      "cx": 674,
+      "cy": 226,
+      "h": 334,
+      "index": 9,
+      "kind": "edge",
+      "mx": 1617,
+      "my": 1391,
+      "p1": [
+        788,
+        393
+      ],
+      "p2": [
+        563,
+        62
+      ],
+      "tags": "path,path,path",
+      "w": 227,
+      "x": 561,
+      "y": 59,
+      "zoom": 1
+    }
+  ],
+  "n_vertices": 7,
+  "n_edges": 3,
+  "labels": [
+    "Start",
+    "Wait one minute",
+    "Steep a bit longer",
+    "Reheat the water",
+    "top up the water",
+    "Yes",
+    "Water boiled ?",
+    "Tea is ready",
+    "Not yet"
+  ]
+}

@@ -55,11 +55,11 @@ public class GeneratedTest {
         actions.clickAndHold(src).moveToElement(dst).release().perform();
         actions.clickAndHold(src).moveToElement(dst).release().perform();
         actions.clickAndHold(src).moveToElement(dst).release().perform();
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/a[1]")).click();
-        driver.findElement(By.xpath("/html/body/div[11]/table/tbody/tr[14]/td[2]")).click();
+        // click 'File' (exact-visible)
+        // click 'Export as' (exact-visible)
         driver.findElement(By.xpath("/html/body/div[12]/table/tbody/tr[1]/td[2]")).click();
-        driver.findElement(By.xpath("/html/body/div[12]/div[1]/div[2]/button[2]")).click();
-        driver.findElement(By.xpath("/html/body/div[12]/div/div[3]/button[4]")).click();
+        // click 'Export' (exact-visible)
+        // click 'Save' (exact-visible)
 
         driver.quit();
     }

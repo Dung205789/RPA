@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 12.09
+        "seconds": 6.84
       }
     },
     {
@@ -18,7 +18,7 @@
       "detail": {
         "ok": true,
         "xpath": "/html/body/div[3]/div[2]/button",
-        "seconds": 2.77
+        "seconds": 2.49
       }
     },
     {
@@ -28,8 +28,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[11]/div[1]/div[2]/div[5]/span",
-        "seconds": 2.62
+        "via": "exact-visible",
+        "seconds": 1.3
       }
     },
     {
@@ -39,8 +39,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[11]/div[1]/div[4]/div[2]/button[2]",
-        "seconds": 2.76
+        "via": "exact-visible",
+        "seconds": 1.29
       }
     },
     {
@@ -54,7 +54,7 @@
         "tried": [
           "/html/body/div[3]/div[1]/a[8]/span[2]"
         ],
-        "seconds": 1.61
+        "seconds": 1.38
       }
     },
     {
@@ -67,7 +67,7 @@
         "palette": false,
         "title": "Help (https://www.drawio.com/doc/faq/scratchpad)",
         "created_cell": false,
-        "seconds": 1.69
+        "seconds": 1.5
       }
     }
   ],
@@ -81,7 +81,7 @@
     "skipped": 0
   },
   "step_success_rate": 0.8333,
-  "total_sec": 24.4,
+  "total_sec": 15.3,
   "cells": [],
   "n_vertices": 0,
   "n_edges": 0,

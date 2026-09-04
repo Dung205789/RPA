@@ -1,0 +1,28 @@
+{
+  "id": "easy_e06_v1_s4b0l0",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+    "Move the element created in step 2 up",
+    "Move the element created in step 2 up",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png]",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+    "Move the element created in step 6 down",
+    "Move the element created in step 6 down",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+    "Move the element created in step 9 down",
+    "Move the element created in step 9 down",
+    "Move the element created in step 9 down",
+    "Double click on the element created in step 2",
+    "Fill \"Season starts\" into the element created in step 2",
+    "Double click on the element created in step 5",
+    "Fill \"Read the forecast\" into the element created in step 5",
+    "Double click on the element created in step 6",
+    "Fill \"Test the soil\" into the element created in step 6",
+    "Double click on the element created in step 9",
+    "Fill \"Crop stored\" into the element created in step 9",
+    "Connect the element created in step 2 to the element created in step 5",
+    "Connect the element created in step 5 to the element created in step 6",
+    "Connect the element created in step 6 to the element created in step 9"
+  ]
+}

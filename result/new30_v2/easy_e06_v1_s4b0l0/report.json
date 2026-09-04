@@ -1,0 +1,513 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "ok",
+      "detail": {
+        "url": "https://app.diagrams.net/?lang=en&splash=0",
+        "seconds": 6.42
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.672,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "ellipse.png",
+        "identified_as": "ellipse.png",
+        "drawn_match": 0.578,
+        "seconds": 2.76
+      }
+    },
+    {
+      "n": 3,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 4,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.73
+      }
+    },
+    {
+      "n": 5,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.622,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "parallelogram.png",
+        "identified_as": "parallelogram.png",
+        "drawn_match": 0.826,
+        "insert_correction": {
+          "dx": -760,
+          "dy": -360
+        },
+        "seconds": 10.67
+      }
+    },
+    {
+      "n": 6,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "rectangle.png",
+        "identified_as": "rectangle.png",
+        "drawn_match": 1.0,
+        "insert_correction": {
+          "dx": -720,
+          "dy": -340
+        },
+        "seconds": 10.6
+      }
+    },
+    {
+      "n": 7,
+      "description": "Move the element created in step 6 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 142,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.76
+      }
+    },
+    {
+      "n": 8,
+      "description": "Move the element created in step 6 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 143,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.74
+      }
+    },
+    {
+      "n": 9,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.672,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "ellipse.png",
+        "identified_as": "ellipse.png",
+        "drawn_match": 0.578,
+        "insert_correction": {
+          "dx": -720,
+          "dy": -340
+        },
+        "seconds": 10.51
+      }
+    },
+    {
+      "n": 10,
+      "description": "Move the element created in step 9 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 142,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.72
+      }
+    },
+    {
+      "n": 11,
+      "description": "Move the element created in step 9 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 143,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.74
+      }
+    },
+    {
+      "n": 12,
+      "description": "Move the element created in step 9 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 142,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.78
+      }
+    },
+    {
+      "n": 13,
+      "description": "Double click on the element created in step 2",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 2",
+        "seconds": 2.27
+      }
+    },
+    {
+      "n": 14,
+      "description": "Fill \"Season starts\" into the element created in step 2",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 2",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          731,
+          450,
+          114,
+          76
+        ],
+        "seconds": 1.55
+      }
+    },
+    {
+      "n": 15,
+      "description": "Double click on the element created in step 5",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 5",
+        "seconds": 2.31
+      }
+    },
+    {
+      "n": 16,
+      "description": "Fill \"Read the forecast\" into the element created in step 5",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 5",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          731,
+          459,
+          114,
+          57
+        ],
+        "seconds": 1.5
+      }
+    },
+    {
+      "n": 17,
+      "description": "Double click on the element created in step 6",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 6",
+        "seconds": 2.28
+      }
+    },
+    {
+      "n": 18,
+      "description": "Fill \"Test the soil\" into the element created in step 6",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 6",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            488
+          ]
+        ],
+        "target_box": [
+          731,
+          459,
+          114,
+          57
+        ],
+        "seconds": 1.47
+      }
+    },
+    {
+      "n": 19,
+      "description": "Double click on the element created in step 9",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 9",
+        "seconds": 2.33
+      }
+    },
+    {
+      "n": 20,
+      "description": "Fill \"Crop stored\" into the element created in step 9",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 9",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            787,
+            487
+          ]
+        ],
+        "target_box": [
+          731,
+          449,
+          114,
+          76
+        ],
+        "seconds": 1.51
+      }
+    },
+    {
+      "n": 21,
+      "description": "Connect the element created in step 2 to the element created in step 5",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 4,
+        "after": 5,
+        "seconds": 6.18
+      }
+    },
+    {
+      "n": 22,
+      "description": "Connect the element created in step 5 to the element created in step 6",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 5,
+        "after": 6,
+        "seconds": 6.15
+      }
+    },
+    {
+      "n": 23,
+      "description": "Connect the element created in step 6 to the element created in step 9",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 6,
+        "after": 7,
+        "seconds": 6.16
+      }
+    }
+  ],
+  "counts": {
+    "ok": 23,
+    "failed": 0,
+    "error": 0,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 1.0,
+  "total_sec": 96.0,
+  "cells": [
+    {
+      "cx": 733,
+      "cy": 218,
+      "h": 255,
+      "index": 0,
+      "kind": "edge",
+      "mx": 1248,
+      "my": 976,
+      "p1": [
+        712,
+        90
+      ],
+      "p2": [
+        750,
+        340
+      ],
+      "tags": "path,path,path",
+      "w": 41,
+      "x": 712,
+      "y": 90,
+      "zoom": 1
+    },
+    {
+      "cx": 712,
+      "cy": 52,
+      "h": 76,
+      "index": 1,
+      "kind": "ellipse",
+      "mx": 1227,
+      "my": 810,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 114,
+      "x": 655,
+      "y": 14,
+      "zoom": 1
+    },
+    {
+      "cx": 771,
+      "cy": 526,
+      "h": 246,
+      "index": 2,
+      "kind": "edge",
+      "mx": 1286,
+      "my": 1284,
+      "p1": [
+        750,
+        403
+      ],
+      "p2": [
+        788,
+        644
+      ],
+      "tags": "path,path,path",
+      "w": 41,
+      "x": 750,
+      "y": 403,
+      "zoom": 1
+    },
+    {
+      "cx": 750,
+      "cy": 375,
+      "h": 57,
+      "index": 3,
+      "kind": "path",
+      "mx": 1265,
+      "my": 1133,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 114,
+      "x": 693,
+      "y": 346,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 745,
+      "h": 75,
+      "index": 4,
+      "kind": "edge",
+      "mx": 1303,
+      "my": 1503,
+      "p1": [
+        788,
+        707
+      ],
+      "p2": [
+        788,
+        777
+      ],
+      "tags": "path,path,path",
+      "w": 7,
+      "x": 785,
+      "y": 707,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 679,
+      "h": 57,
+      "index": 5,
+      "kind": "rect",
+      "mx": 1303,
+      "my": 1437,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 114,
+      "x": 731,
+      "y": 650,
+      "zoom": 1
+    },
+    {
+      "cx": 788,
+      "cy": 821,
+      "h": 76,
+      "index": 6,
+      "kind": "ellipse",
+      "mx": 1303,
+      "my": 1579,
+      "p1": null,
+      "p2": null,
+      "tags": "ellipse",
+      "w": 114,
+      "x": 731,
+      "y": 783,
+      "zoom": 1
+    }
+  ],
+  "n_vertices": 4,
+  "n_edges": 3,
+  "labels": [
+    "Season starts",
+    "Read the forecast",
+    "Test the soil",
+    "Crop stored"
+  ]
+}

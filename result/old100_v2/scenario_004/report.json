@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 5.77
+        "seconds": 5.23
       }
     },
     {
@@ -20,17 +20,17 @@
         "palette": false,
         "title": "Help",
         "created_cell": false,
-        "seconds": 1.51
+        "seconds": 1.58
       }
     },
     {
       "n": 3,
       "description": "Fill \"a\"",
       "action": "fill",
-      "status": "failed",
+      "status": "ok",
       "detail": {
-        "reason": "no editor open and no resolvable target for ''",
-        "seconds": 0.0
+        "target": "active element (input)",
+        "seconds": 0.32
       }
     },
     {
@@ -39,21 +39,21 @@
       "action": "press",
       "status": "ok",
       "detail": {
-        "seconds": 0.41
+        "seconds": 0.44
       }
     }
   ],
   "counts": {
-    "ok": 3,
-    "failed": 1,
+    "ok": 4,
+    "failed": 0,
     "error": 0,
     "unparsed": 0,
     "unsupported": 0,
     "parse_error": 0,
     "skipped": 0
   },
-  "step_success_rate": 0.75,
-  "total_sec": 8.0,
+  "step_success_rate": 1.0,
+  "total_sec": 7.9,
   "cells": [],
   "n_vertices": 0,
   "n_edges": 0,

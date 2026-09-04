@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 10.87
+        "seconds": 7.05
       }
     },
     {
@@ -20,7 +20,7 @@
         "palette": true,
         "title": "",
         "created_cell": true,
-        "seconds": 3.01
+        "seconds": 2.7
       }
     }
   ],
@@ -34,7 +34,7 @@
     "skipped": 0
   },
   "step_success_rate": 1.0,
-  "total_sec": 14.2,
+  "total_sec": 10.1,
   "cells": [
     {
       "cx": 783,

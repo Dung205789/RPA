@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 7.12
+        "seconds": 6.84
       }
     },
     {
@@ -20,7 +20,7 @@
         "palette": true,
         "title": "",
         "created_cell": true,
-        "seconds": 2.69
+        "seconds": 2.65
       }
     },
     {
@@ -35,7 +35,7 @@
         "wanted": 150,
         "relative_to": 0,
         "assumed": true,
-        "seconds": 2.76
+        "seconds": 2.67
       }
     },
     {
@@ -50,7 +50,7 @@
         "wanted": 150,
         "relative_to": 0,
         "assumed": true,
-        "seconds": 2.74
+        "seconds": 2.67
       }
     },
     {
@@ -67,7 +67,7 @@
           "dx": 400,
           "dy": -400
         },
-        "seconds": 9.83
+        "seconds": 9.56
       }
     },
     {
@@ -79,7 +79,7 @@
         "ok": true,
         "before": 2,
         "after": 3,
-        "seconds": 6.14
+        "seconds": 6.05
       }
     },
     {
@@ -89,7 +89,7 @@
       "status": "ok",
       "detail": {
         "editing": "connector_from_step2_to_step5",
-        "seconds": 2.33
+        "seconds": 2.31
       }
     },
     {
@@ -113,7 +113,7 @@
           239,
           7
         ],
-        "seconds": 1.48
+        "seconds": 1.45
       }
     },
     {
@@ -132,7 +132,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 2",
-        "seconds": 2.32
+        "seconds": 2.26
       }
     },
     {
@@ -156,7 +156,7 @@
           120,
           80
         ],
-        "seconds": 1.5
+        "seconds": 1.43
       }
     }
   ],
@@ -170,7 +170,7 @@
     "skipped": 0
   },
   "step_success_rate": 1.0,
-  "total_sec": 40.4,
+  "total_sec": 39.4,
   "cells": [
     {
       "cx": 788,

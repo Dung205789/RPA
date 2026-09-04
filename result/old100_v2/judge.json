@@ -1,19 +1,19 @@
 {
   "n_cases": 100,
   "n_judged": 24,
-  "mean_overall": 0.75,
-  "mean_layout_similarity": 0.8146,
-  "shape_recall": 0.9559,
-  "shape_type_accuracy": 0.8615,
+  "mean_overall": 0.81,
+  "mean_layout_similarity": 0.8512,
+  "shape_recall": 0.9853,
+  "shape_type_accuracy": 0.8657,
   "label_accuracy": 0.8971,
-  "arrow_recall": 0.6667,
-  "arrow_label_accuracy": 0.6154,
+  "arrow_recall": 0.7778,
+  "arrow_label_accuracy": 0.9286,
   "totals": {
     "reference_shapes": 68,
     "reference_arrows": 45,
-    "reference_labelled_arrows": 13,
-    "result_shapes": 81,
-    "result_arrows": 50
+    "reference_labelled_arrows": 14,
+    "result_shapes": 77,
+    "result_arrows": 52
   },
   "cases": [
     {
@@ -73,7 +73,7 @@
       "arrow_labels_matched": 0,
       "layout_similarity": 1.0,
       "overall": 1.0,
-      "verdict": "The result perfectly matches the reference shape, though the background color differs.",
+      "verdict": "The result successfully reproduces the reference shape with correct type and position, though rendered on a dark background.",
       "problems": [],
       "_judge": {
         "provider": "gemini",
@@ -129,14 +129,14 @@
       },
       "shapes_matched": 1,
       "shape_types_matched": 1,
-      "labels_matched": 1,
+      "labels_matched": 0,
       "arrows_matched": 0,
       "arrow_labels_matched": 0,
       "layout_similarity": 1.0,
-      "overall": 0.8,
-      "verdict": "The result successfully drew the single rectangle, but included two extra small shapes overlapping its sides.",
+      "overall": 0.5,
+      "verdict": "The result contains the correct shape but incorrectly adds two extra overlapping shapes inside it.",
       "problems": [
-        "Extra shapes drawn on the left and right sides of the main rectangle"
+        "Extra shapes drawn inside the main rectangle"
       ],
       "_judge": {
         "provider": "gemini",
@@ -177,7 +177,7 @@
       "arrow_labels_matched": 0,
       "layout_similarity": 1.0,
       "overall": 1.0,
-      "verdict": "The result successfully reproduces the single shape present in the reference.",
+      "verdict": "The result successfully reproduces the single oval shape from the reference diagram.",
       "problems": [],
       "_judge": {
         "provider": "gemini",
@@ -253,7 +253,7 @@
       "arrow_labels_matched": 0,
       "layout_similarity": 1.0,
       "overall": 1.0,
-      "verdict": "The result perfectly matches the reference diagram containing a single shape.",
+      "verdict": "The result perfectly matches the reference diagram, containing the single oval shape with the exact text 'test_abc'.",
       "problems": [],
       "_judge": {
         "provider": "gemini",
@@ -284,7 +284,7 @@
       "arrow_labels_matched": 0,
       "layout_similarity": 1.0,
       "overall": 1.0,
-      "verdict": "The result successfully reproduces the reference diagram containing a single oval shape.",
+      "verdict": "The result perfectly matches the reference containing a single oval shape.",
       "problems": [],
       "_judge": {
         "provider": "gemini",
@@ -310,7 +310,7 @@
       "arrow_labels_matched": 0,
       "layout_similarity": 1.0,
       "overall": 1.0,
-      "verdict": "The result successfully reproduces the reference with an identical single oval shape.",
+      "verdict": "The result successfully reproduces the single shape present in the reference.",
       "problems": [],
       "_judge": {
         "provider": "gemini",
@@ -341,10 +341,9 @@
       "arrow_labels_matched": 0,
       "layout_similarity": 1.0,
       "overall": 0.95,
-      "verdict": "The result correctly reproduces all shapes and the connecting arrow, but adds extraneous vertical lines inside the rectangle and places an extra arrow head inside it.",
+      "verdict": "The diagram is correctly reproduced except for minor artifact lines inside the rectangle shape.",
       "problems": [
-        "Extraneous vertical lines inside the rectangle shape",
-        "Extra arrow head drawn inside the rectangle"
+        "unwanted vertical lines and internal arrow artifact inside the rectangle shape"
       ],
       "_judge": {
         "provider": "gemini",
@@ -380,12 +379,12 @@
       },
       "shapes_matched": 1,
       "shape_types_matched": 1,
-      "labels_matched": 1,
+      "labels_matched": 0,
       "arrows_matched": 0,
       "arrow_labels_matched": 0,
       "layout_similarity": 1.0,
       "overall": 1.0,
-      "verdict": "The result successfully reproduces the single parallelogram shape from the reference image.",
+      "verdict": "The result perfectly matches the reference containing a single parallelogram.",
       "problems": [],
       "_judge": {
         "provider": "gemini",
@@ -411,9 +410,10 @@
       "arrow_labels_matched": 0,
       "layout_similarity": 0.6,
       "overall": 0.5,
-      "verdict": "The shapes are drawn correctly, but the connecting arrow takes a detour and enters the rectangle from the top instead of the left.",
+      "verdict": "The result includes the correct shapes and types, but the connecting arrow is bent at a right angle and enters the rectangle from the top instead of a direct horizontal connection.",
       "problems": [
-        "Arrow is routed horizontally then down into the top of the rectangle instead of directly between them"
+        "Arrow is routed with a 90-degree corner instead of going straight horizontally",
+        "Arrow enters the rectangle from the top rather than the left side"
       ],
       "_judge": {
         "provider": "gemini",
@@ -430,18 +430,18 @@
       },
       "result": {
         "shapes": 2,
-        "arrows": 0
+        "arrows": 2
       },
       "shapes_matched": 2,
       "shape_types_matched": 2,
       "labels_matched": 2,
-      "arrows_matched": 0,
+      "arrows_matched": 1,
       "arrow_labels_matched": 0,
-      "layout_similarity": 0.8,
-      "overall": 0.5,
-      "verdict": "The result successfully includes the shapes but completely misses the connecting arrow.",
+      "layout_similarity": 1.0,
+      "overall": 0.9,
+      "verdict": "The result successfully reproduces the shapes and layout, but includes an extra artifact inside the rectangle shape.",
       "problems": [
-        "Missing connecting arrow between shapes"
+        "extra internal lines or arrow inside the rectangle shape"
       ],
       "_judge": {
         "provider": "gemini",
@@ -466,10 +466,10 @@
       "arrows_matched": 1,
       "arrow_labels_matched": 0,
       "layout_similarity": 1.0,
-      "overall": 0.95,
-      "verdict": "The diagram is well reproduced, but the rectangle has internal vertical lines making it look like a data shape.",
+      "overall": 0.9,
+      "verdict": "The result successfully reproduces the shapes and layout of the reference, though the rectangle contains an extra internal structure/arrow artifact.",
       "problems": [
-        "Rectangle shape has internal vertical lines at both ends"
+        "Rectangle shape contains an unwanted internal vertical line and arrow-like marking"
       ],
       "_judge": {
         "provider": "gemini",
@@ -495,7 +495,7 @@
       "arrow_labels_matched": 1,
       "layout_similarity": 1.0,
       "overall": 0.95,
-      "verdict": "The diagram is correctly reproduced except for extra inner vertical lines inside the rectangle shape.",
+      "verdict": "The diagram is correctly reproduced except for extra inner vertical lines inside the rectangle shape in the result.",
       "problems": [
         "extra vertical lines inside the rectangle shape"
       ],
@@ -523,9 +523,10 @@
       "arrow_labels_matched": 1,
       "layout_similarity": 1.0,
       "overall": 0.95,
-      "verdict": "The diagram is well reproduced, but the target rectangle shape contains an internal arrow/line artifact in the result.",
+      "verdict": "The diagram is well reproduced, but the target rectangle shape contains extraneous internal vertical lines and an extra arrow.",
       "problems": [
-        "Extra lines or arrow inside the rectangle shape"
+        "Target rectangle contains extra vertical lines inside",
+        "Target rectangle contains an extra arrow pointing inside it"
       ],
       "_judge": {
         "provider": "gemini",
@@ -549,13 +550,12 @@
       "labels_matched": 3,
       "arrows_matched": 0,
       "arrow_labels_matched": 0,
-      "layout_similarity": 0.4,
-      "overall": 0.5,
-      "verdict": "The result includes all correct shapes, but the layout and routing of the arrows do not match the reference diagram.",
+      "layout_similarity": 0.3,
+      "overall": 0.4,
+      "verdict": "The result includes all correct shapes, but the layout and routing of arrows are completely incorrect.",
       "problems": [
-        "Arrows use right-angle routing instead of straight lines",
-        "Incorrect connection paths between shapes",
-        "Layout arrangement is staggered instead of horizontal"
+        "Arrow connections and routing are incorrect",
+        "Layout is offset and misaligned compared to the reference"
       ],
       "_judge": {
         "provider": "gemini",
@@ -581,10 +581,10 @@
       "arrow_labels_matched": 0,
       "layout_similarity": 0.6,
       "overall": 0.6,
-      "verdict": "All shapes and labels are correct, but the arrows take bent paths instead of direct straight connections.",
+      "verdict": "The result successfully includes all three shapes and correct labels, but the arrows are incorrectly routed with unnecessary right-angled bends instead of straight lines.",
       "problems": [
-        "Arrow from START to EXECUTE has unnecessary right-angle bends instead of being a straight horizontal line",
-        "Arrow from EXECUTE to END has unnecessary right-angle bends instead of being a straight horizontal line"
+        "Arrow from START to EXECUTE has a right-angled bend instead of being a straight horizontal line",
+        "Arrow from EXECUTE to END has a right-angled bend instead of being a straight horizontal line"
       ],
       "_judge": {
         "provider": "gemini",
@@ -606,19 +606,18 @@
       "shapes_matched": 3,
       "shape_types_matched": 3,
       "labels_matched": 3,
-      "arrows_matched": 0,
-      "arrow_labels_matched": 0,
-      "layout_similarity": 0.2,
-      "overall": 0.35,
-      "verdict": "The result successfully includes all three shapes and their labels, but the layout and arrows are completely incorrect.",
+      "arrows_matched": 2,
+      "arrow_labels_matched": 2,
+      "layout_similarity": 0.7,
+      "overall": 0.94,
+      "verdict": "The result reproduces the same three shapes, labels, and two labelled arrows, with only a different layout/spacing.",
       "problems": [
-        "Layout is radically rearranged with shapes positioned differently and overlapping lines",
-        "Connectors and arrows do not link the correct shape pairs in the correct directions",
-        "Arrow connections and labels are misplaced"
+        "Layout is rearranged vertically/diagonally instead of the reference's horizontal row",
+        "Shape sizing and spacing differ from the reference"
       ],
       "_judge": {
-        "provider": "gemini",
-        "model": "gemini-flash-lite-latest"
+        "provider": "openai",
+        "model": "gpt-5.4-mini"
       },
       "id": "scenario_049",
       "status": "judged"
@@ -636,15 +635,14 @@
       "shapes_matched": 6,
       "shape_types_matched": 4,
       "labels_matched": 6,
-      "arrows_matched": 5,
+      "arrows_matched": 6,
       "arrow_labels_matched": 2,
       "layout_similarity": 0.95,
       "overall": 0.85,
-      "verdict": "The flowchart is mostly accurate, but the process shapes 'Take bus' and 'Take subway' incorrectly have a document outline instead of rectangles.",
+      "verdict": "The result successfully captures all flowchart elements and labels, but uses incorrect shape types (multi-doc/cylinder instead of standard rectangles) for the two process nodes.",
       "problems": [
-        "Shape 'Take bus' has incorrect outline type (document instead of rectangle)",
-        "Shape 'Take subway' has incorrect outline type (document instead of rectangle)",
-        "Arrow connection routing differs slightly at the bottom merge point"
+        "Shape type mismatch: 'Take bus' uses a multi-document/cylinder shape instead of a rectangle",
+        "Shape type mismatch: 'Take subway' uses a multi-document/cylinder shape instead of a rectangle"
       ],
       "_judge": {
         "provider": "gemini",
@@ -660,22 +658,21 @@
         "labelled_arrows": 0
       },
       "result": {
-        "shapes": 5,
+        "shapes": 3,
         "arrows": 0
       },
-      "shapes_matched": 1,
-      "shape_types_matched": 1,
-      "labels_matched": 1,
+      "shapes_matched": 3,
+      "shape_types_matched": 3,
+      "labels_matched": 2,
       "arrows_matched": 0,
       "arrow_labels_matched": 0,
-      "layout_similarity": 0.1,
-      "overall": 0.2,
-      "verdict": "The result is missing most of the reference shapes, includes extra incorrect elements, and has a completely different layout.",
+      "layout_similarity": 0.2,
+      "overall": 0.4,
+      "verdict": "The result includes all three shapes, but their positions, layout, and labels are incorrect compared to the reference.",
       "problems": [
-        "Missing 'Login' shape",
-        "Missing top unnamed shape",
-        "Extra shapes and actor icon included",
-        "Incorrect layout arrangement"
+        "Positions of shapes are completely rearranged",
+        "Labels on shapes are mismatched (Register and Login swapped/incorrectly placed)",
+        "Extra unwanted label 'Test' added below one shape"
       ],
       "_judge": {
         "provider": "gemini",
@@ -731,20 +728,19 @@
         "labelled_arrows": 0
       },
       "result": {
-        "shapes": 3,
+        "shapes": 1,
         "arrows": 0
       },
       "shapes_matched": 1,
-      "shape_types_matched": 1,
+      "shape_types_matched": 0,
       "labels_matched": 0,
       "arrows_matched": 0,
       "arrow_labels_matched": 0,
-      "layout_similarity": 0.8,
-      "overall": 0.3,
-      "verdict": "The result drew extra shapes overlapping the main shape instead of a single clean rectangle.",
+      "layout_similarity": 1.0,
+      "overall": 0.8,
+      "verdict": "The result drew a shape roughly in the correct position, but used the wrong shape type.",
       "problems": [
-        "Extra shapes drawn around the main shape",
-        "Missing single clean outline structure"
+        "Shape type mismatch: reference has a rectangle, result has a shape with curved sides (possibly a document or custom shape)."
       ],
       "_judge": {
         "provider": "gemini",
@@ -894,17 +890,15 @@
         "arrows": 6
       },
       "shapes_matched": 7,
-      "shape_types_matched": 6,
-      "labels_matched": 6,
+      "shape_types_matched": 7,
+      "labels_matched": 7,
       "arrows_matched": 6,
       "arrow_labels_matched": 1,
       "layout_similarity": 0.95,
-      "overall": 0.85,
-      "verdict": "The result successfully captures all shapes, arrows, and labels with correct vertical layout, though some shape border rendering artifacts and minor text typos are present.",
+      "overall": 0.95,
+      "verdict": "The diagram is well-reproduced with correct shape types, text, and arrows, though there are minor visual artifacts on the rectangles.",
       "problems": [
-        "Shape outline artifacts on multiple rectangle blocks",
-        "Typo in label 'CalculateM and a for each agent' instead of 'Calculate M and a for each agent'",
-        "Minor spacing/artifact issues around vertical connector lines"
+        "Extra vertical lines/artifacts appearing inside or around the rectangular shapes."
       ],
       "_judge": {
         "provider": "gemini",
@@ -928,12 +922,13 @@
       "labels_matched": 3,
       "arrows_matched": 3,
       "arrow_labels_matched": 0,
-      "layout_similarity": 0.85,
-      "overall": 0.75,
-      "verdict": "The result successfully captures most of the vertical flowchart structure and shapes, but omits 'Process step 2' entirely.",
+      "layout_similarity": 0.8,
+      "overall": 0.7,
+      "verdict": "The result is missing 'Process step 2' entirely, leading to a missing step and arrow, and text overlap issues on the combined shapes.",
       "problems": [
         "Missing shape 'Process step 2'",
-        "Missing connection arrow between Process step 1 and Process step 3"
+        "Missing arrow connecting Process step 1 and Process step 2",
+        "Overlapping or misaligned shapes causing visual text clutter on Process step 3 and End nodes"
       ],
       "_judge": {
         "provider": "gemini",
@@ -957,12 +952,12 @@
       "labels_matched": 6,
       "arrows_matched": 5,
       "arrow_labels_matched": 0,
-      "layout_similarity": 0.95,
-      "overall": 0.85,
-      "verdict": "The result successfully matches most shapes and arrows, but incorrectly uses a document shape instead of a rectangle for the two calculation and output steps.",
+      "layout_similarity": 0.98,
+      "overall": 0.9,
+      "verdict": "The result successfully reproduces all shapes, texts, and arrows, but uses incorrect shape types (multi-doc/subroutine style) for the two process rectangles.",
       "problems": [
-        "Shape type incorrect for 'Calculate Sum as A + B': rendered as document instead of rectangle",
-        "Shape type incorrect for 'Print Sum': rendered as document instead of rectangle"
+        "The process shape 'Calculate Sum as A + B' is drawn with extra vertical lines on the sides (subroutine/predefined process) instead of a plain rectangle.",
+        "The process shape 'Print Sum' is also drawn with extra vertical lines on the sides."
       ],
       "_judge": {
         "provider": "gemini",
@@ -975,7 +970,7 @@
       "reference": {
         "shapes": 7,
         "arrows": 6,
-        "labelled_arrows": 2
+        "labelled_arrows": 3
       },
       "result": {
         "shapes": 7,
@@ -985,16 +980,15 @@
       "shape_types_matched": 5,
       "labels_matched": 7,
       "arrows_matched": 4,
-      "arrow_labels_matched": 1,
+      "arrow_labels_matched": 3,
       "layout_similarity": 0.85,
       "overall": 0.75,
-      "verdict": "The result successfully captures all shapes and labels, but uses incorrect shape types for two processes, has incorrect arrow routing, and misplaces arrow labels.",
+      "verdict": "The result captures all shapes and labels correctly, but draws incorrect shape types for the two process/document boxes and uses suboptimal routing for some arrows.",
       "problems": [
-        "Process shapes are drawn as sub-process symbols (with vertical double borders) instead of standard rectangles.",
-        "Arrow from Start to Process has unnecessary jagged corners.",
-        "Arrow from Process to Decision has unnecessary jagged corners.",
-        "NO arrow label is positioned incorrectly above the arrow instead of next to it.",
-        "Arrow from left shape 'A' connects directly to the side of the Document shape without an arrowhead."
+        "Shape 'Process' rendered as a sub-process (double-bordered rectangle) instead of a regular rectangle",
+        "Shape 'Document' rendered as a sub-process (double-bordered rectangle) instead of a basic rectangle",
+        "Arrow from Start to Process has an unnecessary step/kink",
+        "Arrow from Process to Decision has an unnecessary step/kink"
       ],
       "_judge": {
         "provider": "gemini",
@@ -1016,15 +1010,16 @@
       "shapes_matched": 5,
       "shape_types_matched": 3,
       "labels_matched": 5,
-      "arrows_matched": 3,
-      "arrow_labels_matched": 2,
+      "arrows_matched": 4,
+      "arrow_labels_matched": 3,
       "layout_similarity": 0.5,
-      "overall": 0.4,
-      "verdict": "The result includes extra shapes, incorrect shape types for several elements, and extraneous arrows and labels not present in the reference.",
+      "overall": 0.5,
+      "verdict": "The result includes extra shapes, incorrect shape types for several elements, and extraneous connector lines.",
       "problems": [
-        "Extra shapes added ('Start', 'Process', 'Decision', 'Data', 'End', extra ovals/documents).",
-        "Incorrect shape types used (e.g., 'Wait for 30 mins' drawn as a data/document shape instead of a rectangle).",
-        "Extraneous arrows and routing lines cluttering the diagram."
+        "Extra shapes added including 'Start', 'Process', 'Decision', 'Data', 'Document', 'End', and stray ellipses with labels 'A'.",
+        "Shape types incorrect for 'Wait for 30 mins' (drawn as double-lined rectangle instead of simple rectangle) and 'Full' (drawn with double lines).",
+        "Extraneous and overlapping arrows connecting to incorrect nodes.",
+        "Arrow label 'No' missing or misplaced."
       ],
       "_judge": {
         "provider": "gemini",

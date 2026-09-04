@@ -1,0 +1,15 @@
+{
+  "id": "easy_e03_v6_s2b0l0",
+  "descriptions": [
+    "Open \"https://app.diagrams.net/\"",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+    "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+    "Move the element created in step 3 down",
+    "Move the element created in step 3 down",
+    "Double click on the element created in step 2",
+    "Fill \"Season starts\" into the element created in step 2",
+    "Double click on the element created in step 3",
+    "Fill \"Crop stored\" into the element created in step 3",
+    "Connect the element created in step 2 to the element created in step 3"
+  ]
+}

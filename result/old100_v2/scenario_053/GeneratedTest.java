@@ -8,7 +8,7 @@ public class GeneratedTest {
 
         driver.get("https://app.diagrams.net/?lang=en&splash=0");
         // click D:\SVG_Agent\documents\RPA_Datasets\images\drawio\object20.png (a, score 0.88)
-        driver.findElement(By.xpath("//*[@id='geContainerOption']")).click();
+        // click 'Container checkbox' (checkbox-label)
 
         driver.quit();
     }

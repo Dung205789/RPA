@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 11.28
+        "seconds": 7.21
       }
     },
     {
@@ -20,7 +20,7 @@
         "palette": true,
         "title": "",
         "created_cell": true,
-        "seconds": 3.09
+        "seconds": 2.63
       }
     },
     {
@@ -35,7 +35,7 @@
         "wanted": 150,
         "relative_to": 0,
         "assumed": true,
-        "seconds": 3.05
+        "seconds": 2.72
       }
     },
     {
@@ -50,7 +50,7 @@
         "wanted": 150,
         "relative_to": 0,
         "assumed": true,
-        "seconds": 3.06
+        "seconds": 2.7
       }
     },
     {
@@ -65,7 +65,7 @@
         "wanted": 150,
         "relative_to": 0,
         "assumed": true,
-        "seconds": 3.21
+        "seconds": 2.69
       }
     },
     {
@@ -82,7 +82,7 @@
           "dx": -340,
           "dy": 410
         },
-        "seconds": 11.92
+        "seconds": 9.46
       }
     },
     {
@@ -96,7 +96,7 @@
         "dy": -128,
         "wanted": 150,
         "relative_to": 1,
-        "seconds": 3.47
+        "seconds": 2.69
       }
     },
     {
@@ -110,7 +110,7 @@
         "dy": -127,
         "wanted": 150,
         "relative_to": 1,
-        "seconds": 3.2
+        "seconds": 2.72
       }
     },
     {
@@ -127,7 +127,7 @@
           "dx": -290,
           "dy": 410
         },
-        "seconds": 12.01
+        "seconds": 9.32
       }
     },
     {
@@ -141,7 +141,7 @@
         "dy": -128,
         "wanted": 150,
         "relative_to": 2,
-        "seconds": 3.27
+        "seconds": 2.69
       }
     },
     {
@@ -158,7 +158,7 @@
           "dx": -290,
           "dy": 350
         },
-        "seconds": 10.84
+        "seconds": 9.15
       }
     },
     {
@@ -172,7 +172,7 @@
         "dy": -128,
         "wanted": 150,
         "relative_to": 3,
-        "seconds": 3.2
+        "seconds": 2.7
       }
     },
     {
@@ -186,7 +186,7 @@
         "dy": 0,
         "wanted": 150,
         "relative_to": 3,
-        "seconds": 3.25
+        "seconds": 2.73
       }
     },
     {
@@ -203,7 +203,7 @@
           "dx": -250,
           "dy": 350
         },
-        "seconds": 11.26
+        "seconds": 9.0
       }
     },
     {
@@ -220,7 +220,7 @@
           "dx": -250,
           "dy": 350
         },
-        "seconds": 10.98
+        "seconds": 8.91
       }
     },
     {
@@ -234,7 +234,7 @@
         "dy": 127,
         "wanted": 150,
         "relative_to": 5,
-        "seconds": 3.18
+        "seconds": 2.7
       }
     },
     {
@@ -248,7 +248,7 @@
         "dy": 0,
         "wanted": 150,
         "relative_to": 5,
-        "seconds": 3.3
+        "seconds": 2.7
       }
     },
     {
@@ -265,7 +265,7 @@
           "dx": -250,
           "dy": 350
         },
-        "seconds": 11.16
+        "seconds": 8.88
       }
     },
     {
@@ -279,7 +279,7 @@
         "dy": 127,
         "wanted": 150,
         "relative_to": 6,
-        "seconds": 2.98
+        "seconds": 2.72
       }
     },
     {
@@ -296,7 +296,7 @@
           "dx": -250,
           "dy": 300
         },
-        "seconds": 10.84
+        "seconds": 8.77
       }
     },
     {
@@ -310,7 +310,7 @@
         "dy": 128,
         "wanted": 150,
         "relative_to": 7,
-        "seconds": 3.07
+        "seconds": 2.7
       }
     },
     {
@@ -324,7 +324,7 @@
         "dy": 127,
         "wanted": 150,
         "relative_to": 7,
-        "seconds": 2.98
+        "seconds": 2.71
       }
     },
     {
@@ -334,7 +334,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 2",
-        "seconds": 2.47
+        "seconds": 2.32
       }
     },
     {
@@ -358,7 +358,7 @@
           102,
           68
         ],
-        "seconds": 1.64
+        "seconds": 1.45
       }
     },
     {
@@ -368,7 +368,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 6",
-        "seconds": 2.54
+        "seconds": 2.31
       }
     },
     {
@@ -392,7 +392,7 @@
           102,
           51
         ],
-        "seconds": 1.59
+        "seconds": 1.43
       }
     },
     {
@@ -402,7 +402,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 9",
-        "seconds": 2.55
+        "seconds": 2.3
       }
     },
     {
@@ -426,7 +426,7 @@
           68,
           68
         ],
-        "seconds": 1.66
+        "seconds": 1.45
       }
     },
     {
@@ -436,7 +436,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 11",
-        "seconds": 2.52
+        "seconds": 2.28
       }
     },
     {
@@ -460,7 +460,7 @@
           102,
           68
         ],
-        "seconds": 1.55
+        "seconds": 1.42
       }
     },
     {
@@ -470,7 +470,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 14",
-        "seconds": 2.53
+        "seconds": 2.29
       }
     },
     {
@@ -494,7 +494,7 @@
           102,
           51
         ],
-        "seconds": 1.6
+        "seconds": 1.46
       }
     },
     {
@@ -504,7 +504,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 15",
-        "seconds": 2.48
+        "seconds": 2.27
       }
     },
     {
@@ -532,7 +532,7 @@
           102,
           68
         ],
-        "seconds": 1.56
+        "seconds": 1.44
       }
     },
     {
@@ -542,7 +542,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 18",
-        "seconds": 2.47
+        "seconds": 2.28
       }
     },
     {
@@ -566,7 +566,7 @@
           102,
           51
         ],
-        "seconds": 1.58
+        "seconds": 1.44
       }
     },
     {
@@ -576,7 +576,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 20",
-        "seconds": 2.45
+        "seconds": 2.28
       }
     },
     {
@@ -600,7 +600,7 @@
           102,
           68
         ],
-        "seconds": 1.61
+        "seconds": 1.45
       }
     },
     {
@@ -612,7 +612,7 @@
         "ok": true,
         "before": 8,
         "after": 9,
-        "seconds": 6.46
+        "seconds": 6.07
       }
     },
     {
@@ -624,7 +624,7 @@
         "ok": true,
         "before": 9,
         "after": 10,
-        "seconds": 6.5
+        "seconds": 6.06
       }
     },
     {
@@ -636,7 +636,7 @@
         "ok": true,
         "before": 10,
         "after": 11,
-        "seconds": 6.5
+        "seconds": 6.14
       }
     },
     {
@@ -646,7 +646,7 @@
       "status": "ok",
       "detail": {
         "editing": "connector_from_step9_to_step11",
-        "seconds": 2.56
+        "seconds": 2.38
       }
     },
     {
@@ -670,7 +670,7 @@
           93,
           54
         ],
-        "seconds": 1.59
+        "seconds": 1.46
       }
     },
     {
@@ -682,7 +682,7 @@
         "ok": true,
         "before": 11,
         "after": 12,
-        "seconds": 6.34
+        "seconds": 6.06
       }
     },
     {
@@ -692,7 +692,7 @@
       "status": "ok",
       "detail": {
         "editing": "connector_from_step9_to_step14",
-        "seconds": 3.89
+        "seconds": 3.42
       }
     },
     {
@@ -716,7 +716,7 @@
           33,
           20
         ],
-        "seconds": 1.62
+        "seconds": 1.48
       }
     },
     {
@@ -728,7 +728,7 @@
         "ok": true,
         "before": 12,
         "after": 13,
-        "seconds": 6.56
+        "seconds": 6.09
       }
     },
     {
@@ -740,7 +740,7 @@
         "ok": true,
         "before": 13,
         "after": 14,
-        "seconds": 6.36
+        "seconds": 6.13
       }
     },
     {
@@ -752,7 +752,7 @@
         "ok": true,
         "before": 14,
         "after": 15,
-        "seconds": 6.51
+        "seconds": 6.08
       }
     },
     {
@@ -762,8 +762,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[1]/div[1]/a[1]",
-        "seconds": 2.94
+        "via": "exact-visible",
+        "seconds": 1.3
       }
     },
     {
@@ -773,8 +773,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[11]/table/tbody/tr[14]/td[2]",
-        "seconds": 2.74
+        "via": "exact-visible",
+        "seconds": 1.3
       }
     },
     {
@@ -785,7 +785,7 @@
       "detail": {
         "ok": true,
         "xpath": "/html/body/div[12]/table/tbody/tr[1]/td[2]",
-        "seconds": 22.58
+        "seconds": 22.12
       }
     },
     {
@@ -795,8 +795,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[12]/div[1]/div[2]/button[2]",
-        "seconds": 2.77
+        "via": "exact-visible",
+        "seconds": 1.33
       }
     },
     {
@@ -806,8 +806,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[12]/div/div[3]/button[4]",
-        "seconds": 2.78
+        "via": "exact-visible",
+        "seconds": 1.31
       }
     }
   ],
@@ -821,7 +821,7 @@
     "skipped": 0
   },
   "step_success_rate": 1.0,
-  "total_sec": 266.3,
+  "total_sec": 222.4,
   "cells": [
     {
       "cx": 688,

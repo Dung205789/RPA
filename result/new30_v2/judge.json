@@ -1,0 +1,927 @@
+{
+  "n_cases": 30,
+  "n_judged": 30,
+  "mean_overall": 0.6423,
+  "mean_layout_similarity": 0.6383,
+  "shape_recall": 0.994,
+  "shape_type_accuracy": 0.6587,
+  "label_accuracy": 0.9702,
+  "arrow_recall": 0.6316,
+  "arrow_label_accuracy": 0.6571,
+  "totals": {
+    "reference_shapes": 168,
+    "reference_arrows": 171,
+    "reference_labelled_arrows": 70,
+    "result_shapes": 169,
+    "result_arrows": 156
+  },
+  "cases": [
+    {
+      "reference": {
+        "shapes": 5,
+        "arrows": 4,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 5,
+        "arrows": 4
+      },
+      "shapes_matched": 5,
+      "shape_types_matched": 2,
+      "labels_matched": 5,
+      "arrows_matched": 4,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.9,
+      "overall": 0.8,
+      "verdict": "The result successfully captures all shapes, text labels, and arrows in the correct vertical order, but uses standard rectangles instead of rounded rectangles for the start/end terminal nodes.",
+      "problems": [
+        "Top start node 'Lamp does not work' is drawn as a rectangle instead of a rounded rectangle.",
+        "Bottom end node 'Lamp works' is drawn as a rectangle instead of a rounded rectangle."
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "easy_e01_v1_s5b0l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 2,
+        "arrows": 1,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 2,
+        "arrows": 1
+      },
+      "shapes_matched": 2,
+      "shape_types_matched": 2,
+      "labels_matched": 2,
+      "arrows_matched": 1,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 1.0,
+      "overall": 0.9,
+      "verdict": "The result successfully reproduces all shapes, labels, and connecting arrows with minor styling differences in color and border thickness.",
+      "problems": [
+        "Shape and arrow colors differ from reference (black outline/text instead of gold/blue)",
+        "Shapes are drawn much smaller than in the reference"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "easy_e01_v5_s2b0l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 5,
+        "arrows": 4,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 5,
+        "arrows": 4
+      },
+      "shapes_matched": 5,
+      "shape_types_matched": 3,
+      "labels_matched": 5,
+      "arrows_matched": 4,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.95,
+      "overall": 0.85,
+      "verdict": "The result successfully captures all shapes, labels, and connections in the correct vertical layout, though two process shapes were rendered as standard rectangles instead of rounded rectangles.",
+      "problems": [
+        "Shape 'Fill the kettle' is a rectangle instead of a rounded rectangle",
+        "Shape 'Switch it on' is a rectangle instead of a rounded rectangle"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "easy_e02_v1_s5b0l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 4,
+        "arrows": 3,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 4,
+        "arrows": 0
+      },
+      "shapes_matched": 4,
+      "shape_types_matched": 1,
+      "labels_matched": 4,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.2,
+      "overall": 0.3,
+      "verdict": "The result contains all required shapes with correct text, but the layout is disordered and all connecting arrows are missing.",
+      "problems": [
+        "All connecting arrows are missing",
+        "Incorrect shape types used for most elements (rectangles used instead of rounded rectangles and a data shape)",
+        "Elements are drawn in the wrong vertical order and poorly positioned"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "easy_e02_v2_s4b0l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 3,
+        "arrows": 2,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 3,
+        "arrows": 2
+      },
+      "shapes_matched": 3,
+      "shape_types_matched": 3,
+      "labels_matched": 3,
+      "arrows_matched": 2,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.9,
+      "overall": 0.9,
+      "verdict": "The result captures all shapes, labels, and connections correctly, though the connecting lines use angular steps rather than straight arrows.",
+      "problems": [
+        "Connecting lines use orthogonal/angular paths instead of straight lines",
+        "Color styling and line thickness do not match the reference"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "easy_e02_v4_s3b0l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 5,
+        "arrows": 4,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 5,
+        "arrows": 4
+      },
+      "shapes_matched": 5,
+      "shape_types_matched": 5,
+      "labels_matched": 5,
+      "arrows_matched": 4,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.9,
+      "overall": 0.95,
+      "verdict": "The result successfully reproduces all shapes, labels, and connections from the reference, though the connecting arrows use orthogonal routing instead of straight lines.",
+      "problems": [
+        "Arrows use orthogonal routing with corners instead of straight lines"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "easy_e02_v6_s5b0l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 2,
+        "arrows": 1,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 2,
+        "arrows": 0
+      },
+      "shapes_matched": 2,
+      "shape_types_matched": 0,
+      "labels_matched": 2,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.4,
+      "overall": 0.3,
+      "verdict": "The result captures the text and shapes, but uses incorrect shape types and completely misses the connecting arrow.",
+      "problems": [
+        "Shape types are incorrect (rectangles used instead of rounded rectangles)",
+        "Connecting arrow is missing entirely",
+        "Layout positioning and spacing are poorly scaled"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "easy_e03_v6_s2b0l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 4,
+        "arrows": 3,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 4,
+        "arrows": 3
+      },
+      "shapes_matched": 4,
+      "shape_types_matched": 4,
+      "labels_matched": 4,
+      "arrows_matched": 3,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.95,
+      "overall": 0.95,
+      "verdict": "The result successfully captures all shapes, labels, and connections from the reference, with only minor variations in connector routing.",
+      "problems": [
+        "Connectors include unnecessary jogs instead of straight vertical lines"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "easy_e06_v1_s4b0l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 6,
+        "arrows": 5,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 5
+      },
+      "shapes_matched": 6,
+      "shape_types_matched": 6,
+      "labels_matched": 6,
+      "arrows_matched": 5,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.85,
+      "overall": 0.9,
+      "verdict": "The result successfully captures all shapes, labels, and connections, though the connecting lines use orthogonal routing instead of straight vertical arrows and the text is very small.",
+      "problems": [
+        "Arrow styles are orthogonal lines rather than straight vertical arrows",
+        "Text and shape sizes are disproportionately small compared to the canvas"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "easy_e06_v5_s6b0l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 4,
+        "arrows": 3,
+        "labelled_arrows": 0
+      },
+      "result": {
+        "shapes": 4,
+        "arrows": 0
+      },
+      "shapes_matched": 4,
+      "shape_types_matched": 0,
+      "labels_matched": 4,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.4,
+      "overall": 0.3,
+      "verdict": "The result successfully includes all four text labels in separate shapes, but uses incorrect shape types and completely omits all connecting arrows.",
+      "problems": [
+        "All shapes are drawn as standard rectangles instead of rounded rectangles for the start/end nodes.",
+        "All connecting arrows between the shapes are missing.",
+        "The layout is extremely sparse and poorly scaled across the canvas."
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "easy_e06_v6_s4b0l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 6,
+        "arrows": 6,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 6
+      },
+      "shapes_matched": 6,
+      "shape_types_matched": 6,
+      "labels_matched": 6,
+      "arrows_matched": 6,
+      "arrow_labels_matched": 4,
+      "layout_similarity": 0.85,
+      "overall": 0.9,
+      "verdict": "The result successfully captures all shapes, text, arrows, and labels with minor layout variations.",
+      "problems": [
+        "Arrow and text scaling is very small making text hard to read",
+        "Layout spacing and line routing differ slightly from the reference"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "hard_h02_v1_s6b2l1",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 6,
+        "arrows": 6,
+        "labelled_arrows": 2
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 5
+      },
+      "shapes_matched": 6,
+      "shape_types_matched": 4,
+      "labels_matched": 6,
+      "arrows_matched": 3,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.3,
+      "overall": 0.4,
+      "verdict": "The result captures all shapes and text labels, but the layout is severely distorted, shape types for the first and terminal nodes are incorrect, and arrows are misconnected.",
+      "problems": [
+        "First node shape type is incorrect (drawn as rectangle instead of rounded rectangle/oval)",
+        "Terminal node shape type is incorrect (drawn as rectangle instead of rounded rectangle/oval)",
+        "Order of 'Check the identity' and 'Print the contract' is swapped",
+        "Incorrect arrow routing and connections throughout the diagram",
+        "Missing arrow connecting 'Print the contract' to 'Check the identity'",
+        "Arrow labels ('Missing', 'Complete') are placed incorrectly or missing their text correctly associated"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "hard_h05_v7_s6b1l1",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 7,
+        "arrows": 7,
+        "labelled_arrows": 2
+      },
+      "result": {
+        "shapes": 7,
+        "arrows": 6
+      },
+      "shapes_matched": 7,
+      "shape_types_matched": 7,
+      "labels_matched": 7,
+      "arrows_matched": 5,
+      "arrow_labels_matched": 1,
+      "layout_similarity": 0.6,
+      "overall": 0.7,
+      "verdict": "The result captures all shapes and labels correctly, but has incorrect arrow routing and missing connections.",
+      "problems": [
+        "Start node is isolated at the top left without any connecting arrow.",
+        "Arrow between 'Wait one minute' and 'Steep a bit longer' is missing/misrouted.",
+        "Arrow label 'Not yet' is positioned incorrectly."
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "hard_h06_v2_s7b1l1",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 8,
+        "arrows": 9,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 8,
+        "arrows": 9
+      },
+      "shapes_matched": 8,
+      "shape_types_matched": 4,
+      "labels_matched": 8,
+      "arrows_matched": 5,
+      "arrow_labels_matched": 2,
+      "layout_similarity": 0.4,
+      "overall": 0.5,
+      "verdict": "The result captures all shapes and text labels, but the layout is severely distorted with overlapping and misplaced elements and incorrect arrow routing.",
+      "problems": [
+        "Most shapes have incorrect outlines (rectangles used instead of rounded rectangles and ellipses)",
+        "Layout is heavily scrambled with extreme spacing and misalignment",
+        "Several arrows connect to incorrect shapes or route through improper paths",
+        "Some arrow labels are missing or misplaced"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "hard_h08_v5_s9b2l1",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 6,
+        "arrows": 6,
+        "labelled_arrows": 2
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 5
+      },
+      "shapes_matched": 6,
+      "shape_types_matched": 1,
+      "labels_matched": 6,
+      "arrows_matched": 3,
+      "arrow_labels_matched": 1,
+      "layout_similarity": 0.3,
+      "overall": 0.25,
+      "verdict": "The result fails to use correct shape types and has severely distorted layout and incorrect arrow connections.",
+      "problems": [
+        "Most shapes are drawn as rectangles instead of their correct types (ovals, diamond, trapezoid).",
+        "Layout is heavily shifted and misaligned, with extreme horizontal offsets.",
+        "Incorrect arrow connections and routing between shapes."
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "hard_h12_v1_s6b1l1",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 5,
+        "arrows": 8,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 5,
+        "arrows": 7
+      },
+      "shapes_matched": 5,
+      "shape_types_matched": 2,
+      "labels_matched": 5,
+      "arrows_matched": 4,
+      "arrow_labels_matched": 2,
+      "layout_similarity": 0.6,
+      "overall": 0.5,
+      "verdict": "The result captures all shapes and text labels, but has incorrect shape types for start/end, incorrect arrow routing, and misplaced connector labels.",
+      "problems": [
+        "Start and end shapes are drawn as rectangles instead of rounded rectangles/ovals",
+        "Incorrect shape type or styling for Start node",
+        "Arrow routing is distorted with awkward right-angle connections",
+        "Connector labels 'Yes' and 'No' near the second decision box are incorrectly positioned or swapped"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "hard_h12_v3_s6b2l1",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 10,
+        "arrows": 11,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 10,
+        "arrows": 11
+      },
+      "shapes_matched": 10,
+      "shape_types_matched": 10,
+      "labels_matched": 10,
+      "arrows_matched": 6,
+      "arrow_labels_matched": 2,
+      "layout_similarity": 0.4,
+      "overall": 0.5,
+      "verdict": "The diagram contains all shapes and labels correctly, but the layout structure and connections are significantly disordered.",
+      "problems": [
+        "Incorrect arrow connections and routing throughout the flowchart",
+        "Missing loop-back arrow from 'Can reproduce?' to 'Ask for more detail'",
+        "Arrows and layout are misaligned and disorganized"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "hard_h23_v5_s9b2l1",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 6,
+        "arrows": 7,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 6
+      },
+      "shapes_matched": 6,
+      "shape_types_matched": 2,
+      "labels_matched": 6,
+      "arrows_matched": 2,
+      "arrow_labels_matched": 2,
+      "layout_similarity": 0.2,
+      "overall": 0.3,
+      "verdict": "The result captures all shapes and text labels, but the layout is severely scrambled and almost all shape types and connections are incorrect.",
+      "problems": [
+        "Most shape types are drawn incorrectly (e.g. ovals and rounded rectangles rendered as plain rectangles or circles)",
+        "Layout structure is completely distorted with disconnected or misrouted arrows",
+        "Missing retry arrow loop from Disk space free back to itself",
+        "Arrow labels and directions are incorrectly placed and connected"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "hard_h25_v4_s6b2l1",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 8,
+        "arrows": 10,
+        "labelled_arrows": 5
+      },
+      "result": {
+        "shapes": 8,
+        "arrows": 10
+      },
+      "shapes_matched": 8,
+      "shape_types_matched": 7,
+      "labels_matched": 7,
+      "arrows_matched": 7,
+      "arrow_labels_matched": 3,
+      "layout_similarity": 0.6,
+      "overall": 0.65,
+      "verdict": "The result successfully includes all shapes and arrows, but swaps the order and logic of the decision diamonds ('Water boiled?' and 'Strong enough?').",
+      "problems": [
+        "Decision diamonds 'Water boiled?' and 'Strong enough?' are swapped in position and logic flow",
+        "Arrow label 'Not yet' is connected incorrectly or missing proper routing",
+        "Some arrow labels have incorrect text or placement"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "hard_h28_v2_s8b3l1",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 8,
+        "arrows": 9,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 8,
+        "arrows": 8
+      },
+      "shapes_matched": 8,
+      "shape_types_matched": 3,
+      "labels_matched": 8,
+      "arrows_matched": 4,
+      "arrow_labels_matched": 4,
+      "layout_similarity": 0.3,
+      "overall": 0.35,
+      "verdict": "The result captures all shapes and text labels, but has severely distorted layout placement, incorrect shape types, and broken routing.",
+      "problems": [
+        "Most rectangular action nodes are incorrectly drawn as rectangles with sharp or incorrect aspect ratios",
+        "Layout is highly disorganized with overlapping text and strange horizontal routing",
+        "Order of bottom nodes ('Patch merged' and 'Assign a reviewer') is swapped"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "hard_h28_v5_s8b2l1",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 6,
+        "arrows": 6,
+        "labelled_arrows": 2
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 6
+      },
+      "shapes_matched": 6,
+      "shape_types_matched": 2,
+      "labels_matched": 6,
+      "arrows_matched": 5,
+      "arrow_labels_matched": 2,
+      "layout_similarity": 0.8,
+      "overall": 0.75,
+      "verdict": "The result captures all shapes and text labels correctly, but draws most shapes as rectangles instead of their correct types and has some routing defects.",
+      "problems": [
+        "Shape 'Lamp does not work' rendered as rectangle instead of rounded rectangle",
+        "Shape 'Check the socket' rendered as rectangle instead of rounded rectangle",
+        "Shape 'Plug it in' rendered incorrectly",
+        "Shape 'Lamp works' rendered as rectangle instead of rounded rectangle",
+        "Incorrect arrow routing into 'Plug it in' shape"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "medium_m02_v2_s6b1l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 6,
+        "arrows": 7,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 7
+      },
+      "shapes_matched": 6,
+      "shape_types_matched": 3,
+      "labels_matched": 5,
+      "arrows_matched": 0,
+      "arrow_labels_matched": 0,
+      "layout_similarity": 0.1,
+      "overall": 0.2,
+      "verdict": "The result successfully includes all 6 shapes and text content, but the layout is completely scrambled, shape types are mostly incorrect rectangles, and the arrows and connections are jumbled.",
+      "problems": [
+        "Most shapes are drawn as basic rectangles instead of rounded rectangles and specific process shapes",
+        "Layout and positioning are completely scrambled relative to the reference",
+        "All arrows and routing are connected incorrectly",
+        "Text formatting and arrow labels are misplaced and overlapping"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "medium_m06_v2_s6b2l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 4,
+        "arrows": 6,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 4,
+        "arrows": 5
+      },
+      "shapes_matched": 4,
+      "shape_types_matched": 3,
+      "labels_matched": 2,
+      "arrows_matched": 3,
+      "arrow_labels_matched": 2,
+      "layout_similarity": 0.75,
+      "overall": 0.65,
+      "verdict": "The result successfully captures most shapes and overall flow, but contains shape type errors, altered text labels, and incorrect branching logic.",
+      "problems": [
+        "Water boiled? shape is a diamond in reference but drawn as a rectangle in result",
+        "Water boiled? text has a line break and spaces ('Water\nboi l ed ?')",
+        "Strong enough? text has spaces ('Strong\nenough ?')",
+        "Incorrect branching from Water boiled? (added a 'No' branch leading nowhere useful)",
+        "Missing arrow connecting to the final 'Tea is ready' state correctly from the left branch"
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "medium_m07_v3_s5b2l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 5,
+        "arrows": 6,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 5,
+        "arrows": 5
+      },
+      "shapes_matched": 5,
+      "shape_types_matched": 1,
+      "labels_matched": 5,
+      "arrows_matched": 4,
+      "arrow_labels_matched": 3,
+      "layout_similarity": 0.8,
+      "overall": 0.65,
+      "verdict": "The result captures all shapes and general layout, but uses incorrect shape types for the start and end nodes and has several incorrect arrow labels and connections.",
+      "problems": [
+        "Start shape ('Application filed') uses a rectangle instead of a rounded rectangle.",
+        "End shape ('Case closed') uses a rectangle instead of a rounded rectangle.",
+        "Arrow label from 'Score above cutoff?' is incorrect ('Below' changed to 'Below' swapped or misplaced, wait - 'Below' label is attached to the wrong arrow leading to 'Check the identity' as 'Below').",
+        "Missing final merge arrow leading to 'Case closed' from bottom line.",
+        "Text wrapping inside 'Documents complete?' is split awkwardly across multiple lines."
+      ],
+      "_judge": {
+        "provider": "gemini",
+        "model": "gemini-flash-lite-latest"
+      },
+      "id": "medium_m08_v3_s5b2l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 5,
+        "arrows": 6,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 6
+      },
+      "shapes_matched": 4,
+      "shape_types_matched": 1,
+      "labels_matched": 4,
+      "arrows_matched": 5,
+      "arrow_labels_matched": 4,
+      "layout_similarity": 0.72,
+      "overall": 0.68,
+      "verdict": "The result captures most of the flow and labels, but one shape is extra and several shapes have the wrong outline types.",
+      "problems": [
+        "Extra unlabeled oval/shape at the top center that is not in the reference",
+        "The left decision and process shapes are swapped in outline type: 'Slice the model' is drawn as a rectangle, and 'First layer stuck?' is drawn as a diamond/decision mix",
+        "'Heat the nozzle' is drawn as a hexagon in the result, but it should be a trapezoid-like/hexagon-style shape only if matching reference outline; here the outline differs",
+        "Some arrow routing is simplified and not identical to the reference, especially around the left branch and bottom connections"
+      ],
+      "_judge": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini"
+      },
+      "id": "medium_m10_v4_s6b2l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 7,
+        "arrows": 7,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 7,
+        "arrows": 7
+      },
+      "shapes_matched": 7,
+      "shape_types_matched": 7,
+      "labels_matched": 7,
+      "arrows_matched": 4,
+      "arrow_labels_matched": 3,
+      "layout_similarity": 0.72,
+      "overall": 0.78,
+      "verdict": "The result captures all seven shapes and the general flow, but several arrows are routed differently and at least one arrow label is misplaced or missing.",
+      "problems": [
+        "One labelled arrow text ('Fail') is not clearly attached to the correct branch in the result.",
+        "The path from 'Read the pull request' to 'Post the summary' is drawn differently from the reference.",
+        "The left branch routing around 'Run the test suite' and the bottom return path differ from the reference.",
+        "The overall layout is compressed and the right-side branch positions are not fully faithful."
+      ],
+      "_judge": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini"
+      },
+      "id": "medium_m12_v5_s8b2l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 7,
+        "arrows": 7,
+        "labelled_arrows": 2
+      },
+      "result": {
+        "shapes": 7,
+        "arrows": 7
+      },
+      "shapes_matched": 7,
+      "shape_types_matched": 7,
+      "labels_matched": 7,
+      "arrows_matched": 5,
+      "arrow_labels_matched": 1,
+      "layout_similarity": 0.78,
+      "overall": 0.84,
+      "verdict": "The result reproduces all seven shapes and most of the flow, but one labelled arrow text is missing/misplaced and a couple of connections/layout details differ.",
+      "problems": [
+        "The arrow labeled \"Yes\" is not clearly matched with the reference label placement.",
+        "The central decision and lower connecting lines are drawn with slightly different routing than the reference.",
+        "Some shapes are smaller and more compressed than in the reference, especially on the left and bottom.",
+        "The final \"Lamp works\" node is positioned lower and more centered than in the reference."
+      ],
+      "_judge": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini"
+      },
+      "id": "medium_m13_v3_s8b1l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 6,
+        "arrows": 6,
+        "labelled_arrows": 2
+      },
+      "result": {
+        "shapes": 6,
+        "arrows": 6
+      },
+      "shapes_matched": 6,
+      "shape_types_matched": 4,
+      "labels_matched": 6,
+      "arrows_matched": 6,
+      "arrow_labels_matched": 2,
+      "layout_similarity": 0.95,
+      "overall": 0.92,
+      "verdict": "The result reproduces the full flowchart content and connections, with minor shape-outline mismatches on some symbols.",
+      "problems": [
+        "The top/ending ovals and one or more other shape outlines are not perfectly faithful to the reference.",
+        "Text appears much smaller in the result, though the labels are the same.",
+        "The overall layout is slightly compressed and repositioned compared with the reference."
+      ],
+      "_judge": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini"
+      },
+      "id": "medium_m21_v4_s7b1l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 5,
+        "arrows": 5,
+        "labelled_arrows": 5
+      },
+      "result": {
+        "shapes": 5,
+        "arrows": 5
+      },
+      "shapes_matched": 5,
+      "shape_types_matched": 5,
+      "labels_matched": 5,
+      "arrows_matched": 5,
+      "arrow_labels_matched": 5,
+      "layout_similarity": 0.93,
+      "overall": 0.97,
+      "verdict": "The result reproduces the reference flowchart very closely, with all shapes, labels, and arrows present in the same structure.",
+      "problems": [
+        "Result is much smaller and differently positioned on the canvas",
+        "Some text and lines appear thinner due to scaling"
+      ],
+      "_judge": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini"
+      },
+      "id": "medium_m29_v6_s6b2l0",
+      "status": "judged"
+    },
+    {
+      "reference": {
+        "shapes": 7,
+        "arrows": 6,
+        "labelled_arrows": 4
+      },
+      "result": {
+        "shapes": 7,
+        "arrows": 6
+      },
+      "shapes_matched": 7,
+      "shape_types_matched": 5,
+      "labels_matched": 7,
+      "arrows_matched": 3,
+      "arrow_labels_matched": 3,
+      "layout_similarity": 0.6,
+      "overall": 0.63,
+      "verdict": "The result captures all seven flowchart nodes and most labels, but several shape outlines and arrow routings are wrong or compressed into a very different layout.",
+      "problems": [
+        "'Tea is ready' is drawn as a rectangle instead of a rounded terminator.",
+        "'Warm the pot' is drawn as a hexagon-like shape instead of a rounded/terminator-style shape.",
+        "The 'Water boiled?' and 'Strong enough?' decision diamonds are much smaller and differently proportioned than in the reference.",
+        "Several arrows do not follow the same routing/attachment points as the reference, especially the right-side branch from 'Water boiled?' and the lower return path.",
+        "Overall layout is heavily compressed horizontally and the relative spacing differs from the reference."
+      ],
+      "_judge": {
+        "provider": "openai",
+        "model": "gpt-5.4-mini"
+      },
+      "id": "medium_m32_v3_s8b2l0",
+      "status": "judged"
+    }
+  ]
+}

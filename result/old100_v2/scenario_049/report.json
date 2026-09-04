@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 7.06
+        "seconds": 6.83
       }
     },
     {
@@ -20,7 +20,7 @@
         "palette": false,
         "title": "Zoom (Alt+Mousewheel)",
         "created_cell": false,
-        "seconds": 1.47
+        "seconds": 1.48
       }
     },
     {
@@ -30,8 +30,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[11]/table/tbody/tr[15]/td[2]",
-        "seconds": 2.44
+        "via": "exact-visible",
+        "seconds": 1.29
       }
     },
     {
@@ -44,7 +44,7 @@
         "palette": true,
         "title": "",
         "created_cell": true,
-        "seconds": 2.74
+        "seconds": 2.69
       }
     },
     {
@@ -59,7 +59,7 @@
         "wanted": 150,
         "relative_to": 0,
         "assumed": true,
-        "seconds": 2.72
+        "seconds": 2.69
       }
     },
     {
@@ -72,7 +72,7 @@
         "palette": false,
         "title": "Zoom (Alt+Mousewheel)",
         "created_cell": false,
-        "seconds": 1.51
+        "seconds": 1.48
       }
     },
     {
@@ -82,8 +82,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[11]/table/tbody/tr[15]/td[2]",
-        "seconds": 2.52
+        "via": "exact-visible",
+        "seconds": 1.3
       }
     },
     {
@@ -100,7 +100,7 @@
           "dx": 710,
           "dy": -130
         },
-        "seconds": 9.91
+        "seconds": 9.64
       }
     },
     {
@@ -112,7 +112,7 @@
         "ok": true,
         "before": 2,
         "after": 3,
-        "seconds": 6.12
+        "seconds": 6.02
       }
     },
     {
@@ -125,7 +125,7 @@
         "palette": false,
         "title": "Zoom (Alt+Mousewheel)",
         "created_cell": false,
-        "seconds": 1.47
+        "seconds": 1.49
       }
     },
     {
@@ -135,8 +135,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[11]/table/tbody/tr[15]/td[2]",
-        "seconds": 2.49
+        "via": "exact-visible",
+        "seconds": 1.3
       }
     },
     {
@@ -153,7 +153,7 @@
           "dx": 710,
           "dy": -80
         },
-        "seconds": 9.71
+        "seconds": 9.61
       }
     },
     {
@@ -167,7 +167,7 @@
         "dy": 0,
         "wanted": 150,
         "relative_to": 2,
-        "seconds": 2.74
+        "seconds": 2.7
       }
     },
     {
@@ -179,7 +179,7 @@
         "ok": true,
         "before": 4,
         "after": 5,
-        "seconds": 6.15
+        "seconds": 6.05
       }
     },
     {
@@ -192,7 +192,7 @@
         "palette": false,
         "title": "Zoom (Alt+Mousewheel)",
         "created_cell": false,
-        "seconds": 1.52
+        "seconds": 1.5
       }
     },
     {
@@ -202,8 +202,8 @@
       "status": "ok",
       "detail": {
         "ok": true,
-        "xpath": "/html/body/div[11]/table/tbody/tr[15]/td[2]",
-        "seconds": 2.48
+        "via": "exact-visible",
+        "seconds": 1.3
       }
     },
     {
@@ -213,7 +213,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 4",
-        "seconds": 2.32
+        "seconds": 2.27
       }
     },
     {
@@ -237,7 +237,7 @@
           78,
           52
         ],
-        "seconds": 1.5
+        "seconds": 1.46
       }
     },
     {
@@ -247,7 +247,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 8",
-        "seconds": 2.31
+        "seconds": 2.27
       }
     },
     {
@@ -271,7 +271,7 @@
           78,
           39
         ],
-        "seconds": 1.48
+        "seconds": 1.45
       }
     },
     {
@@ -281,7 +281,7 @@
       "status": "ok",
       "detail": {
         "editing": "element created in step 12",
-        "seconds": 2.37
+        "seconds": 2.26
       }
     },
     {
@@ -305,7 +305,7 @@
           78,
           52
         ],
-        "seconds": 1.48
+        "seconds": 1.42
       }
     },
     {
@@ -315,7 +315,7 @@
       "status": "ok",
       "detail": {
         "editing": "connector_from_step4_to_step8",
-        "seconds": 2.36
+        "seconds": 2.29
       }
     },
     {
@@ -349,7 +349,7 @@
       "status": "ok",
       "detail": {
         "editing": "connector_from_step8_to_step12",
-        "seconds": 2.33
+        "seconds": 2.31
       }
     },
     {
@@ -373,7 +373,7 @@
           58,
           34
         ],
-        "seconds": 1.48
+        "seconds": 1.46
       }
     }
   ],
@@ -387,7 +387,7 @@
     "skipped": 0
   },
   "step_success_rate": 1.0,
-  "total_sec": 84.7,
+  "total_sec": 78.5,
   "cells": [
     {
       "cx": 818,

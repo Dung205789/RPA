@@ -8,7 +8,8 @@ public class GeneratedTest {
 
         driver.get("https://app.diagrams.net/?lang=en&splash=0");
         driver.findElement(By.xpath("/html/body/div[4]/div[2]/div[1]/div[2]/div/div[3]/button")).click();
-        driver.findElement(By.xpath("/html/body/div[11]/div[1]/div[3]/button[4]")).click();
+        driver.switchTo().activeElement().sendKeys("http://localhost:8123/uploads/stepImg/objectImg/objectImg__148__22__20251022.jpg");
+        // click 'Apply' (exact-visible)
 
         driver.quit();
     }

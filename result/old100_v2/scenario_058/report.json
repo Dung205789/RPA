@@ -7,7 +7,7 @@
       "status": "ok",
       "detail": {
         "url": "https://app.diagrams.net/?lang=en&splash=0",
-        "seconds": 5.69
+        "seconds": 5.47
       }
     },
     {
@@ -18,7 +18,7 @@
       "detail": {
         "ok": true,
         "xpath": "/html/body/div[4]/div[2]/div[1]/div[2]/div/div[3]/span",
-        "seconds": 23.63
+        "seconds": 23.87
       }
     },
     {
@@ -31,7 +31,7 @@
         "palette": false,
         "title": "Edit",
         "created_cell": false,
-        "seconds": 1.6
+        "seconds": 1.7
       }
     },
     {
@@ -40,8 +40,9 @@
       "action": "fill",
       "status": "failed",
       "detail": {
-        "reason": "no editor open and no resolvable target for ''",
-        "seconds": 0.0
+        "reason": "no editor open and nothing editable focused",
+        "focused_tag": "div",
+        "seconds": 0.01
       }
     },
     {
@@ -52,7 +53,7 @@
       "detail": {
         "ok": true,
         "xpath": "/html/body/div[3]/div[1]/a[4]/span[2]",
-        "seconds": 23.36
+        "seconds": 25.44
       }
     }
   ],
@@ -66,7 +67,7 @@
     "skipped": 0
   },
   "step_success_rate": 0.8,
-  "total_sec": 54.9,
+  "total_sec": 57.0,
   "cells": [],
   "n_vertices": 0,
   "n_edges": 0,
