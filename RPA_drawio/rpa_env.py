@@ -35,7 +35,46 @@ import subprocess
 import time
 from pathlib import Path
 
-DRAWIO_URL = "https://app.diagrams.net/?lang=en&splash=0"
+def _dotenv(name: str, default: str = "") -> str:
+    """Read one key out of the repository's ``.env``.
+
+    Added 2026-09-22 for D9 / the G0 environment gate. The URL used to be the
+    literal below, so ``DRAWIO_URL=http://localhost:8080`` in ``D:\\SVG_agent\\.env``
+    was written, committed to in DECISIONS, and then ignored — every number the
+    project holds was measured against whatever ``app.diagrams.net`` happened to
+    be serving that day. An environment variable wins over the file so a single
+    run can be pointed elsewhere without editing anything.
+    """
+    val = os.environ.get(name)
+    if val:
+        return val
+    here = Path(__file__).resolve()
+    for parent in [here.parent] + list(here.parents):
+        candidate = parent / ".env"
+        if not candidate.is_file():
+            continue
+        try:
+            for line in candidate.read_text(encoding="utf-8").splitlines():
+                line = line.strip()
+                if not line or line.startswith("#") or "=" not in line:
+                    continue
+                key, _, raw = line.partition("=")
+                if key.strip() != name:
+                    continue
+                return raw.split("##")[0].strip().strip('"').strip("'")
+        except OSError:
+            continue
+    return default
+
+
+def _drawio_url() -> str:
+    base = _dotenv("DRAWIO_URL", "https://app.diagrams.net").rstrip("/")
+    # The query string is not configuration: English UI and no splash screen are
+    # what the corpus's menu wording and the harness's readiness check require.
+    return base + "/?lang=en&splash=0"
+
+
+DRAWIO_URL = _drawio_url()
 
 
 def _find_chrome() -> str:
@@ -80,24 +119,89 @@ def kill_chrome_on_port(port: int) -> int:
     exact port are touched, so the user's own browser is never affected.
     """
     killed = 0
-    try:
-        out = subprocess.run(
-            ["wmic", "process", "where", "name='chrome.exe'", "get", "ProcessId,CommandLine"],
-            capture_output=True, text=True, timeout=20).stdout
-    except Exception:
-        out = ""
-    needle = "--remote-debugging-port=%d" % port
-    for line in out.splitlines():
-        if needle not in line:
-            continue
-        pid = line.strip().rsplit(None, 1)[-1]
-        if pid.isdigit():
-            subprocess.run(["taskkill", "/F", "/PID", pid],
-                           capture_output=True, timeout=20)
-            killed += 1
+    for pid in _chrome_pids_on_port(port):
+        subprocess.run(["taskkill", "/F", "/PID", str(pid)],
+                       capture_output=True, timeout=20)
+        killed += 1
     if killed:
         time.sleep(2.0)
     return killed
+
+
+def _chrome_pids_on_port(port: int) -> list:
+    """PIDs of Chrome processes whose command line names this debugging port.
+
+    Originally this asked ``wmic``. Windows 11 has removed WMIC (checked
+    2026-09-22 on 10.0.26200: the executable is simply not there), and the call
+    was wrapped in a bare ``except``, so the function returned 0 and reported
+    success while leaving the previous Chrome running. That is exactly the
+    condition `documents/CLAUDE.md` warns about — a second Chrome competing for
+    CPU makes Shift+Arrow presses drop, which is how ``scenario_050`` once scored
+    34/41 instead of 41/41 — and the guard against it had quietly stopped working.
+
+    PowerShell's CIM query replaces it, with the old ``wmic`` kept as a fallback
+    for machines that still have it. Matching is on the exact
+    ``--remote-debugging-port=<port>`` token, so the operator's own browser is
+    never touched.
+    """
+    needle = "--remote-debugging-port=%d" % port
+    pids = []
+    ps = ("Get-CimInstance Win32_Process -Filter \"Name='chrome.exe'\" | "
+          "Where-Object { $_.CommandLine -like '*%s*' } | "
+          "ForEach-Object { $_.ProcessId }" % needle)
+    for cmd in (["powershell", "-NoProfile", "-NonInteractive", "-Command", ps],
+                ["wmic", "process", "where", "name='chrome.exe'",
+                 "get", "ProcessId,CommandLine"]):
+        try:
+            out = subprocess.run(cmd, capture_output=True, text=True, timeout=40).stdout
+        except Exception:
+            continue
+        if cmd[0] == "powershell":
+            pids = [int(t) for t in out.split() if t.strip().isdigit()]
+        else:
+            pids = [int(line.strip().rsplit(None, 1)[-1]) for line in out.splitlines()
+                    if needle in line and line.strip().rsplit(None, 1)[-1].isdigit()]
+        if pids:
+            return pids
+    return pids
+
+
+def kill_orphaned_chromedrivers() -> int:
+    """Stop any ``chromedriver.exe`` whose Chrome child is already gone.
+
+    Found 2026-09-24: ``restart_browser`` (``run_drawio_v2.py``) kills Chrome on
+    session death and launches a fresh one, but never touched the chromedriver
+    process that was driving the dead session — Selenium's local driver process
+    does not exit on its own just because its browser crashed out from under it
+    (as opposed to a clean ``driver.quit()``, which tells chromedriver to shut
+    down). Every crash-and-restart during a run left one more chromedriver.exe
+    running forever. Measured: 34 orphaned chromedriver.exe processes had
+    accumulated across sessions, which is the more likely explanation for both
+    "chromedriver could not start" (`RPA_docs/TRACE.md` 2026-09-22) and a
+    background run being killed for system memory pressure (2026-09-24) than
+    "the machine happened to be low on RAM" was.
+
+    A chromedriver with a live Chrome child is a worker actually in use (parallel
+    workers each own one) and must not be touched; only a driver with no living
+    Chrome child is a leak.
+    """
+    ps = (
+        "$drivers = Get-CimInstance Win32_Process -Filter \"Name='chromedriver.exe'\"; "
+        "$chromePids = (Get-CimInstance Win32_Process -Filter \"Name='chrome.exe'\").ProcessId; "
+        "$drivers | Where-Object { "
+        "  $childChrome = Get-CimInstance Win32_Process -Filter \"Name='chrome.exe' AND ParentProcessId=$($_.ProcessId)\"; "
+        "  -not $childChrome "
+        "} | ForEach-Object { $_.ProcessId }"
+    )
+    try:
+        out = subprocess.run(["powershell", "-NoProfile", "-NonInteractive", "-Command", ps],
+                             capture_output=True, text=True, timeout=40).stdout
+    except Exception:
+        return 0
+    pids = [int(t) for t in out.split() if t.strip().isdigit()]
+    for pid in pids:
+        subprocess.run(["taskkill", "/F", "/PID", str(pid)], capture_output=True, timeout=20)
+    return len(pids)
 
 
 def launch_chrome(port: int = 9222, profile_dir: str | Path | None = None,

@@ -1,0 +1,913 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "error",
+      "detail": {
+        "error": "WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED\n  (Session info: chrome=153.0.8010.53)\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]\n\tchromedriver!(No symbol) [0x7ff723ad2c70]\n\tchromedriver!(No symbol) [0x7ff7238f4a7d]\n\tchromedriver!(No symbol) [0x7ff7238f186b]\n\tchromedriver!(No symbol) [0x7ff7238e1da1]\n\tchromedriver!(No symbol) [0x7ff7238e3be4]\n\tchromedriver!(No symbol) [0x7ff7238e2334]\n\tchromedriver!(No symbol) [0x7ff7238e1b0b]\n\tchromedriver!(No symbol) [0x7ff7238e17c1]\n\tchromedriver!(No symbol) [0x7ff7238df490]\n\tchromedriver!(No symbol) [0x7ff7238dfc02]\n\tchromedriver!(No symbol) [0x7ff7238f8d67]\n\tchromedriver!(No symbol) [0x7ff7239a0994]\n\tchromedriver!(No symbol) [0x7ff7239793ea]\n\tchromedriver!(No symbol) [0x7ff72399fbea]\n\tchromedriver!(No symbol) [0x7ff723941d02]\n\tchromedriver!(No symbol) [0x7ff723942b13]\n\tchromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]\n\tchromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]\n\tchromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]\n\tchromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]\n\tchromedriver!(No symbol) [0x7ff723ae0a05]\n\tchromedriver!(No symbol) [0x7ff723adbcf4]\n\tchromedriver!(No symbol) [0x7ff723adbe84]\n\tchromedriver!(No symbol) [0x7ff723ac66ac]\n\tKERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]\n\tntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]\n",
+        "traceback": "Traceback (most recent call last):\n  File \"D:\\SVG_Agent\\documents\\RPA_drawio\\drawio_executor.py\", line 775, in run\n    status, detail = handler(self, step, n)\n                     ^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SVG_Agent\\documents\\RPA_drawio\\drawio_executor.py\", line 295, in _do_open\n    self.prepare()\n  File \"D:\\SVG_Agent\\documents\\RPA_drawio\\drawio_executor.py\", line 173, in prepare\n    state = rpa_env.open_clean_drawio(self.driver, self.url, log=self.log)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\SVG_Agent\\documents\\RPA_drawio\\rpa_env.py\", line 494, in open_clean_drawio\n    driver.get(url)\nselenium.common.exceptions.WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED\n  (Session info: chrome=153.0.8010.53)\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]\n\tchromedriver!(No symbol) [0x7ff723ad2c70]\n\tchromedriver!(No symbol) [0x7ff7238f4a7d]\n\tchromedriver!(No symbol) [0x7ff7238f186b]\n\tchromedriver!(No symbol) [0x7ff7238e1da1]\n\tchromedriver!(No symbol) [0x7ff7238e3be4]\n\tchromedriver!(No symbol) [0x7ff7238e2334]\n\tchromedriver!(No symbol) [0x7ff7238e1b0b]\n\tchromedriver!(No symbol) [0x7ff7238e17c1]\n\tchromedriver!(No symbol) [0x7ff7238df490]\n\tchromedriver!(No symbol) [0x7ff7238dfc02]\n\tchromedriver!(No symbol) [0x7ff7238f8d67]\n\tchromedriver!(No symbol) [0x7ff7239a0994]\n\tchromedriver!(No symbol) [0x7ff7239793ea]\n\tchromedriver!(No symbol) [0x7ff72399fbea]\n\tchromedriver!(No symbol) [0x7ff723941d02]\n\tchromedriver!(No symbol) [0x7ff723942b13]\n\tchromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]\n\tchromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]\n\tchromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]\n\tchromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]\n\tchromedriver!(No symbol) [0x7ff723ae0a05]\n\tchromedriver!(No symbol) [0x7ff723adbcf4]\n\tchromedriver!(No symbol) [0x7ff723adbe84]\n\tchromedriver!(No symbol) [0x7ff723ac66ac]\n\tKERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]\n\tntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]\n\n",
+        "seconds": 0.08,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.167,
+        "palette": false,
+        "title": "",
+        "created_cell": false,
+        "seconds": 1.59,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 3,
+      "description": "Move the element created in step 2 right",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 2'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 4,
+      "description": "Move the element created in step 2 right",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 2'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 5,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 2'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 6,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 2'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 7,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 2'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 8,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.213,
+        "palette": false,
+        "title": "",
+        "created_cell": false,
+        "seconds": 2.73,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 9,
+      "description": "Move the element created in step 8 right",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 8'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 10,
+      "description": "Move the element created in step 8 right",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 8'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 11,
+      "description": "Move the element created in step 8 up",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 8'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 12,
+      "description": "Move the element created in step 8 up",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 8'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 13,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.213,
+        "palette": false,
+        "title": "",
+        "created_cell": false,
+        "seconds": 4.82,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 14,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.082,
+        "palette": false,
+        "title": "",
+        "created_cell": false,
+        "seconds": 1.64,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 15,
+      "description": "Move the element created in step 14 left",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 14'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 16,
+      "description": "Move the element created in step 14 left",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 14'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 17,
+      "description": "Move the element created in step 14 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 14'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 18,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\ellipse.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.331,
+        "palette": false,
+        "title": "",
+        "created_cell": false,
+        "seconds": 1.83,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 19,
+      "description": "Move the element created in step 18 right",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 18'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "no-verdict",
+          "level": "none",
+          "reason": "no pre-state for this step",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 20,
+      "description": "Move the element created in step 18 right",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 18'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to step 18",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 21,
+      "description": "Move the element created in step 18 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 18'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to step 18",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 22,
+      "description": "Move the element created in step 18 down",
+      "action": "move",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 18'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to step 18",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 23,
+      "description": "Double click on the element created in step 2",
+      "action": "double click",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 2'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to ('created', 2)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 24,
+      "description": "Fill \"Start\" into the element created in step 2",
+      "action": "fill",
+      "status": "failed",
+      "detail": {
+        "reason": "no editor open and no resolvable target for 'element created in step 2'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N2",
+          "reason": "no editable target for the text",
+          "measured": {
+            "target": "off-canvas"
+          }
+        }
+      }
+    },
+    {
+      "n": 25,
+      "description": "Double click on the element created in step 8",
+      "action": "double click",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 8'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to ('created', 8)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 26,
+      "description": "Fill \"Water boiled?\" into the element created in step 8",
+      "action": "fill",
+      "status": "failed",
+      "detail": {
+        "reason": "no editor open and no resolvable target for 'element created in step 8'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N2",
+          "reason": "no editable target for the text",
+          "measured": {
+            "target": "off-canvas"
+          }
+        }
+      }
+    },
+    {
+      "n": 27,
+      "description": "Double click on the element created in step 13",
+      "action": "double click",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 13'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to ('created', 13)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 28,
+      "description": "Fill \"Strong enough?\" into the element created in step 13",
+      "action": "fill",
+      "status": "failed",
+      "detail": {
+        "reason": "no editor open and no resolvable target for 'element created in step 13'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N2",
+          "reason": "no editable target for the text",
+          "measured": {
+            "target": "off-canvas"
+          }
+        }
+      }
+    },
+    {
+      "n": 29,
+      "description": "Double click on the element created in step 14",
+      "action": "double click",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 14'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to ('created', 14)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 30,
+      "description": "Fill \"Fill the kettle\" into the element created in step 14",
+      "action": "fill",
+      "status": "failed",
+      "detail": {
+        "reason": "no editor open and no resolvable target for 'element created in step 14'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N2",
+          "reason": "no editable target for the text",
+          "measured": {
+            "target": "off-canvas"
+          }
+        }
+      }
+    },
+    {
+      "n": 31,
+      "description": "Double click on the element created in step 18",
+      "action": "double click",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'element created in step 18'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to ('created', 18)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 32,
+      "description": "Fill \"Tea is ready\" into the element created in step 18",
+      "action": "fill",
+      "status": "failed",
+      "detail": {
+        "reason": "no editor open and no resolvable target for 'element created in step 18'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N2",
+          "reason": "no editable target for the text",
+          "measured": {
+            "target": "off-canvas"
+          }
+        }
+      }
+    },
+    {
+      "n": 33,
+      "description": "Connect the element created in step 2 to the element created in step 8",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "reason": "unresolved endpoints",
+        "src": "element created in step 2",
+        "dst": "element created in step 8",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "endpoint not bound (None -> None)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 34,
+      "description": "Connect the element created in step 8 to the element created in step 13",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "reason": "unresolved endpoints",
+        "src": "element created in step 8",
+        "dst": "element created in step 13",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "endpoint not bound (None -> None)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 35,
+      "description": "Double click on connector_from_step8_to_step13",
+      "action": "double click",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'connector_from_step8_to_step13'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to ('connector', 8, 13)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 36,
+      "description": "Fill \"Yes\"",
+      "action": "fill",
+      "status": "failed",
+      "detail": {
+        "reason": "no editor open and nothing editable focused",
+        "focused_tag": "body",
+        "seconds": 0.01,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N2",
+          "reason": "no editable target for the text",
+          "measured": {
+            "target": "off-canvas"
+          }
+        }
+      }
+    },
+    {
+      "n": 37,
+      "description": "Connect the element created in step 8 to the element created in step 18",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "reason": "unresolved endpoints",
+        "src": "element created in step 8",
+        "dst": "element created in step 18",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "endpoint not bound (None -> None)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 38,
+      "description": "Double click on connector_from_step8_to_step18",
+      "action": "double click",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'connector_from_step8_to_step18'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to ('connector', 8, 18)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 39,
+      "description": "Fill \"Not yet\"",
+      "action": "fill",
+      "status": "failed",
+      "detail": {
+        "reason": "no editor open and nothing editable focused",
+        "focused_tag": "body",
+        "seconds": 0.01,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N2",
+          "reason": "no editable target for the text",
+          "measured": {
+            "target": "off-canvas"
+          }
+        }
+      }
+    },
+    {
+      "n": 40,
+      "description": "Connect the element created in step 13 to the element created in step 14",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "reason": "unresolved endpoints",
+        "src": "element created in step 13",
+        "dst": "element created in step 14",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "endpoint not bound (None -> None)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 41,
+      "description": "Double click on connector_from_step13_to_step14",
+      "action": "double click",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'connector_from_step13_to_step14'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to ('connector', 13, 14)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 42,
+      "description": "Fill \"Yes\"",
+      "action": "fill",
+      "status": "failed",
+      "detail": {
+        "reason": "no editor open and nothing editable focused",
+        "focused_tag": "body",
+        "seconds": 0.01,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N2",
+          "reason": "no editable target for the text",
+          "measured": {
+            "target": "off-canvas"
+          }
+        }
+      }
+    },
+    {
+      "n": 43,
+      "description": "Connect the element created in step 13 to the element created in step 8",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "reason": "unresolved endpoints",
+        "src": "element created in step 13",
+        "dst": "element created in step 8",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "endpoint not bound (None -> None)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 44,
+      "description": "Double click on connector_from_step13_to_step8",
+      "action": "double click",
+      "status": "failed",
+      "detail": {
+        "reason": "unknown reference 'connector_from_step13_to_step8'",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "nothing bound to ('connector', 13, 8)",
+          "measured": null
+        }
+      }
+    },
+    {
+      "n": 45,
+      "description": "Fill \"No\"",
+      "action": "fill",
+      "status": "failed",
+      "detail": {
+        "reason": "no editor open and nothing editable focused",
+        "focused_tag": "body",
+        "seconds": 0.01,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N2",
+          "reason": "no editable target for the text",
+          "measured": {
+            "target": "off-canvas"
+          }
+        }
+      }
+    },
+    {
+      "n": 46,
+      "description": "Connect the element created in step 14 to the element created in step 13",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "reason": "unresolved endpoints",
+        "src": "element created in step 14",
+        "dst": "element created in step 13",
+        "seconds": 0.0,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "endpoint not bound (None -> None)",
+          "measured": null
+        }
+      }
+    }
+  ],
+  "counts": {
+    "ok": 5,
+    "failed": 40,
+    "error": 1,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 0.1087,
+  "total_sec": 36.5,
+  "cells": [],
+  "n_vertices": 0,
+  "n_edges": 0,
+  "labels": [],
+  "oracle": {
+    "n_steps": 46,
+    "n_graded": 27,
+    "pass": 0,
+    "root_failure": 19,
+    "cascade_failure": 8,
+    "no_verdict": 19,
+    "false_pass": 0,
+    "false_fail": 0,
+    "by_action": {
+      "open": {
+        "n": 1,
+        "pass": 0,
+        "fail": 0,
+        "no-verdict": 1,
+        "false_pass": 0,
+        "level": "none"
+      },
+      "click_shape": {
+        "n": 5,
+        "pass": 0,
+        "fail": 0,
+        "no-verdict": 5,
+        "false_pass": 0,
+        "level": "none"
+      },
+      "move": {
+        "n": 16,
+        "pass": 0,
+        "fail": 3,
+        "no-verdict": 13,
+        "false_pass": 0,
+        "level": "none"
+      },
+      "double_click": {
+        "n": 9,
+        "pass": 0,
+        "fail": 9,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "fill": {
+        "n": 9,
+        "pass": 0,
+        "fail": 9,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N2"
+      },
+      "connect": {
+        "n": 6,
+        "pass": 0,
+        "fail": 6,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      }
+    },
+    "kinds": {
+      "1": "no-verdict",
+      "2": "no-verdict",
+      "3": "no-verdict",
+      "4": "no-verdict",
+      "5": "no-verdict",
+      "6": "no-verdict",
+      "7": "no-verdict",
+      "8": "no-verdict",
+      "9": "no-verdict",
+      "10": "no-verdict",
+      "11": "no-verdict",
+      "12": "no-verdict",
+      "13": "no-verdict",
+      "14": "no-verdict",
+      "15": "no-verdict",
+      "16": "no-verdict",
+      "17": "no-verdict",
+      "18": "no-verdict",
+      "19": "no-verdict",
+      "20": "root",
+      "21": "root",
+      "22": "root",
+      "23": "root",
+      "24": "root",
+      "25": "root",
+      "26": "root",
+      "27": "root",
+      "28": "root",
+      "29": "root",
+      "30": "root",
+      "31": "root",
+      "32": "root",
+      "33": "root",
+      "34": "root",
+      "35": "cascade",
+      "36": "cascade",
+      "37": "root",
+      "38": "cascade",
+      "39": "cascade",
+      "40": "root",
+      "41": "cascade",
+      "42": "cascade",
+      "43": "root",
+      "44": "cascade",
+      "45": "cascade",
+      "46": "root"
+    }
+  }
+}

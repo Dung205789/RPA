@@ -12,12 +12,14 @@ to create cells, so the runs still measure what a UI robot can do.
 """
 from __future__ import annotations
 
+import os
 import time
 
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 import cell_tracker
+import mx_control
 import rpa_env
 
 # One Shift+Arrow press moves the selection by exactly 10px at 100% zoom.
@@ -29,6 +31,54 @@ PX_PER_ARROW_PRESS = 10
 # converter independently assumed 100px. Defining it once, here, is what keeps the
 # corpus and the executor talking about the same distance.
 MOVE_STEP_PX = 150
+
+
+def _flag(name: str, default: bool = True) -> bool:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() not in ("0", "false", "no", "off")
+
+
+# G1.1. Open loop was the defect: fifteen presses were sent and never checked,
+# and under load presses are dropped — `DIAGNOSIS.md` L1 measured a median
+# displacement of 98px where every step demanded 150. Closing the loop on the
+# model makes a dropped press a thing the run repairs instead of a thing it
+# reports as success. Off reproduces the pre-G1 behaviour exactly, which is how
+# the before/after comparison stays honest.
+CLOSED_LOOP_MOVE = _flag("RPA_CLOSED_LOOP_MOVE", True)
+# G1.3. Put every inserted shape back on the scenario's one insertion point,
+# measured in model units instead of restored through the container's scroll.
+ANCHOR_INSERTS = _flag("RPA_ANCHOR_INSERTS", True)
+# G1.4. Resize by pressing until the model reports the size asked for.
+CLOSED_LOOP_RESIZE = _flag("RPA_CLOSED_LOOP_RESIZE", True)
+# G1.8. Read the label back out of the model and retype it if it is not what was
+# asked for. Added 2026-09-22 after `medium_m08_v3_s5b2l0` stored
+# "Documents complete ?" for a step that typed "Documents complete?" — twice in
+# one case, while the DOM-based check passed both. It does not reproduce when the
+# same string is typed into the same shape in isolation (probed over five
+# shape/length combinations), so it is a timing fault, and the only reliable
+# answer to a timing fault is to check the result.
+CLOSED_LOOP_LABEL = _flag("RPA_CLOSED_LOOP_LABEL", True)
+LABEL_MAX_ATTEMPTS = 3
+# How many correction rounds before giving up and calling the step failed.
+MOVE_MAX_ROUNDS = 5
+# The tolerance `ORACLE.md` §1 sets for a move, in model units.
+MOVE_TOLERANCE_PX = 2
+
+# One Ctrl+Arrow press changes the selection's size by exactly 1 model unit, and
+# moves the edge the arrow points at while the opposite edge stays put. Measured
+# 2026-09-22, `RPA_docs/probe_editor.json` section B:
+#   Ctrl+Right  w +1, x unchanged      Ctrl+Left  w -1
+#   Ctrl+Down   h +1, y unchanged      Ctrl+Up    h -1
+# The executor had been assuming 10 units per press, the same as a nudge, and so
+# asked for 15 presses to get 150 units and got 15.
+PX_PER_RESIZE_PRESS = 1
+# What one bare "Extend the right edge of ..." is worth. The DSL names no amount,
+# and this keeps the inherited convention — one move step — rather than inventing
+# a second constant. Revisited at G2.2, when the converter starts asking for real
+# sizes instead of a default.
+RESIZE_STEP_PX = MOVE_STEP_PX
 
 _ARROW = {
     "left": Keys.ARROW_LEFT, "right": Keys.ARROW_RIGHT,
@@ -141,6 +191,222 @@ def move_cell(driver, element, direction: str, distance_px: int = MOVE_STEP_PX,
             "wanted": distance_px}
 
 
+_AXIS = {"left": ("x", -1), "right": ("x", 1), "up": ("y", -1), "top": ("y", -1),
+         "down": ("y", 1), "bottom": ("y", 1)}
+
+
+def move_cell_exact(driver, element, direction: str, distance_px: int = MOVE_STEP_PX,
+                    cell_id: str | None = None, log=None) -> dict:
+    """Nudge a cell until the model says it has moved the distance asked for.
+
+    G1.1. The open-loop version sends ``distance / 10`` presses and hopes. This
+    one presses, reads ``mxGeometry`` back, and presses again for whatever is
+    still missing, up to ``MOVE_MAX_ROUNDS`` rounds. A dropped keystroke then
+    costs one extra round instead of costing the step — and, because the
+    scenario language places every later shape relative to this one, instead of
+    costing the rest of the drawing.
+
+    Reading the model rather than the SVG is the other half. ``cell_tracker``
+    recovers a coordinate by undoing the canvas transform on a bounding box, and
+    that number moves when draw.io re-anchors a growing canvas; a loop closed on
+    it would chase the editor's own scrolling. ``mxGeometry`` is what draw.io
+    acts on.
+
+    Returns what happened, for the step report. It does **not** decide whether
+    the step passed: ``oracle_verdict`` re-reads the model and rules on that
+    (`ORACLE.md` §2).
+    """
+    log = log or (lambda *a, **k: None)
+    axis = _AXIS.get((direction or "").lower())
+    if axis is None:
+        return {"ok": False, "reason": "unknown direction %r" % direction}
+    dim, sign = axis
+    back = {"x": ("left", "right"), "y": ("up", "down")}[dim]
+
+    if cell_id is None:
+        cell_id = mx_control.cell_id_for(driver, element)
+    if not cell_id:
+        # No model handle: fall back to the open loop rather than skipping the
+        # step, and say so, so the row is not mistaken for a closed-loop result.
+        res = move_cell(driver, element, direction, distance_px, measure=False)
+        res.update({"closed_loop": False, "reason": "no model id for this element"})
+        return res
+
+    start = mx_control.geometry_of(driver, cell_id)
+    if not start:
+        res = move_cell(driver, element, direction, distance_px, measure=False)
+        res.update({"closed_loop": False, "reason": "cell has no geometry"})
+        return res
+
+    want = sign * distance_px
+    select_cell(driver, element)
+    rounds = []
+    for attempt in range(MOVE_MAX_ROUNDS):
+        now = mx_control.geometry_of(driver, cell_id)
+        if not now:
+            return {"ok": False, "closed_loop": True, "rounds": rounds,
+                    "reason": "cell vanished during the move"}
+        done = now[dim] - start[dim]
+        remaining = want - done
+        if abs(remaining) <= MOVE_TOLERANCE_PX:
+            break
+        presses = int(round(abs(remaining) / PX_PER_ARROW_PRESS))
+        if presses < 1:
+            # Less than one press worth is left and the grid cannot express it.
+            break
+        key = _ARROW[back[1] if remaining > 0 else back[0]]
+        _press_arrow(driver, key, presses)
+        time.sleep(0.35)
+        after = mx_control.geometry_of(driver, cell_id) or now
+        moved = after[dim] - now[dim]
+        rounds.append({"presses": presses, "asked": remaining, "got": moved})
+        if moved == 0 and attempt == 0:
+            # Nothing budged: the click probably did not land on the cell.
+            log("[move] no movement on the first round; re-selecting")
+            select_cell(driver, element)
+
+    end = mx_control.geometry_of(driver, cell_id) or start
+    dx, dy = end["x"] - start["x"], end["y"] - start["y"]
+    achieved = (dx if dim == "x" else dy)
+    drift = (dy if dim == "x" else dx)
+    return {"ok": abs(achieved - want) <= MOVE_TOLERANCE_PX and abs(drift) <= MOVE_TOLERANCE_PX,
+            "closed_loop": True, "cell": cell_id, "dx": dx, "dy": dy,
+            "wanted": want, "axis": dim, "error": achieved - want,
+            "off_axis_drift": drift, "rounds": rounds, "n_rounds": len(rounds)}
+
+
+_RESIZE_KEY = {"grow_w": Keys.ARROW_RIGHT, "shrink_w": Keys.ARROW_LEFT,
+               "grow_h": Keys.ARROW_DOWN, "shrink_h": Keys.ARROW_UP}
+
+# Which dimension an edge belongs to, and whether moving that edge outward also
+# needs the cell shifted. Ctrl+Arrow can only move the right and bottom edges, so
+# extending the left edge is "grow the width, then slide the shape left by the
+# same amount" — a statement about what the tool offers, not about any case.
+_EDGE_PLAN = {
+    "right": ("w", None), "bottom": ("h", None), "down": ("h", None),
+    "left": ("w", "left"), "top": ("h", "up"), "up": ("h", "up"),
+}
+
+
+def _press_ctrl_arrow(driver, key, times: int) -> None:
+    for _ in range(times):
+        (ActionChains(driver).key_down(Keys.CONTROL).send_keys(key)
+         .key_up(Keys.CONTROL).perform())
+        time.sleep(0.02)
+
+
+def resize_cell_exact(driver, element, edge: str, delta_px: int,
+                      cell_id: str | None = None, log=None) -> dict:
+    """Move one edge of a shape by an exact amount, and verify it in the model.
+
+    G1.4. The old version pressed a fixed 15 times and passed the step if the
+    size changed by anything at all, which — at one unit per press — meant every
+    "Extend" delivered 15 units where the step's own convention is 150.
+
+    ``delta_px`` is positive to move the edge outward (extend) and negative to
+    move it inward (shrink). The edge named in the step is the one that moves;
+    the opposite edge is held, which is what makes "extend the right edge" and
+    "extend the left edge" different instructions rather than two words for the
+    same growth.
+    """
+    log = log or (lambda *a, **k: None)
+    plan = _EDGE_PLAN.get((edge or "").lower())
+    if plan is None:
+        return {"ok": False, "reason": "unknown edge %r" % edge}
+    dim, shift_dir = plan
+    if cell_id is None:
+        cell_id = mx_control.cell_id_for(driver, element)
+    start = mx_control.geometry_of(driver, cell_id) if cell_id else None
+    if not start:
+        return {"ok": False, "reason": "no model geometry for this element"}
+
+    want_size = start[dim] + delta_px
+    if want_size <= 0:
+        return {"ok": False, "reason": "shrinking by %d would leave size %d"
+                                       % (delta_px, want_size)}
+    select_cell(driver, element)
+    rounds = []
+    for _ in range(MOVE_MAX_ROUNDS):
+        now = mx_control.geometry_of(driver, cell_id)
+        if not now:
+            return {"ok": False, "reason": "cell vanished during the resize"}
+        remaining = want_size - now[dim]
+        if abs(remaining) <= MOVE_TOLERANCE_PX:
+            break
+        presses = int(round(abs(remaining) / PX_PER_RESIZE_PRESS))
+        if presses < 1:
+            break
+        key = _RESIZE_KEY[("grow_" if remaining > 0 else "shrink_") + dim]
+        _press_ctrl_arrow(driver, key, presses)
+        time.sleep(0.3)
+        after = mx_control.geometry_of(driver, cell_id) or now
+        rounds.append({"presses": presses, "asked": remaining,
+                       "got": after[dim] - now[dim]})
+
+    mid = mx_control.geometry_of(driver, cell_id) or start
+    moved_back = None
+    if shift_dir is not None:
+        grown = mid[dim] - start[dim]
+        if abs(grown) >= PX_PER_ARROW_PRESS:
+            moved_back = move_cell_exact(driver, element, shift_dir, abs(grown),
+                                         cell_id=cell_id, log=log)
+
+    end = mx_control.geometry_of(driver, cell_id) or start
+    got = end[dim] - start[dim]
+    # The edge the step did not name must not have moved.
+    anchor = {"w": "x", "h": "y"}[dim]
+    anchor_moved = end[anchor] - start[anchor]
+    held = (abs(anchor_moved) <= MOVE_TOLERANCE_PX if shift_dir is None
+            else abs(anchor_moved + got) <= MOVE_TOLERANCE_PX)
+    return {"ok": abs(got - delta_px) <= MOVE_TOLERANCE_PX and held,
+            "closed_loop": True, "cell": cell_id, "dim": dim,
+            "d" + dim: got, "wanted": delta_px,
+            "opposite_edge_held": held, "anchor_moved": anchor_moved,
+            "rounds": rounds, "shifted_back": moved_back,
+            "before": start, "after": end}
+
+
+def anchor_to(driver, element, target_x: float, target_y: float,
+              cell_id: str | None = None, log=None) -> dict:
+    """Put a cell exactly on a model point, using the nudge grid.
+
+    G1.3. draw.io drops a click-inserted shape at the centre of the current
+    view, and the scenario language treats that as one fixed point. Restoring
+    the container's scroll does not hold it: measured 2026-09-22
+    (`RPA_docs/probe_editor.json` section D), inserting and nudging six times
+    with the scroll restored still moved the landing point 400 units down the
+    canvas, and without the restore it ran away by 2230 units and drifted 20
+    sideways.
+
+    So the point is held in model coordinates instead: the first insert of a
+    scenario defines it, and every later insert is nudged back onto it. The
+    nudge grid is 10 units, so this lands exactly whenever the drift is a
+    multiple of 10 — which the measured drift is, because it comes from the same
+    grid.
+    """
+    log = log or (lambda *a, **k: None)
+    if cell_id is None:
+        cell_id = mx_control.cell_id_for(driver, element)
+    now = mx_control.geometry_of(driver, cell_id) if cell_id else None
+    if not now:
+        return {"ok": False, "reason": "no model geometry for this element"}
+    dx, dy = target_x - now["x"], target_y - now["y"]
+    if abs(dx) < PX_PER_ARROW_PRESS and abs(dy) < PX_PER_ARROW_PRESS:
+        return {"ok": True, "corrected": False, "dx": 0, "dy": 0}
+    out = {"corrected": True, "wanted_dx": dx, "wanted_dy": dy}
+    if abs(dx) >= PX_PER_ARROW_PRESS:
+        move_cell_exact(driver, element, "right" if dx > 0 else "left", abs(dx),
+                        cell_id=cell_id, log=log)
+    if abs(dy) >= PX_PER_ARROW_PRESS:
+        move_cell_exact(driver, element, "down" if dy > 0 else "up", abs(dy),
+                        cell_id=cell_id, log=log)
+    end = mx_control.geometry_of(driver, cell_id) or now
+    out.update({"x": end["x"], "y": end["y"],
+                "residual": [round(target_x - end["x"], 1), round(target_y - end["y"], 1)]})
+    out["ok"] = max(abs(target_x - end["x"]), abs(target_y - end["y"])) <= MOVE_TOLERANCE_PX
+    return out
+
+
 _POINT_ON_CELL_JS = r"""
 const g = arguments[0];
 const paths = Array.from(g.querySelectorAll('path'));
@@ -222,6 +488,57 @@ def label_cell(driver, element, text: str) -> dict:
     ActionChains(driver).send_keys(Keys.ESCAPE).perform()
     time.sleep(0.8)
     return _label_result(driver, text, near=_info_of(driver, element))
+
+
+def _model_text(driver, cell_id) -> str | None:
+    """The label as the model holds it, stripped to visible text."""
+    raw = mx_control.label_of(driver, cell_id)
+    if raw is None:
+        return None
+    import mx_oracle
+    return mx_oracle._text_of(raw)
+
+
+def label_cell_exact(driver, element, text: str, cell_id: str | None = None,
+                     editor_already_open: bool = False, log=None) -> dict:
+    """Type a label and keep going until the model holds exactly that text.
+
+    G1.8. ``label_cell`` typed once and checked by looking for the string
+    somewhere on the canvas near the shape. That check passes on text that is
+    not the text asked for: ``medium_m08_v3_s5b2l0`` stored
+    ``"Documents complete ?"`` for ``Fill "Documents complete?"`` and the step
+    reported success. Comparing against ``mxCell.value`` instead makes the
+    difference visible, and retyping is what makes it go away.
+
+    ``editor_already_open`` is for the corpus's two-step form — ``Double click
+    on X`` then ``Fill "..."`` — where a previous step opened the editor and
+    closing it to start again would throw away that step's work.
+    """
+    log = log or (lambda *a, **k: None)
+    if cell_id is None:
+        cell_id = mx_control.cell_id_for(driver, element)
+    want = " ".join((text or "").split())
+    attempts = []
+    for attempt in range(LABEL_MAX_ATTEMPTS):
+        if attempt == 0 and editor_already_open:
+            pass                       # use the editor the previous step opened
+        else:
+            open_editor_on(driver, element)
+        ActionChains(driver).key_down(Keys.CONTROL).send_keys("a").key_up(Keys.CONTROL).perform()
+        time.sleep(0.15)
+        ActionChains(driver).send_keys(text).perform()
+        time.sleep(0.4)
+        ActionChains(driver).send_keys(Keys.ESCAPE).perform()
+        time.sleep(0.8)
+        got = _model_text(driver, cell_id)
+        attempts.append(got)
+        if got == want:
+            return {"ok": True, "cell": cell_id, "value": got, "wanted": want,
+                    "attempts": len(attempts), "closed_loop": True}
+        log("[label] attempt %d put %r where %r was asked for" % (attempt + 1, got, want))
+    return {"ok": False, "cell": cell_id, "value": attempts[-1] if attempts else None,
+            "wanted": want, "attempts": attempts, "closed_loop": True,
+            "reason": "the label never matched after %d attempts" % LABEL_MAX_ATTEMPTS}
 
 
 def open_editor_on(driver, element) -> dict:

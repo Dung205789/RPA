@@ -1,0 +1,642 @@
+{
+  "summary": {
+    "n_steps": 16,
+    "n_graded": 16,
+    "pass": 16,
+    "root_failure": 0,
+    "cascade_failure": 0,
+    "no_verdict": 0,
+    "false_pass": 0,
+    "false_fail": 0,
+    "by_action": {
+      "open": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "click_shape": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "move": {
+        "n": 4,
+        "pass": 4,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "double_click": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "fill": {
+        "n": 3,
+        "pass": 3,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "connect": {
+        "n": 2,
+        "pass": 2,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      }
+    },
+    "kinds": {
+      "1": "pass",
+      "2": "pass",
+      "3": "pass",
+      "4": "pass",
+      "5": "pass",
+      "6": "pass",
+      "7": "pass",
+      "8": "pass",
+      "9": "pass",
+      "10": "pass",
+      "11": "pass",
+      "12": "pass",
+      "13": "pass",
+      "14": "pass",
+      "15": "pass",
+      "16": "pass"
+    }
+  },
+  "steps": [
+    {
+      "n": 1,
+      "action": "open",
+      "oracle_row": 1,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "palette": 45,
+        "url": "https://app.diagrams.net/?lang=en&splash=0",
+        "url_in_step": "https://app.diagrams.net",
+        "host_substituted_per_D9": false
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 2,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-1",
+        "shape": "ellipse",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "d80YoaIQIVkNrjEpWxno-1"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 3,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "d80YoaIQIVkNrjEpWxno-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 4,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "d80YoaIQIVkNrjEpWxno-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 5,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-2",
+        "shape": "parallelogram",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "d80YoaIQIVkNrjEpWxno-2"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 6,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-3",
+        "shape": "ellipse",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "d80YoaIQIVkNrjEpWxno-3"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 7,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-3",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "d80YoaIQIVkNrjEpWxno-3": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 8,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-3",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "d80YoaIQIVkNrjEpWxno-3": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 9,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-1",
+        "editing": "d80YoaIQIVkNrjEpWxno-1"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 10,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-1",
+        "value": "Patch submitted",
+        "wanted": "Patch submitted",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "d80YoaIQIVkNrjEpWxno-1": [
+            "",
+            "Patch submitted"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 11,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-2",
+        "editing": "d80YoaIQIVkNrjEpWxno-2"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 12,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-2",
+        "value": "Read the pull request",
+        "wanted": "Read the pull request",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "d80YoaIQIVkNrjEpWxno-2": [
+            "",
+            "Read the pull request"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 13,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-3",
+        "editing": "d80YoaIQIVkNrjEpWxno-3"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 14,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "d80YoaIQIVkNrjEpWxno-3",
+        "value": "Patch merged",
+        "wanted": "Patch merged",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "d80YoaIQIVkNrjEpWxno-3": [
+            "",
+            "Patch merged"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 15,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "d80YoaIQIVkNrjEpWxno-4",
+        "source": "d80YoaIQIVkNrjEpWxno-1",
+        "target": "d80YoaIQIVkNrjEpWxno-2",
+        "want_source": "d80YoaIQIVkNrjEpWxno-1",
+        "want_target": "d80YoaIQIVkNrjEpWxno-2"
+      },
+      "diff": {
+        "added": [
+          "d80YoaIQIVkNrjEpWxno-4"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 16,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "d80YoaIQIVkNrjEpWxno-5",
+        "source": "d80YoaIQIVkNrjEpWxno-2",
+        "target": "d80YoaIQIVkNrjEpWxno-3",
+        "want_source": "d80YoaIQIVkNrjEpWxno-2",
+        "want_target": "d80YoaIQIVkNrjEpWxno-3"
+      },
+      "diff": {
+        "added": [
+          "d80YoaIQIVkNrjEpWxno-5"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    }
+  ],
+  "dependencies": {
+    "1": [],
+    "2": [],
+    "3": [
+      2
+    ],
+    "4": [
+      2
+    ],
+    "5": [],
+    "6": [],
+    "7": [
+      6
+    ],
+    "8": [
+      6
+    ],
+    "9": [
+      2
+    ],
+    "10": [
+      2
+    ],
+    "11": [
+      5
+    ],
+    "12": [
+      5
+    ],
+    "13": [
+      6
+    ],
+    "14": [
+      6
+    ],
+    "15": [
+      2,
+      5
+    ],
+    "16": [
+      5,
+      6
+    ]
+  },
+  "dependents": {
+    "1": [],
+    "2": [
+      3,
+      4,
+      9,
+      10,
+      15
+    ],
+    "3": [],
+    "4": [],
+    "5": [
+      11,
+      12,
+      15,
+      16
+    ],
+    "6": [
+      7,
+      8,
+      13,
+      14,
+      16
+    ],
+    "7": [],
+    "8": [],
+    "9": [],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [],
+    "15": [],
+    "16": []
+  }
+}

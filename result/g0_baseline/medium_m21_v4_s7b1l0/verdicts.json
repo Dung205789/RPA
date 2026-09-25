@@ -1,0 +1,2767 @@
+{
+  "summary": {
+    "n_steps": 71,
+    "n_graded": 71,
+    "pass": 71,
+    "root_failure": 0,
+    "cascade_failure": 0,
+    "no_verdict": 0,
+    "false_pass": 0,
+    "false_fail": 0,
+    "by_action": {
+      "open": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "click_shape": {
+        "n": 7,
+        "pass": 7,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "move": {
+        "n": 38,
+        "pass": 38,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "double_click": {
+        "n": 9,
+        "pass": 9,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "fill": {
+        "n": 9,
+        "pass": 9,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "connect": {
+        "n": 7,
+        "pass": 7,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      }
+    },
+    "kinds": {
+      "1": "pass",
+      "2": "pass",
+      "3": "pass",
+      "4": "pass",
+      "5": "pass",
+      "6": "pass",
+      "7": "pass",
+      "8": "pass",
+      "9": "pass",
+      "10": "pass",
+      "11": "pass",
+      "12": "pass",
+      "13": "pass",
+      "14": "pass",
+      "15": "pass",
+      "16": "pass",
+      "17": "pass",
+      "18": "pass",
+      "19": "pass",
+      "20": "pass",
+      "21": "pass",
+      "22": "pass",
+      "23": "pass",
+      "24": "pass",
+      "25": "pass",
+      "26": "pass",
+      "27": "pass",
+      "28": "pass",
+      "29": "pass",
+      "30": "pass",
+      "31": "pass",
+      "32": "pass",
+      "33": "pass",
+      "34": "pass",
+      "35": "pass",
+      "36": "pass",
+      "37": "pass",
+      "38": "pass",
+      "39": "pass",
+      "40": "pass",
+      "41": "pass",
+      "42": "pass",
+      "43": "pass",
+      "44": "pass",
+      "45": "pass",
+      "46": "pass",
+      "47": "pass",
+      "48": "pass",
+      "49": "pass",
+      "50": "pass",
+      "51": "pass",
+      "52": "pass",
+      "53": "pass",
+      "54": "pass",
+      "55": "pass",
+      "56": "pass",
+      "57": "pass",
+      "58": "pass",
+      "59": "pass",
+      "60": "pass",
+      "61": "pass",
+      "62": "pass",
+      "63": "pass",
+      "64": "pass",
+      "65": "pass",
+      "66": "pass",
+      "67": "pass",
+      "68": "pass",
+      "69": "pass",
+      "70": "pass",
+      "71": "pass"
+    }
+  },
+  "steps": [
+    {
+      "n": 1,
+      "action": "open",
+      "oracle_row": 1,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "palette": 45,
+        "url": "http://localhost:8080/?lang=en&splash=0",
+        "url_in_step": "https://app.diagrams.net",
+        "host_substituted_per_D9": true
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 2,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-1",
+        "shape": "ellipse",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-1"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 3,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 4,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 5,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 6,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 7,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 8,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 9,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-2",
+        "shape": "parallelogram",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-2"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 10,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-2",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-2": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 11,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-2",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-2": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 12,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-2",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-2": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 13,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-2",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-2": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 14,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-3",
+        "shape": "rectangle",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-3"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 15,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-3",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-3": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 16,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-3",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-3": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 17,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-4",
+        "shape": "rhombus",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-4"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 18,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "shape": "trapezoid",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-5"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 19,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-5": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 20,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-5": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 21,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-5": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 22,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-5": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 23,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-5": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 24,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-5": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 25,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-5": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 26,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-5": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 27,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-5": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 28,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "shape": "rectangle",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-6"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 29,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 30,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 31,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 32,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 33,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 34,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 35,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 150.0,
+        "dy": 0.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            150.0,
+            0.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 36,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 37,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 38,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 39,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 40,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-7",
+        "shape": "ellipse",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-7"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 41,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-7",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-7": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 42,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-7",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-7": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 43,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-7",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-7": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 44,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-7",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-7": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 45,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-7",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-7": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 46,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-7",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "UjQinPS0vNR9lLjEe_oK-7": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 47,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-1",
+        "editing": "UjQinPS0vNR9lLjEe_oK-1"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 48,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-1",
+        "value": "Lamp does not work",
+        "wanted": "Lamp does not work",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "UjQinPS0vNR9lLjEe_oK-1": [
+            "",
+            "Lamp does not work"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 49,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-2",
+        "editing": "UjQinPS0vNR9lLjEe_oK-2"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 50,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-2",
+        "value": "Read the manual",
+        "wanted": "Read the manual",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "UjQinPS0vNR9lLjEe_oK-2": [
+            "",
+            "Read the manual"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 51,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-3",
+        "editing": "UjQinPS0vNR9lLjEe_oK-3"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 52,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-3",
+        "value": "Check the socket",
+        "wanted": "Check the socket",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "UjQinPS0vNR9lLjEe_oK-3": [
+            "",
+            "Check the socket"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 53,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-4",
+        "editing": "UjQinPS0vNR9lLjEe_oK-4"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 54,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-4",
+        "value": "Plugged in?",
+        "wanted": "Plugged in?",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "UjQinPS0vNR9lLjEe_oK-4": [
+            "",
+            "Plugged in?"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 55,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "editing": "UjQinPS0vNR9lLjEe_oK-5"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 56,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-5",
+        "value": "Plug it in",
+        "wanted": "Plug it in",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "UjQinPS0vNR9lLjEe_oK-5": [
+            "",
+            "Plug it in"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 57,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "editing": "UjQinPS0vNR9lLjEe_oK-6"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 58,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-6",
+        "value": "Replace the bulb",
+        "wanted": "Replace the bulb",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "UjQinPS0vNR9lLjEe_oK-6": [
+            "",
+            "Replace the bulb"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 59,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-7",
+        "editing": "UjQinPS0vNR9lLjEe_oK-7"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 60,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-7",
+        "value": "Lamp works",
+        "wanted": "Lamp works",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "UjQinPS0vNR9lLjEe_oK-7": [
+            "",
+            "Lamp works"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 61,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "UjQinPS0vNR9lLjEe_oK-8",
+        "source": "UjQinPS0vNR9lLjEe_oK-1",
+        "target": "UjQinPS0vNR9lLjEe_oK-2",
+        "want_source": "UjQinPS0vNR9lLjEe_oK-1",
+        "want_target": "UjQinPS0vNR9lLjEe_oK-2"
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-8"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 62,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "UjQinPS0vNR9lLjEe_oK-9",
+        "source": "UjQinPS0vNR9lLjEe_oK-2",
+        "target": "UjQinPS0vNR9lLjEe_oK-3",
+        "want_source": "UjQinPS0vNR9lLjEe_oK-2",
+        "want_target": "UjQinPS0vNR9lLjEe_oK-3"
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-9"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 63,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "UjQinPS0vNR9lLjEe_oK-10",
+        "source": "UjQinPS0vNR9lLjEe_oK-3",
+        "target": "UjQinPS0vNR9lLjEe_oK-4",
+        "want_source": "UjQinPS0vNR9lLjEe_oK-3",
+        "want_target": "UjQinPS0vNR9lLjEe_oK-4"
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-10"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 64,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "UjQinPS0vNR9lLjEe_oK-11",
+        "source": "UjQinPS0vNR9lLjEe_oK-4",
+        "target": "UjQinPS0vNR9lLjEe_oK-5",
+        "want_source": "UjQinPS0vNR9lLjEe_oK-4",
+        "want_target": "UjQinPS0vNR9lLjEe_oK-5"
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-11"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 65,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-11",
+        "editing": "UjQinPS0vNR9lLjEe_oK-11"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 66,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-11",
+        "value": "Yes",
+        "wanted": "Yes",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "UjQinPS0vNR9lLjEe_oK-11": [
+            "",
+            "Yes"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 67,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "UjQinPS0vNR9lLjEe_oK-12",
+        "source": "UjQinPS0vNR9lLjEe_oK-4",
+        "target": "UjQinPS0vNR9lLjEe_oK-7",
+        "want_source": "UjQinPS0vNR9lLjEe_oK-4",
+        "want_target": "UjQinPS0vNR9lLjEe_oK-7"
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-12"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 68,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-12",
+        "editing": "UjQinPS0vNR9lLjEe_oK-12"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 69,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "UjQinPS0vNR9lLjEe_oK-12",
+        "value": "No",
+        "wanted": "No",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "UjQinPS0vNR9lLjEe_oK-12": [
+            "",
+            "No"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 70,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "UjQinPS0vNR9lLjEe_oK-13",
+        "source": "UjQinPS0vNR9lLjEe_oK-5",
+        "target": "UjQinPS0vNR9lLjEe_oK-6",
+        "want_source": "UjQinPS0vNR9lLjEe_oK-5",
+        "want_target": "UjQinPS0vNR9lLjEe_oK-6"
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-13"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 71,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "UjQinPS0vNR9lLjEe_oK-14",
+        "source": "UjQinPS0vNR9lLjEe_oK-6",
+        "target": "UjQinPS0vNR9lLjEe_oK-7",
+        "want_source": "UjQinPS0vNR9lLjEe_oK-6",
+        "want_target": "UjQinPS0vNR9lLjEe_oK-7"
+      },
+      "diff": {
+        "added": [
+          "UjQinPS0vNR9lLjEe_oK-14"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    }
+  ],
+  "dependencies": {
+    "1": [],
+    "2": [],
+    "3": [
+      2
+    ],
+    "4": [
+      2
+    ],
+    "5": [
+      2
+    ],
+    "6": [
+      2
+    ],
+    "7": [
+      2
+    ],
+    "8": [
+      2
+    ],
+    "9": [],
+    "10": [
+      9
+    ],
+    "11": [
+      9
+    ],
+    "12": [
+      9
+    ],
+    "13": [
+      9
+    ],
+    "14": [],
+    "15": [
+      14
+    ],
+    "16": [
+      14
+    ],
+    "17": [],
+    "18": [],
+    "19": [
+      18
+    ],
+    "20": [
+      18
+    ],
+    "21": [
+      18
+    ],
+    "22": [
+      18
+    ],
+    "23": [
+      18
+    ],
+    "24": [
+      18
+    ],
+    "25": [
+      18
+    ],
+    "26": [
+      18
+    ],
+    "27": [
+      18
+    ],
+    "28": [],
+    "29": [
+      28
+    ],
+    "30": [
+      28
+    ],
+    "31": [
+      28
+    ],
+    "32": [
+      28
+    ],
+    "33": [
+      28
+    ],
+    "34": [
+      28
+    ],
+    "35": [
+      28
+    ],
+    "36": [
+      28
+    ],
+    "37": [
+      28
+    ],
+    "38": [
+      28
+    ],
+    "39": [
+      28
+    ],
+    "40": [],
+    "41": [
+      40
+    ],
+    "42": [
+      40
+    ],
+    "43": [
+      40
+    ],
+    "44": [
+      40
+    ],
+    "45": [
+      40
+    ],
+    "46": [
+      40
+    ],
+    "47": [
+      2
+    ],
+    "48": [
+      2
+    ],
+    "49": [
+      9
+    ],
+    "50": [
+      9
+    ],
+    "51": [
+      14
+    ],
+    "52": [
+      14
+    ],
+    "53": [
+      17
+    ],
+    "54": [
+      17
+    ],
+    "55": [
+      18
+    ],
+    "56": [
+      18
+    ],
+    "57": [
+      28
+    ],
+    "58": [
+      28
+    ],
+    "59": [
+      40
+    ],
+    "60": [
+      40
+    ],
+    "61": [
+      2,
+      9
+    ],
+    "62": [
+      9,
+      14
+    ],
+    "63": [
+      14,
+      17
+    ],
+    "64": [
+      17,
+      18
+    ],
+    "65": [
+      17,
+      18,
+      64
+    ],
+    "66": [
+      65
+    ],
+    "67": [
+      17,
+      40
+    ],
+    "68": [
+      17,
+      40,
+      67
+    ],
+    "69": [
+      68
+    ],
+    "70": [
+      18,
+      28
+    ],
+    "71": [
+      28,
+      40
+    ]
+  },
+  "dependents": {
+    "1": [],
+    "2": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      47,
+      48,
+      61
+    ],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": [
+      10,
+      11,
+      12,
+      13,
+      49,
+      50,
+      61,
+      62
+    ],
+    "10": [],
+    "11": [],
+    "12": [],
+    "13": [],
+    "14": [
+      15,
+      16,
+      51,
+      52,
+      62,
+      63
+    ],
+    "15": [],
+    "16": [],
+    "17": [
+      53,
+      54,
+      63,
+      64,
+      65,
+      67,
+      68
+    ],
+    "18": [
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      55,
+      56,
+      64,
+      65,
+      70
+    ],
+    "19": [],
+    "20": [],
+    "21": [],
+    "22": [],
+    "23": [],
+    "24": [],
+    "25": [],
+    "26": [],
+    "27": [],
+    "28": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      57,
+      58,
+      70,
+      71
+    ],
+    "29": [],
+    "30": [],
+    "31": [],
+    "32": [],
+    "33": [],
+    "34": [],
+    "35": [],
+    "36": [],
+    "37": [],
+    "38": [],
+    "39": [],
+    "40": [
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      59,
+      60,
+      67,
+      68,
+      71
+    ],
+    "41": [],
+    "42": [],
+    "43": [],
+    "44": [],
+    "45": [],
+    "46": [],
+    "47": [],
+    "48": [],
+    "49": [],
+    "50": [],
+    "51": [],
+    "52": [],
+    "53": [],
+    "54": [],
+    "55": [],
+    "56": [],
+    "57": [],
+    "58": [],
+    "59": [],
+    "60": [],
+    "61": [],
+    "62": [],
+    "63": [],
+    "64": [
+      65
+    ],
+    "65": [
+      66
+    ],
+    "66": [],
+    "67": [
+      68
+    ],
+    "68": [
+      69
+    ],
+    "69": [],
+    "70": [],
+    "71": []
+  }
+}

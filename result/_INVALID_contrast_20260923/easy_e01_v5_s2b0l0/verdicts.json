@@ -1,0 +1,215 @@
+{
+  "summary": {
+    "n_steps": 10,
+    "n_graded": 0,
+    "pass": 0,
+    "root_failure": 0,
+    "cascade_failure": 0,
+    "no_verdict": 10,
+    "false_pass": 0,
+    "false_fail": 0,
+    "by_action": {
+      "open": {
+        "n": 1,
+        "pass": 0,
+        "fail": 0,
+        "no-verdict": 1,
+        "false_pass": 0,
+        "level": "none"
+      },
+      "click_shape": {
+        "n": 2,
+        "pass": 0,
+        "fail": 0,
+        "no-verdict": 2,
+        "false_pass": 0,
+        "level": "none"
+      },
+      "move": {
+        "n": 2,
+        "pass": 0,
+        "fail": 0,
+        "no-verdict": 2,
+        "false_pass": 0,
+        "level": "none"
+      },
+      "double_click": {
+        "n": 2,
+        "pass": 0,
+        "fail": 0,
+        "no-verdict": 2,
+        "false_pass": 0,
+        "level": "none"
+      },
+      "fill": {
+        "n": 2,
+        "pass": 0,
+        "fail": 0,
+        "no-verdict": 2,
+        "false_pass": 0,
+        "level": "none"
+      },
+      "connect": {
+        "n": 1,
+        "pass": 0,
+        "fail": 0,
+        "no-verdict": 1,
+        "false_pass": 0,
+        "level": "none"
+      }
+    },
+    "kinds": {
+      "1": "no-verdict",
+      "2": "no-verdict",
+      "3": "no-verdict",
+      "4": "no-verdict",
+      "5": "no-verdict",
+      "6": "no-verdict",
+      "7": "no-verdict",
+      "8": "no-verdict",
+      "9": "no-verdict",
+      "10": "no-verdict"
+    }
+  },
+  "steps": [
+    {
+      "n": 1,
+      "action": "open",
+      "oracle_row": 1,
+      "level": "none",
+      "verdict": "no-verdict",
+      "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+      "executor_status": "error"
+    },
+    {
+      "n": 2,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "none",
+      "verdict": "no-verdict",
+      "reason": "oracle could not read the model: mxGraph model not reachable — was mx_oracle.install() called before the page loaded?",
+      "executor_status": "ok"
+    },
+    {
+      "n": 3,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "none",
+      "verdict": "no-verdict",
+      "reason": "oracle could not read the model: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]\n\tchromedriver!(No symbol) [0x7ff723ad2c70]\n\tchromedriver!(No symbol) [0x7ff7238f4876]\n\tchromedriver!(No symbol) [0x7ff723940e03]\n\tchromedriver!(No symbol) [0x7ff7239792f2]\n\tchromedriver!(No symbol) [0x7ff7239730c2]\n\tchromedriver!(No symbol) [0x7ff723972843]\n\tchromedriver!(No symbol) [0x7ff7238bcdcb]\n\tchromedriver!(No symbol) [0x7ff7238bd422]\n\tchromedriver!(No symbol) [0x7ff7238bda55]\n\tchromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]\n\tchromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]\n\tchromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]\n\tchromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]\n\tchromedriver!(No symbol) [0x7ff723ae0a05]\n\tchromedriver!(No symbol) [0x7ff7238bc20a]\n\tchromedriver!GetHandleVerifier [0x7ff724052f9f+4a79ff]\n\tKERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]\n\tntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]\n",
+      "executor_status": "error"
+    },
+    {
+      "n": 4,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "none",
+      "verdict": "no-verdict",
+      "reason": "oracle could not read the model: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]\n\tchromedriver!(No symbol) [0x7ff723ad2c70]\n\tchromedriver!(No symbol) [0x7ff7238f4876]\n\tchromedriver!(No symbol) [0x7ff723940e03]\n\tchromedriver!(No symbol) [0x7ff7239792f2]\n\tchromedriver!(No symbol) [0x7ff7239730c2]\n\tchromedriver!(No symbol) [0x7ff723972843]\n\tchromedriver!(No symbol) [0x7ff7238bcdcb]\n\tchromedriver!(No symbol) [0x7ff7238bd422]\n\tchromedriver!(No symbol) [0x7ff7238bda55]\n\tchromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]\n\tchromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]\n\tchromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]\n\tchromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]\n\tchromedriver!(No symbol) [0x7ff723ae0a05]\n\tchromedriver!(No symbol) [0x7ff7238bc20a]\n\tchromedriver!GetHandleVerifier [0x7ff724052f9f+4a79ff]\n\tKERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]\n\tntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]\n",
+      "executor_status": "failed"
+    },
+    {
+      "n": 5,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "none",
+      "verdict": "no-verdict",
+      "reason": "oracle could not read the model: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]\n\tchromedriver!(No symbol) [0x7ff723ad2c70]\n\tchromedriver!(No symbol) [0x7ff7238f4876]\n\tchromedriver!(No symbol) [0x7ff723940e03]\n\tchromedriver!(No symbol) [0x7ff7239792f2]\n\tchromedriver!(No symbol) [0x7ff7239730c2]\n\tchromedriver!(No symbol) [0x7ff723972843]\n\tchromedriver!(No symbol) [0x7ff7238bcdcb]\n\tchromedriver!(No symbol) [0x7ff7238bd422]\n\tchromedriver!(No symbol) [0x7ff7238bda55]\n\tchromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]\n\tchromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]\n\tchromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]\n\tchromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]\n\tchromedriver!(No symbol) [0x7ff723ae0a05]\n\tchromedriver!(No symbol) [0x7ff7238bc20a]\n\tchromedriver!GetHandleVerifier [0x7ff724052f9f+4a79ff]\n\tKERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]\n\tntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]\n",
+      "executor_status": "failed"
+    },
+    {
+      "n": 6,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "none",
+      "verdict": "no-verdict",
+      "reason": "oracle could not read the model: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]\n\tchromedriver!(No symbol) [0x7ff723ad2c70]\n\tchromedriver!(No symbol) [0x7ff7238f4876]\n\tchromedriver!(No symbol) [0x7ff723940e03]\n\tchromedriver!(No symbol) [0x7ff7239792f2]\n\tchromedriver!(No symbol) [0x7ff7239730c2]\n\tchromedriver!(No symbol) [0x7ff723972843]\n\tchromedriver!(No symbol) [0x7ff7238bcdcb]\n\tchromedriver!(No symbol) [0x7ff7238bd422]\n\tchromedriver!(No symbol) [0x7ff7238bda55]\n\tchromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]\n\tchromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]\n\tchromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]\n\tchromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]\n\tchromedriver!(No symbol) [0x7ff723ae0a05]\n\tchromedriver!(No symbol) [0x7ff7238bc20a]\n\tchromedriver!GetHandleVerifier [0x7ff724052f9f+4a79ff]\n\tKERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]\n\tntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]\n",
+      "executor_status": "failed"
+    },
+    {
+      "n": 7,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "none",
+      "verdict": "no-verdict",
+      "reason": "oracle could not read the model: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]\n\tchromedriver!(No symbol) [0x7ff723ad2c70]\n\tchromedriver!(No symbol) [0x7ff7238f4876]\n\tchromedriver!(No symbol) [0x7ff723940e03]\n\tchromedriver!(No symbol) [0x7ff7239792f2]\n\tchromedriver!(No symbol) [0x7ff7239730c2]\n\tchromedriver!(No symbol) [0x7ff723972843]\n\tchromedriver!(No symbol) [0x7ff7238bcdcb]\n\tchromedriver!(No symbol) [0x7ff7238bd422]\n\tchromedriver!(No symbol) [0x7ff7238bda55]\n\tchromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]\n\tchromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]\n\tchromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]\n\tchromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]\n\tchromedriver!(No symbol) [0x7ff723ae0a05]\n\tchromedriver!(No symbol) [0x7ff7238bc20a]\n\tchromedriver!GetHandleVerifier [0x7ff724052f9f+4a79ff]\n\tKERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]\n\tntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]\n",
+      "executor_status": "failed"
+    },
+    {
+      "n": 8,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "none",
+      "verdict": "no-verdict",
+      "reason": "oracle could not read the model: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]\n\tchromedriver!(No symbol) [0x7ff723ad2c70]\n\tchromedriver!(No symbol) [0x7ff7238f4876]\n\tchromedriver!(No symbol) [0x7ff723940e03]\n\tchromedriver!(No symbol) [0x7ff7239792f2]\n\tchromedriver!(No symbol) [0x7ff7239730c2]\n\tchromedriver!(No symbol) [0x7ff723972843]\n\tchromedriver!(No symbol) [0x7ff7238bcdcb]\n\tchromedriver!(No symbol) [0x7ff7238bd422]\n\tchromedriver!(No symbol) [0x7ff7238bda55]\n\tchromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]\n\tchromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]\n\tchromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]\n\tchromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]\n\tchromedriver!(No symbol) [0x7ff723ae0a05]\n\tchromedriver!(No symbol) [0x7ff7238bc20a]\n\tchromedriver!GetHandleVerifier [0x7ff724052f9f+4a79ff]\n\tKERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]\n\tntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]\n",
+      "executor_status": "failed"
+    },
+    {
+      "n": 9,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "none",
+      "verdict": "no-verdict",
+      "reason": "oracle could not read the model: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]\n\tchromedriver!(No symbol) [0x7ff723ad2c70]\n\tchromedriver!(No symbol) [0x7ff7238f4876]\n\tchromedriver!(No symbol) [0x7ff723940e03]\n\tchromedriver!(No symbol) [0x7ff7239792f2]\n\tchromedriver!(No symbol) [0x7ff7239730c2]\n\tchromedriver!(No symbol) [0x7ff723972843]\n\tchromedriver!(No symbol) [0x7ff7238bcdcb]\n\tchromedriver!(No symbol) [0x7ff7238bd422]\n\tchromedriver!(No symbol) [0x7ff7238bda55]\n\tchromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]\n\tchromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]\n\tchromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]\n\tchromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]\n\tchromedriver!(No symbol) [0x7ff723ae0a05]\n\tchromedriver!(No symbol) [0x7ff7238bc20a]\n\tchromedriver!GetHandleVerifier [0x7ff724052f9f+4a79ff]\n\tKERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]\n\tntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]\n",
+      "executor_status": "failed"
+    },
+    {
+      "n": 10,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "none",
+      "verdict": "no-verdict",
+      "reason": "oracle could not read the model: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception\nStacktrace:\n\tchromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]\n\tchromedriver!(No symbol) [0x7ff723ad2c70]\n\tchromedriver!(No symbol) [0x7ff7238f4876]\n\tchromedriver!(No symbol) [0x7ff723940e03]\n\tchromedriver!(No symbol) [0x7ff7239792f2]\n\tchromedriver!(No symbol) [0x7ff7239730c2]\n\tchromedriver!(No symbol) [0x7ff723972843]\n\tchromedriver!(No symbol) [0x7ff7238bcdcb]\n\tchromedriver!(No symbol) [0x7ff7238bd422]\n\tchromedriver!(No symbol) [0x7ff7238bda55]\n\tchromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]\n\tchromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]\n\tchromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]\n\tchromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]\n\tchromedriver!(No symbol) [0x7ff723ae0a05]\n\tchromedriver!(No symbol) [0x7ff7238bc20a]\n\tchromedriver!GetHandleVerifier [0x7ff724052f9f+4a79ff]\n\tKERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]\n\tntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]\n",
+      "executor_status": "failed"
+    }
+  ],
+  "dependencies": {
+    "1": [],
+    "2": [],
+    "3": [],
+    "4": [
+      3
+    ],
+    "5": [
+      3
+    ],
+    "6": [
+      2
+    ],
+    "7": [
+      2
+    ],
+    "8": [
+      3
+    ],
+    "9": [
+      3
+    ],
+    "10": [
+      2,
+      3
+    ]
+  },
+  "dependents": {
+    "1": [],
+    "2": [
+      6,
+      7,
+      10
+    ],
+    "3": [
+      4,
+      5,
+      8,
+      9,
+      10
+    ],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [],
+    "8": [],
+    "9": [],
+    "10": []
+  }
+}

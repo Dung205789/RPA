@@ -1,0 +1,1631 @@
+{
+  "summary": {
+    "n_steps": 42,
+    "n_graded": 42,
+    "pass": 42,
+    "root_failure": 0,
+    "cascade_failure": 0,
+    "no_verdict": 0,
+    "false_pass": 0,
+    "false_fail": 0,
+    "by_action": {
+      "open": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "click_shape": {
+        "n": 6,
+        "pass": 6,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "move": {
+        "n": 18,
+        "pass": 18,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "double_click": {
+        "n": 6,
+        "pass": 6,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "fill": {
+        "n": 6,
+        "pass": 6,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "connect": {
+        "n": 5,
+        "pass": 5,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      }
+    },
+    "kinds": {
+      "1": "pass",
+      "2": "pass",
+      "3": "pass",
+      "4": "pass",
+      "5": "pass",
+      "6": "pass",
+      "7": "pass",
+      "8": "pass",
+      "9": "pass",
+      "10": "pass",
+      "11": "pass",
+      "12": "pass",
+      "13": "pass",
+      "14": "pass",
+      "15": "pass",
+      "16": "pass",
+      "17": "pass",
+      "18": "pass",
+      "19": "pass",
+      "20": "pass",
+      "21": "pass",
+      "22": "pass",
+      "23": "pass",
+      "24": "pass",
+      "25": "pass",
+      "26": "pass",
+      "27": "pass",
+      "28": "pass",
+      "29": "pass",
+      "30": "pass",
+      "31": "pass",
+      "32": "pass",
+      "33": "pass",
+      "34": "pass",
+      "35": "pass",
+      "36": "pass",
+      "37": "pass",
+      "38": "pass",
+      "39": "pass",
+      "40": "pass",
+      "41": "pass",
+      "42": "pass"
+    }
+  },
+  "steps": [
+    {
+      "n": 1,
+      "action": "open",
+      "oracle_row": 1,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "palette": 45,
+        "url": "http://localhost:8080/?lang=en&splash=0",
+        "url_in_step": "https://app.diagrams.net",
+        "host_substituted_per_D9": true
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 2,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-1",
+        "shape": "ellipse",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-1"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 3,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 4,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 5,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 6,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-1",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-1": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 7,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-2",
+        "shape": "parallelogram",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-2"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 8,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-2",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-2": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 9,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-2",
+        "dx": 0.0,
+        "dy": -150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-2": [
+            0.0,
+            -150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 10,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-3",
+        "shape": "rectangle",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-3"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 11,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-4",
+        "shape": "parallelogram",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-4"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 12,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-4",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-4": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 13,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-4",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-4": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 14,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-5",
+        "shape": "cylinder3",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-5"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 15,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-5",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-5": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 16,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-5",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-5": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 17,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-5",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-5": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 18,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-5",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-5": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 19,
+      "action": "click_shape",
+      "oracle_row": 2,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-6",
+        "shape": "ellipse",
+        "type_checked": true
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-6"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 20,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-6",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-6": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 21,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-6",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-6": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 22,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-6",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-6": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 23,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-6",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-6": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 24,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-6",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-6": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 25,
+      "action": "move",
+      "oracle_row": 6,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-6",
+        "dx": 0.0,
+        "dy": 150.0,
+        "wanted": 150,
+        "error_px": 0.0
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {
+          "4G6EHLT5Bov65EBXr_ux-6": [
+            0.0,
+            150.0
+          ]
+        },
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 26,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-1",
+        "editing": "4G6EHLT5Bov65EBXr_ux-1"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 27,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-1",
+        "value": "Visitor arrives",
+        "wanted": "Visitor arrives",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "4G6EHLT5Bov65EBXr_ux-1": [
+            "",
+            "Visitor arrives"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 28,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-2",
+        "editing": "4G6EHLT5Bov65EBXr_ux-2"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 29,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-2",
+        "value": "Show the form",
+        "wanted": "Show the form",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "4G6EHLT5Bov65EBXr_ux-2": [
+            "",
+            "Show the form"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 30,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-3",
+        "editing": "4G6EHLT5Bov65EBXr_ux-3"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 31,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-3",
+        "value": "Validate the email",
+        "wanted": "Validate the email",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "4G6EHLT5Bov65EBXr_ux-3": [
+            "",
+            "Validate the email"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 32,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-4",
+        "editing": "4G6EHLT5Bov65EBXr_ux-4"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 33,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-4",
+        "value": "Read user input",
+        "wanted": "Read user input",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "4G6EHLT5Bov65EBXr_ux-4": [
+            "",
+            "Read user input"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 34,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-5",
+        "editing": "4G6EHLT5Bov65EBXr_ux-5"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 35,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-5",
+        "value": "Create the record",
+        "wanted": "Create the record",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "4G6EHLT5Bov65EBXr_ux-5": [
+            "",
+            "Create the record"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 36,
+      "action": "double_click",
+      "oracle_row": 4,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-6",
+        "editing": "4G6EHLT5Bov65EBXr_ux-6"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 37,
+      "action": "fill",
+      "oracle_row": 5,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "cell": "4G6EHLT5Bov65EBXr_ux-6",
+        "value": "Account active",
+        "wanted": "Account active",
+        "target_from": "the step that named it"
+      },
+      "diff": {
+        "added": [],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {
+          "4G6EHLT5Bov65EBXr_ux-6": [
+            "",
+            "Account active"
+          ]
+        },
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 38,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "4G6EHLT5Bov65EBXr_ux-7",
+        "source": "4G6EHLT5Bov65EBXr_ux-1",
+        "target": "4G6EHLT5Bov65EBXr_ux-2",
+        "want_source": "4G6EHLT5Bov65EBXr_ux-1",
+        "want_target": "4G6EHLT5Bov65EBXr_ux-2"
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-7"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 39,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "4G6EHLT5Bov65EBXr_ux-8",
+        "source": "4G6EHLT5Bov65EBXr_ux-2",
+        "target": "4G6EHLT5Bov65EBXr_ux-3",
+        "want_source": "4G6EHLT5Bov65EBXr_ux-2",
+        "want_target": "4G6EHLT5Bov65EBXr_ux-3"
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-8"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 40,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "4G6EHLT5Bov65EBXr_ux-9",
+        "source": "4G6EHLT5Bov65EBXr_ux-3",
+        "target": "4G6EHLT5Bov65EBXr_ux-4",
+        "want_source": "4G6EHLT5Bov65EBXr_ux-3",
+        "want_target": "4G6EHLT5Bov65EBXr_ux-4"
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-9"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 41,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "4G6EHLT5Bov65EBXr_ux-10",
+        "source": "4G6EHLT5Bov65EBXr_ux-4",
+        "target": "4G6EHLT5Bov65EBXr_ux-5",
+        "want_source": "4G6EHLT5Bov65EBXr_ux-4",
+        "want_target": "4G6EHLT5Bov65EBXr_ux-5"
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-10"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    },
+    {
+      "n": 42,
+      "action": "connect",
+      "oracle_row": 7,
+      "level": "N3+N4",
+      "verdict": "pass",
+      "reason": "",
+      "n3": true,
+      "n4": true,
+      "measured": {
+        "edge": "4G6EHLT5Bov65EBXr_ux-11",
+        "source": "4G6EHLT5Bov65EBXr_ux-5",
+        "target": "4G6EHLT5Bov65EBXr_ux-6",
+        "want_source": "4G6EHLT5Bov65EBXr_ux-5",
+        "want_target": "4G6EHLT5Bov65EBXr_ux-6"
+      },
+      "diff": {
+        "added": [
+          "4G6EHLT5Bov65EBXr_ux-11"
+        ],
+        "removed": [],
+        "moved": {},
+        "resized": {},
+        "relabelled": {},
+        "restyled": {},
+        "reanchored": {}
+      },
+      "executor_status": "ok",
+      "false_pass": false,
+      "false_fail": false
+    }
+  ],
+  "dependencies": {
+    "1": [],
+    "2": [],
+    "3": [
+      2
+    ],
+    "4": [
+      2
+    ],
+    "5": [
+      2
+    ],
+    "6": [
+      2
+    ],
+    "7": [],
+    "8": [
+      7
+    ],
+    "9": [
+      7
+    ],
+    "10": [],
+    "11": [],
+    "12": [
+      11
+    ],
+    "13": [
+      11
+    ],
+    "14": [],
+    "15": [
+      14
+    ],
+    "16": [
+      14
+    ],
+    "17": [
+      14
+    ],
+    "18": [
+      14
+    ],
+    "19": [],
+    "20": [
+      19
+    ],
+    "21": [
+      19
+    ],
+    "22": [
+      19
+    ],
+    "23": [
+      19
+    ],
+    "24": [
+      19
+    ],
+    "25": [
+      19
+    ],
+    "26": [
+      2
+    ],
+    "27": [
+      2
+    ],
+    "28": [
+      7
+    ],
+    "29": [
+      7
+    ],
+    "30": [
+      10
+    ],
+    "31": [
+      10
+    ],
+    "32": [
+      11
+    ],
+    "33": [
+      11
+    ],
+    "34": [
+      14
+    ],
+    "35": [
+      14
+    ],
+    "36": [
+      19
+    ],
+    "37": [
+      19
+    ],
+    "38": [
+      2,
+      7
+    ],
+    "39": [
+      7,
+      10
+    ],
+    "40": [
+      10,
+      11
+    ],
+    "41": [
+      11,
+      14
+    ],
+    "42": [
+      14,
+      19
+    ]
+  },
+  "dependents": {
+    "1": [],
+    "2": [
+      3,
+      4,
+      5,
+      6,
+      26,
+      27,
+      38
+    ],
+    "3": [],
+    "4": [],
+    "5": [],
+    "6": [],
+    "7": [
+      8,
+      9,
+      28,
+      29,
+      38,
+      39
+    ],
+    "8": [],
+    "9": [],
+    "10": [
+      30,
+      31,
+      39,
+      40
+    ],
+    "11": [
+      12,
+      13,
+      32,
+      33,
+      40,
+      41
+    ],
+    "12": [],
+    "13": [],
+    "14": [
+      15,
+      16,
+      17,
+      18,
+      34,
+      35,
+      41,
+      42
+    ],
+    "15": [],
+    "16": [],
+    "17": [],
+    "18": [],
+    "19": [
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      36,
+      37,
+      42
+    ],
+    "20": [],
+    "21": [],
+    "22": [],
+    "23": [],
+    "24": [],
+    "25": [],
+    "26": [],
+    "27": [],
+    "28": [],
+    "29": [],
+    "30": [],
+    "31": [],
+    "32": [],
+    "33": [],
+    "34": [],
+    "35": [],
+    "36": [],
+    "37": [],
+    "38": [],
+    "39": [],
+    "40": [],
+    "41": [],
+    "42": []
+  }
+}

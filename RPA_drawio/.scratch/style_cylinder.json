@@ -1,0 +1,6 @@
+{
+  "shape": "cylinder",
+  "icon": "cylinder.png",
+  "style": "shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;",
+  "xml": "<mxGraphModel dx=\"542\" dy=\"535\" grid=\"0\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"0\" pageScale=\"1\" pageWidth=\"850\" pageHeight=\"1100\" math=\"0\" shadow=\"0\">\n  <root>\n    <mxCell id=\"0\" />\n    <mxCell id=\"1\" parent=\"0\" />\n    <mxCell id=\"JATb92wAjxeVh_ew6KuL-12\" value=\"\" style=\"shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;\" vertex=\"1\" parent=\"1\">\n      <mxGeometry x=\"170\" y=\"160\" width=\"60\" height=\"80\" as=\"geometry\" />\n    </mxCell>\n  </root>\n</mxGraphModel>\n"
+}

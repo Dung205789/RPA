@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "D:\SVG_agent\documents\run_drawio_v2.py", line 203, in run_one
+    report = ex.run(descriptions, parser, oracle=oracle)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SVG_Agent\documents\RPA_drawio\drawio_executor.py", line 788, in run
+    cells = cell_tracker.cell_info(self.driver)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SVG_Agent\documents\RPA_drawio\cell_tracker.py", line 233, in cell_info
+    elements = cell_elements(driver)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SVG_Agent\documents\RPA_drawio\cell_tracker.py", line 227, in cell_elements
+    return driver.execute_script(_CELLS_JS) or []
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SVG_agent\documents\RPA_drawio\venv_rpa\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 613, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SVG_agent\documents\RPA_drawio\venv_rpa\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 503, in execute
+    self.error_handler.check_response(response)
+  File "D:\SVG_agent\documents\RPA_drawio\venv_rpa\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalidsessionidexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff723bb1035+5a95]
+	chromedriver!(No symbol) [0x7ff723ad2c70]
+	chromedriver!(No symbol) [0x7ff7238f4876]
+	chromedriver!(No symbol) [0x7ff723940e03]
+	chromedriver!(No symbol) [0x7ff7239792f2]
+	chromedriver!(No symbol) [0x7ff7239730c2]
+	chromedriver!(No symbol) [0x7ff723972843]
+	chromedriver!(No symbol) [0x7ff7238bcdcb]
+	chromedriver!(No symbol) [0x7ff7238bd422]
+	chromedriver!(No symbol) [0x7ff7238bda55]
+	chromedriver!GetHandleVerifier [0x7ff723fd1411+425e71]
+	chromedriver!GetHandleVerifier [0x7ff723ffca47+4514a7]
+	chromedriver!GetHandleVerifier [0x7ff723ff094e+4453ae]
+	chromedriver!GetHandleVerifier [0x7ff723cabf6e+1009ce]
+	chromedriver!(No symbol) [0x7ff723ae0a05]
+	chromedriver!(No symbol) [0x7ff7238bc20a]
+	chromedriver!GetHandleVerifier [0x7ff724052f9f+4a79ff]
+	KERNEL32!BaseThreadInitThunk [0x7ff8c8d7cd87+17]
+	ntdll!RtlUserThreadStart [0x7ff8ca20caec+2c]
+

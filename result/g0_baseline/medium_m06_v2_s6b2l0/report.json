@@ -1,0 +1,1922 @@
+{
+  "steps": [
+    {
+      "n": 1,
+      "description": "Open \"https://app.diagrams.net/\"",
+      "action": "open",
+      "status": "ok",
+      "detail": {
+        "url": "http://localhost:8080/?lang=en&splash=0",
+        "seconds": 7.64,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "palette": 45,
+            "url": "http://localhost:8080/?lang=en&splash=0",
+            "url_in_step": "https://app.diagrams.net",
+            "host_substituted_per_D9": true
+          }
+        }
+      }
+    },
+    {
+      "n": 2,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "rectangle.png",
+        "identified_as": "rectangle.png",
+        "drawn_match": 0.741,
+        "seconds": 2.78,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-1",
+            "shape": "rectangle",
+            "type_checked": true
+          }
+        }
+      }
+    },
+    {
+      "n": 3,
+      "description": "Move the element created in step 2 right",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.76,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-1",
+            "dx": 150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 4,
+      "description": "Move the element created in step 2 right",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.69,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-1",
+            "dx": 150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 5,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.71,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-1",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 6,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.68,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-1",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 7,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.73,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-1",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 8,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.69,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-1",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 9,
+      "description": "Move the element created in step 2 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 0,
+        "assumed": true,
+        "seconds": 2.71,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-1",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 10,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.756,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "diamond.png",
+        "identified_as": "diamond.png",
+        "drawn_match": 0.419,
+        "insert_correction": {
+          "dx": 0,
+          "dy": 1200
+        },
+        "seconds": 8.61,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-2",
+            "shape": "rhombus",
+            "type_checked": true
+          }
+        }
+      }
+    },
+    {
+      "n": 11,
+      "description": "Move the element created in step 10 right",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.71,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-2",
+            "dx": 150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 12,
+      "description": "Move the element created in step 10 right",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.71,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-2",
+            "dx": 150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 13,
+      "description": "Move the element created in step 10 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.68,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-2",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 14,
+      "description": "Move the element created in step 10 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.68,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-2",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 15,
+      "description": "Move the element created in step 10 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.68,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-2",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 16,
+      "description": "Move the element created in step 10 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 1,
+        "seconds": 2.74,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-2",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 17,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\diamond.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.756,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "diamond.png",
+        "identified_as": "diamond.png",
+        "drawn_match": 0.419,
+        "insert_correction": {
+          "dx": 0,
+          "dy": 1200
+        },
+        "seconds": 8.57,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-3",
+            "shape": "rhombus",
+            "type_checked": true
+          }
+        }
+      }
+    },
+    {
+      "n": 18,
+      "description": "Move the element created in step 17 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.72,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-3",
+            "dx": -150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 19,
+      "description": "Move the element created in step 17 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.69,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-3",
+            "dx": -150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 20,
+      "description": "Move the element created in step 17 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.67,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-3",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 21,
+      "description": "Move the element created in step 17 up",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": -150,
+        "wanted": 150,
+        "relative_to": 2,
+        "seconds": 2.7,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-3",
+            "dx": 0.0,
+            "dy": -150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 22,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\parallelogram.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.622,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "parallelogram.png",
+        "identified_as": "parallelogram.png",
+        "drawn_match": 0.686,
+        "insert_correction": {
+          "dx": 800,
+          "dy": 1200
+        },
+        "seconds": 13.11,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-4",
+            "shape": "parallelogram",
+            "type_checked": true
+          }
+        }
+      }
+    },
+    {
+      "n": 23,
+      "description": "Move the element created in step 22 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.7,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-4",
+            "dx": -150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 24,
+      "description": "Move the element created in step 22 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.69,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-4",
+            "dx": -150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 25,
+      "description": "Move the element created in step 22 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.69,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-4",
+            "dx": -150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 26,
+      "description": "Move the element created in step 22 left",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": -150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 3,
+        "seconds": 2.71,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-4",
+            "dx": -150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 27,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "rectangle.png",
+        "identified_as": "rectangle.png",
+        "drawn_match": 0.741,
+        "insert_correction": {
+          "dx": 800,
+          "dy": 1200
+        },
+        "seconds": 13.14,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-5",
+            "shape": "rectangle",
+            "type_checked": true
+          }
+        }
+      }
+    },
+    {
+      "n": 28,
+      "description": "Click on [D:\\SVG_Agent\\documents\\RPA_drawio\\shape_icons\\rectangle.png]",
+      "action": "click",
+      "status": "ok",
+      "detail": {
+        "score": 0.569,
+        "palette": true,
+        "title": "",
+        "created_cell": true,
+        "wanted": "rectangle.png",
+        "identified_as": "rectangle.png",
+        "drawn_match": 0.741,
+        "insert_correction": {
+          "dx": 800,
+          "dy": 1200
+        },
+        "seconds": 13.13,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-6",
+            "shape": "rectangle",
+            "type_checked": true
+          }
+        }
+      }
+    },
+    {
+      "n": 29,
+      "description": "Move the element created in step 28 right",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 2.69,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-6",
+            "dx": 150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 30,
+      "description": "Move the element created in step 28 right",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 150,
+        "dy": 0,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 2.68,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-6",
+            "dx": 150.0,
+            "dy": 0.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 31,
+      "description": "Move the element created in step 28 down",
+      "action": "move",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "dx": 0,
+        "dy": 150,
+        "wanted": 150,
+        "relative_to": 5,
+        "seconds": 2.68,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-6",
+            "dx": 0.0,
+            "dy": 150.0,
+            "wanted": 150,
+            "error_px": 0.0
+          }
+        }
+      }
+    },
+    {
+      "n": 32,
+      "description": "Double click on the element created in step 2",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 2",
+        "seconds": 2.27,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-1",
+            "editing": "UYoryOK9T0I4OFj3ozsl-1"
+          }
+        }
+      }
+    },
+    {
+      "n": 33,
+      "description": "Fill \"Order received\" into the element created in step 2",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 2",
+        "text_from": "literal",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            781,
+            488
+          ]
+        ],
+        "target_box": [
+          722,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.45,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-1",
+            "value": "Order received",
+            "wanted": "Order received",
+            "target_from": "the step that named it"
+          }
+        }
+      }
+    },
+    {
+      "n": 34,
+      "description": "Double click on the element created in step 10",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 10",
+        "seconds": 2.28,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-2",
+            "editing": "UYoryOK9T0I4OFj3ozsl-2"
+          }
+        }
+      }
+    },
+    {
+      "n": 35,
+      "description": "Fill \"In stock?\" into the element created in step 10",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 10",
+        "text_from": "literal",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            781,
+            488
+          ]
+        ],
+        "target_box": [
+          742,
+          448,
+          80,
+          80
+        ],
+        "seconds": 1.44,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-2",
+            "value": "In stock?",
+            "wanted": "In stock?",
+            "target_from": "the step that named it"
+          }
+        }
+      }
+    },
+    {
+      "n": 36,
+      "description": "Double click on the element created in step 17",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 17",
+        "seconds": 2.27,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-3",
+            "editing": "UYoryOK9T0I4OFj3ozsl-3"
+          }
+        }
+      }
+    },
+    {
+      "n": 37,
+      "description": "Fill \"Payment approved?\" into the element created in step 17",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 17",
+        "text_from": "literal",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            781,
+            488
+          ]
+        ],
+        "target_box": [
+          742,
+          448,
+          80,
+          80
+        ],
+        "seconds": 1.44,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-3",
+            "value": "Payment approved?",
+            "wanted": "Payment approved?",
+            "target_from": "the step that named it"
+          }
+        }
+      }
+    },
+    {
+      "n": 38,
+      "description": "Double click on the element created in step 22",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 22",
+        "seconds": 2.27,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-4",
+            "editing": "UYoryOK9T0I4OFj3ozsl-4"
+          }
+        }
+      }
+    },
+    {
+      "n": 39,
+      "description": "Fill \"Read order form\" into the element created in step 22",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 22",
+        "text_from": "literal",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            781,
+            488
+          ]
+        ],
+        "target_box": [
+          722,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.45,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-4",
+            "value": "Read order form",
+            "wanted": "Read order form",
+            "target_from": "the step that named it"
+          }
+        }
+      }
+    },
+    {
+      "n": 40,
+      "description": "Double click on the element created in step 27",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 27",
+        "seconds": 2.27,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-5",
+            "editing": "UYoryOK9T0I4OFj3ozsl-5"
+          }
+        }
+      }
+    },
+    {
+      "n": 41,
+      "description": "Fill \"Check stock\" into the element created in step 27",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 27",
+        "text_from": "literal",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            781,
+            488
+          ]
+        ],
+        "target_box": [
+          722,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.45,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-5",
+            "value": "Check stock",
+            "wanted": "Check stock",
+            "target_from": "the step that named it"
+          }
+        }
+      }
+    },
+    {
+      "n": 42,
+      "description": "Double click on the element created in step 28",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "element created in step 28",
+        "seconds": 2.24,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-6",
+            "editing": "UYoryOK9T0I4OFj3ozsl-6"
+          }
+        }
+      }
+    },
+    {
+      "n": 43,
+      "description": "Fill \"Order closed\" into the element created in step 28",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "element created in step 28",
+        "text_from": "literal",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            781,
+            488
+          ]
+        ],
+        "target_box": [
+          722,
+          458,
+          120,
+          60
+        ],
+        "seconds": 1.44,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-6",
+            "value": "Order closed",
+            "wanted": "Order closed",
+            "target_from": "the step that named it"
+          }
+        }
+      }
+    },
+    {
+      "n": 44,
+      "description": "Connect the element created in step 2 to the element created in step 10",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 6,
+        "after": 7,
+        "seconds": 6.09,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "edge": "UYoryOK9T0I4OFj3ozsl-7",
+            "source": "UYoryOK9T0I4OFj3ozsl-1",
+            "target": "UYoryOK9T0I4OFj3ozsl-2",
+            "want_source": "UYoryOK9T0I4OFj3ozsl-1",
+            "want_target": "UYoryOK9T0I4OFj3ozsl-2"
+          }
+        }
+      }
+    },
+    {
+      "n": 45,
+      "description": "Connect the element created in step 10 to the element created in step 17",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 7,
+        "after": 8,
+        "seconds": 6.08,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "edge": "UYoryOK9T0I4OFj3ozsl-8",
+            "source": "UYoryOK9T0I4OFj3ozsl-2",
+            "target": "UYoryOK9T0I4OFj3ozsl-3",
+            "want_source": "UYoryOK9T0I4OFj3ozsl-2",
+            "want_target": "UYoryOK9T0I4OFj3ozsl-3"
+          }
+        }
+      }
+    },
+    {
+      "n": 46,
+      "description": "Double click on connector_from_step10_to_step17",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step10_to_step17",
+        "seconds": 2.27,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-8",
+            "editing": "UYoryOK9T0I4OFj3ozsl-8"
+          }
+        }
+      }
+    },
+    {
+      "n": 47,
+      "description": "Fill \"Yes\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step10_to_step17",
+        "text_from": "literal",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            634,
+            339
+          ]
+        ],
+        "target_box": [
+          500,
+          339,
+          564,
+          299
+        ],
+        "seconds": 1.46,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-8",
+            "value": "Yes",
+            "wanted": "Yes",
+            "target_from": "the step that named it"
+          }
+        }
+      }
+    },
+    {
+      "n": 48,
+      "description": "Connect the element created in step 10 to the element created in step 28",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 8,
+        "after": 9,
+        "seconds": 6.07,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "edge": "UYoryOK9T0I4OFj3ozsl-9",
+            "source": "UYoryOK9T0I4OFj3ozsl-2",
+            "target": "UYoryOK9T0I4OFj3ozsl-6",
+            "want_source": "UYoryOK9T0I4OFj3ozsl-2",
+            "want_target": "UYoryOK9T0I4OFj3ozsl-6"
+          }
+        }
+      }
+    },
+    {
+      "n": 49,
+      "description": "Double click on connector_from_step10_to_step28",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step10_to_step28",
+        "seconds": 2.29,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-9",
+            "editing": "UYoryOK9T0I4OFj3ozsl-9"
+          }
+        }
+      }
+    },
+    {
+      "n": 50,
+      "description": "Fill \"No\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step10_to_step28",
+        "text_from": "literal",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            782,
+            489
+          ]
+        ],
+        "target_box": [
+          778,
+          149,
+          7,
+          679
+        ],
+        "seconds": 1.47,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-9",
+            "value": "No",
+            "wanted": "No",
+            "target_from": "the step that named it"
+          }
+        }
+      }
+    },
+    {
+      "n": 51,
+      "description": "Connect the element created in step 17 to the element created in step 22",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 9,
+        "after": 10,
+        "seconds": 6.04,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "edge": "UYoryOK9T0I4OFj3ozsl-10",
+            "source": "UYoryOK9T0I4OFj3ozsl-3",
+            "target": "UYoryOK9T0I4OFj3ozsl-4",
+            "want_source": "UYoryOK9T0I4OFj3ozsl-3",
+            "want_target": "UYoryOK9T0I4OFj3ozsl-4"
+          }
+        }
+      }
+    },
+    {
+      "n": 52,
+      "description": "Double click on connector_from_step17_to_step22",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step17_to_step22",
+        "seconds": 2.26,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-10",
+            "editing": "UYoryOK9T0I4OFj3ozsl-10"
+          }
+        }
+      }
+    },
+    {
+      "n": 53,
+      "description": "Fill \"Approved\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step17_to_step22",
+        "text_from": "literal",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            784,
+            489
+          ]
+        ],
+        "target_box": [
+          630,
+          374,
+          304,
+          229
+        ],
+        "seconds": 1.48,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-10",
+            "value": "Approved",
+            "wanted": "Approved",
+            "target_from": "the step that named it"
+          }
+        }
+      }
+    },
+    {
+      "n": 54,
+      "description": "Connect the element created in step 17 to the element created in step 27",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 10,
+        "after": 11,
+        "seconds": 6.12,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "edge": "UYoryOK9T0I4OFj3ozsl-11",
+            "source": "UYoryOK9T0I4OFj3ozsl-3",
+            "target": "UYoryOK9T0I4OFj3ozsl-5",
+            "want_source": "UYoryOK9T0I4OFj3ozsl-3",
+            "want_target": "UYoryOK9T0I4OFj3ozsl-5"
+          }
+        }
+      }
+    },
+    {
+      "n": 55,
+      "description": "Double click on connector_from_step17_to_step27",
+      "action": "double click",
+      "status": "ok",
+      "detail": {
+        "editing": "connector_from_step17_to_step27",
+        "seconds": 2.3,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-11",
+            "editing": "UYoryOK9T0I4OFj3ozsl-11"
+          }
+        }
+      }
+    },
+    {
+      "n": 56,
+      "description": "Fill \"Declined\"",
+      "action": "fill",
+      "status": "ok",
+      "detail": {
+        "target": "connector_from_step17_to_step27",
+        "text_from": "literal",
+        "ok": true,
+        "placement": "on-target",
+        "label_at": [
+          [
+            781,
+            489
+          ]
+        ],
+        "target_box": [
+          631,
+          374,
+          304,
+          229
+        ],
+        "seconds": 1.46,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "cell": "UYoryOK9T0I4OFj3ozsl-11",
+            "value": "Declined",
+            "wanted": "Declined",
+            "target_from": "the step that named it"
+          }
+        }
+      }
+    },
+    {
+      "n": 57,
+      "description": "Connect the element created in step 22 to the element created in step 28",
+      "action": "connect",
+      "status": "ok",
+      "detail": {
+        "ok": true,
+        "before": 11,
+        "after": 12,
+        "seconds": 6.07,
+        "oracle": {
+          "verdict": "pass",
+          "level": "N3+N4",
+          "reason": "",
+          "measured": {
+            "edge": "UYoryOK9T0I4OFj3ozsl-12",
+            "source": "UYoryOK9T0I4OFj3ozsl-4",
+            "target": "UYoryOK9T0I4OFj3ozsl-6",
+            "want_source": "UYoryOK9T0I4OFj3ozsl-4",
+            "want_target": "UYoryOK9T0I4OFj3ozsl-6"
+          }
+        }
+      }
+    },
+    {
+      "n": 58,
+      "description": "Connect the element created in step 27 to the element created in step 28",
+      "action": "connect",
+      "status": "failed",
+      "detail": {
+        "ok": false,
+        "before": 12,
+        "after": 12,
+        "seconds": 6.07,
+        "oracle": {
+          "verdict": "fail",
+          "level": "N3+N4",
+          "reason": "0 edges appeared, wanted exactly 1",
+          "measured": {
+            "src": "UYoryOK9T0I4OFj3ozsl-5",
+            "dst": "UYoryOK9T0I4OFj3ozsl-6"
+          }
+        }
+      }
+    }
+  ],
+  "counts": {
+    "ok": 57,
+    "failed": 1,
+    "error": 0,
+    "unparsed": 0,
+    "unsupported": 0,
+    "parse_error": 0,
+    "skipped": 0
+  },
+  "step_success_rate": 0.9828,
+  "total_sec": 218.2,
+  "cells": [
+    {
+      "cx": 932,
+      "cy": 2,
+      "h": 79,
+      "index": 0,
+      "kind": "edge",
+      "mx": 2062,
+      "my": 1218,
+      "p1": [
+        932,
+        -37
+      ],
+      "p2": [
+        932,
+        36
+      ],
+      "tags": "path,path,path",
+      "w": 7,
+      "x": 928,
+      "y": -37,
+      "zoom": 1
+    },
+    {
+      "cx": 932,
+      "cy": -67,
+      "h": 60,
+      "index": 1,
+      "kind": "rect",
+      "mx": 2062,
+      "my": 1149,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 120,
+      "x": 872,
+      "y": -97,
+      "zoom": 1
+    },
+    {
+      "cx": 932,
+      "cy": 462,
+      "h": 679,
+      "index": 2,
+      "kind": "edge",
+      "mx": 2062,
+      "my": 1678,
+      "p1": [
+        932,
+        123
+      ],
+      "p2": [
+        932,
+        796
+      ],
+      "tags": "path,path,path",
+      "w": 7,
+      "x": 928,
+      "y": 123,
+      "zoom": 1
+    },
+    {
+      "cx": 932,
+      "cy": 83,
+      "h": 80,
+      "index": 3,
+      "kind": "path",
+      "mx": 2062,
+      "my": 1299,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 80,
+      "x": 892,
+      "y": 43,
+      "zoom": 1
+    },
+    {
+      "cx": 180,
+      "cy": 537,
+      "h": 229,
+      "index": 4,
+      "kind": "edge",
+      "mx": 1310,
+      "my": 1753,
+      "p1": [
+        332,
+        423
+      ],
+      "p2": [
+        32,
+        646
+      ],
+      "tags": "path,path,path",
+      "w": 304,
+      "x": 28,
+      "y": 423,
+      "zoom": 1
+    },
+    {
+      "cx": 483,
+      "cy": 537,
+      "h": 229,
+      "index": 5,
+      "kind": "edge",
+      "mx": 1613,
+      "my": 1753,
+      "p1": [
+        332,
+        423
+      ],
+      "p2": [
+        632,
+        646
+      ],
+      "tags": "path,path,path",
+      "w": 304,
+      "x": 332,
+      "y": 423,
+      "zoom": 1
+    },
+    {
+      "cx": 332,
+      "cy": 383,
+      "h": 80,
+      "index": 6,
+      "kind": "path",
+      "mx": 1462,
+      "my": 1599,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 80,
+      "x": 292,
+      "y": 343,
+      "zoom": 1
+    },
+    {
+      "cx": 32,
+      "cy": 683,
+      "h": 60,
+      "index": 7,
+      "kind": "path",
+      "mx": 1162,
+      "my": 1899,
+      "p1": null,
+      "p2": null,
+      "tags": "path",
+      "w": 120,
+      "x": -28,
+      "y": 653,
+      "zoom": 1
+    },
+    {
+      "cx": 632,
+      "cy": 683,
+      "h": 60,
+      "index": 8,
+      "kind": "rect",
+      "mx": 1762,
+      "my": 1899,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 120,
+      "x": 572,
+      "y": 653,
+      "zoom": 1
+    },
+    {
+      "cx": 932,
+      "cy": 833,
+      "h": 60,
+      "index": 9,
+      "kind": "rect",
+      "mx": 2062,
+      "my": 2049,
+      "p1": null,
+      "p2": null,
+      "tags": "rect",
+      "w": 120,
+      "x": 872,
+      "y": 803,
+      "zoom": 1
+    },
+    {
+      "cx": 610,
+      "cy": 232,
+      "h": 299,
+      "index": 10,
+      "kind": "edge",
+      "mx": 1740,
+      "my": 1448,
+      "p1": [
+        892,
+        83
+      ],
+      "p2": [
+        332,
+        376
+      ],
+      "tags": "path,path,path",
+      "w": 564,
+      "x": 328,
+      "y": 83,
+      "zoom": 1
+    },
+    {
+      "cx": 506,
+      "cy": 759,
+      "h": 154,
+      "index": 11,
+      "kind": "edge",
+      "mx": 1636,
+      "my": 1975,
+      "p1": [
+        82,
+        683
+      ],
+      "p2": [
+        925,
+        833
+      ],
+      "tags": "path,path,path",
+      "w": 849,
+      "x": 82,
+      "y": 683,
+      "zoom": 1
+    }
+  ],
+  "n_vertices": 6,
+  "n_edges": 6,
+  "labels": [
+    "Order received",
+    "No",
+    "In stock?",
+    "Approved",
+    "Declined",
+    "Payment approved?",
+    "Read order form",
+    "Check stock",
+    "Order closed",
+    "Yes"
+  ],
+  "oracle": {
+    "n_steps": 58,
+    "n_graded": 58,
+    "pass": 57,
+    "root_failure": 1,
+    "cascade_failure": 0,
+    "no_verdict": 0,
+    "false_pass": 0,
+    "false_fail": 0,
+    "by_action": {
+      "open": {
+        "n": 1,
+        "pass": 1,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "click_shape": {
+        "n": 6,
+        "pass": 6,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "move": {
+        "n": 24,
+        "pass": 24,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "double_click": {
+        "n": 10,
+        "pass": 10,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "fill": {
+        "n": 10,
+        "pass": 10,
+        "fail": 0,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      },
+      "connect": {
+        "n": 7,
+        "pass": 6,
+        "fail": 1,
+        "no-verdict": 0,
+        "false_pass": 0,
+        "level": "N3+N4"
+      }
+    },
+    "kinds": {
+      "1": "pass",
+      "2": "pass",
+      "3": "pass",
+      "4": "pass",
+      "5": "pass",
+      "6": "pass",
+      "7": "pass",
+      "8": "pass",
+      "9": "pass",
+      "10": "pass",
+      "11": "pass",
+      "12": "pass",
+      "13": "pass",
+      "14": "pass",
+      "15": "pass",
+      "16": "pass",
+      "17": "pass",
+      "18": "pass",
+      "19": "pass",
+      "20": "pass",
+      "21": "pass",
+      "22": "pass",
+      "23": "pass",
+      "24": "pass",
+      "25": "pass",
+      "26": "pass",
+      "27": "pass",
+      "28": "pass",
+      "29": "pass",
+      "30": "pass",
+      "31": "pass",
+      "32": "pass",
+      "33": "pass",
+      "34": "pass",
+      "35": "pass",
+      "36": "pass",
+      "37": "pass",
+      "38": "pass",
+      "39": "pass",
+      "40": "pass",
+      "41": "pass",
+      "42": "pass",
+      "43": "pass",
+      "44": "pass",
+      "45": "pass",
+      "46": "pass",
+      "47": "pass",
+      "48": "pass",
+      "49": "pass",
+      "50": "pass",
+      "51": "pass",
+      "52": "pass",
+      "53": "pass",
+      "54": "pass",
+      "55": "pass",
+      "56": "pass",
+      "57": "pass",
+      "58": "root"
+    }
+  }
+}

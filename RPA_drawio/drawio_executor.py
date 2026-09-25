@@ -46,10 +46,23 @@ from selenium.webdriver.common.keys import Keys
 import by_text
 import cell_tracker
 import drawio_ops
+import mx_control
+import mx_oracle
 import palette_matcher
 import rpa_env
 
 CREATED_RE = re.compile(r"element created in step\s+(\d+)", re.IGNORECASE)
+# The literal a Fill step asks to be typed, taken from the sentence rather than
+# from the parser's reconstruction of it. `StepParser` tokenises the whole
+# description with stanza and rejoins the tokens with spaces, which puts a space
+# in front of every piece of punctuation: measured 2026-09-22,
+# `Fill "Documents complete?"` reaches the executor as `Documents complete ?`,
+# `"50% done"` as `50 % done`, `"Check e-mail, then wait"` as
+# `Check e-mail , then wait`. 35 of the 246 Fill steps in the new corpus (14.2%)
+# carry punctuation and were being typed wrong, and the DOM-based label check
+# passed every one of them. `step_parser.py` is frozen (DECISIONS D6), so the
+# literal is recovered here instead of repaired there.
+QUOTED_RE = re.compile(r'"([^"]*)"')
 CONNECTOR_RE = re.compile(r"connector_from_step(\d+)_to_step(\d+)", re.IGNORECASE)
 IMAGE_RE = re.compile(r"\.(png|jpe?g|bmp|gif)$", re.IGNORECASE)
 
@@ -85,6 +98,15 @@ class DrawioExecutor:
         # accumulated from the displacements actually observed. This is what makes
         # the insertion point recoverable — see _insert_origin.
         self.displacement: dict = {}
+        # G1.3: the scenario's single insertion point, in model units. Set by the
+        # first shape a scenario inserts; every later insert is nudged back onto
+        # it. Held here rather than recovered from scroll offsets because the
+        # scroll stops naming the same model point once draw.io grows the canvas
+        # (measured: `RPA_docs/probe_editor.json` section D).
+        self.insert_origin_model = None
+        # The sentence the current step came from, so a handler can read a
+        # literal out of it instead of trusting the parser's detokenisation.
+        self.current_description = ""
 
     # ------------------------------------------------------- frame-safe geometry
     def _positions(self) -> dict:
@@ -135,15 +157,19 @@ class DrawioExecutor:
 
     def _nudge(self, element, dx: int, dy: int) -> None:
         """Move a cell by an exact model offset, using the arrow-key grid."""
+        mover = (drawio_ops.move_cell_exact if drawio_ops.CLOSED_LOOP_MOVE
+                 else lambda d, e, dirn, dist: drawio_ops.move_cell(d, e, dirn, dist,
+                                                                    measure=False))
         if abs(dx) >= drawio_ops.PX_PER_ARROW_PRESS:
-            drawio_ops.move_cell(self.driver, element,
-                                 "right" if dx > 0 else "left", abs(dx), measure=False)
+            mover(self.driver, element, "right" if dx > 0 else "left", abs(dx))
         if abs(dy) >= drawio_ops.PX_PER_ARROW_PRESS:
-            drawio_ops.move_cell(self.driver, element,
-                                 "down" if dy > 0 else "up", abs(dy), measure=False)
+            mover(self.driver, element, "down" if dy > 0 else "up", abs(dy))
 
     # ------------------------------------------------------------------ setup
     def prepare(self):
+        # The oracle's observer has to be in place before draw.io's own scripts
+        # run, so it is armed here rather than at the first judgement.
+        mx_oracle.install(self.driver)
         state = rpa_env.open_clean_drawio(self.driver, self.url, log=self.log)
         self.origin = rpa_env.view_origin(self.driver)
         return state
@@ -337,7 +363,10 @@ class DrawioExecutor:
                         "drawn_match": next((r["score"] for r in ranking
                                              if r["icon"] == wanted), 0.0),
                     }
-                correction = self._align_to_origin(n, before_positions)
+                if drawio_ops.ANCHOR_INSERTS:
+                    correction = self._anchor_insert(n, el)
+                else:
+                    correction = self._align_to_origin(n, before_positions)
                 self.java_lines.append("// click %s (%s, score %.2f)"
                                        % (obj, cand["tag"], cand["score"]))
                 detail = {"score": cand["score"], "palette": cand["palette"],
@@ -436,6 +465,33 @@ class DrawioExecutor:
         self._nudge(el, dx, dy)
         return {"dx": dx, "dy": dy}
 
+    def _anchor_insert(self, n: int, element):
+        """Hold every insert on the scenario's one insertion point (G1.3).
+
+        The first shape a scenario inserts *defines* the point — there is nothing
+        to compare it against and nothing to correct. Every later one is measured
+        against it in model units and nudged back, which is exact because the
+        nudge grid and the drift are both multiples of 10.
+        """
+        if element is None:
+            return None
+        cid = mx_control.cell_id_for(self.driver, element)
+        geo = mx_control.geometry_of(self.driver, cid) if cid else None
+        if not geo:
+            return {"anchored": False, "reason": "no model geometry for the new cell"}
+        if self.insert_origin_model is None:
+            self.insert_origin_model = (geo["x"], geo["y"])
+            return {"anchored": True, "defined_origin": list(self.insert_origin_model)}
+        tx, ty = self.insert_origin_model
+        drift = [round(geo["x"] - tx, 1), round(geo["y"] - ty, 1)]
+        if max(abs(drift[0]), abs(drift[1])) < drawio_ops.PX_PER_ARROW_PRESS:
+            return {"anchored": True, "drift": drift, "corrected": False}
+        self.log("[insert] step %d landed %+.0f,%+.0f off the insertion point; correcting"
+                 % (n, drift[0], drift[1]))
+        res = drawio_ops.anchor_to(self.driver, element, tx, ty, cell_id=cid, log=self.log)
+        res["drift"] = drift
+        return res
+
     def _do_double_click(self, step, n):
         obj = (step.object or "").strip()
         el, info, kind = self._resolve_object(obj)
@@ -451,26 +507,48 @@ class DrawioExecutor:
             return "failed", res
         return "ok", res
 
+    def _literal_value(self, step):
+        """What the step literally asks to be typed.
+
+        The quoted run in the description wins over ``step.value``; see
+        ``QUOTED_RE``. When the description has no quotes — it does in every
+        ``Fill`` of both corpora, but the handler must not assume it — the
+        parser's value is used and the row records which one was taken.
+        """
+        m = QUOTED_RE.search(self.current_description or "")
+        if m is not None:
+            return m.group(1), "literal"
+        return (step.value or ""), "parser"
+
     def _do_fill(self, step, n):
-        text = step.value or ""
+        text, source = self._literal_value(step)
         obj = (step.object or "").strip()
         if not text:
             return "failed", {"reason": "nothing to type"}
 
         if self.editor_open_on is not None:
             target = self.editor_open_on
-            _, near, _ = self._resolve_object(target)
-            res = drawio_ops.type_into_open_editor(self.driver, text, near=near)
+            el, near, _ = self._resolve_object(target)
+            if drawio_ops.CLOSED_LOOP_LABEL and el is not None:
+                res = drawio_ops.label_cell_exact(self.driver, el, text,
+                                                  editor_already_open=True,
+                                                  log=self.log)
+            else:
+                res = drawio_ops.type_into_open_editor(self.driver, text, near=near)
             self.editor_open_on = None
             self.java_lines.append('actions.sendKeys("%s").perform();   // into %s'
                                    % (text, target))
-            return ("ok" if res["ok"] else "failed"), {"target": target, **res}
+            return ("ok" if res["ok"] else "failed"), {"target": target,
+                                                        "text_from": source, **res}
 
         el, info, kind = self._resolve_object(obj)
         if kind in ("created", "connector") and el is not None:
-            res = drawio_ops.label_cell(self.driver, el, text)
+            if drawio_ops.CLOSED_LOOP_LABEL:
+                res = drawio_ops.label_cell_exact(self.driver, el, text, log=self.log)
+            else:
+                res = drawio_ops.label_cell(self.driver, el, text)
             self.java_lines.append('actions.doubleClick(cell).sendKeys("%s").perform();' % text)
-            return ("ok" if res["ok"] else "failed"), res
+            return ("ok" if res["ok"] else "failed"), {"text_from": source, **res}
 
         if not obj:
             # A bare "Fill" with no object and no shape editor open names no
@@ -509,11 +587,19 @@ class DrawioExecutor:
         # differences cancels it.
         m = CREATED_RE.search(obj)
         moved_step = int(m.group(1)) if m else None
-        before = self._positions()
-        drawio_ops.move_cell(self.driver, el, step.value or "", measure=False)
-        after = self._positions()
-        res = self._displacement(moved_step, before, after, step.value or "")
-        if res.get("ok") and moved_step is not None:
+        if drawio_ops.CLOSED_LOOP_MOVE:
+            # G1.1: press, read mxGeometry, press again for what is missing. The
+            # difference-of-differences below is only needed when the loop is
+            # open, because it exists to cancel a view shift that the model
+            # coordinates never see in the first place.
+            res = drawio_ops.move_cell_exact(self.driver, el, step.value or "",
+                                             log=self.log)
+        else:
+            before = self._positions()
+            drawio_ops.move_cell(self.driver, el, step.value or "", measure=False)
+            after = self._positions()
+            res = self._displacement(moved_step, before, after, step.value or "")
+        if res.get("ok") and moved_step is not None and "dx" in res:
             px, py = self.displacement.get(moved_step, (0, 0))
             self.displacement[moved_step] = (px + res["dx"], py + res["dy"])
         self.java_lines.append(
@@ -544,16 +630,28 @@ class DrawioExecutor:
     def _do_resize(self, step, n, grow: bool):
         """Grow or shrink a shape along one edge.
 
-        draw.io resizes the selection with Ctrl+Arrow, by the same 10px grid the
-        plain arrows move it on. The old corpus uses "extend"/"shrink" in a
-        handful of scenarios (scenario_051 among them); without a handler those
-        steps were reported as unsupported.
+        draw.io resizes the selection with Ctrl+Arrow. The original version
+        assumed that moved the edge by the same 10 units a plain arrow moves the
+        shape, and pressed fifteen times for a 150-unit change. Measured
+        2026-09-22 (`RPA_docs/probe_editor.json` section B) one press is **one**
+        unit, so every "Extend" delivered a tenth of what the step asked for and
+        still reported success, because the check was only that the size had
+        changed at all. G1.4 replaces both halves: press until the model reports
+        the size asked for, and hold the edge the step did not name.
         """
         obj = (step.object or "").strip()
         el, info, kind = self._resolve_object(obj)
         if el is None:
             return "failed", {"reason": "unknown reference %r" % obj}
         direction = (step.value or "").lower()
+        if drawio_ops.CLOSED_LOOP_RESIZE:
+            delta = drawio_ops.RESIZE_STEP_PX * (1 if grow else -1)
+            res = drawio_ops.resize_cell_exact(self.driver, el, direction, delta,
+                                               log=self.log)
+            self.java_lines.append(
+                "// %s the %s edge by %d units (Ctrl+Arrow, one unit per press)"
+                % ("extend" if grow else "shrink", direction, abs(delta)))
+            return ("ok" if res.get("ok") else "failed"), res
         key = drawio_ops._ARROW.get(direction)
         if key is None:
             return "failed", {"reason": "unknown direction %r" % step.value}
@@ -626,34 +724,53 @@ class DrawioExecutor:
     }
 
     # -------------------------------------------------------------------- run
-    def run(self, descriptions: list, parser) -> dict:
+    def run(self, descriptions: list, parser, oracle=None) -> dict:
         """Execute a scenario's descriptions in order.
 
         ``descriptions`` keeps its original indexing: entry i is step i+1, which
         is what "the element created in step N" refers to.
+
+        ``oracle`` is an ``oracle_verdict.Oracle``. It is read from around every
+        step and never consulted by any handler: the executor does not learn what
+        the oracle thinks, and the oracle does not learn what the executor did
+        beyond the bare status string it needs to count false passes
+        (`RPA_docs/ORACLE.md` §§2, 3.1). A step whose handler is missing or whose
+        sentence the parser could not read is still judged — otherwise an
+        unreadable step would score better than a wrong one.
         """
         results = []
         t0 = time.time()
         for i, desc in enumerate(descriptions):
             n = i + 1
+            pre = oracle.before(n) if oracle is not None else None
+
+            def _record(status, detail, action=""):
+                if oracle is not None:
+                    v = oracle.after(n, pre, executor_status=status,
+                                     executor_detail=detail)
+                    detail = dict(detail or {})
+                    detail["oracle"] = {"verdict": v["verdict"], "level": v["level"],
+                                        "reason": v["reason"],
+                                        "measured": v.get("measured")}
+                results.append(StepResult(n, desc, action, status, detail))
+
             try:
                 step = parser.process_step(desc)
             except Exception as exc:
-                results.append(StepResult(n, desc, status="parse_error",
-                                          detail={"error": repr(exc)}))
+                _record("parse_error", {"error": repr(exc)})
                 continue
             if step is None:
-                results.append(StepResult(n, desc, status="unparsed"))
+                _record("unparsed", None)
                 continue
 
             action = (step.action or "").lower().strip()
             handler = self._HANDLERS.get(action)
             if handler is None:
-                results.append(StepResult(n, desc, action, "unsupported",
-                                          {"reason": "no handler for %r" % action}))
+                _record("unsupported", {"reason": "no handler for %r" % action}, action)
                 continue
 
             t = time.time()
+            self.current_description = desc
             try:
                 status, detail = handler(self, step, n)
             except Exception as exc:
@@ -661,9 +778,12 @@ class DrawioExecutor:
                                            "traceback": traceback.format_exc(limit=4)}
             detail = dict(detail or {})
             detail["seconds"] = round(time.time() - t, 2)
-            results.append(StepResult(n, desc, action, status, detail))
-            self.log("[step %d/%d] %-12s %-8s %s"
-                     % (n, len(descriptions), action, status, desc[:60]))
+            _record(status, detail, action)
+            self.log("[step %d/%d] %-12s %-8s %-6s %s"
+                     % (n, len(descriptions), action, status,
+                        (results[-1]["detail"].get("oracle") or {}).get("verdict", "-")
+                        if isinstance(results[-1].get("detail"), dict) else "-",
+                        desc[:55]))
 
         cells = cell_tracker.cell_info(self.driver)
         labels = cell_tracker.canvas_labels(self.driver)

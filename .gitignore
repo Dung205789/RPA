@@ -24,6 +24,7 @@ RPA_drawio/src/
 
 # Chromedriver / selenium caches
 .cache/
+RPA_drawio/.chrome_debug_profile/
 
 # VLM read cache (regenerated from the images; keyed by image content)
 RPA_drawio/.vlm_cache/

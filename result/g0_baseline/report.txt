@@ -1,0 +1,58 @@
+Lượt chạy : result\g0_baseline          Ngày: 2026-09-24 15:24:49
+Corpus    : benchmark ảnh drawio (easy 10, hard 10, medium 10)  n=30 case chạy xong   Tập: chỉnh 21, giữ kín 9
+Môi trường: draw.io 28.2.5 @ http://localhost:8080/?lang=en&splash=0 | Chrome 153.0.8010.53 | commit f09cba37d7 (cây làm việc bẩn)
+Mức phán định báo cáo: N3 + N4
+
+-- Sàn --
+  canvas trắng        : overall 0.0000   bố cục 0.0000   nodeF1 0.0000   cạnhF1 0.0000
+  toàn chữ nhật       : overall 0.4237   bố cục 1.0000   nodeF1 1.0000   cạnhF1 0.0000
+  node không cạnh     : overall 0.8000   bố cục 1.0000   nodeF1 1.0000   cạnhF1 0.0000
+
+-- Mức bước --  (n=1617 bước, 1617 có phán định)
+  đạt N3              : 99.69% [99.28, 99.87]  (1612/1617)
+  hỏng gốc            : 0.25% [0.10, 0.63]  (4/1617)
+  hỏng kéo theo       : 0.06% [0.01, 0.35]  (1/1617)
+  không phán định được: 0.00% [0.00, 0.24]  (0/1617)
+  báo đạt sai (thước cũ, oracle trọng tài): 0.19% [0.06, 0.54]  (3/1615)
+  báo hỏng sai (thước cũ)                 : 0.00% [0.00, 65.76]  (0/2)
+  hỏng thầm lặng                          : 0.06% [0.01, 0.35]  (1/1617)
+  báo đạt sai của THƯỚC MỚI               : chưa đo — cần review_adjudication.json
+
+  theo hành động:
+    click_shape    N3+N4   100.00% [97.86, 100.00]  (176/176)
+    connect        N3+N4   98.89% [96.04, 99.69]  (178/180)
+    double_click   N3+N4   99.59% [97.73, 99.93]  (245/246)
+    fill           N3+N4   99.59% [97.73, 99.93]  (245/246)
+    move           N3+N4   100.00% [99.48, 100.00]  (739/739)
+    open           N3+N4   96.67% [83.33, 99.41]  (29/30)
+
+-- Mức hình (oracle tất định, mẫu số = số đếm bản tham chiếu) --
+  n=30 case chấm được
+  node_f1               : 0.9877
+  node_count_recall     : 1.0000
+  node_excess           : 0.0389
+  edge_f1               : 0.9271
+  edge_recall           : 0.9222
+  edge_excess           : 0.0897
+  label_accuracy        : 0.9528
+  shape_type_accuracy   : 0.6570
+  edge_label_accuracy   : 0.9292
+  layout_score          : 0.8912
+  overall               : 0.8831
+  sai số vị trí sau Procrustes (phần đường chéo): trung vị 0.0250, p95 0.0493
+
+  band         n   overall    bố cục    nodeF1    cạnhF1
+  easy        10     0.869     0.883     1.000     0.940
+  hard        10     0.925     0.895     1.000     1.000
+  medium      10     0.855     0.895     0.963     0.841
+
+-- Ổn định --
+  chưa đo — cần 20 case x 5 lần (ORACLE §3.2, việc G1.6)
+
+-- Chi phí --
+  thời gian/case: trung vị 203.2s, p95 349.4s
+  gọi LLM khi chạy: 0 — kịch bản đã sinh sẵn; chi phí VLM nằm ở bước
+                    image_to_scenario.py, đo riêng (việc G2.3)
+
+-- Đã nhìn bằng mắt --
+  chưa làm — cần ≥10 case, mỗi case một dòng mô tả sai ở đâu (eyeballed.md)

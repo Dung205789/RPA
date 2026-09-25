@@ -106,6 +106,7 @@ def restart_browser(port: int, log=print):
     import by_text
     import rpa_env
     rpa_env.kill_chrome_on_port(port)
+    rpa_env.kill_orphaned_chromedrivers()
     time.sleep(2)
     rpa_env.launch_chrome(port=port)
     if not rpa_env.wait_for_debug_port(port):
@@ -114,9 +115,74 @@ def restart_browser(port: int, log=print):
     return by_text.setup_chrome_driver(use_existing=True)
 
 
+def environment_record(driver, port: int) -> dict:
+    """What this run was measured against (`RPA_docs/PLAN.md` G0.8).
+
+    A result folder without this is not reproducible: draw.io on the public site
+    changes under you, and DIAGNOSIS §1's numbers were all taken against an
+    unpinned build without anyone recording which one.
+    """
+    import subprocess as sp
+    rec = {"date": time.strftime("%Y-%m-%d %H:%M:%S"),
+           "drawio_url": os.environ.get("DRAWIO_URL") or "",
+           "debug_port": port,
+           "llm_provider": os.environ.get("LLM_PROVIDER") or "",
+           "llm_model": os.environ.get("LLM_MODEL") or ""}
+    try:
+        import rpa_env
+        rec["drawio_url"] = rpa_env.DRAWIO_URL
+    except Exception:
+        pass
+    try:
+        # The G1 switches. A result folder has to say which executor produced it,
+        # or the before/after comparison is between two things nobody can name.
+        import drawio_ops
+        rec["executor_flags"] = {
+            "closed_loop_move": drawio_ops.CLOSED_LOOP_MOVE,
+            "anchor_inserts": drawio_ops.ANCHOR_INSERTS,
+            "closed_loop_resize": drawio_ops.CLOSED_LOOP_RESIZE,
+            "closed_loop_label": drawio_ops.CLOSED_LOOP_LABEL,
+            "move_step_px": drawio_ops.MOVE_STEP_PX,
+            "px_per_arrow_press": drawio_ops.PX_PER_ARROW_PRESS,
+            "px_per_resize_press": drawio_ops.PX_PER_RESIZE_PRESS,
+        }
+    except Exception:
+        rec["executor_flags"] = None
+    try:
+        caps = getattr(driver, "capabilities", {}) or {}
+        rec["chrome"] = caps.get("browserVersion")
+        rec["chromedriver"] = (caps.get("chrome") or {}).get("chromedriverVersion")
+    except Exception:
+        pass
+    try:
+        rec["drawio_build"] = driver.execute_script(
+            "return (window.EditorUi && EditorUi.VERSION) || (window.App && App.VERSION)"
+            " || (typeof mxClient !== 'undefined' ? mxClient.VERSION : null);")
+    except Exception:
+        rec["drawio_build"] = None
+    for key, cmd in (("repo_commit", ["git", "rev-parse", "HEAD"]),
+                     ("repo_dirty", ["git", "status", "--porcelain"])):
+        try:
+            out = sp.run(cmd, cwd=str(DOCUMENTS_DIR), capture_output=True,
+                         text=True, timeout=20)
+            rec[key] = out.stdout.strip() if key == "repo_commit" else bool(out.stdout.strip())
+        except Exception:
+            rec[key] = None
+    try:
+        rec["drawio_image"] = sp.run(
+            ["docker", "inspect", "-f", "{{.Config.Image}}", "drawio-local"],
+            capture_output=True, text=True, timeout=20).stdout.strip() or None
+    except Exception:
+        rec["drawio_image"] = None
+    return rec
+
+
 def run_one(executor_cls, driver, parser, scenario_path: Path, dataset_root: Path,
             out_dir: Path) -> dict:
     import cell_tracker
+    import mx_oracle
+    import oracle_steps
+    import oracle_verdict
 
     scenario = json.loads(scenario_path.read_text(encoding="utf-8"))
     sid = scenario.get("id", scenario_path.stem)
@@ -126,10 +192,16 @@ def run_one(executor_cls, driver, parser, scenario_path: Path, dataset_root: Pat
     case_dir = out_dir / sid
     case_dir.mkdir(parents=True, exist_ok=True)
 
+    # The oracle reads the scenario itself, with its own grammar, and judges from
+    # the mxGraph model. It is handed the step list, never the executor's view of
+    # it (`RPA_docs/ORACLE.md` §2).
+    osteps = oracle_steps.parse_scenario(descriptions)
+    oracle = oracle_verdict.Oracle(driver, osteps, log=log)
+
     ex = executor_cls(driver, log=log)
     t0 = time.time()
     try:
-        report = ex.run(descriptions, parser)
+        report = ex.run(descriptions, parser, oracle=oracle)
         status = "ran"
         error = None
     except Exception as exc:
@@ -137,6 +209,24 @@ def run_one(executor_cls, driver, parser, scenario_path: Path, dataset_root: Pat
         status = "exception"
         error = "%s: %s" % (type(exc).__name__, exc)
         (case_dir / "traceback.txt").write_text(traceback.format_exc(), encoding="utf-8")
+
+    # The drawing as draw.io itself holds it — the input the deterministic
+    # figure-level scorer reads. Saved before the screenshots, so a failure to
+    # render cannot cost the model.
+    try:
+        (case_dir / "model.xml").write_text(mx_oracle.model_xml(driver), encoding="utf-8")
+    except Exception as exc:
+        (case_dir / "model_error.txt").write_text(repr(exc), encoding="utf-8")
+
+    verdicts = [oracle.verdicts[n] for n in sorted(oracle.verdicts)]
+    oracle_summary = oracle_verdict.summarise(oracle.verdicts, osteps)
+    (case_dir / "verdicts.json").write_text(
+        json.dumps({"summary": oracle_summary, "steps": verdicts,
+                    "dependencies": oracle_steps.dependencies(osteps),
+                    "dependents": oracle_steps.dependents(osteps)},
+                   ensure_ascii=False, indent=2, default=str),
+        encoding="utf-8")
+    report["oracle"] = oracle_summary
 
     shot = case_dir / "after.png"
     canvas_shot = None
@@ -162,12 +252,19 @@ def run_one(executor_cls, driver, parser, scenario_path: Path, dataset_root: Pat
         encoding="utf-8")
 
     counts = report.get("counts", {})
+    osum = report.get("oracle", {})
     return {
         "id": sid,
         "status": status,
         "error": error,
         "n_steps": len(descriptions),
         "n_ok": counts.get("ok", 0),
+        "n3_pass": osum.get("pass"),
+        "root_failure": osum.get("root_failure"),
+        "cascade_failure": osum.get("cascade_failure"),
+        "no_verdict": osum.get("no_verdict"),
+        "false_pass": osum.get("false_pass"),
+        "false_fail": osum.get("false_fail"),
         "n_failed": counts.get("failed", 0) + counts.get("error", 0),
         "n_unparsed": counts.get("unparsed", 0) + counts.get("parse_error", 0),
         "step_success_rate": report.get("step_success_rate", 0.0),
@@ -195,6 +292,11 @@ def main(argv=None):
     os.chdir(RPA_DRAWIO_DIR)          # stanza / sentence-transformers paths are cwd-relative
     sys.path.insert(0, str(RPA_DRAWIO_DIR))
     os.environ["RPA_CHROME_DEBUG_PORT"] = str(args.port)
+
+    # Before anything imports a corpus: from here on this process cannot open an
+    # answer key even by mistake (`RPA_docs/PLAN.md` §Bất biến 1, G0.5).
+    import leak_guard
+    leak_guard.arm()
 
     import rpa_env
     import by_text
@@ -224,13 +326,25 @@ def main(argv=None):
 
     log("[harness] starting Chrome on port %d" % args.port)
     rpa_env.launch_chrome(port=args.port)
-    if not rpa_env.wait_for_debug_port(args.port):
-        log("[harness] Chrome debugging port never came up")
-        return 2
-    driver = by_text.setup_chrome_driver(use_existing=True)
-
+    driver = None
     rows = []
+    # Everything from here on can leave a Chrome/chromedriver process behind if it
+    # raises — `mx_oracle.install` doing that on 2026-09-25 (public site closed the
+    # window mid-launch) leaked one, because cleanup previously only wrapped the
+    # per-scenario loop, not browser setup. The whole browser lifetime is now one
+    # try/finally so no exit path skips cleanup.
     try:
+        if not rpa_env.wait_for_debug_port(args.port):
+            log("[harness] Chrome debugging port never came up")
+            return 2
+        driver = by_text.setup_chrome_driver(use_existing=True)
+
+        import mx_oracle
+        mx_oracle.install(driver)          # before any page of this batch loads
+        (out_dir / "env.json").write_text(
+            json.dumps(environment_record(driver, args.port), ensure_ascii=False, indent=2),
+            encoding="utf-8")
+
         for i, p in enumerate(paths, 1):
             log("[harness] [%d/%d] %s" % (i, len(paths), p.name))
             try:
@@ -253,20 +367,25 @@ def main(argv=None):
                 except Exception as exc:
                     row = {"id": p.stem, "status": "harness_error",
                            "error": "restart failed: %s: %s" % (type(exc).__name__, exc)}
-            log("[harness]   -> %s  steps %s/%s ok  vertices=%s edges=%s  %ss"
-                % (row.get("status"), row.get("n_ok"), row.get("n_steps"),
-                   row.get("n_vertices"), row.get("n_edges"), row.get("total_sec")))
+            log("[harness]   -> %s  N3 %s/%s (N0 %s)  root=%s cascade=%s falsepass=%s"
+                "  vertices=%s edges=%s  %ss"
+                % (row.get("status"), row.get("n3_pass"), row.get("n_steps"),
+                   row.get("n_ok"), row.get("root_failure"), row.get("cascade_failure"),
+                   row.get("false_pass"), row.get("n_vertices"), row.get("n_edges"),
+                   row.get("total_sec")))
             rows.append(row)
             (out_dir / "summary.json").write_text(
                 json.dumps(_summarize(rows), ensure_ascii=False, indent=2),
                 encoding="utf-8")
     finally:
         if not args.keep_browser:
-            try:
-                driver.quit()
-            except Exception:
-                pass
+            if driver is not None:
+                try:
+                    driver.quit()
+                except Exception:
+                    pass
             rpa_env.kill_chrome_on_port(args.port)
+            rpa_env.kill_orphaned_chromedrivers()
 
     summary = _summarize(rows)
     (out_dir / "summary.json").write_text(
@@ -280,13 +399,29 @@ def _summarize(rows):
     done = [r for r in rows if r.get("n_steps")]
     total_steps = sum(r["n_steps"] for r in done)
     total_ok = sum(r["n_ok"] for r in done)
+
+    def tot(key):
+        return sum(r.get(key) or 0 for r in done)
+
+    n3 = tot("n3_pass")
     return {
         "n_cases": len(rows),
         "n_ran": sum(1 for r in rows if r.get("status") == "ran"),
         "n_exception": sum(1 for r in rows if r.get("status") in ("exception", "harness_error")),
         "steps_total": total_steps,
-        "steps_ok": total_ok,
-        "step_success_rate": round(total_ok / total_steps, 4) if total_steps else 0.0,
+        # The old headline, kept only so the two rulers can be compared. It is an
+        # N0 count — "the handler did not raise" — and `RPA_docs/ORACLE.md` §1
+        # forbids reporting it as a success rate.
+        "steps_ok_N0": total_ok,
+        "step_success_rate_N0": round(total_ok / total_steps, 4) if total_steps else 0.0,
+        # What may be reported.
+        "steps_pass_N3": n3,
+        "step_pass_rate_N3": round(n3 / total_steps, 4) if total_steps else 0.0,
+        "root_failure": tot("root_failure"),
+        "cascade_failure": tot("cascade_failure"),
+        "no_verdict": tot("no_verdict"),
+        "false_pass": tot("false_pass"),
+        "false_fail": tot("false_fail"),
         "cases_with_any_edge": sum(1 for r in done if (r.get("n_edges") or 0) > 0),
         "rows": rows,
     }

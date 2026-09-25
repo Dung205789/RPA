@@ -1,0 +1,2073 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{tocloft}
+\usepackage[utf8]{inputenc}
+\usepackage{hyphenat}
+\usepackage{hyperref}
+\usepackage{booktabs} 
+\renewcommand{\tablename}{Bảng}
+\renewcommand{\figurename}{Hình}
+\def\tableautorefname{Bảng}
+
+\usepackage{url} 
+\usepackage{hyperref}
+\usepackage{doi}
+
+
+
+
+\usepackage{float}
+\usepackage[vietnamese]{babel}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{datetime}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{mathptmx}
+\usepackage{tikz}
+% \usepackage[utf8]{vietnam}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{siunitx}
+\usepackage{pgfplots}
+\usetikzlibrary{calc}
+
+\usepackage{tcolorbox}
+
+\usepackage{enumitem}
+
+\usepackage{cite}
+
+
+\captionsetup{justification=centering}
+\usepackage{geometry}
+    \geometry{
+        left=30mm,
+        top=20mm,
+        right=20mm,
+        bottom=20mm,
+    }
+
+
+\usepackage{glossaries}
+\usepackage[toc,style=long]{glossaries-extra}
+\makeglossaries
+\renewcommand{\glsnamefont}[1]{\textbf{\textup{#1}}}
+
+
+\usepackage{algorithm}
+    \floatname{algorithm}{Thuật toán}
+\usepackage{algorithmic}
+
+
+
+
+\usepackage{setspace}
+\setstretch{1.3}
+\usepackage{scrextend}
+\usetikzlibrary{arrows.meta, positioning}
+
+
+% chỉnh độ lớn section
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\fontsize{14}{16.8}\selectfont\bfseries}
+  {\fontsize{14}{16.8}\selectfont\thesection}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{14}{16.8}\selectfont\bfseries}
+  {\fontsize{14}{16.8}\selectfont\thesubsection}
+  {1em}
+  {}
+
+
+
+\usepackage[font=small,labelfont=bf, ]{caption}
+\captionsetup[table]{name=Bảng, labelsep=period, font=bf, skip=10pt}
+\captionsetup[figure]{name=Hình, labelsep=period, font=bf, skip=10pt}
+
+
+
+
+% Đặt màu cho liên kết
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,     % Mục lục, liên kết trong văn bản
+    citecolor=black,     % Liên kết trích dẫn
+    urlcolor=black       % Liên kết URL
+}
+
+% Định nghĩa màu sắc
+\definecolor{headerblue}{RGB}{52, 73, 94}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+\definecolor{darkgray}{RGB}{149, 165, 166}
+\definecolor{highpercent}{RGB}{231, 76, 60}
+\definecolor{mediumpercent}{RGB}{241, 196, 15}
+\definecolor{lowpercent}{RGB}{39, 174, 96}
+
+
+% Hàm tô màu theo phần trăm
+\newcommand{\colorpercent}[1]{%
+  \ifnum#1>50
+    \textcolor{highpercent}{\textbf{#1\%}}%
+  \else\ifnum#1>20
+    \textcolor{mediumpercent}{\textbf{#1\%}}%
+  \else
+    \textcolor{lowpercent}{\textbf{#1\%}}%
+  \fi\fi
+}
+
+
+
+\input{glossary}
+
+
+\begin{document}
+
+% Trang bìa
+\begin{titlepage}
+
+\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+     \draw[black!70!black,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)
+     --([xshift=2.5cm,yshift=-2cm]current page.north west) coordinate(B)
+     --([xshift=2.5cm,yshift=2cm]current page.south west) coordinate (C)
+     --([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)
+     --cycle;
+
+    \draw[black!70!black,line width=1pt] 
+    ([xshift=-1.7cm,yshift=-2.2cm]current page.north east)
+    --([xshift=2.7cm,yshift=-2.2cm]current page.north west)
+    --([xshift=2.7cm,yshift=2.2cm]current page.south west)
+    --([xshift=-1.7cm,yshift=2.2cm]current page.south east)
+    --cycle;
+
+\end{tikzpicture}
+
+
+
+\begin{center}
+    {\fontsize{18pt}{18pt}\selectfont 
+    \textbf{ĐẠI HỌC QUỐC GIA HÀ NỘI}}\\
+    {\fontsize{18pt}{18pt}\selectfont 
+        \textbf{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ}}
+\end{center}
+
+
+
+\vspace{60pt}
+\begin{center}
+    \includegraphics[scale=0.5]{image/uet_logo.png}
+
+    \vspace{20pt}
+    \fontsize{18Pt}{18pt}\selectfont 
+    \textbf{Nguyễn Thị Hoài Thu}
+
+    \vspace{10pt}
+    \fontsize{14pt}{14pt}\selectfont 
+    \textbf{\textrm{PHƯƠNG PHÁP SINH MÃ KIỂM THỬ TỪ CA KIỂM THỬ MÔ TẢ BẰNG NGÔN NGỮ TỰ NHIÊN VÀ DẠNG ẢNH CHO ỨNG DỤNG WEB SỬ DỤNG SVG}}
+   
+
+\end{center}
+
+\vspace{60pt}
+\begin{center}
+    \fontsize{14pt}{14pt}\selectfont  
+    \textbf{{KHÓA LUẬN TỐT NGHIỆP ĐẠI HỌC HỆ CHÍNH QUY}}
+
+    
+    \vspace{10pt}
+    \fontsize{14Pt}{14pt}\selectfont 
+    \textbf{Ngành: Công nghệ thông tin}
+\end{center}
+
+\begin{center}
+    \fontsize{14pt}{14pt}\selectfont 
+    \textbf{\textrm{}}
+\end{center}
+
+
+
+
+
+\vfill
+\begin{center}
+    {\fontsize{16pt}{16pt}\selectfont\textbf{HÀ NỘI - 2025}}
+\end{center}
+
+\end{titlepage}
+
+\newpage
+% phụ bìa
+\begin{titlepage}
+
+\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+     \draw[black!70!black,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)
+     --([xshift=2.5cm,yshift=-2cm]current page.north west) coordinate(B)
+     --([xshift=2.5cm,yshift=2cm]current page.south west) coordinate (C)
+     --([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)
+     --cycle;
+
+     \draw[black!70!black,line width=1pt] 
+    ([xshift=-1.7cm,yshift=-2.2cm]current page.north east)
+    --([xshift=2.7cm,yshift=-2.2cm]current page.north west)
+    --([xshift=2.7cm,yshift=2.2cm]current page.south west)
+    --([xshift=-1.7cm,yshift=2.2cm]current page.south east)
+    --cycle;
+\end{tikzpicture}
+
+\begin{center}
+    {\fontsize{18pt}{18pt}\selectfont 
+    \textbf{ĐẠI HỌC QUỐC GIA HÀ NỘI}}\\
+    {\fontsize{18pt}{18pt}\selectfont 
+        \textbf{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ}}
+\end{center}
+
+
+
+
+
+\vspace{100pt}
+\begin{center}
+    \fontsize{18pt}{18pt}\selectfont  
+    \textbf{{Nguyễn Thị Hoài Thu}}
+\end{center}
+
+\begin{center}
+    \fontsize{14pt}{14pt}\selectfont 
+    \textbf{\textrm{PHƯƠNG PHÁP SINH MÃ KIỂM THỬ TỪ CA KIỂM THỬ MÔ TẢ BẰNG NGÔN NGỮ TỰ NHIÊN VÀ DẠNG ẢNH CHO ỨNG DỤNG WEB SỬ DỤNG SVG
+    }}
+\end{center}
+
+\vspace{50pt}
+\begin{center}
+    
+
+    \vspace{10pt}
+    \fontsize{14pt}{14pt}\selectfont 
+    \textbf{KHÓA LUẬN TỐT NGHIỆP ĐẠI HỌC HỆ CHÍNH QUY}
+   
+    \vspace{10pt}
+    \textbf{Ngành: Công nghệ thông tin}
+\end{center}
+
+
+\vspace{80pt}
+{\large
+\begin{spacing}{1.2} 
+    \textbf{Cán bộ hướng dẫn: TS. Nguyễn Đức Anh}
+\end{spacing}
+}
+
+
+\vfill
+\begin{center}
+    {\fontsize{16pt}{16pt}\selectfont\textbf{HÀ NỘI - 2025}}
+\end{center}
+
+\end{titlepage}
+
+
+\newpage
+\pagenumbering{roman}
+\begin{center}
+    {\fontsize{14pt}{16pt}\selectfont \textbf{LỜI CẢM ƠN}}
+\end{center}
+% \addcontentsline{toc}{section}{\textbf{Lời cảm ơn}}
+
+\begin{spacing}{1.3}
+Lời đầu tiên, tôi xin gửi lời cảm ơn chân thành đến TS. Nguyễn Đức Anh. Với sự chỉ dẫn tận tình và những kiến thức quý báu được thầy truyền đạt đã giúp tôi có phương pháp tư duy và nghiên cứu hiệu quả để hoàn thành khóa luận. Những lời chỉ bảo, góp ý chuyên môn của thầy là tài sản vô giá giúp tôi hoàn thiện khóa luận này.
+
+
+Bên cạnh đó, tôi cũng muốn bày tỏ lòng biết ơn đến các thầy cô, cán bộ, anh chị và
+bạn bè tại Trường Đại học Công nghệ đã tạo điều kiện thuận lợi cho tôi được học tập,
+nghiên cứu và thực hiện khóa luận. Họ đã giúp đỡ tôi trong suốt quá trình học tập, tạo
+điều kiện thuận lợi cho tôi để phát triển tốt hơn.
+
+
+Cuối cùng, tôi xin gửi lời cảm ơn sâu sắc đến gia đình tôi. Họ đã luôn ở bên cạnh, ủng
+hộ và động viên tôi trong suốt thời gian học tập vừa qua. Họ đã cho tôi niềm tin để vượt
+qua mọi khó khăn và hoàn thành tốt quá trình học tập.
+
+\end{spacing}
+
+\newpage
+
+
+
+
+
+\begin{center}
+    {\fontsize{14pt}{16pt}\selectfont \textbf{LỜI CAM ĐOAN}}
+\end{center}
+% \addcontentsline{toc}{section}{\textbf{Lời cam đoan}}
+
+\begin{spacing}{1.3}
+\end{spacing}
+Tôi tên là Nguyễn Thị Hoài Thu, sinh viên lớp 	QH-2022-I/CQ-I-IT2, ngành Công nghệ thông tin. Tôi xin cam đoan đề tài khóa luận với chủ đề 
+“\textbf{Phương pháp sinh mã kiểm thử từ ca kiểm thử mô tả bằng ngôn ngữ tự nhiên và dạng ảnh cho ứng dụng Web sử dụng SVG}” là kết quả nghiên cứu của riêng tôi dưới sự hướng dẫn của TS. Nguyễn Đức Anh và chưa bao giờ được nộp làm khóa luận tốt nghiệp cho bất kỳ trường đại học nào, trong đó có Trường Đại học Công nghệ. Tôi cam đoan rằng khóa luận này không sao chép từ bất kỳ nguồn tài liệu tham khảo nào khác và tôi cũng không sử dụng sản phẩm của người khác mà không có trích dẫn rõ ràng, không bao gồm bất kỳ mã nguồn hay nội dung được lấy hoặc chỉnh sửa từ các cá nhân hoặc tổ chức nào khác mà không được phép. Các tài liệu, số liệu, hình ảnh được sử dụng trong khóa luận đều có nguồn gốc rõ ràng, 
+được trích dẫn theo đúng quy định. Tôi cũng xin cam đoan rằng khóa luận này được tôi thực hiện bằng chính năng lực và sự nỗ lực của bản thân, không sử dụng các công cụ trí tuệ nhân tạo để tạo ra nội dung hoặc mã nguồn mà không có sự kiểm soát, chỉnh sửa và ghi nhận công sức rõ ràng. 
+Nếu vi phạm những điều trên, tôi hoàn toàn chịu trách nhiệm theo quy định của Trường Đại học Công nghệ - ĐHQGHN.  
+
+% \vspace{1cm}
+% \begin{flushright}
+% \begin{minipage}{0.4\textwidth}
+% \centering
+% Hà Nội, ngày \hspace{0.5cm} tháng \hspace{0.5cm} năm 2025
+% \\
+% \textit{Sinh viên thực hiện}\\[6ex]
+% Nguyễn Thị Hoài Thu
+% \end{minipage}
+% \end{flushright}
+
+\vspace{1cm}
+\begin{flushright}
+\begin{minipage}{0.4\textwidth}
+\centering
+Hà Nội, ngày 30 tháng 12 năm 2025
+\\
+\textit{Sinh viên thực hiện}\\[6ex]
+Nguyễn Thị Hoài Thu
+\end{minipage}
+\end{flushright}
+
+
+\newpage
+%======================
+% tóm tắt
+
+\changefontsizes[16pt]{13pt}
+\begin{center}
+    {\fontsize{14pt}{16pt}\selectfont \textbf{TÓM TẮT}}
+\end{center}
+% \addcontentsline{toc}{section}{\textbf{Tóm tắt}}
+
+
+
+Trong bối cảnh phát triển phần mềm hiện nay, đặc biệt trong lĩnh vực ứng dụng Web, việc sử dụng SVG (Scalable Vector Graphics) để xây dựng giao diện đã trở nên phổ biến, nhất là trong các ứng dụng có nhiều sự tương tác trực quan với người dùng như các công cụ vẽ sơ đồ. Theo W3Techs, tỉ lệ trang web sử dụng SVG trong năm 2025 tăng đều, tại thời điểm trình bày khóa luận hiện đạt mức 64.50\% trên tổng số trang web và vẫn có xu hướng tăng theo thời gian \cite{w3techs_svg}. Xu hướng này cho thấy nhu cầu tự động hóa kiểm thử giao diện Web ngày~càng~trở~nên~cấp~thiết.
+
+
+Tuy vậy, trong kiểm thử giao diện Web, việc tự động hóa quy trình từ mô tả kiểm thử đến mã thực thi chứa đầy thách thức. Kiểm thử thủ công tốn nhiều thời gian, việc viết và bảo trì \gls{TestScript} tự động đòi hỏi chi phí lớn, đặc biệt khi phần mềm thường xuyên cập nhật. Thêm vào đó, các phần tử như logo, icon, SVG hoặc đối tượng đồ họa trong công cụ vẽ sơ đồ khó mô tả chính xác chỉ bằng ngôn ngữ tự nhiên, gây khó khăn trong việc ánh xạ và duy trì kịch bản kiểm thử. Việc sử dụng các công cụ kiểm thử tự động hiện tại chưa đáp ứng được cho các trang web đặc thù này. Khóa luận đề xuất phương pháp thực thi và sinh mã kiểm thử giao diện ứng dụng Web tự động dựa trên mô tả bằng ngôn ngữ tự nhiên kèm theo đó là cơ chế xử lý hình ảnh. 
+% để tăng tính linh hoạt trong việc sinh \gls{TestScript} và duy trì kịch bản kiểm thử
+ Phương pháp đề xuất tích hợp \gls{NaturalLanguageProcessing} để hiểu kịch bản kiểm thử từ đó ánh xạ mô tả văn bản với các thao tác tương ứng, kết hợp với \gls{ImageProcessing} để nhận dạng, định vị chính xác phần tử thông qua đặc trưng trực quan, cuối cùng sinh mã kiểm thử có thể thực thi. Kết quả cho thấy cách tiếp cận này không chỉ tăng độ chính xác và tính linh hoạt trong việc kiểm thử giao diện Web, đồng thời phù hợp với quy trình phát triển phần mềm hiện đại.
+
+
+Thực nghiệm được tiến hành trên các ứng dụng Web phổ biến trong nhiều lĩnh vực như tin tức (nhandan.vn, tuoitre.vn, vnexpress.net), tìm kiếm (bing.com), các công cụ vẽ sơ đồ (Draw.io, Lucidchart, Visual Paradigm) và webtest.ranorex.org (form đăng nhập) với tổng số 408 kịch bản. Kết quả cho thấy phương pháp đạt tỉ lệ thành công thấp nhất là 80.00\% đối với các kịch bản thuần ngôn ngữ tự nhiên; đối với các kịch bản chứa hình ảnh, dài, phức tạp tỷ lệ thành công đạt từ 85.71\% trở lên. Các thử nghiệm bao phủ hầu hết trường hợp thường gặp khi người dùng tương tác với ứng dụng Web đặc biệt là công cụ vẽ sơ đồ. Những kết quả này chứng minh tính khả thi và khả dụng của phương pháp trong thực tế.
+
+% Thực nghiệm bao gồm hầu hết các hành động thường xuất hiện khi người dùng tương tác đối với các ứng dụng Web, các đối tượng trong các kịch bản đa dạng với các phần tử mô tả bằng chữ, bằng hình ảnh, các phần tử người dùng có thể nhìn thấy trực tiếp, các phần tử cần cuộn mới có thể quan sát hoặc những phần tử mô tả bằng cách ánh xạ chúng sang ngôn ngữ tự nhiên mặc dù không có tên trực tiếp. Những kết quả này chứng minh tính khả dụng của phương pháp khi áp dụng vào thực tế.
+
+
+ \textit{\textbf{Từ khóa:}} \textit{SVG, kiểm thử giao diện Web, kiểm thử GUI tự động, phát hiện phần tử dựa trên hình ảnh, \gls{NaturalLanguageProcessing}, sinh mã kiểm thử.}
+
+
+
+
+% 1. Thiết lập font và vị trí tiêu đề "MỤC LỤC" bên trái
+\renewcommand{\contentsname}{\MakeUppercase{{\fontsize{18pt}{18pt}\selectfont \textbf{MỤC LỤC}}}}
+\renewcommand{\cfttoctitlefont}{\Large\bfseries} % Bỏ \centering ở đây
+\renewcommand{\cftaftertoctitle}{}               % Để trống để không bị đẩy ra giữa/phải
+
+% 2. Thiết lập các mục (3, 3.1, 3.1.1) thẳng hàng lề trái (0pt)
+\setlength{\cftsecindent}{0pt}      
+\setlength{\cftsubsecindent}{0pt}   
+\setlength{\cftsubsubsecindent}{0pt}
+
+% 3. Chỉnh khoảng cách giữa số và tên mục cho thoáng
+\setlength{\cftsecnumwidth}{2.5em}      % Tăng từ 1.5em lên 2.5em
+\setlength{\cftsubsecnumwidth}{3.5em}   % Tăng từ 2.5em lên 3.5em
+\setlength{\cftsubsubsecnumwidth}{4.5em} % Tăng từ 3.5em lên 4.5em
+
+% --- Bắt đầu hiển thị Mục lục ---
+\newpage
+\tableofcontents
+\newpage
+
+
+
+
+
+% \renewcommand{\contentsname}{\MakeUppercase{ {\fontsize{18pt}{18pt}\selectfont \textbf{MỤC LỤC}}}}
+% \renewcommand{\cfttoctitlefont}{\Large\bfseries\centering}
+% \newpage
+% \tableofcontents
+% \newpage
+
+% tu dien thuat ngu
+\clearpage
+\begin{table}[h]
+    \centering
+    \caption*{Bảng thuật ngữ}
+    \renewcommand{\arraystretch}{1.5} 
+    \begin{tabular}{|c|c|>{\centering\arraybackslash}p{4.5cm}|>{\centering\arraybackslash}p{7cm}|}
+        \hline
+        \textbf{STT} & \textbf{Từ viết tắt} & \textbf{Tên đầy đủ} & \textbf{Giải thích} \\  
+        \hline
+        1  & MSTM  & Multi-Scale Template Matching   & Một kỹ thuật trong thị giác máy tính dùng để tìm kiếm vị trí của một hình mẫu (template) bên trong ảnh gốc, ngay cả khi đối tượng trong ảnh có kích thước khác với mẫu. \\  
+        \hline
+        2  & SIFT  & Scale-Invariant Feature Transform   & Thuật toán phát hiện và mô tả đặc trưng cục bộ trong ảnh, bất biến với tỷ lệ, phép quay và chiếu sáng. \\  
+        \hline
+        3  & CDP    & Chrome DevTools Protocol     & Giao thức công cụ phát triển của Chrome, dùng để chụp ảnh toàn trang và tương tác với trình duyệt. \\  
+        \hline
+        4  & DPR   & Device Pixel Ratio & Tỷ lệ giữa điểm ảnh vật lý trên màn hình và điểm ảnh logic (CSS) được sử dụng trong thiết kế web.\\  
+        \hline
+        5  & DT   & DOM Tree & Cấu trúc cây biểu diễn tài liệu HTML/XML, trong đó mỗi nút là một phần tử giao diện. \\  
+        \hline
+        6  & GUI   & Graphical User Interface & Giao diện người dùng đồ họa, bao gồm các phần tử hiển thị trên ứng dụng Web. \\  
+        \hline
+        7  & TSC   & Test Script & Mã kiểm thử tự động hóa. \\  
+        \hline
+        8  & TS   & Test Scenario & Tập hợp có thứ tự các bước kiểm thử. \\  
+        \hline
+        9  & Flowchart   & Flowchart & Công cụ trực quan được sử dụng để mô tả và phân tích các quy trình, hệ thống hoặc hoạt động. \\  
+        \hline
+        10  & SVG   & Scalable Vector Graphics & Một ngôn ngữ đánh dấu XML và dùng để miêu tả các hình ảnh đồ họa vector hai chiều, tĩnh và hoạt hình, thường dành cho ứng dụng trên ứng dụng Web. \\  
+        \hline
+    \end{tabular}
+    \label{tab:test_terms}
+\end{table}
+\newpage
+
+% \newpage
+% \listoffigures
+% \newpage
+
+% \newpage
+% \listoftables
+% \newpage
+
+% Danh sách hình ảnh (chữ thường, cỡ 16pt)
+\renewcommand{\listfigurename}{DANH MỤC HÌNH ẢNH}
+% \addcontentsline{toc}{section}{\textbf{Danh mục hình ảnh}}
+{
+    \renewcommand{\cftloftitlefont}{\fontsize{16pt}{18pt}\selectfont\bfseries}
+    \listoffigures
+}
+\newpage
+
+
+% Danh sách bảng (chữ thường, cỡ 16pt)
+\renewcommand{\listtablename}{DANH MỤC BẢNG}
+% \addcontentsline{toc}{section}{\textbf{Danh mục bảng}}
+{
+    \renewcommand{\cftlottitlefont}{\fontsize{16pt}{18pt}\selectfont\bfseries}
+    \listoftables
+}
+\newpage
+
+
+
+
+
+\pagenumbering{arabic}
+
+%========================== Đặt vấn đề
+\chapter{Đặt vấn đề}
+
+
+Ngày càng nhiều hệ thống, đặc biệt là các công cụ vẽ sơ đồ, biểu đồ tương tác, v.v. có sử dụng Scalable Vector Graphics (SVG) để phát triển giao diện~\cite{w3techs_svg}.
+Một số ứng dụng Web phổ biến có thể kể tới như Draw.io\footnote{https://www.drawio.com/}, Lucidchart\footnote{https://www.lucidchart.com/}, Visual Paradigm\footnote{https://www.visual-paradigm.com/}, Microsoft Visio\footnote{https://www.microsoft.com/en/microsoft-365/visio/}, Creately\footnote{https://creately.com/}, v.v. 
+Ví dụ, để vẽ được hình ellipse trên giao diện, draw.io sẽ thêm phần tử svg vào HTML như sau:
+% \begin{verbatim}
+% <ellipse cx="1423" cy="587" rx="60" ry="40" fill="#ffffff" stroke="#000000"></ellipse>
+% \end{verbatim}
+
+
+% SVG hỗ trợ đồ họa phức tạp nên rất hữu ích với những ứng dụng web chứa đồ họa \cite{mong2003svg_rendering}. 
+% Vì thế, bài toán kiểm thử giao diện người dùng (GUI) nói chung đã và đang đóng vai trò quan trọng nhằm đảm bảo chất lượng và trải nghiệm người dùng cuối \cite{testing-art}. 
+% Có hai giải pháp phổ biến cho bài toán kiểm thử giao diện là kiểm thử thủ công và kiểm thử tự động. Kiểm thử thủ công tốn thời gian và công sức nên không đem lại hiệu quả \cite{compare-manual-auto}, do đó kiểm thử tự động được coi như là lựa chọn hàng đầu cho bài toán này, hiện nay có hai phương pháp tiêu biểu là ghi -- chạy lại (như Selenium \cite{selenium}, Playwright \cite{karpukhinamodern}, Cypress \cite{taky2021automated}) và ghi kịch bản dựa trên hình~ảnh (như Sikuli \cite{10.1145/1622176.1622213}, Testim \cite{galvez2024comparison}). 
+
+
+
+Các công cụ kiểm thử tự động hiện nay hữu ích cho hầu hết các trang web nhưng chưa có công cụ nào chuyên biệt và có thể kiểm thử tốt cho các trang được sử dụng như công cụ vẽ sơ đồ. Các trang web sử dụng SVG có nhiều đặc trưng khác biệt khiến việc kiểm thử giao diện trở nên phức tạp hơn. Các hướng trên gặp phải 3 vấn đề chính như sau: \textbf{(1)} vấn đề duy trì kịch bản và xác định phần tử khi không thể mô tả phần tử bằng ngôn ngữ tự nhiên,  \textbf{(2)} vấn đề thực thi mã kiểm thử khi ứng dụng Web tiến hóa và \textbf{(3)} vấn đề sinh mã kiểm thử đối với những kịch bản phức tạp như vẽ flowchart. 
+
+
+Đối với vấn đề duy trì kịch bản và xác định phần tử khi không thể mô tả phần tử bằng ngôn ngữ tự nhiên, chẳng hạn như các biểu tượng, hình khối trang trí hoặc đối tượng đồ họa tùy chỉnh không có nhãn văn bản \cite{10.1145/1622176.1622213}. Những phần tử này không mang đặc trưng ngữ nghĩa rõ ràng để mô tả bằng lời, khiến việc xác định chính xác vị trí và đối tượng cần thao tác trở nên khó khăn. Khi đó, việc định danh phần tử phải dựa vào đặc trưng hình ảnh hoặc bố cục không gian, hiện tại có công cụ SikuliX hỗ trợ xử lý tìm phần tử bằng hình ảnh, tuy nhiên đối với kịch bản vẽ flowchart muốn thực thi tự động bằng phương pháp này không khả thi do các hành động kéo thả trên SikuliX thường yêu cầu tọa độ chính xác. Thách thức này đặc biệt rõ nét với các ứng dụng web động như \href{https://app.diagrams.net/}{\textbf{Draw.io}} \cite{drawio} - một công cụ vẽ sơ đồ trực tuyến phổ biến với giao diện chứa hàng trăm biểu tượng chức năng không có nhãn văn bản rõ ràng và cấu trúc DOM thay đổi liên tục. Đáng chú ý, hiện chưa có nhiều nghiên cứu tập trung vào việc sinh mã kiểm thử tự động cho loại ứng dụng này dựa trên mô tả đa phương thức (văn bản và hình ảnh).
+
+
+Thứ hai, đối với vấn đề thực thi mã kiểm thử khi ứng dụng Web tiến hóa, khi giao diện có sự thay đổi về cấu trúc hoặc thuộc tính của một phần tử, các đoạn mã kiểm thử tham chiếu đến phần tử đó thường không còn hợp lệ. Hiện tượng này phổ biến trong các phương pháp ghi và phát lại (record -- and -- playback), nơi mã kiểm thử được sinh ra dựa trên cây DOM tại thời điểm ghi \cite{DELUCA2024111932}. Khi cây DOM thay đổi -- chẳng hạn định danh của nút “Đăng nhập” bị sửa hoặc xóa -- các lệnh kiểm thử cũ sẽ không thể thực thi. Ngoài ra, một số phần tử không có định danh cụ thể và chỉ có thể nhận dạng thông qua đặc trưng hình ảnh hoặc ngữ cảnh hiển thị, khiến việc duy trì và thực thi mã kiểm thử trở~nên~khó~khăn~hơn.
+
+
+Cuối cùng, về vấn đề sinh mã kiểm thử đối với những kịch bản phức tạp như vẽ flowchart, thường các kịch bản kiểm thử sẽ mô tả bằng ngôn ngữ tự nhiên trong khi đó việc sinh mã kiểm thử dựa trên mô tả ngôn ngữ tự nhiên trong trường hợp này vẫn là một thách thức lớn \cite{du2025codegragbridginggapnatural}. Sự khác biệt giữa cách con người diễn tả hành động và cú pháp chính xác của mã kiểm thử tạo nên một khoảng cách ngữ nghĩa đáng kể. Chẳng hạn một mô tả đơn giản như ``Move the element created in step 2 to the left'' đòi hỏi mô hình phải xác định chính xác phần tử tương ứng trên cây DOM kèm theo sự liên kết với các bước khác trong \gls{TestScript}. Quá trình này yêu cầu mô hình không chỉ hiểu nội dung ngôn ngữ mà còn phải suy luận ngữ cảnh giao diện và quan hệ không gian giữa các phần tử. Bên cạnh đó, tính mơ hồ, đa nghĩa và sự thiếu chuẩn hóa trong cách mô tả hành động khiến việc diễn giải đúng ý định của người kiểm thử và sinh mã kiểm thử tương ứng trở nên khó khăn. Với các công cụ hiện nay, phương pháp khả thi đối với dạng kịch bản này là người kiểm thử phải tự viết toàn bộ \gls{TestScript} bằng tay vì thế việc viết và duy trì dạng kịch bản này tỏ~ra~kém~hiệu~quả.
+
+
+
+
+
+Để giải quyết các hạn chế nêu trên, khóa luận này đề xuất phương pháp sinh mã kiểm thử giao diện ứng dụng Web tự động thông qua mô tả bằng ngôn ngữ tự nhiên kèm theo đó có thể bổ sung hình ảnh vào kịch bản. Tư tưởng cốt lõi của phương pháp đề xuất là tự động thực thi và chuyển đổi các kịch bản kiểm thử thành mã kiểm thử , đồng thời cập nhật ngữ cảnh ứng dụng trong quá trình thực thi thực tế. Đầu vào của phương pháp là kịch bản kiểm thử mô tả các bước kiểm tra bằng ngôn ngữ tự nhiên có thể kèm theo hình ảnh. Đầu ra là khả năng tự động thực thi kịch bản và trả về \gls{TestScript} tương ứng kèm theo. Quy trình thực hiện với 4 bước gồm phân tích ngôn ngữ tự nhiên, định vị phần tử, theo dõi sự thay đổi trên ứng dụng Web, thực thi và sinh mã kiểm thử. Với đầu vào bằng ngôn ngữ tự nhiên nên phương pháp không gặp trở ngại khi ứng dụng Web tiến hóa. Bước định vị phần tử cho phép người dùng tìm kiếm phần tử dựa cả vào văn bản và hình ảnh giúp giải quyết được vấn đề tìm kiếm phần tử khi mô tả bằng từ khóa chưa đủ ngữ nghĩa. Bước theo dõi sự thay đổi trên ứng dụng Web giúp xử lý mối quan hệ giữa các bước tốt hơn hỗ trợ hiệu quả cho các kịch bản vẽ flowchart - vốn dựa nhiều vào mối liên kết và tham~chiếu~giữa~các~bước.
+
+
+
+
+Thực nghiệm đánh giá đã được tiến hành trên một bộ dữ liệu gồm 408 kịch bản kiểm thử được đề xuất trong khóa luận này. Phương pháp tập trung kiểm thử trên các công cụ vẽ sơ đồ phổ biến như Draw.io với 104 kịch bản (15 kịch bản thuần ngôn ngữ tự nhiên và 89 kịch bản có sự kết hợp giữa ngôn ngữ tự nhiên và hình ảnh), Lucidchart gồm 100 kịch bản (20 kịch bản thuần ngôn ngữ tự nhiên và 80 kịch bản có sự kết hợp giữa ngôn ngữ tự nhiên và hình ảnh), Visual Paradigm gồm 100 kịch bản (24 kịch bản thuần ngôn ngữ tự nhiên và 76 kịch bản có sự kết hợp giữa ngôn ngữ tự nhiên và hình ảnh); 104 kịch bản còn lại từ các ứng dụng Web phổ biến về tin tức, tìm kiếm (62 kịch bản thuần ngôn ngữ tự nhiên và 42 kịch bản có sự kết hợp giữa ngôn ngữ tự nhiên và hình ảnh). Các kịch bản bao gồm nhiều biến đổi giao diện và cách diễn đạt, đòi hỏi phương pháp suy luận để nhận diện đúng phần tử. 
+
+
+Phương pháp đề xuất được so sánh với các công cụ phổ biến hiện nay như Cypress và SikuliX tương ứng với hai miền đầu vào là ngôn ngữ tự nhiên và hình ảnh, các kịch bản đa dạng trên nhiều miền ứng dụng Web, đặc biệt tập trung vào những kịch bản vẽ flowchart. Đối với kịch bản sử dụng ngôn ngữ tự nhiên, phương pháp đạt kết quả thành công thấp nhất là 80.00\% và 100\% trên 3 trang web trong tổng số 8 trang web được sử dụng làm thực nghiệm, trong khi tỉ lệ thành công trung bình khi sử dụng Cypress là 14.29\%. Về khả năng của kịch bản có kết hợp xử lý nhận diện phần tử bằng hình ảnh, phương pháp đạt tỉ lệ thành công từ 85.47\% khi xét trên kịch bản hoàn chỉnh ngay cả khi phần tử có kích thước khác so với thực tế hoặc phần tử cần cuộn trang, cuộn thẻ mới có thể quan sát được. Trong khi đó SikuliX hoàn toàn thất bại khi gặp các biến thể trên, chỉ có thể xử lý các kịch bản đơn giản với phần tử nằm trong viewport. Những kết quả này minh chứng rõ ràng cho tính hiệu quả và độ tin cậy vượt trội của phương pháp trong bối cảnh kiểm thử giao diện web hiện đại và đa dạng.
+
+
+Đóng góp chính của khóa luận là đề xuất một phương pháp nhằm khắc phục hạn chế về độ ổn định của kịch bản, khả năng thích nghi với sự thay đổi của giao diện và việc tự động hóa các thao tác kiểm thử phức tạp. Ý tưởng chính là chuyển đổi kịch bản kiểm thử được mô tả bằng ngôn ngữ tự nhiên (có thể kèm hình ảnh) thành mã kiểm thử tự động, đồng thời duy trì khả năng cập nhật ngữ cảnh ứng dụng trong suốt quá trình thực thi. Bên cạnh đó, khóa luận đánh giá kỹ lưỡng phương pháp dựa trên bộ dữ liệu được xây dựng trong quá trình thực hiện nghiên cứu. Bộ dữ liệu đề xuất gồm bộ kịch bản kiểm thử cho các trang web dưới dạng ngôn ngữ tự nhiên và hình ảnh, bao gồm cả những kịch bản phức tạp như thao tác vẽ flowchart với nhiều tương tác trên các thẻ SVG - một dạng dữ liệu cho đến nay chưa từng được công bố. Khóa luận cung cấp bộ mã nguồn hoàn chỉnh với các module nhận diện phần tử và tự động sinh mã kiểm thử từ ngôn ngữ tự nhiên và dạng ảnh. Phương pháp đạt độ chính xác từ 80.00\% trở lên trên tất cả các trang web thử nghiệm, kể cả các kịch bản phức tạp như thao tác vẽ flowchart trên thẻ SVG.
+
+
+
+Tóm lại, các đóng góp chính của khóa luận này có thể được tóm tắt như sau:
+
+\begin{itemize}
+    \item Phương pháp được đề xuất nhằm khắc phục hạn chế về độ ổn định và khả năng thích nghi với thay đổi giao diện, đồng thời tự động hóa các thao tác kiểm thử với đầu vào đa phương thức (văn bản và hình ảnh) để nâng cao độ tin cậy và tính linh hoạt của quá trình kiểm thử giao diện web.
+    \item Về dữ liệu, khóa luận xây dựng bộ dữ liệu gồm 408 kịch bản kiểm thử, tập trung vào miền ứng dụng Web sử dụng SVG - một lĩnh vực chưa từng có nghiên cứu trước đây - nhằm cung cấp nguồn dữ liệu đặc thù phục vụ đánh giá và phát triển các phương pháp kiểm thử giao diện tự động.
+\end{itemize}
+
+
+% mô tả đóng góp của khóa luânkj
+% - đề xuất 1 bộ kịch bản cho các trang web dưới dạng... đến thời điểm hiện tại chưa có bộ dữ liệu nào cho svg (web)
+% - đề xuất phương pháp thực thi được kịch bản 
+% liệu có nên theo hướng từ ảnh - gpt sinh kịch bản - thực thi bởi phương pháp đề xuất - ảnh thực tế - dùng mô hình gpt để so khớp kì vọng và thực tế 
+% luồng 2: kịch bản - thực thi - đánh giá
+% hiện tại vẽ (thực thi) các kịch bản tốn tg + viết (đầu vào) - nên từ ảnh chụp - tự động hóa - giảm thiểu chi phí - về mặt lâu dài ko hiển thị luồng 2
+
+
+
+
+Phần còn lại của báo cáo được tổ chức như sau. Chương 2 trình bày các kiến thức nền tảng, bao gồm các khái niệm về bài toán kiểm thử giao diện và tỷ lệ điểm ảnh thiết bị, thuật toán Multi-Scale Template Matching, thuật toán SIFT, công cụ kiểm thử Cypress và SikuliX. Chương 3 mô tả chi tiết phương pháp đề xuất. Chương 4 trình bày kết quả thực nghiệm, bao gồm mô tả bộ dữ liệu, cấu hình, thực nghiệm. Chương 5 tổng hợp các nghiên cứu liên quan. Và cuối cùng, chương 6 kết luận toàn bộ tóm tắt những đóng góp chính và đề xuất hướng phát triển trong tương lai.
+
+
+
+
+%===================== Kiến thức nền tảng
+\chapter{Kiến thức nền tảng}
+
+Chương này trình bày các kiến thức, lý thuyết và nghiên cứu có liên quan đến lĩnh vực kiểm thử giao diện người dùng cũng như các thuật toán và công cụ được ứng dụng trong quá trình kiểm thử. Những nội dung này không chỉ là nền tảng lý thuyết mà còn ảnh hưởng trực tiếp đến cách xây dựng, triển khai và tối ưu hóa phương pháp kiểm thử được đề xuất trong khóa luận.
+
+
+\section{Bài toán kiểm thử giao diện} 
+
+Kiểm thử giao diện (GUI Testing) \cite{enwiki:1306186425} là quá trình kiểm tra giao diện đồ họa người dùng để đảm bảo đáp ứng được các yêu cầu và khả năng sử dụng của ứng dụng. Kiểm thử giao diện bao gồm việc kiểm tra các đối tượng trên màn hình như menu, button, link,... những đối tượng mà người dùng nhìn thấy, đảm bảo rằng chúng được hiển thị đúng và hoạt động chính xác trong các trình duyệt khác nhau \cite{memon2002gui}. Nói cách khác, kiểm thử giao diện là kiểm tra tính hợp lệ của các thành phần/đối tượng trên màn hình. Kiểm thử GUI rất quan trọng vì nó sẽ ảnh hưởng lớn tới quyết định có nên tiếp tục dùng ứng dụng hay không của người dùng. Nếu người dùng cảm thấy không thoải mái khi sử dụng ứng dụng thì khả năng người dùng sử dụng ứng dụng trong tương lai là rất thấp. Đó là lý do tại sao kiểm thử giao diện ứng dụng người dùng là một vấn đề rất cấp thiết.
+
+
+Có nhiều phương pháp kiểm thử giao diện khác nhau tùy thuộc vào phạm vi, công cụ và mục tiêu của quy trình kiểm thử. Hai phương pháp phổ biến nhất là kiểm thử thủ công và kiểm thử tự động. Kiểm thử tự động được ưu tiên hơn kiểm thử thủ công vì giúp giảm chi phí, tăng tần suất kiểm thử, phát hiện lỗi sớm hơn và nâng cao chất lượng hệ thống \cite{6228988, alegroth2015visual}. Kiểm thử thủ công thường được sử dụng trong giai đoạn đầu phát triển hoặc trong quá trình thay đổi thiết kết UI cần sự đánh giá chủ quan. Tuy vậy nhược điểm của phương pháp này khá lớn khi nó sẽ là một quá trình nhàm chán, lặp đi lặp lại, rất tốn thời gian đặc biệt là đối với ứng dụng lớn và dễ xảy ra lỗi do yếu tố con người \cite{5070540, 4976392, finsterwalder2001automating, 4076909, dustin1999automated}. Kiểm thử tự động thường các công cụ và tập lệnh chuyên dụng để thực hiện các trường hợp mà không cần sự can thiệp của con người. Phương pháp này rất hiệu quả đối với các tác vụ lặp lại chẳng hạn như kiểm thử hồi quy, ngoài ra có độ tin cậy cao hơn vì loại bỏ được khả năng xảy ra lỗi của con người. Phương pháp này cũng không hoàn hảo khi việc viết và duy trì các \gls{TestScript} có thể tốn nhiều thời gian \cite{alégroth2016maintenanceautomatedtestsuites}. Với sự phát triển nhanh chóng hiện nay thì việc tự động hóa kiểm thử đang dần trở thành xu thế khi giúp nhà phát triển tiết kiệm chi phí và rút ngắn thời gian phát hành.
+
+
+
+
+
+
+
+
+
+
+\section{Tỷ lệ điểm ảnh thiết bị (DPR - Device Pixel Ratio)}
+
+Tỷ lệ điểm ảnh thiết bị (DPR) là là tỷ lệ giữa điểm ảnh vật lý (physical pixels) và điểm ảnh logic (CSS pixels) của thiết bị \cite{mdnDevicePixelRatio}. Việc tính toán tỷ lệ pixel trên thiết bị đã được đơn giản hóa nhờ thuộc tính devicePixelRatio của HTML. Tỷ lệ điểm ảnh trên thiết bị đóng vai trò quan trọng trong việc đảm bảo hình ảnh nhìn thấy trên màn hình sống động và sắc nét nhất có thể. DPR cao hơn sẽ tích hợp nhiều điểm ảnh hơn vào cùng một không gian, mang lại hình ảnh sắc nét và chi tiết hơn. Ví dụ, màn hình thường có DPR = 1.0, trong khi màn hình Retina có DPR = 2.0, nghĩa là mỗi điểm ảnh logic được hiển thị bằng 4 điểm ảnh vật lý (2×2).
+
+
+Trong việc định vị phần tử thông qua hình ảnh, DPR đóng vai trò quan trọng, nếu không xác định đúng thì tọa độ phần tử có thể bị sai lệch nghiêm trọng. Ví dụ, một phần tử ở vị trí CSS (200, 100) trên màn hình DPR = 2.0 sẽ xuất hiện tại (400, 200) trong screenshot. Nếu không thực hiện chuyển đổi dễ dẫn tới việc tương tác sai phần tử mặc dù đã \gls{ImageProcessing} chính xác.
+
+
+
+\section{Thuật toán Multi-scale Template Matching}
+% với TM\_CCOEFF\allowbreak\_NORMED}
+
+% Thuật toán so khớp mẫu đa tỷ lệ (Multi-scale Template Matching) sử dụng hệ số tương quan chuẩn hóa (TM$\_$CCOEEFF$\_$NORMED) là một phương pháp mở rộng từ template matching cơ bản, được mô tả trong tài liệu OpenCV \cite{opencv_template_matching}. Phương pháp này nhằm tìm kiếm và xác định vị trí của một ảnh mẫu trong ảnh lớn hơn bằng cách thử nghiệm nhiều tỷ lệ kích thước (thường từ 0.2 đến 2.0 với khoảng 40 mức) để xử lý sự khác biệt về scale giữa template và ảnh nguồn \cite{rosebrock2015multiscale}. Quá trình bao gồm việc resize ảnh mẫu theo từng scale, tính toán hệ số tương quan chuẩn hóa giữa mẫu và các vùng con của ảnh đầu vào, sau đó chọn scale có giá trị khớp cao nhất nếu vượt ngưỡng (ví dụ: 0.8). Kết quả được chuẩn hóa để giảm ảnh hưởng của ánh sáng và độ tương phản. Brunelli \cite{brunelli2009template} đã chứng minh rằng template matching hiệu quả khi đối tượng có kích thước và hướng cố định, trong khi Tang và Tao \cite{tang2007fast} đề xuất sử dụng binary features để tăng tốc độ cho multi-scale matching. Để xử lý phát hiện dư thừa, thuật toán áp dụng ngưỡng và kỹ thuật Non-Maximum Suppression (NMS) để loại bỏ các hộp giới hạn chồng chéo dựa trên điểm số tương quan \cite{neubeck2006efficient}. 
+
+
+
+Multi-scale Template Matching (MSTM) \cite{pyimagesearch_mstm} là một kỹ thuật \gls{ImageProcessing} mở rộng của phương pháp Template Matching truyền thống \cite{opencvTemplateMatching}, được sử dụng phổ biến trong thị giác máy tính để xác định vị trí của một ảnh mẫu trong một ảnh nguồn có kích thước lớn hơn. Khác với template matching thông thường - vốn chỉ so khớp ảnh mẫu ở một kích thước cố định - MSTM cho phép ảnh mẫu được thay đổi tỉ lệ (scale) trong một khoảng giá trị nhất định, giúp thuật toán bền vững hơn trước các biến đổi hình học như phóng to, thu nhỏ hoặc thay đổi độ phân giải hiển thị.
+
+Về nguyên lý, thuật toán hoạt động bằng cách trượt ảnh mẫu qua toàn bộ ảnh nguồn và tại mỗi vị trí $(x, y)$, tính toán độ tương đồng giữa vùng ảnh con và ảnh mẫu. Cho ảnh nguồn $S$ có kích thước $(W_s \times H_s)$ và ảnh mẫu $T$ có kích thước $(W_t \times H_t)$ với $W_t \le W_s$ và $H_t \le H_s$, quá trình template matching sẽ tạo ra một ma trận kết quả $R$ có kích thước $(W_s - W_t + 1) \times (H_s - H_t + 1)$, trong đó mỗi phần tử $R(x, y)$ biểu thị độ tương đồng giữa $T$ và vùng ảnh con của $S$ tại vị trí $(x, y)$ \cite{opencv_object_detection}.  
+
+Thư viện OpenCV cung cấp nhiều phương pháp để đo độ tương đồng giữa ảnh mẫu và ảnh nguồn, bao gồm phương pháp dựa trên bình phương sai khác (TM\_SQDIFF, TM\_SQDIFF\_NORMED), tương quan (TM\_CCORR, TM\_CCORR\_NORMED), và hệ số tương quan (TM\_CCOEFF, TM\_CCOEFF\_NORMED) \cite{opencv_measure}. Trong đó, TM\_CCOEFF\_NORMED thường được sử dụng phổ biến vì có khả năng chuẩn hóa kết quả về khoảng $[-1, 1]$, ít bị ảnh hưởng bởi thay đổi độ sáng và độ tương phản, đồng thời cho độ chính xác cao trong nhiều tình huống thực tế, ít nhạy cảm với nhiễu so với các phương pháp khác.
+
+Công thức tính toán của phương pháp TM\_CCOEFF\_NORMED được định nghĩa như Công thức~\ref{eq:tm_ccoef_normed}.
+
+\begin{equation}
+R(x, y) = \frac{\sum_{x',y'} (T'(x',y') \cdot I'(x+x', y+y'))}{\sqrt{\sum_{x',y'} T'(x',y')^2 \cdot \sum_{x',y'} I'(x+x', y+y')^2}}
+\label{eq:tm_ccoef_normed}
+\end{equation}
+
+trong đó:
+
+\begin{equation}
+T'(x',y') = T(x',y') - \frac{1}{w \cdot h} \sum_{x'',y''} T(x'',y'')
+\end{equation}
+
+\begin{equation}
+I'(x+x', y+y') = I(x+x', y+y') - \frac{1}{w \cdot h} \sum_{x'',y''} I(x+x'', y+y'')
+\end{equation}
+
+Các ký hiệu trong công thức có ý nghĩa như sau:
+\begin{itemize}
+    \item $T(x',y')$: giá trị pixel của template (ảnh mẫu) tại vị trí $(x',y')$
+    \item $I(x+x', y+y')$: giá trị pixel của ảnh nguồn tại vị trí $(x+x', y+y')$
+    \item $w, h$: chiều rộng và chiều cao của template
+    \item $T'(x',y')$: giá trị pixel của template sau khi trừ đi giá trị trung bình
+    \item $I'(x+x', y+y')$: giá trị pixel của vùng ảnh nguồn sau khi trừ đi giá trị trung bình
+    \item $(x,y)$: tọa độ góc trên bên trái của vùng đang xét trong ảnh nguồn
+\end{itemize}
+
+Trong thuật toán Multi-scale Template Matching, thay vì chỉ thực hiện phép so khớp với một ảnh mẫu cố định, ảnh mẫu $T$ sẽ được co giãn theo nhiều tỉ lệ $s_i \in [s_{\min}, s_{\max}]$. Với mỗi tỉ lệ $s_i$, ảnh mẫu được biến đổi thành kích thước $(W_t \cdot s_i, H_t \cdot s_i)$ và thực hiện phép so khớp với ảnh nguồn bằng phương pháp đo độ tương đồng đã chọn. Mỗi lần so khớp sinh ra một ma trận tương quan $R_{s_i}(x, y)$.
+% , và giá trị cực đại toàn cục được chọn làm kết quả cuối cùng:
+% \[
+% R^*(x^*, y^*, s^*) = \max_{s_i \in [s_{\min}, s_{\max}]} R_{s_i}(x, y)
+% \]
+% trong đó $(x^*, y^*)$ là vị trí và $s^*$ là tỉ lệ cho độ tương đồng cao nhất. Nếu giá trị $R^*$ vượt ngưỡng tin cậy $\tau$ (ví dụ $\tau = 0.8$), phương pháp sẽ xác định rằng mẫu $T$ đã được phát hiện trong ảnh nguồn $S$ tại vị trí $(x^*, y^*)$ với kích thước tương ứng $(W_t \cdot s^*, H_t \cdot s^*)$.
+
+Ưu điểm của MSTM là khả năng phát hiện đối tượng dù có sự thay đổi về tỉ lệ hoặc độ phân giải hiển thị, điều mà template matching thông thường không thể đảm bảo. Tuy nhiên, chi phí tính toán của thuật toán này cao hơn đáng kể, vì phải thực hiện phép so khớp nhiều lần tương ứng với từng tỉ lệ $s_i$. Do đó, việc lựa chọn khoảng tỉ lệ $[s_{\min}, s_{\max}]$ và số lượng bước (number scales) cần được cân nhắc phù hợp để đạt được cân bằng giữa độ chính xác và hiệu năng.
+
+
+
+% \section{Thuật toán SIFT (Scale-Invariant Feature Transform)}
+% Thuật toán SIFT, được giới thiệu bởi Lowe \cite{lowe2004distinctive}, là một phương pháp mạnh mẽ để phát hiện và mô tả các đặc trưng cục bộ trong ảnh. Điểm nổi bật của SIFT là khả năng bất biến với các biến đổi về tỷ lệ, phép quay, và các thay đổi về điều kiện chiếu sáng.
+% SIFT hoạt động bằng cách xác định các điểm đặc trưng (keypoints) trong cả ảnh mẫu và ảnh đầu vào, sau đó mô tả chúng bằng các vector đặc trưng 128 chiều. Ke et al. \cite{ke2004pca} đã chứng minh rằng các mô tả này có tính phân biệt cao và có thể được sử dụng để nhận dạng đối tượng một cách đáng tin cậy ngay cả trong điều kiện khó khăn.
+% Quá trình so khớp trong SIFT bao gồm việc so sánh các vector đặc trưng giữa ảnh mẫu và ảnh đầu vào, thường sử dụng kỹ thuật nearest-neighbor matching \cite{muja2014scalable}. Các điểm đặc trưng khớp nhau sau đó được sử dụng để ước lượng phép biến đổi hình học giữa ảnh mẫu và ảnh đầu vào, cho phép định vị đối tượng một cách chính xác.
+
+
+\section{Thuật toán SIFT (Scale-Invariant Feature Transform)}
+
+Scale-Invariant Feature Transform (SIFT) \cite{Lindeberg:2012} là một trong những thuật toán phát hiện và mô tả đặc trưng (feature descriptor) mạnh mẽ nhất trong lĩnh vực thị giác máy tính, được đề xuất bởi David G. Lowe vào năm 1999 và hoàn thiện năm 2004~\cite{lowe2004distinctive}. Mục tiêu của SIFT là trích xuất các đặc trưng cục bộ (\textit{local features}) từ ảnh mà vẫn đảm bảo bất biến đối với thay đổi về tỉ lệ, góc quay và ánh sáng - điều mà các phương pháp template matching truyền thống khó đạt được.
+
+Thuật toán SIFT bao gồm bốn giai đoạn chính. Giai đoạn đầu tiên là phát hiện điểm đặc trưng ở nhiều thang đo (Scale-space Extrema Detection) trong đó ảnh đầu vào được biến đổi thành một không gian đa tỉ lệ bằng cách làm mờ ảnh với các bộ lọc Gaussian có độ lệch chuẩn $\sigma$ khác nhau. SIFT sử dụng hàm sai khác Gaussian (DoG - Difference of Gaussians) để xác định các điểm cực trị cục bộ trong không gian này như Công thức~\ref{eq: DoG}.
+\begin{equation}
+    D(x, y, \sigma) = [G(x, y, k\sigma) - G(x, y, \sigma)] * I(x, y)
+    \label{eq: DoG}
+\end{equation}
+    trong đó $I(x, y)$ là ảnh đầu vào, $G(x, y, \sigma)$ là hàm Gaussian, và $k$ là hệ số tỉ lệ giữa các mức Gaussian kế tiếp. Các điểm cực trị (local extrema) của $D(x, y, \sigma)$ được xem là các ứng viên đặc trưng tiềm năng.
+
+Giai {} đoạn {} thứ {} hai {} là {} xác {} định {} và {} tinh {} chỉnh {} vị {} trí {} điểm {} đặc {} trưng {} (Keypoint\\ Localization). Mỗi điểm cực trị được tinh chỉnh bằng cách sử dụng khai triển Taylor bậc hai của hàm $D(x, y, \sigma)$ để xác định vị trí chính xác hơn và loại bỏ các điểm không ổn định (ví dụ: nhiễu hoặc điểm nằm trên biên). Một điểm được giữ lại nếu giá trị độ tương phản đủ lớn và không nằm trên các vùng biên phẳng.
+
+Giai đoạn kế tiếp là gán hướng cho điểm đặc trưng (Orientation Assignment). Với mỗi điểm đặc trưng, một hoặc nhiều hướng chính được gán dựa trên histogram gradient cục bộ của vùng lân cận. Hướng gradient $\theta(x, y)$ được tính theo Công thức \ref{eq: gradient_1}.
+    \begin{equation}
+        \theta(x, y) = \tan^{-1}\left(\frac{L_y(x, y)}{L_x(x, y)}\right)
+        \label{eq: gradient_1}
+    \end{equation}
+    
+    và độ lớn gradient với Công thức \ref{eq: gradient_2}.
+    \begin{equation}
+        m(x, y) = \sqrt{L_x^2(x, y) + L_y^2(x, y)}
+        \label{eq: gradient_2}
+    \end{equation}
+    
+    trong đó $L_x$ và $L_y$ là đạo hàm theo hai hướng $x$ và $y$.  
+    Việc gán hướng giúp đặc trưng trở nên bất biến với phép quay.
+
+Giai đoạn cuối cùng là tạo vector mô tả đặc trưng (Keypoint Descriptor Generation). Vùng lân cận quanh mỗi điểm đặc trưng được chia thành các ô (cells), thường là $4\times4$, và trong mỗi ô, histogram hướng gradient được tính với 8 bins. Toàn bộ 16 histogram được ghép lại tạo thành vector đặc trưng 128 chiều cho mỗi điểm (16 $\times$ 8). Vector này được chuẩn hóa để giảm ảnh hưởng của thay đổi độ sáng hoặc độ tương phản. Kết quả của thuật toán SIFT là một tập hợp các điểm đặc trưng $\{k_i\}$, mỗi điểm bao gồm thông tin: vị trí $(x_i, y_i)$, tỉ lệ $\sigma_i$, hướng $\theta_i$, và vector mô tả đặc trưng $f_i$ có kích thước 128. Khi so khớp hai ảnh, các vector mô tả này được so sánh các bộ so khớp như FLANN để tìm ra các cặp điểm tương ứng.
+
+Ưu điểm nổi bật của SIFT là tính bất biến với tỉ lệ, góc quay, và ánh sáng, đồng thời vẫn ổn định trong điều kiện nhiễu hoặc biến dạng nhẹ. Tuy nhiên, SIFT hoạt động kém hiệu quả đối với các hình ảnh có ít đặc trưng cục bộ hoặc ít góc cạnh, chẳng hạn như hình elip. Thuật toán này phát huy tốt hơn trên các hình ảnh nhiều chi tiết trong môi trường thực tế. Trong phương pháp được đề xuất, SIFT được sử dụng như một phương pháp dự phòng sau khi Multi-Scale Template Matching thất bại, nhằm xác định chính xác hơn vị trí đối tượng trong ảnh thông qua phép khớp đặc trưng cục bộ.
+
+
+\section{Công cụ Cypress}
+
+Cypress \cite{taky2021automated} là một công cụ kiểm thử giao diện người dùng hiện đại dành cho các ứng 
+dụng web, được thiết kế với mục tiêu đơn giản hoá quá trình viết, chạy và giám 
+sát các kịch bản kiểm thử end-to-end. Khác với các framework truyền thống như 
+Selenium vận hành theo mô hình điều khiển trình duyệt từ bên ngoài thông qua 
+WebDriver, Cypress được nhúng trực tiếp vào cùng tiến trình với ứng dụng web 
+đang chạy. Nhờ đó, Cypress có khả năng kiểm soát và truy cập sâu hơn vào thành phần của ứng dụng và thao tác trình duyệt với tốc độ nhanh, độ ổn định cao.
+\clearpage
+
+
+\begin{figure*}[!t]
+	\centering 
+    \includegraphics[width=0.9\textwidth]{image/cypress_architecture.png}
+	\caption{Kiến trúc của Cypress}
+	\label{fig:cypress}
+\end{figure*}
+
+
+
+Hình~\ref{fig:cypress} minh họa các thành phần chính trong kiến trúc Cypress và cách chúng tương tác với nhau.Kiến trúc của Cypress thường được chia thành ba phần chính: \textbf{Test Runner, Cypress Server và Browser}. Test Runner là một giao diện đồ họa người dùng (GUI) cho phép người dùng tương tác với các bộ kiểm thử và xem kết quả, nó cũng hỗ trợ khả năng gỡ lỗi và chụp snapshot trong quá trình kiểm thử. Cypress Test Runner có thể thực hiện các kiểm thử song song trên nhiều máy ảo, giúp tăng tốc đáng kể. Cypress Server là một tiến trình Node.js chạy nền và quản lý tương tác giữa Test Runner và trình duyệt, Cypress sử dụng kiến trúc độc đáo gọi là "Dual Server", trong đó Test Runner và Cypress Server chạy trong các tiến trình riêng biệt. Điều này cho phép Cypress quản lý trình duyệt và thực hiện kiểm thử hiệu quả hơn. Trình duyện trong Cypress là phiên bản trình duyệt thực tế chạy ứng dụng và thực hiện các ca kiểm thử. Cypress giao tiếp với trình duyệt bằng một giao thức tùy chỉnh gọi là giao thức Cypress. Giao thức này cho phép Cypress điều khiển trình duyệt và truy cập các thành phần bên trong, chẳng hạn như DOM và các yêu cầu mạng (network requests).
+
+
+Về quy trình xử lý, Node.js process sẽ khởi tạo một browser với proxy, browser này sẽ được hiển thị với hai iframe là cypress (domain: localhost) và ứng dụng (domain riêng) bởi vì các iframe trên browser không thể trao đổi hoặc tương tác lẫn nhau nếu khác domain nên một script được cài đặt vào ứng dụng đang được kiểm thử để đổi domain của ứng dụng thì localhost. Từ đó Cypress có thể truy cập đến các thành phần khác bên trong ứng dụng như DOM, Window, LocalStorage v.v. Cypress cũng tương tác với Node.js để có thể xin cấp quyền từ hệ điều hành (OS) cho các tác vụ như chụp ảnh hoặc quay video. Do trình duyệt được khởi tạo thông qua proxy, Cypress có thể kiểm soát toàn bộ lưu lượng mạng đi vào và đi ra từ trình duyệt, từ đó cho phép chỉnh sửa request và response theo nhu cầu.
+
+
+
+
+Cypress cung cấp nhiều tính năng hỗ trợ kiểm thử giao diện một cách hiệu quả. Công cụ cho phép truy cập trực tiếp vào các phần tử trong cây DOM và tự động tải lại kịch bản khi có thay đổi, đồng thời hiển thị kết quả ngay lập tức nhằm tối ưu hóa quá trình phát triển và gỡ lỗi. Cơ chế tự động chờ giúp loại bỏ nhu cầu sử dụng các lệnh chờ thủ công trong kịch bản kiểm thử. Bên cạnh đó, Cypress đơn giản hóa quá trình gỡ lỗi thông qua khả năng tạm dừng thực thi và việc cung cấp các thông báo lỗi rõ ràng, dễ hiểu. Công cụ còn hỗ trợ tạo dữ liệu giả và kiểm soát các yêu cầu mạng, giúp mô phỏng phản hồi từ máy chủ và kiểm thử các tình huống ngoại lệ một cách chủ động. Ngoài ra, Cypress cho phép ghi lại video và chụp ảnh màn hình khi chạy trên hệ thống CI, phục vụ việc phân tích và truy vết lỗi.
+
+
+Mặc dù Cypress mang lại nhiều khả năng mạnh trong kiểm thử giao diện người dùng, công cụ này vẫn tồn tại một số hạn chế đáng kể. Cụ thể, Cypress chủ yếu chạy trên các trình duyệt dựa trên Chromium và không hỗ trợ Safari hoặc Internet Explorer. Công cụ cũng không thể thực hiện kiểm thử đa miền do các ràng buộc bảo mật của trình duyệt, đồng thời không hỗ trợ các tình huống liên quan đến nhiều tab hoặc nhiều cửa sổ. Ngôn ngữ viết kiểm thử bị giới hạn trong JavaScript và TypeScript. Đối với ứng dụng di động, Cypress không hỗ trợ kiểm thử ứng dụng gốc và chỉ dừng lại ở khả năng mô phỏng giao diện trình duyệt di động. Bên cạnh đó, việc tương tác với nội dung bên trong iframe còn nhiều hạn chế, và Cypress không cho phép điều khiển đồng thời nhiều phiên trình duyệt.
+
+
+
+
+
+% Trong khóa luận này, Cypress được lựa chọn như một công cụ đối chứng để so 
+% sánh với phương pháp kiểm thử dựa trên hình ảnh được đề xuất. Các kịch bản 
+% kiểm thử được xây dựng dựa trên thao tác DOM truyền thống, sử dụng bộ chọn 
+% (selector) để xác định phần tử và thực thi hành động. 
+% Kết quả thực nghiệm cho 
+% thấy rằng mặc dù Cypress đạt độ chính xác cao và tốc độ tốt trong các giao diện có cấu trúc DOM rõ ràng, công cụ này gặp khó khăn với các ứng dụng như tin tức khi thông tin được load liên tục hay các ứng dụng không có DOM như canvas hoặc SVG phức tạp - nơi phương pháp nhận dạng dựa trên hình ảnh 
+% tỏ ra ưu thế vượt trội.
+
+
+\section{Công cụ SikuliX}
+
+SikuliX là một công cụ tự động hoá giao diện người dùng (Graphical User Interface~-~GUI) dựa trên thị giác máy tính, cho phép mô phỏng hành động của con người thông qua việc nhận dạng và thao tác trực tiếp lên các phần tử hiển thị trên màn hình~\cite{10.1145/1622176.1622213}. Khác với các framework kiểm thử truyền thống như Selenium hay Appium - vốn dựa vào cây DOM hoặc API hệ thống để truy cập phần tử - SikuliX sử dụng phương pháp nhận dạng hình ảnh (image-based recognition) để xác định vị trí và tương tác với các đối tượng đồ hoạ, bất kể công nghệ nền tảng của ứng dụng là gì (Web, Desktop hay Mobile emulator). Nhờ đó, SikuliX có thể kiểm thử được cả các ứng dụng không có cấu trúc DOM, chẳng hạn như canvas, game, hoặc các phần mềm giả lập.
+
+
+\begin{figure*}[!b]
+	\centering 
+    \includegraphics[width=0.9\textwidth]{image/sikuli_architecture.png}
+	\caption{Kiến trúc của Sikuli}
+	\label{fig:sikuli}
+\end{figure*}
+
+
+
+
+Kiến trúc của Sikuli được mô tả như trong hình \ref{fig:sikuli} gồm hai thành phần chính là: \textbf{Sikuli Script} và \textbf{Sikuli IDE} \cite{sikulix_system_design}. Sikuli Script là bộ phận cốt lõi dùng để viết các kịch bản kiểm thử GUI, được xây dựng trên nền tảng Jython (kết hợp Python và Java), cho phép tận dụng thư viện của cả hai ngôn ngữ để tạo các kịch bản phức tạp. Thành phần này cung cấp API để tương tác với giao diện người dùng thông qua hình ảnh và vị trí của chúng. Sikuli IDE là môi trường phát triển tích hợp hỗ trợ tạo, quản lý và chạy kịch bản kiểm thử bằng giao diện đồ họa trực quan, đồng thời cho phép ghi lại thao tác trên giao diện để sinh kịch bản tự động. Ngoài ra, kiến trúc Sikuli còn bao gồm Sikuli Core (thư viện Java dùng để xử lý hình ảnh và tương tác với UI), Sikuli X (phiên bản phát triển mới dựa trên JavaFX nhằm nâng cao tính năng và hiệu suất), và Sikuli Remote (hỗ trợ chạy kịch bản kiểm thử từ xa trên nhiều máy chủ).
+
+
+
+
+
+
+
+Ưu điểm nổi bật của SikuliX là khả năng tự động hoá các thao tác trên mọi ứng dụng hiển thị trên màn hình mà không cần phụ thuộc vào công nghệ nền tảng hoặc cấu trúc mã nguồn. Công cụ này đặc biệt hữu ích trong các trường hợp cần thao tác trên các phần tử đồ hoạ không thể truy cập bằng các công cụ truyền thống, chẳng hạn như biểu tượng, hình ảnh hoặc vùng canvas. Ngoài ra, SikuliX có giao diện thân thiện, cho phép người không chuyên lập trình vẫn có thể dễ dàng tạo kịch bản kiểm thử bằng cách chụp ảnh và mô tả thao tác mong muốn.
+
+
+Tuy nhiên, phương pháp dựa trên hình ảnh của SikuliX cũng tồn tại những hạn chế đáng kể. Việc nhận dạng phụ thuộc mạnh vào độ phân giải, tỉ lệ zoom và giao diện hiển thị của màn hình; chỉ cần sự thay đổi nhỏ về màu sắc, kích thước hoặc giao diện cũng có thể khiến quá trình nhận dạng thất bại. Bên cạnh đó, SikuliX chỉ có thể phát hiện các phần tử nằm trong vùng hiển thị hiện tại (viewport), do đó các phần tử bị che khuất hoặc cần cuộn mới thấy sẽ không thể được xác định~\cite{22}.
+
+
+% Trong nghiên cứu này, SikuliX được sử dụng như một công cụ đối chứng để đánh giá hiệu quả của phương pháp được đề xuất. Các kịch bản kiểm thử giao diện được thực thi bằng cách cung cấp ảnh mẫu của các phần tử (nút, biểu tượng, menu, v.v.), và SikuliX sẽ tự động xác định toạ độ tương ứng trên giao diện web để mô phỏng thao tác người dùng. Kết quả thực nghiệm cho thấy, mặc dù SikuliX đạt độ chính xác cao trong các trường hợp giao diện tĩnh hoặc có cấu trúc đơn giản, nhưng công cụ gặp khó khăn khi các phần tử cần tìm bị che khuất, nằm ngoài vùng cuộn hoặc thay đổi nhỏ về phong cách hiển thị so với ảnh mẫu gốc.
+
+
+
+
+%===================== Phương pháp đề xuất
+\chapter{Phương pháp đề xuất}
+\section{Tổng quan phương pháp đề xuất}
+\par{
+% \textit{Tổng quan:} Phương pháp đề xuất cho phép sinh mã kiểm thử tự động cho ứng dụng Web dựa trên mô tả bằng văn bản và hình ảnh và đặc biệt là công cụ vẽ flowchart có thêm hỗ trợ đầu vào là hình ảnh flowchart bằng cách phân tích ảnh thành các bước kiểm thử tương ứng - điều này giúp tiết kiệm chi phí và thời gian cho các kịch bản dài. Phương pháp thực hiện bốn bước chính: (1) phân tích câu lệnh kiểm thử để trích xuất hành động và đối tượng tương tác, (2) định vị phần tử trên giao diện thông qua ánh xạ DOM hoặc xử lý hình ảnh, (3) sinh mã Selenium Java để thực thi các thao tác kiểm thử và (4) đánh giá độ chính xác nếu kịch bản kiểm thử thực hiện việc vẽ flowchart.
+
+
+% \textit{Bài toán:} Đầu vào là có thể là hai dạng gồm chuỗi các bước kiểm thử dưới dạng văn bản tự nhiên tiếng Anh hoặc ảnh flowchart cần kiểm thử. Ở dạng đầu vào thứ nhất, trong mỗi bước có thể mô tả phần tử cần tương tác bằng văn bản (ví dụ: "Click on File button"), hình ảnh (ví dụ: [rectangle.png]), hoặc tham chiếu đến phần tử đã tạo (ví dụ: "Connect element created in step 2 to element created in step 3"). Đầu ra là mã kiểm thử Selenium Java hoàn chỉnh, ngoài các hành động cơ bản như click, điền thông tin mà còn có khả năng tự động thực thi các thao tác trên draw.io như vẽ hình, kết nối đối tượng, di chuyển, thay đổi kích thước, và xóa phần tử.
+% }
+
+
+
+% Hình \ref{fig:OpenAIFlow} mô tả quy trình tổng quan với bốn thành phần chính. Đầu tiên, nếu đầu vào là ảnh flowchart ta sẻ thực hiện one-shot nhằm chuyển từ ảnh sang các bước kiểm thử, đến đây kịch bản của cả hai đầu vào đều là một dạng gồm chuỗi các hành động. Ta tiến hành phân tích câu lệnh và trích xuất hành động (action), đối tượng tương tác (object), đối tượng liên quan (related\_object), giá trị (value - ví dụ khi thực hiện điền vào 1 trường thông tin). Thứ hai, định vị phần tử theo ba cách: (a) với văn bản, phương pháp tìm kiếm trên DOM và áp dụng mô hình AI nếu cần; (b) với hình ảnh, áp dụng các phương pháp so khớp ảnh; (c) với tham chiếu, truy xuất CSS Selector từ ánh xạ đã lưu. Cuối cùng, sinh mã Java và đồng thời thực thi trên Python WebDriver với cơ chế fallback (retry với các locator khác nhau) song song với đó là cơ chế phát hiện phần tử mới. 
+
+
+
+Để giải quyết vấn đề tự động hóa kiểm thử cho các ứng dụng Web sử dụng SVG, khóa luận này đề xuất phương pháp sinh mã kiểm thử dựa trên mô tả bằng văn bản và hình ảnh. Tư tưởng chung của phương pháp đề xuất là kết hợp khả năng \gls{NaturalLanguageProcessing}, phân tích hình ảnh và định vị phần tử đa phương thức để tự động hóa toàn bộ quy trình từ mô tả kịch bản đến mã kiểm thử thực thi được. Hình \ref{fig:OpenAIFlow} mô tả tổng quan phương pháp đề xuất. Đầu vào của phương pháp có thể là chuỗi các bước kiểm thử dưới dạng văn bản tự nhiên tiếng Anh hoặc ảnh flowchart cần kiểm thử, trong đó mỗi bước có thể mô tả phần tử bằng văn bản (ví dụ: ``Click on File button''), hình ảnh (ví dụ: [rectangle.png]), hoặc tham chiếu đến phần tử đã tạo (ví dụ: ``Connect element created in step 2 to element created in step 3''). Đầu ra là mã kiểm thử Selenium Java hoàn chỉnh có khả năng thực thi các thao tác cơ bản (click, điền các trường thông tin) và nâng cao (vẽ hình, kết nối đối tượng, di chuyển, thay đổi kích thước, và xóa~phần~tử).
+
+
+Phương pháp thực hiện qua bốn bước chính như mô tả trong Hình 3.1. Đầu tiên, nếu đầu vào là ảnh flowchart, phương pháp áp dụng kỹ thuật one-shot learning để chuyển đổi ảnh thành chuỗi các bước kiểm thử dạng văn bản. Thứ hai, phương pháp phân tích câu lệnh kiểm thử để trích xuất các thông tin quan trọng bao gồm hành động, đối tượng tương tác, đối tượng liên quan, và giá trị như nội dung cần điền vào trường thông tin. Thứ ba, phương pháp định vị phần tử trên giao diện theo ba cách khác nhau tùy thuộc vào loại mô tả: (a) với mô tả văn bản, phương pháp tìm kiếm trên cây DOM và áp dụng mô hình AI nếu cần thiết; (b) với mô tả hình ảnh, áp dụng các kỹ thuật so khớp ảnh và xử lý thị giác máy tính; (c) với tham chiếu đến phần tử đã tạo, truy xuất XPath/CSS Selector từ ánh xạ đã lưu trữ trước đó hoặc thông qua \gls{ImageProcessing}. Cuối cùng, phương pháp sinh mã Selenium Java và đồng thời thực thi trên Python WebDriver với cơ chế fallback (tự động thử lại với các locator khác nhau) kết hợp với cơ chế phát hiện phần tử mới được tạo trong quá trình kiểm thử.
+
+\begin{figure*}[!hbpt]
+	\centering 
+	\includegraphics[width=.8\linewidth]{image/luong.png}
+        \vspace{10pt}
+	\caption{Tổng quan phương pháp}
+	\label{fig:OpenAIFlow}
+\end{figure*}
+
+
+\section{Các bước tiến hành}
+
+
+
+Như Hình \ref{fig:OpenAIFlow} mô tả, phương pháp đề xuất được chia thành ba  pha xử lý: (i) phân tích ngữ nghĩa \gls{TestScenario} để trích xuất cấu trúc hành động, (ii) định vị phần tử thông qua ánh xạ văn bản sang \gls{DOMTree}, so khớp hình ảnh, hoặc truy xuất từ ánh xạ đã lưu, và (iii) sinh mã kiểm thử với cơ chế thực thi, phát hiện phần tử mới và fallback.
+
+
+\subsection{Pha phân tích ngữ nghĩa \gls{TestScenario}}
+
+
+\begin{figure*}[!hbpt]
+	\centering 
+	\includegraphics[width=0.95\linewidth]{image/step_parser.png}
+	\caption{Tổng quan pha phân tích ngữ nghĩa kịch bản kiểm thử}
+	\label{fig:step_parser}
+\end{figure*}
+
+
+Phân tích ngữ nghĩa \gls{TestScenario} là giai đoạn đầu tiên và cốt lõi trong quy trình tự động hóa, nhằm trích xuất chính xác các thành phần hành động, đối tượng tương tác, đối tượng liên quan và giá trị từ mỗi bước trong \gls{TestScenario} mô tả bằng ngôn ngữ tự nhiên (Hình \ref{fig:step_parser}). Phương pháp nhận đầu vào là gồm một chuỗi các bước thực thi, mỗi hành động nằm trong một câu. Đối với các trang web thông thường thì một \gls{TestScenario} từ 2~-~8 bước, nhưng đối với các công cụ vẽ sơ đồ khi thực thi kịch bản như vẽ flowchart thì độ dài có thể lên tới 50 bước. Việc xây dựng kịch bản ngôn ngữ tự nhiên cho flowchart rất tốn thời gian và dễ gây ra sai sót, do đó phương pháp bổ sung thêm cơ chế phân tích flowchart người dùng muốn kiểm thử từ ảnh thông qua one-shot learning, qua đó giảm bớt thời gian và công sức cho việc xây dựng kịch bản (chi tiết được trình bày ở phần \hyperref[appendix:flowchart]{Phụ lục A}). Thông thường kết quả one-shot learning đủ để thực thi, đảm bảo đúng yêu cầu và logic, tuy vậy có thể khoảng cách giữa các phần tử trong flowchart không đẹp nên cần sự tinh chỉnh lại kịch bản từ phía kiểm thử viên.
+
+
+
+Ở pha phân tích kịch bản sau khi đưa về cùng dạng là chuỗi các bước kiểm thử, phương pháp sử dụng xử lý tokenize và POS tagging để phân tích cú pháp và từ loại của câu lệnh, đồng thời áp dụng các quy tắc heuristic thông minh để nhận diện hành động dựa trên tập từ khóa như ``open'', ``click'', ``fill'', ``connect'', v.v. Trong quá trình duyệt tuần tự các từ, phương pháp nhận diện các mẫu đặc biệt như URL (khớp với regex \texttt{\textasciicircum https?://}), hình ảnh (khớp với regex \texttt{\textbackslash.(png|jpg|jpeg|gif|svg|bmp|webp)\$} để nhận diện phần mở rộng file ảnh), tham chiếu đến phần tử đã tạo (khớp với regex \texttt{element created in step \textbackslash d+} để trích xuất số bước), và xử lý ngữ cảnh thông qua giới từ vị trí (at, in, on, near, v.v.) bằng cách kiểm tra từ tiếp theo để tránh nhầm lẫn với giới từ thông thường. Đối với hình ảnh được dán trực tiếp vào kịch bản, phương pháp có cơ chế tự động lưu lại hình ảnh để phục vụ cho quá trình thực thi sau đó. Các đối tượng liên quan trực tiếp tới hành động (thường là phần tử trên trang web) được xây dựng từ các cụm danh từ, tính từ hoặc cụm từ có ý nghĩa, loại bỏ stop words, đồng thời giữ nguyên chuỗi gốc để đảm bảo tính chính xác. Giá trị (value) được trích xuất từ nội dung trong dấu ngoặc kép hoặc các phím tắt như ``Enter'', ``Esc''. Hình ảnh được ưu tiên gán thành các phần tử trên trang Web - đối tượng chính của bước thực thi. Kết quả là một bước kiểm thử được phân tích thành cấu trúc rõ ràng gồm hành động, đối tượng thực thi và giá trị thực thi, cung cấp nền tảng vững chắc cho các giai đoạn định vị phần tử và sinh mã tự động tiếp theo.
+
+
+\subsection{Pha định vị phần tử}
+Đối tượng tương tác trong câu lệnh kiểm thử mà người dùng đưa vào có thể là văn bản hoặc hình ảnh, do đó sẽ tương ứng với 3 cơ chế: Cơ chế tìm phần tử theo văn bản, cơ chế tìm phần tử theo hình ảnh và cơ chế tìm phần tử dựa trên ánh xạ từ bước trước.
+
+\subsubsection{Cơ chế tìm phần tử theo văn bản}
+
+Thuật toán của cơ chế này được trình bày ở Thuật toán \ref{alg:locateElementFromText} và tổng quan cơ chế được mô tả ở Hình \ref{fig:by_text}.
+% Đầu tiên, ta khởi tạo Chrome WebDriver với các thiết lập cố định nhằm đảm bảo tính ổn định trong quá trình thu thập dữ liệu DOM (dòng \ref{line:text_dong3}). 
+Phương pháp tìm kiếm được triển khai theo hai giai đoạn. Giai đoạn thứ nhất thực hiện đối sánh trực tiếp dựa trên văn bản trong từng thẻ DOM, thuộc tính, hoặc nhãn gắn với phần tử DOM (dòng \ref{line:text_dong7}--\ref{line:text_dong18}). Trong trường hợp không tìm thấy (dòng \ref{line:text_dong21}), ta thực hiện giai đoạn hai bằng cách áp dụng so khớp ngữ nghĩa bằng cách tính toán độ tương đồng cosine (dòng \ref{line:text_dong26}) giữa biểu diễn vector của từ khóa tìm kiếm (dòng \ref{line:text_dong23}) và các chuỗi văn bản được trích xuất từ DOM (dòng \ref{line:text_dong24}--\ref{line:text_dong25}). Cách tiếp cận này vừa đảm bảo độ chính xác khi phần tử có thể xác định rõ ràng, vừa duy trì khả năng tìm kiếm linh hoạt đối với các trường hợp văn bản không khớp chính xác. Cuối cùng chọn ra những phần tử có độ tương đồng cao nhất (dòng \ref{line:text_dong27}--\ref{line:text_dong28}) và tạo XPath cho chúng (dòng \ref{line:text_dong31}). 
+
+
+
+\begin{figure*}[!hbpt]
+	\centering 
+	\includegraphics[width=0.95\linewidth]{image/by_text.png}
+	\caption{Tổng quan cơ chế tìm phần tử theo văn bản}
+	\label{fig:by_text}
+\end{figure*}
+
+
+
+
+
+\begin{algorithm}[!hbpt]
+\caption{Quy trình định vị phần tử từ văn bản mô tả}
+\label{alg:locateElementFromText}
+    \begin{algorithmic}[1]
+        \STATE \textbf{Input: } $text\_description$ - Văn bản mô tả phần tử
+        \STATE \textbf{Output: } $xpath$ - XPath của phần tử
+        
+        \STATE $dom \gets$ parseHTML(page\_source) \label{line:text_dong3}
+        \STATE $keyword, tag \gets$ tokenize($text\_description$) \label{line:text_dong4}
+        \STATE $candidates \gets \emptyset$
+        
+        % \STATE \COMMENT{Tìm kiếm trực tiếp bằng keyword matching}
+        \IF{$tag \in tagMapping$} \label{line:text_dong7} 
+            \STATE $htmlTags \gets$ tagMapping[$tag$] \label{line:text_dong8}
+            \FOR{each $element$ in dom.findAll($htmlTags$)}
+                \IF{$keyword \subseteq$ getAllText($element$)} \label{line:text_dong10}
+                    \STATE $candidates \gets candidates \cup \{element\}$ \label{line:text_dong12}
+                \ENDIF
+            \ENDFOR
+        \ELSE
+            \FOR{each $element$ in dom.findAll()}
+                \IF{$text\_description \subseteq$ getAllText($element$)}
+                    \STATE $candidates \gets candidates \cup \{element\}$ \label{line:text_dong18}
+                \ENDIF
+            \ENDFOR
+        \ENDIF
+        
+        % \STATE \COMMENT{Nếu không tìm thấy, dùng semantic similarity}
+        \IF{$candidates = \emptyset$} \label{line:text_dong21}
+            \STATE $model \gets$ loadSentenceEncoder() \label{line:text_dong22}
+            \STATE $queryEmb \gets$ model.encode($text\_description$) \label{line:text_dong23}
+            \STATE $elements, texts \gets$ extractElementsWithText($dom$) \label{line:text_dong24}
+            \STATE $elementEmbs \gets$ model.encode($texts$) \label{line:text_dong25}
+            \STATE $similarities \gets$ cosineSimilarity($queryEmb$, $elementEmbs$) \label{line:text_dong26}
+            \STATE $topK \gets$ argTopK($similarities$, $k=1$) \label{line:text_dong27}
+            \STATE $candidates \gets \{elements[i] : similarities[i] > threshold, i \in topK\}$ \label{line:text_dong28}
+        \ENDIF
+        
+        \STATE $xpath \gets$ $candidates \neq \emptyset$ ? buildXPath($candidates$) : "//not-found" \label{line:text_dong31}
+        \STATE \textbf{return} $xpath$
+    \end{algorithmic}
+\end{algorithm}
+
+
+
+% Phương pháp tìm kiếm truyền thống bắt đầu bằng việc phân tích câu tìm kiếm để hiểu ý định của người dùng (dòng \ref{line:text_dong4}). Phương pháp sẽ tách câu tìm kiếm thành các từ riêng biệt và cố gắng nhận diện loại phần tử cần tìm. Ví dụ, khi người dùng tìm kiếm ``Login button'', phương pháp hiểu rằng cần tìm một nút bấm có liên quan đến chức năng đăng nhập. Từ ``button'' giúp phương pháp biết cần tập trung vào các thẻ HTML như button, input hoặc link (dòng \ref{line:text_dong7}–\ref{line:text_dong8}). 
+
+
+
+Phương pháp tìm kiếm truyền thống bắt đầu bằng việc phân tích câu tìm kiếm để hiểu ý định của người dùng (dòng~\ref{line:text_dong4}). Phương pháp sẽ tách câu thành các từ riêng biệt và nhận diện loại phần tử cần tìm. Ví dụ, khi tìm kiếm ``Login button'', phương pháp hiểu cần tìm nút bấm liên quan đến đăng nhập. Từ ``button'' giúp xác định các thẻ HTML như~\texttt{button}, \texttt{input} hoặc~\texttt{link} (dòng~\ref{line:text_dong7}--\ref{line:text_dong8}).
+
+
+
+Để tìm kiếm hiệu quả, phương pháp thu thập thông tin văn bản từ nhiều nguồn khác nhau của mỗi phần tử (dòng \ref{line:text_dong10}). Không chỉ dừng lại ở nội dung hiển thị trên giao diện, phương pháp còn xem xét các thuộc tính có thể không hiển thị trực tiếp trên giao diện như placeholder, title, aria-label và name. Đối với các ô nhập liệu, phương pháp còn tìm kiếm các nhãn có liên kết với ô đó. Với các checkbox và radio button, phương pháp kiểm tra cả văn bản xung quanh và phần tử cha để có được bức tranh đầy đủ về ngữ cảnh của phần tử. Quá trình so khớp được thực hiện theo từng mức: ưu tiên tìm văn bản khớp hoàn toàn, sau đó mở rộng sang phần tử chứa từ khóa chính (dòng \ref{line:text_dong10}–\ref{line:text_dong12}), với so sánh không phân biệt hoa thường. Khi tìm thấy, phương pháp sinh XPath và trả về kết quả tốt nhất.
+
+
+
+Khi phương pháp tìm kiếm truyền thống không mang lại kết quả (dòng \ref{line:text_dong21}), phương pháp sẽ tự động chuyển sang sử dụng mô hình học sâu dùng để chuyển văn bản thành vector ngữ nghĩa (dòng \ref{line:text_dong22}). Đây là điểm đặc biệt của phương pháp, cho phép tìm kiếm các phần tử ngay cả khi từ ngữ mô tả không khớp chính xác với văn bản trên giao diện. 
+
+
+Quy trình bắt đầu bằng việc chuyển đổi câu tìm kiếm (dòng \ref{line:text_dong23}) và văn bản của các phần tử (dòng \ref{line:text_dong24}–\ref{line:text_dong25}) thành vector ngữ nghĩa trong không gian nhiều chiều. Sau đó, độ tương đồng giữa các vector được tính bằng cosine similarity (dòng \ref{line:text_dong26}), với giá trị càng gần một thể hiện mức độ tương đồng càng cao. Các phần tử được sắp xếp theo thứ tự giảm dần điểm số (dòng \ref{line:text_dong27}), và chọn ra k phần tử có khả năng tương tác trên giao diện mà có điểm số cao nhất xếp theo thứ tự giảm dần (dòng \ref{line:text_dong28}) để trả về cho người dùng. Phương pháp này vẫn cho kết quả chính xác ngay cả khi văn bản trên phần tử giao diện và truy vấn tìm kiếm thuộc hai ngôn ngữ khác nhau. Ví dụ, giao diện hiển thị “Mật khẩu” nhưng người dùng nhập “Password field” thì phương pháp vẫn có thể nhận diện và định vị đúng phần tử tương~ứng. 
+% Kết quả này đạt được nhờ việc sử dụng mô hình \texttt{paraphrase-multilingual-MiniLM-L12-v2}, một sentence-transformer đa ngôn ngữ hỗ trợ hơn 50 ngôn ngữ với vector embedding 384 chiều cho phép ánh xạ các biểu thức văn bản từ nhiều ngôn ngữ khác nhau vào cùng một không gian vector ngữ nghĩa. 
+% Ngưỡng độ tương đồng cosine được đặt ở mức 0.0, cho phép linh hoạt tối đa trong việc chấp nhận các kết quả có điểm số dương. Sỡ dĩ được đặt ở mức 0.0 thay vì 0.7 hay 0.8 do các văn bản cùng ngữ nghĩa nhưng khác ngôn ngữ có độ tương đồng khá thấp (khoảng 0.3 -- 0.4). Nhờ đó, giúp cơ chế so khớp dựa trên độ tương đồng cosine hoạt động hiệu quả ngay cả trong bối cảnh đa ngôn ngữ.
+
+
+Cuối cùng là bước tạo XPath (dòng \ref{line:text_dong31}), trong đó phương pháp ưu tiên sử dụng thuộc tính id và XPath tuyệt đối. Các thuộc tính khác như class, name, value, v.v. không được dùng vì qua thực nghiệm cho thấy chúng thường không đảm bảo tính duy nhất của phần~tử.
+
+Phương pháp trả về hai dạng XPath. Đầu tiên là XPath dựa trên \texttt{id} với cú pháp \texttt{//*[@id='id\_value']}, được ưu tiên sử dụng khi phần tử có thuộc tính \texttt{id}. Dạng này ngắn gọn, dễ đọc và có tốc độ truy vấn nhanh do tính duy nhất của \texttt{id} trong DOM, đồng thời ổn định khi cấu trúc HTML thay đổi. Ví dụ, với phần tử \texttt{<button id="submit-btn">Submit</button>}, XPath trả về sẽ là \texttt{//*[@id='submit-btn']}. Dạng thứ hai là XPath tuyệt đối, ví dụ \texttt{/html/body/div[1]/button[2]}, được áp dụng khi phần tử không có thuộc tính \texttt{id} hoặc \texttt{id} rỗng. XPath này theo dõi toàn bộ đường dẫn từ root element đến phần tử mục tiêu, sử dụng index \texttt{[n]} để phân biệt các anh em cùng tag. Tuy vậy, dạng này dài và dễ bị ảnh hưởng khi cấu trúc HTML thay đổi.
+
+
+
+
+
+
+\subsubsection{Cơ chế tìm phần tử theo hình ảnh}
+
+
+
+\begin{figure*}[!hbpt]
+	\centering 
+	\includegraphics[width=0.95\linewidth]{image/by_image.png}
+	\caption{Tổng quan cơ chế tìm phần tử theo hình ảnh}
+	\label{fig:by_image}
+\end{figure*}
+
+\begin{algorithm}[H]
+\caption{Quy trình định vị phần tử từ ảnh chụp}
+\label{alg:locateElementFromImage}
+    \begin{algorithmic}[1]
+        \STATE \textbf{Input: } $img\_element$ - Ảnh chụp phần tử
+        \STATE \textbf{Output: } $xpath$ - XPath của phần tử tương ứng
+        \STATE $xpath \gets \emptyset$
+        
+        \STATE $fullPageScreenshot \gets$ captureFullPage(CDP) \label{line: dong10}
+        
+        \STATE $match \gets$ templateMatch($template$, $fullPageScreenshot$) \label{line: dong11}
+        
+        \IF{$match.score \geq threshold$} 
+            \STATE $position \gets match.center$  \label{line: dong13}
+        \ELSE
+            \STATE $position \gets$ featureMatch($template$, $fullPageScreenshot$) \label{line: dong15}
+        \ENDIF
+        
+        \STATE $candidates \gets$ detectTemplate($template$, $scrollableContainers$)  \label{line: dong9}
+        \IF{$position \neq \emptyset$}
+            \STATE $candidates \gets candidates \cup \{position\}$ \label{line: dong17}
+        \ENDIF
+        \STATE $node \gets$ selectBestMatch($candidates$, $container$)  \label{line: dong19}
+        \STATE $xpath \gets$ buildXPath($node$) \label{line: dong20}
+        
+        \STATE \textbf{return} $xpath$
+    \end{algorithmic}
+\end{algorithm}
+
+
+
+Đối với việc xác định phần tử theo hình ảnh (Thuật toán \ref{alg:locateElementFromImage} và Hình ảnh \ref{fig:by_image}), quy trình sẽ tiếp tục tạo ra một bản sao trực quan, nhất quán của toàn bộ trang web. Phương pháp 
+% này sử dụng Giao thức Công cụ cho nhà phát triển của Chrome (Chrome DevTools Protocol - CDP) để có thể 
+chụp lại màn hình dưới góc nhìn của người dùng, giữ nguyên cửa sổ màn hình cũng được tùy chỉnh tùy theo mong muốn của người dùng (dòng \ref{line: dong10}).
+
+
+Sau khi có được ảnh chụp màn hình, giai đoạn tiếp theo là xác định vị trí của phần tử mong muốn dựa trên một ảnh mẫu (template image) do người dùng cung cấp. Để tăng cường độ chính xác và khả năng thích ứng, phương pháp này áp dụng một chiến lược hai~lớp. Đầu tiên là sử dụng Multi-scale Template Matching - đây là phương pháp ưu tiên hàng đầu. Thuật toán sẽ thay đổi kích thước của ảnh mẫu qua nhiều tỷ lệ khác nhau và sử dụng hàm đối sánh tương quan chuẩn hóa (TM\_CCOEFF\_NORMED) để tìm kiếm sự hiện diện của nó trên ảnh chụp toàn trang (dòng \ref{line: dong11}). Cách tiếp cận này rất hiệu quả trong việc xử lý các thay đổi nhỏ về kích thước của phần tử do các độ phân giải màn hình khác nhau. Sự lựa chọn này đảm bảo bao phủ hầu hết các trường hợp thay đổi kích thước phần tử trên các thiết bị và độ phân giải khác nhau. Phương pháp tính tương quan sử dụng TM\_CCOEFF\_NORMED, cho kết quả chuẩn hóa trong khoảng [-1, 1], giúp so sánh một cách nhất quán giữa các lần khớp. Trong trường hợp Multi-Scale Template Matching thất bại, chẳng hạn như khi phần tử bị xoay, biến dạng phối cảnh, hoặc thay đổi nhẹ về màu sắc, phương pháp sẽ tự động chuyển sang một phương pháp mạnh mẽ hơn. Thuật toán SIFT (Scale-Invariant Feature Transform) được sử dụng để phát hiện và mô tả các điểm đặc trưng (keypoints) bất biến trong cả ảnh mẫu và ảnh toàn trang. Bằng cách tìm các cặp đặc trưng tương ứng, phương pháp có thể định vị chính xác vùng bao (bounding box) của phần tử ngay cả trong những điều kiện phức tạp (dòng \ref{line: dong15}). Kết quả của giai đoạn này là tọa độ pixel tuyệt đối (x, y) của tâm phần tử trên ảnh chụp toàn~trang.
+
+% Tiếp theo là giai đoạn bắt đầu chuyển đổi sang XPath bằng sách sử dụng JavaScript để lấy ra phần tử nằm tại tọa độ vừa tính. Việc tìm được tọa độ pixel chỉ là bước đầu, bước quan trọng hơn là xác định phần tử HTML có khả năng tương tác tại vị trí đó. Phương pháp thực hiện cuộn trang để đưa phần tử vào tầm nhìn, sau đó xác định XPath tại tọa độ vừa tìm. Phương pháp này ưu tiên tạo XPath dựa trên thuộc tính id của phần tử vì đây là định danh duy nhất và ít thay đổi nhất. Nếu id không tồn tại, một XPath tuyệt đối dựa trên vị trí (positional XPath) sẽ được tạo ra như một giải pháp thay thế đáng tin cậy (dòng \ref{line: dong17} -- \ref{line: dong19}). Phương pháp xác định XPath ở cơ chế này tương đồng với phương pháp xác định XPath ở cơ chế tìm phần tử bằng văn bản.
+
+
+Để đảm bảo và nâng cao tính chính xác, phương pháp tìm kiếm cả những phần tử ở khu vực cuộn, thay vì phân tích một ảnh tĩnh, phương pháp này chủ động tương tác với trang web để khám phá toàn bộ nội dung (dòng~\ref{line: dong9}). Phương pháp bắt đầu bằng việc xác định các vùng có thể cuộn trên trang, bao gồm cả toàn trang và các container con có thuộc tính overflow cho phép cuộn. Mỗi vùng được duyệt tuần tự theo từng bước cuộn nhỏ, tại mỗi vị trí phương pháp chụp màn hình và áp dụng Multi-Scale Template Matching để tính điểm tin cậy (confidence score). Trong quá trình này, chỉ những kết quả vừa có điểm cao vừa được xác minh nằm trong đúng container mới được chấp nhận. 
+
+Cuối cùng, phương pháp chọn ra phần tử tốt nhất từ hai bước trên là tìm kiếm trên giao diện người dùng và tìm kiếm ở những khu vực cần tương tác như cuộn (dòng \ref{line: dong17}). Từ tọa độ của chúng, phương pháp tham chiếu sang các node trên \gls{DOMTree} (dòng \ref{line: dong19}) và xây dựng XPath (dòng \ref{line: dong20}). Việc xây dựng XPath có điểm tương đồng với cơ chế tìm phần tử theo văn bản, cụ thể phương pháp này ưu tiên tạo XPath dựa trên thuộc tính id của phần tử vì đây là định danh duy nhất và ít thay đổi nhất. Nếu id không tồn tại, một XPath tuyệt đối dựa trên vị trí (Absolute XPath) sẽ được tạo ra như một giải pháp thay thế đáng tin cậy. Kết quả cuối cùng là XPath của phần tử tốt nhất được trả về để phục vụ cho các pha tiếp theo.
+
+
+
+
+
+% \begin{algorithm}[H]
+% \caption{Quy trình định vị phần tử từ ảnh chụp}
+% \label{alg:locateElementFromImage}
+%     \begin{algorithmic}[1]
+%         \STATE \textbf{Input: } $img\_element$ - Ảnh chụp phần tử
+%         \STATE \textbf{Output: } $xpath$ - XPath của phần tử tương ứng
+%         \STATE $xpath \gets \emptyset$
+
+        
+%         \STATE $fullPageScreenshot \gets$ captureFullPage(CDP) \label{line: dong10}
+        
+%         \STATE $match \gets$ templateMatch($template$, $fullPageScreenshot$) \label{line: dong11}
+        
+%         \IF{$match.score \geq threshold$}
+%             \STATE $position \gets match.center$ \label{line: dong13}
+%         \ELSE
+%             \STATE $position \gets$ featureMatch($template$, $fullPageScreenshot$) \label{line: dong15}
+%         \ENDIF
+
+%         \IF{$position \neq \emptyset$} \label{line: dong17}
+%             \STATE $node \gets$ domFromCoordinates($position$)
+%             \STATE $xpath \gets$ buildXPath($node$) \label{line: dong19}
+%         \ELSE
+%             \STATE $candidates \gets$ detectTemplate($template$, $scrollableContainers$)  \label{line: dong21}
+%             \STATE $node \gets$ selectBestMatch($candidates$, $container$) 
+%             \STATE $xpath \gets$ buildXPath($node$)  \label{line: dong23} 
+
+
+%         \ENDIF
+
+%         \STATE \textbf{return} $xpath$
+%     \end{algorithmic}
+% \end{algorithm}
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Cơ chế tìm phần tử dựa trên ánh xạ từ bước trước}
+Trong bộ dữ liệu hiện tại, cơ chế này được sử dụng khi người dùng muốn tương tác với phần tử được tạo ra ở bước trước đó. Chẳng hạn ở bước 2 có hành động là ``Click on [rectangle.png]'' và tới bước 8 ta muốn di chuyển phần tử đó sang phải thì sử dụng câu lệnh ``Move the element created in step X''. Tôi đề xuất hai phương pháp để giải quyết vấn đề này tùy thuộc khu vực vẽ có được hiển thị trực tiếp trên DOM không. \mbox{}\\[-2.5em]
+
+\paragraph{\hspace*{1.2em}\textit{Trường hợp 1: Không gian thiết kế hiển thị trực tiếp trong DOM}} \mbox{}\\[-1.5em]
+
+Trường hợp này có thể quan sát thấy ở Draw.io và Visual Paradigm, trong đó các phần tử trong không gian thiết kế được bao bọc trong thẻ <svg>, và mỗi phần tử nằm trong một thẻ <g> riêng biệt. Bằng cách so sánh DOM trước đó với DOM hiện tại, ta có thể dễ dàng xác định xem có phần tử nào mới được thêm vào không gian thiết kế hay không. Khi phát hiện phần tử mới xuất hiện, phương pháp sẽ cập nhật và thêm phần tử đó vào mapping, trong đó lưu trữ giá trị bước tạo phần tử cùng với XPath đầy đủ của chúng. Nhờ vậy, khi phần tử trong kịch bản được mô tả dưới dạng ``element created in step X'', ta có thể dễ dàng tham chiếu đến đúng phần tử cần sử dụng.
+
+
+Tuy nhiên, khi nhiều phần tử xuất hiện đồng thời, việc xác định đúng phần tử cần thao tác trở nên khó khăn. Có hai hướng xử lý cho trường hợp này. Hướng thứ nhất là dựa vào \gls{ImageProcessing}: ta có thể tái dựng từng thẻ <g> và nhận diện chúng thông qua hình ảnh. Phương pháp này có nhược điểm là khi hình ảnh càng phức tạp thì việc xử lý càng khó khăn và tốn thời gian. Hướng thứ hai là dựa vào quy luật sắp xếp của các phần tử trên DOM. Cụ thể, những phần tử như hình chữ nhật, hình tròn, hình thang thường xuất hiện xen kẽ giữa các đường nối (trên Draw.io), hoặc nằm phía trên các đường nối (trên Visual Paradigm). Mặc dù cách tiếp cận này ít linh hoạt khi thực hiện kiểm thử trên nhiều ứng dụng Web khác nhau, nhưng nó đảm bảo độ chính xác cao và tốc độ tìm kiếm phần tử gần như tức thì.\mbox{}\\[-2.5em]
+
+
+
+\paragraph{\hspace*{1.2em}\textit{Trường hợp 2: Không gian thiết kế không hiển thị trong DOM}} \mbox{}\\[-1.5em]
+
+Phương pháp phát hiện phần tử thông nhận dạng hình dạng khi DOM không hiển thị chi tiết từng phần tử, điển hình là Lucidchart. Đầu tiên xem xét hành động vừa thực hiện có tạo ra phần tử mới không, và phần tử mới là hình gì bằng cách phát hiện sự khác biệt giữa các ảnh bằng cách so sánh DOM hoặc ảnh chụp màn hình trước và sau khi có thao tác. Cụ thể, ta chuyển đổi hai ảnh sang ảnh xám, thực hiện phép trừ ảnh sau cho ảnh trước khi thực thi sau đó áp dụng ngưỡng để tạo ra ảnh mask chỉ chứa các phần tử mới xuất hiện. Kết quả được lưu lại với tên của phần tử mới (ví dụ hình chữ nhật) kèm theo bước tạo phần tử đó, nhận dạng loại hình dạng và xác định vị trí chính xác của chúng. 
+
+
+Quy trình cụ thể được thực hiện như sau: phương pháp sẽ kiểm tra ảnh từ đầu vào và phân loại hình dạng thành một trong các loại: hình thoi, hình elip, hình chữ nhật hoặc hình bình hành, hoặc ``unknown'' nếu không nhận dạng được. Sau khi xác định được loại hình, phương pháp tiếp tục tìm kiếm hình dạng lớn nhất trong ảnh mask và trả về tọa độ trung tâm đối với elip, hoặc tọa độ giao điểm của hai đường chéo đối với hình thoi, hình chữ nhật và hình bình hành. Mỗi loại hình có thuật toán nhận dạng riêng biệt: hình thoi được xác định bằng cách kiểm tra 4 đỉnh với 2 đường chéo vuông góc và 4 cạnh gần bằng nhau, đồng thời loại bỏ các hình có 2 cạnh đối diện nằm ngang; hình elip được nhận dạng thông qua việc fit ellipse vào contour và so sánh diện tích lý thuyết với thực tế; còn hình chữ nhật và hình bình hành được phân biệt dựa trên việc kiểm tra 2 cặp cạnh đối diện song song và sự có mặt của góc vuông. Tuy nhiên, phương pháp này có một nhược điểm là hiện tại mới chỉ hỗ trợ nhận dạng bốn loại hình dạng cơ bản (hình thoi, hình elip, hình chữ nhật và hình bình hành), chưa thể mở rộng cho các hình dạng phức tạp hoặc tùy chỉnh khác do các mô hình \gls{ImageProcessing} hiện nay chủ yếu hoạt động hiệu quả với những hình dạng đơn giản.
+
+
+
+
+
+
+
+\subsection{Pha sinh mã kiểm thử với cơ chế thực thi, phát hiện phần tử mới và fallback}
+
+
+
+
+
+
+
+Pha sinh mã kiểm thử là giai đoạn cuối cùng trong quy trình tự động hóa kiểm thử, nơi các thông tin từ phân tích ngữ nghĩa và định vị phần tử được tổng hợp để tạo ra mã nguồn Java có thể thực thi được, đồng thời thực hiện các hành động kiểm thử trực tiếp trên trình duyệt thông qua Python WebDriver. Quá trình trên mỗi bước được minh họa bằng Hình \ref{fig:execute}. Quá trình này không chỉ đảm bảo mã được sinh ra chính xác mà còn tích hợp các cơ chế mạnh mẽ như thực thi song song, phát hiện phần tử mới, và cơ chế dự phòng (fallback) để xử lý các tình huống động và phức tạp trong các ứng dụng web. Mục tiêu là tạo ra một quy trình liền mạch, nơi mã kiểm thử được sinh tự động, thực thi ngay lập tức để xác nhận tính đúng đắn, và có khả năng thích nghi với các thay đổi trong giao diện người dùng, đặc biệt trong các ứng dụng như các công cụ vẽ sơ đồ trực tuyến.
+
+
+\vspace{1cm}
+
+
+\begin{figure*}[!hbpt]
+	\centering 
+	\includegraphics[width=0.75\linewidth]{image/execute.png}
+	\caption{Tổng quan pha thực thi và sinh mã kiểm thử trên mỗi bước}
+	\label{fig:execute}
+\end{figure*}
+
+
+
+Quá trình sinh mã kiểm thử bắt đầu bằng việc ánh xạ các hành động đã trích xuất (như ``click'', ``fill'', ``connect'', ``drag'') thành các lệnh Selenium trong Java. Mỗi hành động được chuyển đổi thành các đoạn mã tương ứng, sử dụng các lớp để đảm bảo phần tử đã sẵn sàng trước khi thực hiện hành động và xử lý các tương tác phức tạp như kéo thả chuột. Phương pháp sử dụng các biến trạng thái để quản lý ngữ cảnh. Đối với các bước liên quan đến tham chiếu phần tử đã tạo trước đó (ví dụ, ``element created in step X'' hoặc ``connector\_from\_stepX\_to\_stepY''), phương pháp truy xuất CSS Selector từ các ánh xạ đã lưu, đảm bảo tính liên kết giữa các bước và duy trì tính nhất quán trong mã. Các đoạn mã được tạo ra bao gồm cả việc khai báo biến cho phần tử, thực thi hành động, và xử lý các giá trị đầu vào (như văn bản cần điền vào trường nhập liệu), tạo ra một kịch bản kiểm thử hoàn chỉnh có thể chạy độc lập. Trong trường hợp này, CSS Selector được sử dụng để xác định vị trí phần tử thay cho XPath, bởi CSS Selector cho độ ổn định cao hơn khi các phần tử nằm sâu bên trong các thẻ <svg> và <g>. XPath không thể tham chiếu trực tiếp đến các thẻ này và phần lớn chúng cũng không có thuộc tính id, khiến việc định vị phần tử bằng XPath trở nên bất khả thi trong nhiều tình huống. Mặc dù vậy, trong các trường hợp khác của khóa luận, XPath vẫn được ưu tiên sử dụng nhờ khả năng linh hoạt vượt trội khi làm việc với các cấu trúc DOM phức tạp.
+
+
+
+Song song với việc sinh mã, phương pháp thực thi các hành động trực tiếp trên trình duyệt để xác nhận tính chính xác của các vị trí được sử dụng. Sau mỗi bước, thực hiện hành động tương ứng (như nhấp chuột, nhập văn bản) trên trang web, cho phép phương pháp phát hiện lỗi ngay lập tức, chẳng hạn như khi một vị trí không tìm thấy phần tử. Để tăng cường độ tin cậy, cơ chế dự phòng (fallback) được tích hợp: lưu trữ một danh sách các vị trí thay thế (XPath hoặc CSS Selector) cho mỗi bước trong lần thực thi đầu tiên. Nếu một vị trí thất bại, phương pháp sẽ thử lại với vị trí tiếp theo trong danh sách, sử dụng một biến để theo dõi số lần thử lại, trong khóa luận này số lần thử lại là 5 - con số được rút ra từ thực nghiệm đảm bảo rằng tốc độ và độ chính xác được cân bằng. Danh sách này được lưu trong một cấu trúc mapping để quản lý vị trí đang sử dụng, đảm bảo quá trình thử lại diễn ra mượt mà và không gây gián đoạn.
+Cơ chế phát hiện phần tử mới là một phần quan trọng, đặc biệt khi xử lý các ứng dụng web động nơi các hành động như nhấp chuột hoặc kết nối có thể tạo ra các phần tử mới trong DOM (Document Object Model). 
+
+
+
+
+Sau mỗi hành động có khả năng tạo phần tử (như ``click'' hoặc ``connect''), phương pháp chụp snapshot của DOM trước và sau hành động, tập trung vào các phần tử  trong container SVG (thường thấy trong các ứng dụng vẽ sơ đồ). Các phần tử mới được xác định bằng cách so sánh các snapshot này, lọc ra các CSS Selector không tồn tại trong DOM ban đầu. Những phần tử này sau đó được phân loại thành hai loại: elements (phần tử thông thường từ hành động như nhấp chuột) và connectors (kết nối giữa các phần tử, từ hành động như ``connect''). Quá trình phân loại được thực hiện bằng cách sắp xếp các phần tử theo thứ tự xuất hiện trong DOM, đảm bảo rằng các phần tử giữa các bước được gán chính xác.
+
+
+% Để hỗ trợ các ứng dụng phức tạp, phương pháp sử dụng thông tin từ danh sách chứa chi tiết về các bước đã thực thi (như số bước, hành động, và tham chiếu từ). Các phần tử mới được gán vào ánh xạ dựa trên thứ tự logic: ví dụ, một connector từ bước X đến bước Y sẽ được xử lý trước phần tử được tạo ở bước X+1, phản ánh cấu trúc DOM nơi các kết nối thường xuất hiện trước phần tử đích. Nếu phát hiện số lượng phần tử mới vượt quá số bước đã tạo trước đó, phương pháp cập nhật ánh xạ và ghi nhận các bước tạo phần tử mới, đồng thời lưu trữ danh sách CSS Selector của các phần tử mới để sử dụng trong các bước sau. Trường hợp không có phần tử mới, phương pháp vẫn đảm bảo ánh xạ được cập nhật để duy trì tính nhất quán.
+Cuối cùng, sau khi tất cả các bước được xử lý, mã Java hoàn chỉnh được ghép lại từ các đoạn mã riêng lẻ của từng bước, bao gồm việc khởi tạo trình duyệt, thực thi hành động, và đóng trình duyệt. Quá trình thực thi song song trên Python WebDriver không chỉ xác nhận tính đúng đắn của mã mà còn cung cấp phản hồi tức thời về các lỗi tiềm ẩn, như phần tử không tìm thấy hoặc DOM thay đổi bất ngờ. Cơ chế này, kết hợp với thử lại (fallback) và phát hiện phần tử mới, đảm bảo phương pháp có thể xử lý các ứng dụng web động với độ chính xác cao, đặc biệt trong các kịch bản phức tạp như tạo sơ đồ hoặc biểu đồ trực tuyến, nơi các phần tử mới xuất hiện thường xuyên và yêu cầu ánh xạ chính xác để tiếp tục thực thi.
+
+
+
+
+
+%=================== Thực nghiệm
+\chapter{Thực nghiệm}
+Để đánh giá hiệu quả của phương pháp đề xuất, thực nghiệm trả lời các~câu~hỏi~sau~đây:
+
+\begin{itemize}
+    \item \textit{RQ1} - \textbf{Tính hiệu quả của phương pháp trên các công cụ vẽ sơ đồ trực tuyến:} Đánh giá khả năng thực thi các kịch bản từ đơn giản (gồm các hành động phổ biến trên web) tới phức tạp (như vẽ flowchart)?
+
+    \item \textit{RQ2} - \textbf{Hiệu năng:} Đánh giá thời gian thực thi trung bình và chi phí token?
+    % và so sánh hiệu quả thực thi kịch bản phức tạp giữa kiểm thử tự động và kiểm thử thủ công?
+
+    \item \textit{RQ3} - \textbf{Tính hiệu quả của phương pháp trên các trang web phổ biến (tin tức, tìm kiếm):} Đánh giá khả năng sinh mã kiểm thử thành công trên đa dạng các trang web so với các công cụ phổ biến (Cypress + SikuliX)?
+
+    
+\end{itemize}
+
+Thực nghiệm được thực hiện trên máy tính cá nhân sử dụng AMD Ryzen 5 5600H (6C/12T), 8GB DDR4-3200 RAM, NVIDIA RTX 3050 Ti Laptop GPU (4GB VRAM), cùng 512GB NVMe SSD, chạy Windows 11. Mục tiêu của RQ1 là đánh giá khả năng thực thi kịch bản trên các công cụ vẽ sơ đồ trực tuyến, RQ2 đánh giá về hiệu năng của các kịch bản trong RQ1 và RQ3 đánh giá khả năng của phương pháp trên các miền ứng dụng Web khác. 
+
+
+
+
+
+% 4.1.1 tin tức
+% 4.1.2 drawio
+% thêm hình để mô tả bộ dữ liệu
+
+
+\section{Bộ dữ liệu}
+\subsection{Khảo sát các bộ dữ liệu có sẵn}
+
+Mục đích của nghiên cứu là tạo ra một công cụ có thể tự động hóa quy trình kiểm thử web dựa trên mô tả bằng ngôn ngữ tự nhiên, với việc chú trọng vào các phần tử đồ họa tương tác (SVG). Do đó bộ dữ liệu cần được thiết kế dưới dạng chuỗi bước mà kiểm thử viên thực tế viết: mô tả rõ hành động (click, fill, type…), mục tiêu (selector/miêu tả ảnh). Sau đó chuyển đổi mô tả đó thành kịch bản kiểm thử dưới dạng mã thực thi được.
+
+
+Hiện tại chưa có benchmark công khai hoặc chuẩn hóa dành riêng cho bài toán sinh kịch bản kiểm thử tự động từ mô tả ngôn ngữ tự nhiên và hình ảnh (đặc biệt là flowchart). Vì vậy, việc sử dụng benchmark chung sẽ không phản ánh đúng đặc thù bài toán.
+
+
+Một số bộ dữ liệu tương tự nhưng chưa phù hợp vì nhiều lý do, có thể kể tới như sau.
+
+
+\paragraph{}
+\textit{\textbf{a, GUIDE: Graphical User Interface Data for Execution \cite{chawla2024guidegraphicaluserinterface}}}. Rajat Chawla và cộng sự đề xuất bộ dữ liệu GUIDE. Dữ liệu huấn luyện được xây dựng theo cấu trúc thống nhất, trong đó mỗi mẫu bao gồm một ảnh chụp màn hình giao diện, mô tả tác vụ, hành động đã thực hiện trước đó đã thực hiện, chuỗi suy luận CoT (Chain-of-Thought), hành động tiếp theo cần thực hiện và thông tin grounding chứa tọa độ chính xác để thao tác trên giao diện. Đầu ra mong muốn của mô hình là hành động kế tiếp và vị trí thao tác trên màn hình. Bộ dữ liệu được thu thập từ nhiều trang web như Apollo (62.67\%), Gmail (3.43\%), Calendar (10.98\%) và Canva (22.92\%), đồng thời được chuẩn hóa cho nhiều hệ điều hành, trình duyệt và kích thước màn hình khác nhau. Trước quá trình thu thập, nhóm nghiên cứu thu nhận các tác vụ thực tế từ người dùng và doanh nghiệp, sau đó lọc và chỉ giữ lại những tác vụ khả thi bằng công nghệ RPA, hợp pháp, đạo đức và có mô tả rõ ràng. Các nhiệm vụ được phân loại theo ba mức độ: Level 1 (đơn giản, một bước), Level 2 (nhiều bước và có quyết định nhỏ), và Level 3 (phức tạp, yêu cầu logic và chuỗi hành động dài). Dữ liệu sau đó được xử lý qua công cụ nội bộ NEXTAG, kiểm tra chất lượng, bổ sung chuỗi suy luận, gắn thêm lịch sử hành động và tạo các biến thể giao diện (trình duyệt khác, OS khác, chế độ sáng/tối). 
+
+
+
+Tuy nhiên, bộ dữ liệu vẫn tồn tại một số hạn chế quan trọng như phạm vi web/app còn hẹp dẫn đến nguy cơ overfit, tập trung nhiều vào ba nhóm hành động chính (Click/Type/ Scroll) làm giảm tính đa dạng của tương tác, và đặc biệt thiếu dữ liệu liên quan đến các phần tử phức tạp như SVG. Vì vậy, bộ dữ liệu này chưa phù hợp với những hệ thống cần khả năng tổng quát cao hoặc xử lý các tương tác giao diện đa dạng trong môi~trường~thực~tế.
+
+\paragraph{}
+
+
+\textit{\textbf{b, RUSS Dataset \cite{xu2021groundingopendomaininstructionsautomate}}}. Bộ dữ liệu được Nancy Xu và cộng sự đề xuất, bộ dữ liệu này có cấu trúc khá gần với dạng kịch bản kiểm thử mong muốn, đồng thời bao phủ nhiều lĩnh vực nhờ được thu thập từ khoảng 84 trang web khác nhau. Tuy nhiên, số lượng kịch bản trên mỗi trang lại khá hạn chế và phần lớn chỉ dựa trên mô tả văn bản (text), chưa khai thác thông tin hình ảnh hay cấu trúc giao diện phức tạp.
+
+
+Về bản chất, bộ dữ liệu đóng vai trò như một trợ lý tương tác, chủ yếu cung cấp các hướng dẫn thao tác trên trang web cho người dùng thay vì thực sự hỗ trợ tự động hóa kiểm thử hay mô phỏng quy trình thao tác chi tiết.
+
+
+Hệ hành động được sử dụng gồm sáu loại chính:
+\begin{itemize}
+    \item @goto(url) – điều hướng tới một trang web mới,
+    \item @enter(element\_id, dict\_key) – nhập nội dung vào trường nhập liệu,
+    \item @click(element\_id) – nhấn vào một phần tử,
+    \item @read(element\_id) – đọc nội dung văn bản của phần tử để trả lời người dùng,
+    \item @say(message) – gửi thông báo hoặc phản hồi chủ động từ agent,
+    \item @ask(dict\_key) – yêu cầu người dùng cung cấp thông tin bổ sung.
+\end{itemize}
+
+Xét về quy mô, bộ dữ liệu này có số lượng mẫu khoảng gấp ba lần bộ dữ liệu của chúng tôi và mức độ đa dạng trang web cũng cao hơn. Tuy vậy, phương pháp của chúng tôi có ưu điểm nổi bật là bao phủ hầu hết các loại phần tử DOM, cho phép mô tả và thao tác chính xác hơn đối với nhiều cấu trúc giao diện phức tạp mà bộ dữ liệu~trên~chưa~hỗ~trợ.
+
+\subsection{Đề xuất xây dựng bộ dữ liệu mới}
+
+\begin{table}[t!]
+\centering
+\caption{So sánh các bộ dữ liệu}
+\label{tab:dataset_comparison}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|l|p{5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Tiêu chí} & \textbf{GUIDE} & \textbf{RUSS Dataset} & \textbf{Bộ dữ liệu hiện tại} \\
+\hline
+\textbf{Nguồn dữ liệu} & 
+Apollo (62.67\%), Gmail (3.43\%), Calendar (10.98\%), Canva (22.92\%) & 
+Khoảng 84 trang web khác nhau & 
+8 trang web: Nhân Dân, Tuổi Trẻ, VNExpress, Bing, webtest.ranorex, Draw.io, Lucidchart, Visual Paradigm \\
+\hline
+\textbf{Cấu trúc dữ liệu} & 
+Ảnh chụp màn hình, mô tả tác vụ, hành động trước đó, chuỗi suy luận CoT, hành động tiếp theo, thông tin grounding với tọa độ & 
+Dạng kịch bản kiểm thử, chủ yếu dựa trên mô tả văn bản & 
+Kịch bản kiểm thử mô tả bằng ngôn ngữ tự nhiên, đa dạng hành động và phần tử trên mọi trang Web \\
+\hline
+\textbf{Phân loại tác vụ} & 
+3 mức độ: Level 1 (đơn giản, 1 bước), Level 2 (nhiều bước, quyết định nhỏ), Level 3 (phức tạp, logic dài) & 
+Không phân loại rõ ràng & 
+Phân loại theo loại giao diện và hành động \\
+\hline
+\textbf{Hệ hành động} & 
+Click, Type, Scroll (tập trung chủ yếu vào 3 nhóm này) & 
+@goto, @enter, @click, @read, @say, @ask (6 loại) & 
+Open, Click, Double click, Fill, Press, thao tác SVG (di chuyển, kéo dài/thu nhỏ, xóa, nối) \\
+\hline
+\textbf{Độ đa dạng} & 
+Thấp - phạm vi web/app hẹp, tập trung vào một số trang chính & 
+Cao - 84 trang web nhưng số kịch bản/trang hạn chế & 
+Trung bình - 8 trang nhưng phủ nhiều loại giao diện \\
+\hline
+\textbf{Loại phần tử hỗ trợ} & 
+Thiếu các phần tử phức tạp như SVG & 
+Chủ yếu văn bản, chưa khai thác hình ảnh hay cấu trúc phức tạp & 
+Bao phủ hầu hết các loại phần tử DOM, bao gồm SVG, văn bản, hình ảnh, diagram \\
+\hline
+\textbf{Ưu điểm} & 
+Có chuỗi suy luận CoT, chuẩn hóa đa nền tảng & 
+Đa dạng trang web, cấu trúc gần kịch bản kiểm thử & 
+Bao phủ đầy đủ phần tử DOM, hỗ trợ SVG \\
+\hline
+\textbf{Hạn chế} & 
+Phạm vi hẹp, nguy cơ overfit, thiếu SVG, tập trung 3 hành động chính & 
+Số kịch bản/trang hạn chế, chủ yếu text-based, không hỗ trợ tự động hóa kiểm thử thực sự & 
+Quy mô nhỏ hơn RUSS, số lượng trang web ít hơn \\
+\hline
+\textbf{Mục đích sử dụng} & 
+Huấn luyện mô hình thực thi hành động trên GUI với grounding & 
+Trợ lý hướng dẫn tương tác web cho người dùng & 
+Tự động hóa kiểm thử, mô phỏng quy trình thao tác chi tiết \\
+\hline
+\end{tabular}
+}
+\end{table}
+
+
+
+Bộ dữ liệu được xây dựng từ tám trang web thực tế, phổ biến và có tần suất sử dụng cao, bao gồm các trang tin tức lớn tại Việt Nam (Nhân Dân\footnote{https://nhandan.vn/}, Tuổi Trẻ\footnote{https://tuoitre.vn/}, VNExpress\footnote{https://vnexpress.net/}), công cụ tìm kiếm (Bing\footnote{https://bing.com/}), kiểm thử (webtest.ranorex\footnote{https://webtest.ranorex.org/wp-login.php}) và các ứng dụng vẽ sơ đồ trực tuyến như Draw.io\footnote{https://www.drawio.com/}, Lucidchart\footnote{https://www.lucidchart.com/} và Visual Paradigm\footnote{https://www.visual-paradigm.com/}. Đây là những nền tảng có giao diện đa dạng, giàu nội dung và phản ánh chân thực hành vi tương tác của người dùng. Ta có Bảng \ref{tab:dataset_comparison} để so sánh giữa ba bộ dữ liệu được đề cập trong khóa luận này.
+
+
+Đối với các trang có nội dung thay đổi liên tục như trang tin tức hoặc công cụ tìm kiếm, dữ liệu hiển thị trên giao diện có thể thay đổi theo ngày, thậm chí theo từng giờ. Do đó, nếu kịch bản kiểm thử được mô tả dựa trên dữ liệu động (ví dụ: tìm kiếm hoặc truy xuất bài báo theo tiêu đề cụ thể), thì trong tương lai rất có thể kịch bản này sẽ không còn tái lập được chính xác do bài báo bị thay đổi, di chuyển, hoặc xoá khỏi. Do đó để đảm bảo tính đúng đắn, ổn định và khả năng tái lập, bộ dữ liệu được thu thập kèm theo toàn bộ mã HTML và tài nguyên định dạng (CSS) của trang tại thời điểm ghi nhận. Việc lưu snapshot giao diện này cho phép kiểm tra lại hoặc tái chạy toàn bộ quy trình khi trang gốc thay đổi, đảm bảo tính toàn vẹn.
+
+
+Các kịch bản thu thập từ nhiều nguồn khác nhau giúp đảm bảo sự khách quan và đa dạng trong quá trình đánh giá phương pháp. Cụ thể, dữ liệu phản ánh nhiều kiểu giao diện và bố cục:
+
+\begin{itemize}
+    \item Văn bản: tiêu đề báo, menu, trường nhập liệu (như form đăng nhập), tương tác theo tiêu đề bài viết.
+    
+    \item Hình ảnh: icon, logo, khi ngôn ngữ tự nhiên không mô tả được đầy đủ đặc trưng phần tử.
+    
+    \item SVG \& Diagram: trong Draw.io, Lucidchart, Visual Paradigm; bao gồm tìm kiếm theo hình dạng, xác định phần tử cần cuộn trang mới thấy, và các thao tác trực tiếp lên sơ đồ.
+\end{itemize}
+
+
+Các kịch bản bao phủ nhiều loại hành động phổ biến, phản ánh các tình huống sử dụng thực tế khi người dùng mô tả thao tác bao gồm các hành động như: Open (mở trang web), Click, Double click, Fill (điền dữ liệu), Press (nhấn phím, ví dụ: Press Enter), Các thao tác với phần tử svg như (di chuyển, kéo dài/thu nhỏ cạnh, xóa phần tử, nối 2 phần tử lại với nhau).
+
+
+
+
+
+
+
+
+
+
+\subsection{Quy trình tạo bộ dữ liệu mới}
+
+
+Tổng quan quá trình thu thập và xây dựng bộ dữ liệu được mô tả trong hình \ref{fig:dulieu}.
+
+\begin{figure*}[!hbpt]
+	\centering 
+	\includegraphics[width=0.95\linewidth]{image/tao_bodulieu.png}
+        \vspace{5pt}
+	\caption{Tổng quan quy trình tạo bộ dữ liệu}
+	\label{fig:dulieu}
+\end{figure*}
+
+\paragraph{Phạm vi và nguồn dữ liệu:}
+Bộ dữ liệu được thừa kế và phát triển dựa trên nền tảng từ khóa luận ``Phương pháp sinh mã kiểm thử giao diện ứng dụng web từ kịch bản mô tả dạng ngôn ngữ tự nhiên và dạng ảnh sử dụng học máy'' của anh Đỗ Minh Sáng \cite{DoMinhSang2025}. Quá trình thực hiện bởi nhóm RPA for Web thuộc Lab Công nghệ phần mềm dưới sự hướng dẫn của TS. Nguyễn Đức Anh thực hiện từ khảo sát UI, đến chạy kịch bản test và ghi nhận dữ liệu. Dữ liệu được thu thập đa dạng từ 6 trang web trên 3 lĩnh vực: báo chí, tìm kiếm, vẽ biểu đồ. 
+
+
+\paragraph{Xây dựng kịch bản:}
+
+Kịch bản bao phủ hầu hết các hành động mà người dùng thường thực hiện khi tương tác với trang web, bao gồm mở trang, nhập liệu, nhấn nút, thao tác với SVG, di chuyển và chỉnh sửa kích thước phần tử. Cụ thể:
+
+\begin{table}[h]
+\small
+\begin{tabular}{@{}p{0.25\textwidth}p{0.7\textwidth}@{}}
+\toprule
+\textbf{Action} & \textbf{Examples} \\ \midrule
+Open URL & Open ``https://app.diagrams.net/'' \\
+Fill/Enter & Fill ``test\_user'' into Username; Enter ``123456'' into Password \\
+Click & Click on Login button \\
+Double Click & Double click on Rectangle shape \\
+Press & Press Enter/Tab on field \\
+Move & Move rectangle (right/left/up/down) \\
+Extend & Extend edge of ellipse (right/left/top/bottom) \\
+Shrink & Shrink edge of ellipse (right/left/top/bottom) \\
+Delete/Remove & Delete rectangle; Remove ellipse \\
+Connect/Link & Connect rectangle to ellipse; Link circle to triangle \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\paragraph{Tiêu chí thu thập dữ liệu:}
+Nhóm thu thập dữ liệu tiến hành phân chia giao diện của mỗi trang web thành các khu vực chức năng như thanh công cụ trên cùng (top bar), thanh bên trái (left panel) và thanh bên phải (right panel). Trong từng khu vực, nhóm lựa chọn một số phần tử UI tiêu biểu, bao gồm dropdown, nút radio, slider, input text và các phần tử SVG, để thực hiện các hành động đa dạng đã liệt kê trước đó. Cách tiếp cận này nhằm đảm bảo mức độ bao phủ rộng cả về loại phần tử DOM lẫn loại thao tác, từ click, nhập liệu, kéo–thả (drag), hover cho đến cuộn trang. Các kịch bản được xây dựng với ba mức độ phức tạp: (1) Level 1 gồm các tình huống đơn giản với 2–3 bước, chẳng hạn mở một đường dẫn cụ thể; (2) Level 2 gồm các kịch bản trung bình từ 4–6 bước, như điền và gửi một form; và (3) Level 3 là các kịch bản phức tạp hơn, bao gồm thao tác vẽ, chỉnh sửa và lưu sơ đồ flowchart trên các nền tảng như draw.io, Lucidchart hoặc Visual Paradigm. Cách phân cấp này cho phép đánh giá hiệu quả mô hình trên nhiều mức độ khó, đồng thời phản ánh đúng nhu cầu tương tác thực tế của người dùng trên các loại giao diện web khác nhau.
+
+
+\paragraph{Kiểm soát chất lượng:}
+
+
+
+Trong quá trình xây dựng kịch bản, nhóm đảm bảo mỗi kịch bản không thiếu bước, không trùng lặp và đồng thời bao phủ đầy đủ theo các tiêu chí đã đề ra. Mỗi bước trong kịch bản được gán nhãn phù hợp với loại input, bao gồm kịch bản thuần văn bản, kịch bản hỗn hợp có sự kết hợp giữa văn bản và hình ảnh, hoặc kịch bản tập trung vào vẽ flowchart, tùy theo tính chất của phần tử tương tác. Các bước mô tả được viết sao cho dễ hiểu, gần gũi với ngôn ngữ tự nhiên, tránh sử dụng thuật ngữ kỹ thuật phức tạp, nhằm phản ánh đúng cách người dùng tương tác thực tế. Ví dụ minh họa một kịch bản đơn giản trên các công cụ vẽ sơ đồ như sau:
+
+\begin{enumerate}[itemsep=0pt, parsep=0pt, leftmargin=3em]
+    \item Open ``https://app.diagrams.net/''
+    \item Click on [ellipse.png]
+    \item Shrink the right edge of the element created in step 2 \\
+    \textit{trong đó [ellipse.png] là ảnh hoặc đường dẫn tới ảnh}
+\end{enumerate}
+
+\clearpage
+
+Hay một ví dụ khác về 1 ca kiểm thử đăng nhập trên Visual Paradigm:
+
+\begin{enumerate}[itemsep=0pt, parsep=0pt, leftmargin=3em]
+    \item Click on [user.png]
+    \item Click on Log in field
+    \item Fill ``nguyenthihoaithu3904@gmail.com'' 
+    \item Click on Password field
+    \item Fill ``123456''
+    \item Click on Login button \\
+    \textit{trong đó [user.png] là ảnh hoặc đường dẫn tới ảnh}
+\end{enumerate}
+
+
+Một ví dụ khác cũng về ca kiểm thử đăng nhập với kịch bản thuần ngôn ngữ tự nhiên như sau: 
+
+\begin{enumerate}[itemsep=0pt, parsep=0pt, leftmargin=3em]
+    \item Open ``http://webtest.ranorex.org/wp-login.php''
+    \item Fill ``abc'' into Username
+    \item Fill ``ranorex'' into Password 
+    \item Click on Password button
+    \item Click on Login button 
+\end{enumerate}
+
+Cách trình bày này giúp các mô hình NLP hoặc công cụ tự động hóa có thể dễ dàng hiểu và tái tạo kịch bản, đồng thời giữ được tính chính xác và khả năng lặp lại khi đánh giá hiệu quả phương pháp.
+
+
+
+\subsection{Mô tả về bộ dữ liệu được sử dụng}
+
+\par{ \autoref{tab:so_test_case} mô tả cấu trúc bộ dữ liệu thực nghiệm. Bộ dữ liệu được xây dựng từ 8 trang web phổ biến, bao gồm Draw.io, LucidChart, Visual Paradigm, webtest.ranorex.org, nhandan.vn, tuoitre.vn, bing.com, vnexpress.net đại diện cho các ngữ cảnh sử dụng và loại phần tử giao diện khác nhau \href{https://app.diagrams.net/}{Draw.io}, \href{https://lucid.app/}{LucidChart}, \href{https://www.visual-paradigm.com/}{Visual Paradigm} (Trang web ứng dụng trực quan, giàu phần tử đồ hoạ và cấu trúc SVG); \href{https://www.bing.com/}{bing.com} (Công cụ tìm kiếm với giao diện nhiều khối nội dung động, kết hợp văn bản và hình ảnh); \href{https://nhandan.vn/}{nhandan.vn}, tuoitre.vn, vnexpress.net (Cổng thông tin báo điện tử với giao diện nhiều khối nội dung, kết hợp văn bản và hình ảnh).
+
+
+Các kịch bản mô tả đa dạng về loại phần tử (bao gồm văn bản, nút bấm, biểu tượng SVG, hình ảnh, khối nội dung tin tức, hộp tìm kiếm); bao quát nhiều tình huống thực tế (từ các phần tử văn bản đơn giản, đến đối tượng đồ hoạ phức tạp và nội dung động cần cuộn~trang).}
+
+\begin{table}[H]
+\centering
+\footnotesize
+\caption{Tính chất bộ dữ liệu thực nghiệm}
+\label{tab:so_test_case}
+\begin{tabular}{|l|c|c|c|}
+\hline
+& \textbf{\begin{tabular}{@{}c@{}}Test case\\văn bản\end{tabular}} & \textbf{\begin{tabular}{@{}c@{}}Test case\\chứa ảnh\end{tabular}} & \textbf{\begin{tabular}{@{}c@{}}Test case\\vẽ flow chart\end{tabular}} \\
+\hline
+draw.io & 11 & 89 & 5 \\
+\hline
+lucid.app & 20 & 80 & 12 \\
+\hline
+visual-paradigm.com & 24 & 76 & 8 \\
+\hline
+webtest.ranorex.org & 3 & 6 & 0 \\
+\hline
+nhandan.vn & 22 & 7 & 0 \\
+\hline
+tuoitre.vn & 19 & 12 & 0 \\
+\hline
+bing.com & 10 & 7 & 0 \\
+\hline
+vnexpress.net & 8 & 10 & 0 \\
+\hline
+\textbf{Tổng} & \textbf{117} & \textbf{287} & \textbf{25} \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Cấu hình}
+Trong quá trình thực nghiệm có hai nhóm tham số chính được thiết lập gồm cấu hình cho pha tìm kiếm phần tử bằng văn bản và pha tìm kiếm phần tử bằng hình ảnh. Đối  với \textit{pha tìm kiếm phần tử bằng văn bản}, ta sẽ sử dụng \textbf{Stanza} để phân tích cú pháp bằng cách tách câu thành các token (từ) và gán nhãn cho chúng qua đó nhận biết hành động, phần tử DOM và giá trị mà bước kiểm thử đề cập. Stanza là một bộ công cụ \gls{NaturalLanguageProcessing} do Stanford phát triển, được viết bằng Python, hỗ trợ 66 ngôn ngữ với dữ liệu huấn luyện dựa trên Universal Dependencies \cite{qi2020stanza}. Bên cạnh đó phương pháp sử dụng mô hình \textbf{Sentence Transformer} paraphrase-multilingual-MiniLM-L12-v2 đa ngôn ngữ với tính hiệu quả đã được chứng minh với hơn 50 ngôn ngữ thuộc nhiều hệ ngôn ngữ khác nhau \cite{reimers-2020-multilingual-sentence-bert}. 
+Với việc cung cấp mô hình hỗ trợ nhiều ngôn ngữ cùng lúc, điều này cho phép người dùng mã hóa văn bản từ các ngôn ngữ khác nhau vào cùng một không gian vector, giúp thực hiện các tác vụ xuyên ngôn ngữ.
+
+
+
+
+% Đối với \textit{pha tìm kiếm phần tử bằng hình ảnh}, ta có cấu hình cho hai thuật toán là Multi-scale Template Matching và SIFT. Cụ thể thuật toán \textbf{ Multi-scale Template Matching} được sử dụng để so khớp hình ảnh với các tham số: phương pháp so khớp TM\_CCOEFF\_NORMED nhằm đảm bảo độ tin cậy dựa trên hệ số tương quan chuẩn hóa; các tỷ lệ thu phóng được thiết lập từ 0.8 đến 1.2 tương ứng với việc mẫu có thể nhỏ hơn hoặc lớn hơn ảnh gốc từ 20\%; tổng cộng 5 bước biến đổi tỷ lệ được tạo ra trong quá trình so khớp, và ngưỡng chấp nhận kết quả được đặt là 0.8 để loại bỏ các điểm so khớp nhiễu hoặc không chính xác. Bên cạnh đó, phương pháp SIFT được áp dụng để phát hiện và mô tả đặc trưng cục bộ trên giao diện. Các tham số của bộ phát hiện đặc trưng được giữ theo giá trị mặc định của OpenCV (nfeatures = 0, nOctaveLayers = 3, contrastThreshold = 0.04, edgeThreshold = 10 và sigma = 1.6) nhằm đảm bảo tính ổn định và khả năng tổng quát. Quá trình ghép nối đặc trưng được thực hiện bằng FLANN với cấu hình KD-Tree (algorithm = 1, trees = 5) và số lần tìm kiếm tối đa checks = 50 nhằm tối ưu tốc độ và độ chính xác. Sự kết hợp giữa Multi-scale Template Matching và SIFT giúp phương pháp có thể tìm kiếm phần tử giao diện hình ảnh một cách linh hoạt và ổn định ngay cả khi xảy ra biến đổi nhỏ về kích thước hoặc chiếu sáng.
+
+
+Đối với \textit{pha tìm kiếm phần tử bằng hình ảnh}, phương pháp sử dụng hai thuật toán là Multi-scale Template Matching và SIFT. Cụ thể, \textbf{thuật toán Multi-scale Template Matching} được triển khai với phương pháp so khớp TM\_CCOEFF\_NORMED bởi theo Công thức \ref{eq:tm_ccoef_normed}, phương pháp này sử dụng giá trị pixel sau khi trừ đi giá trị trung bình nên bất biến với ánh sáng tuyến tính và không bị lệ thuộc vào độ tương phản do chia cho độ lệch chuẩn. Các tỷ lệ thu phóng được thiết lập trong khoảng $[0.8, 1.2]$, tương ứng với khả năng mẫu có thể nhỏ hơn hoặc lớn hơn ảnh gốc tới $20\%$ nếu DPR = 1, nếu DPR khác 1, ta sẽ nhân với DPR để ảnh được thu phóng tương ứng, với tổng cộng 5 bước biến đổi tỷ lệ được thực hiện trong quá trình so khớp. Ngưỡng chấp nhận kết quả (threshold) được đặt bằng 0.8 nhằm loại bỏ các điểm so khớp nhiễu hoặc không chính xác, đảm bảo rằng khi ảnh đầu vào thu nhỏ hoặc phóng to đều có thể nhận biết được. 
+
+% Bên cạnh đó, phương pháp SIFT \cite{lowe2004distinctive} được áp dụng để phát hiện và mô tả đặc trưng cục bộ trên giao diện. Các tham số của bộ phát hiện đặc trưng được cấu hình theo giá trị mặc định của OpenCV: \texttt{nfeatures} = 0 (không giới hạn số lượng đặc trưng), \texttt{nOctaveLayers} = 3 (số lớp trong mỗi octave của kim tự tháp Gaussian), \texttt{contrastThreshold} = 0.04 (ngưỡng độ tương phản để lọc các điểm đặc trưng yếu), \texttt{edgeThreshold} = 10 (ngưỡng để loại bỏ các điểm đặc trưng nằm trên cạnh), và $\sigma = 1.6$ (độ lệch chuẩn của bộ lọc Gaussian ban đầu). Quá trình ghép nối đặc trưng được thực hiện bằng thuật toán FLANN \cite{muja2009flann} với cấu hình KD-Tree (\texttt{algorithm} = 1, \texttt{trees} = 5) và số lần tìm kiếm tối đa \texttt{checks} = 50, nhằm cân bằng giữa tốc độ và độ chính xác của quá trình so khớp. Sự kết hợp giữa Multi-scale Template Matching và SIFT cho phép hệ thống tìm kiếm phần tử giao diện một cách linh hoạt và ổn định, ngay cả khi có sự biến đổi nhỏ về kích thước, góc nhìn hoặc điều kiện chiếu sáng.
+
+\textbf{Thuật toán SIFT } \cite{lowe2004distinctive} được sử dụng để phát hiện và mô tả các đặc trưng cục bộ bất biến với biến đổi hình học trên giao diện. Các tham số trong thuật toán này có thể chia làm 3 nhóm: Tham số khi khởi tạo SIFT, tham số khi matching và tham số lọc kết quả. Trước tiên với tham số khởi tạo nfeatures (số lượng đặc trưng tối đa). Mặc định của OpenCV thường là 0 - nghĩa là không giới hạn số lượng keypoints, OpenCV sẽ giữ tất cả các keypoints tốt nhất mà thuật toán phát hiện được. Trong khóa luận này nfeatures được đặt bằng 0 do số điểm đặc trưng trên các trang web không giống nhau và cũng không có nfeatures tối ưu cho tất cả trường hợp. Chẳng hạn như Draw.io có keypoint thực tế là 876, Nhandan.vn có keypoint thực tế là 9040, việc đặt nfeatures lớn hơn keypoint thực tế không có tác dụng, còn nfeatures nhỏ hơn có 
+thể làm mất keypoint quan trọng. 
+
+
+
+Về các tham số khi matching trong thuật toán SIFT, khóa luận sử dụng FLANN (Fast Library for Approximate Nearest Neighbors). FLANN cho phép tìm hàng xóm gần nhất trong không gian vector nhiều chiều nhanh hơn rất nhiều so với phương pháp Brute-Force. Về các tham số lọc kết quả, tham số số lượng lân cận gần nhất (k-nearest neighbors parameter) được chọn bằng 2 - lấy phần tử tốt nhất và tốt thứ hai. Trong phần mô tả \textit{Keypoint Matching} \cite{lowe2004distinctive}, Lowe đã dùng ngưỡng ratio = 0.8 - ngưỡng này loại bỏ xấp xỉ 90\% các match sai, số lượng match chính xác bị loại bỏ nhỏ hơn 5\%. Do đó việc lựa chọn k = 2 và ratio = 0.8 là các giá trị hợp lý đã được chứng minh trong bài báo gốc~của~Lowe.
+
+
+
+
+% Bộ phát hiện SIFT được khởi tạo với tham số \texttt{nfeatures} = 5000, giới hạn số lượng điểm đặc trưng (keypoints) được giữ lại là 5000 điểm có response mạnh nhất, nhằm cân bằng giữa khả năng mô tả chi tiết giao diện phức tạp và hiệu suất tính toán, tránh trường hợp quá tải khi ảnh chứa quá nhiều đặc trưng tiềm năng. Các tham số còn lại được thiết lập theo giá trị mặc định đã được tối ưu của OpenCV: tham số \texttt{nOctaveLayers} = 3 xác định số lớp (scales) trong mỗi octave của kim tự tháp không gian tỷ lệ DoG (Difference of Gaussians), với tổng số scales thực tế là $\text{nOctaveLayers} + 3 = 6$ lớp, cho phép phát hiện đặc trưng ở nhiều tỷ lệ khác nhau từ chi tiết nhỏ đến cấu trúc lớn; tham số \texttt{contrastThreshold} = 0.04 đóng vai trò là ngưỡng lọc để loại bỏ các điểm đặc trưng có độ tương phản thấp, tức các điểm nằm trong vùng có biến thiên cường độ pixel yếu và dễ bị ảnh hưởng bởi nhiễu, giá trị 0.04 trên thang [0, 1] đảm bảo chỉ giữ lại các keypoint có độ tương phản đủ mạnh để ổn định; tham số \texttt{edgeThreshold} = 10 được sử dụng để loại bỏ các điểm đặc trưng nằm trên các cạnh mạnh (edge responses), những điểm này thường không ổn định do có hướng gradient rõ ràng chỉ theo một phương, ngưỡng này được tính dựa trên tỷ lệ các giá trị riêng (eigenvalues) của ma trận Hessian tại mỗi điểm theo công thức $\frac{(r+1)^2}{r} < \text{edgeThreshold}$, trong đó $r$ là tỷ lệ giữa eigenvalue lớn nhất và nhỏ nhất, giá trị 10 cho phép chấp nhận các điểm có tính corner vừa phải; cuối cùng, tham số $\sigma = 1.6$ xác định độ lệch chuẩn của bộ lọc Gaussian được áp dụng lên ảnh đầu vào trước khi xây dựng không gian tỷ lệ, giá trị 1.6 là giá trị tối ưu được xác định thực nghiệm trong công trình gốc của Lowe (2004) để đạt được sự cân bằng giữa khả năng phát hiện và tính bất biến với nhiễu.
+
+% Sau khi trích xuất các đặc trưng SIFT từ cả mẫu và ảnh giao diện, quá trình ghép nối (matching) được thực hiện bằng thuật toán FLANN (Fast Library for Approximate Nearest Neighbors), một thư viện tối ưu cho bài toán tìm kiếm láng giềng gần nhất trong không gian nhiều chiều. FLANN được cấu hình với cấu trúc dữ liệu KD-Tree thông qua tham số \texttt{algorithm} = 1 (FLANN\_INDEX\_KDTREE), phù hợp cho không gian đặc trưng SIFT 128 chiều với metric khoảng cách Euclidean; tham số \texttt{trees} = 5 chỉ định việc xây dựng song song 5 cây KD-Tree với các phân hoạch ngẫu nhiên khác nhau, kỹ thuật này tăng cường độ chính xác tìm kiếm bằng cách khám phá nhiều đường đi trong không gian đặc trưng, đổi lại là chi phí bộ nhớ tăng tuyến tính theo số cây; tham số \texttt{checks} = 100 giới hạn số lượng node tối đa được duyệt trong quá trình tìm kiếm $k$ láng giềng gần nhất ($k$-NN), cho phép cân bằng giữa tốc độ thực thi và độ chính xác của kết quả gần đúng, giá trị 100 đảm bảo độ chính xác cao trong hầu hết các trường hợp thực tế. Để loại bỏ các cặp ghép nối không rõ ràng (ambiguous matches), phương pháp áp dụng Lowe ratio test với ngưỡng 0.7, chỉ chấp nhận một cặp ghép nối $(m, n)$ khi khoảng cách từ descriptor của mẫu đến nearest neighbor thứ nhất $d(m)$ nhỏ hơn $0.7$ lần khoảng cách đến nearest neighbor thứ hai $d(n)$, tức $d(m) < 0.7 \times d(n)$, điều kiện này đảm bảo sự phân biệt rõ ràng giữa match đúng và các match nhiễu. Cuối cùng, ma trận homography được ước lượng từ các cặp ghép nối tốt thông qua thuật toán RANSAC (Random Sample Consensus) với ngưỡng khoảng cách reprojection là 5 pixels, cho phép loại bỏ các outliers và xác định vị trí chính xác của phần tử mục tiêu trên giao diện.
+
+Sự kết hợp giữa Multi-scale Template Matching ở tầng đầu tiên với SIFT ở tầng fallback tạo nên phương pháp tìm kiếm hai cấp độ, trong đó Template Matching xử lý nhanh các trường hợp đơn giản với biến đổi nhỏ, trong khi SIFT đảm bảo khả năng xử lý các trường hợp phức tạp hơn với biến đổi góc nhìn, chiếu sáng không đồng nhất, hoặc biến dạng hình học, từ đó đảm bảo tính linh hoạt và độ ổn định cao cho toàn bộ quy trình tự động hóa kiểm thử giao diện.
+
+
+
+\section{Kết quả thực nghiệm}
+
+\subsection[RQ1 - Tính hiệu quả của phương pháp trên các công cụ vẽ sơ đồ trực tuyến]{
+RQ1 - Tính {} hiệu {} quả {} của {} phương {} pháp {} trên {} các {} công {} cụ {} vẽ {} sơ {} đồ {} trực {} tuyến}
+
+
+Phương pháp đề xuất đạt hiệu quả cao trên cả ba nền tảng với tỷ lệ thành công 80.00\%~--~100\% cho kịch bản thuần văn bản và 85.39\%~--~99.50\% cho kịch bản kết hợp văn bản-hình ảnh. Đặc biệt, nếu xét riêng tìm kiếm bằng hình ảnh cho kết quả vượt trội (93.15\%~--~100\%) so với văn bản, giúp khắc phục được các trường hợp nhầm lẫn khi DOM phức tạp. Phương pháp cũng thể hiện khả năng xử lý tốt các kịch bản phức tạp và duy trì hiệu suất ổn định trên cả giao diện sáng/tối và khi loại màn hình thay đổi~(kích~thước,~DPR).
+
+
+
+Bảng \ref{tab:thong_ke_2} thống kê về số lượng kịch bản và số lượng các bước trên tất cả kịch bản của ba trang web. Bảng \ref{tab:drawio} là tỷ lệ thành công tương ứng. Mỗi kịch bản bao gồm nhiều bước thực thi liên tiếp. Một kịch bản kiểm thử được coi là thành công thực thi thành công và kết quả giống như mong đợi của kiểm thử viên; ngược lại, một kịch bản kiểm thử được coi là thất bại nếu bất kỳ bước nào trong kịch bản thất bại. Ở cấp độ từng bước (step) trong kịch bản, mỗi bước được đánh giá độc lập với nhau, sự thành công/thất bại của bước trước sẽ đảm bảo để không ảnh hưởng tới bước sau trong quá trình thống kê. 
+
+
+
+
+\textbf{Phương pháp cho thấy hiệu quả tổng thể cao trên miền ứng dụng Web sử dụng SVG.}
+Thực nghiệm cho thấy phương pháp đề xuất đạt hiệu quả cao trên cả ba nền tảng kiểm thử Draw.io, Lucidchart và Visual Paradigm, với tỷ lệ thành công ở cấp độ kịch bản dao động từ 80.00\% -- 100\% cho kịch bản thuần văn bản và 85.39\% -- 93.75\% cho kịch bản kết hợp văn bản và hình ảnh (Bảng \ref{tab:drawio}). Để đạt được kết quả như trên là nhờ cơ chế tìm phần tử hiệu quả cùng với quá trình theo dõi DOM sau mỗi bước thực thi.
+
+
+
+
+\textbf{Bên cạnh đó khả năng xử lý các kịch bản phức tạp của phương pháp tương đối tốt.} Trước khi đi sâu vào các kịch bản phức tạp, thực nghiệm đánh giá khả năng thực thi các tương tác chức năng cơ bản trên công cụ vẽ sơ đồ trực tuyến (Bảng \ref{tab:bang4.5}). Các kịch bản chủ yếu bao gồm những thao tác cơ bản như: tạo hình dạng (shape), kéo - thả đối tượng, chỉnh sửa văn bản, và xoá đối tượng. Mỗi kịch bản được thực thi một lần trong điều kiện mạng và môi trường trình duyệt ổn định. Kết quả cho thấy phương pháp đề xuất có thể xử lý chính xác tất cả các kịch bản này mà không gặp lỗi. Điều này là cơ sở để tiếp tục đánh giá với các kịch bản phức tạp hơn. Ta sẽ đi tới ví dụ về một kịch bản vẽ flowchart hoàn chỉnh.
+
+\begin{table}[H]
+\centering
+\caption{Thống kê số lượng kịch bản và số thao tác trên tất cả kịch bản}
+\label{tab:thong_ke_2}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Website}} & \multicolumn{2}{c|}{\textbf{Văn bản}} & \multicolumn{2}{c|}{\textbf{Văn bản + Hình ảnh}} & \textbf{Flowchart image} \\
+\cline{2-6}
+ & \textbf{Kịch bản} & \textbf{Thao tác} & \textbf{Kịch bản} & \textbf{Thao tác} & \textbf{Kịch bản} \\
+\hline
+Draw.io & 15 & 36 & 89 & 429 & 5 \\
+\hline
+Lucidchart & 20 & 46 & 80 & 1010 & 12 \\
+\hline
+Visual Pardigm & 24 & 80 & 76 & 756 & 8 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+\begin{table}[H]
+\centering
+\caption{Đánh giá tỉ lệ thành công (\%) trên công cụ vẽ sơ đồ}
+\label{tab:drawio}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Website}} & \multicolumn{2}{c|}{\textbf{Văn bản}} & \multicolumn{2}{c|}{\textbf{Văn bản + Hình ảnh}} \\
+\cline{2-5}
+ & \textbf{Toàn bộ kịch bản} & \textbf{Thao tác} & \textbf{Toàn bộ kịch bản} & \textbf{Thao tác} \\
+\hline
+Draw.io & 80.00\% & 91.67\% & 85.39\% & 96.27\% \\
+\hline
+Lucidchart & 85.00\% & 93.48\% & 93.75\% & 99.50\% \\
+\hline
+Visual Pardigm & \textbf{100.00\%} & \textbf{100.00\%} & 90.79\% & 99.07\% \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+\begin{table}[!hbt]
+\centering
+\caption{Kết quả kiểm thử các kịch bản vẽ flowchart trên cả 3 trang web}
+\label{tab:bang4.5}
+\begin{tabular}{|c|p{11cm}|c|}
+\hline
+\textbf{ID} & \textbf{Mô tả kịch bản} & \textbf{Kết quả} \\ \hline
+TS01 & Click on [rectangle.png] & Thành công \\ \hline
+TS02 & Move the element created in step 1 to the right & Thành công \\ \hline
+TS03 & Double click on the element created in step 1 & Thành công \\ \hline
+TS04 & Delete the element created in step 1 & Thành công \\ \hline
+TS05 & Connect the element created in step 1 to the element created in step 3 & Thành công \\ \hline
+TS06 & Extend the right edge of the element created in step 1 & Thành công \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+Kịch bản này mô tả quy trình ra quyết định khi đến giờ ăn trưa - cụ thể là bạn có đói hay không, có đi ăn nhà hàng hay tự nấu, và kết quả cuối cùng là bạn ăn xong và no.
+Với đầu vào là hình ảnh, qua bước one-shot ta chuyển thành từng bước tương ứng với từng trang web Draw.io, Lucidchart và Visual Paradigm lần lượt là 41 bước, 39 bước và 47 bước.
+Mỗi bước là 1 hành động, các thao tác được thực hiện bao gồm: mở ứng dụng web, lần lượt chọn các phần tử hình học và di chuyển chúng tới vị trí phù hợp, chỉnh sửa nội dung văn bản trên từng phần tử, kết nối các phần tử và thêm nhãn cho các đường nối điều kiện. Đây là kịch bản có tính liên kết nhiều hành động gần sát thực tế với thao tác người dùng. Phương pháp đã thực hiện đầy đủ chuỗi thao tác mà không xảy ra lỗi treo tác vụ, không sai thao tác mục tiêu và không xuất hiện hành động không mong muốn. Hình \ref{fig:expect} và \ref{fig:actual} lần lượt là flowchart mong muốn và kết quả thực tế đạt được trên Draw.io. Hình \ref{fig:expect2} và \ref{fig:actual2} lần lượt là flowchart mong muốn và kết quả thực tế đạt được trên Lucidchart. Hình \ref{fig:expect3} và \ref{fig:actual3} lần lượt là flowchart mong muốn và kết quả thực tế đạt được trên Visual Paradigm. Về mặt logic có sự khác biệt nhỏ giữa kết quả mong đợi và kết quả thực tế ở một vị trí, nhưng thao tác được thực hiện vẫn đảm bảo đúng mong muốn. Vì vậy có thể khẳng định rằng kịch bản được thực thi thành công và đáp ứng đúng yêu cầu đặt ra. Kết quả này cũng cố rằng phương pháp có thể mở rộng sang các quy trình kiểm thử giao diện có độ phức tạp lớn hơn.
+
+
+
+Việc thành công của kịch bản flowchart phụ thuộc nhiều vào trang web, điểm neo (connection points) giữa các phần tử có thể nhạy hoặc không phụ thuộc vào trang web và không có tiêu chuẩn nào để đảm bảo tỷ lệ chính xác là 100\% như các hành động click, điền. Qua thực nghiệm trên Lucidchart, các hành động di chuyển phần tử đôi khi sẽ thất bại khi di chuyển phần tử nhiều lần trên trang web sẽ xuất hiện nút ``Change'' trên phần tử - vốn là điều không mong đợi, làm ảnh hưởng tới bước khác, có thể khiến kết quả toàn bộ kịch bản hiển thị không như mong đợi hoặc thất bại. Một vấn đề chung khác là đường nối giữa các phần tử ảnh hưởng nhiều từ vị trí tương đối giữa các phần tử. Phương pháp đã giảm thiểu ảnh hưởng này bằng cách phân tích vị trí tương đối giữa chúng, tuy nhiên các trường hợp rất đa dạng, chẳng hạn như đường nối đúng, đảm bảo logic nhưng bị trùng hoặc che khuất, không đảm bảo thẩm mỹ; hoặc có thể đảm bảo tính thẩm mỹ nhưng đường nối chưa đảm bảo hoàn toàn tính logic do hành động nối phức tạp. Hiện tại phương pháp xử lý tốt cho các đường nối khi các phần tử khi không phần tử khác nằm ở giữa chúng - vấn đề này sẽ được phân tích kĩ hơn ở cuối RQ1.
+
+
+
+
+
+\textbf{Một điểm đáng chú ý là phương pháp hoàn toàn không bị ảnh hưởng bởi sự thay đổi giao diện sáng/tối cũng như sự khác biệt về mật độ điểm ảnh (DPR).}
+Một ưu điểm nổi bật của phương pháp là tính ổn định trước sự thay đổi chủ đề giao diện. Khi chuyển đổi giữa chế độ sáng (light mode) và tối (dark mode), phương pháp hoàn toàn không bị ảnh hưởng về hiệu suất (Hình \ref{fig:actual} và Hình \ref{fig:actual_dark}). Ví dụ, thử nghiệm trên Draw.io, việc vẽ flowchart thành công cả ở chế độ sáng và chế độ tối - không có sự chênh lệch nào xảy đáng kể. Điều này là do phương pháp dựa trên cấu trúc DOM (cho văn bản) và đặc trưng hình dạng (cho hình ảnh), không phụ thuộc vào màu sắc hay độ tương phản của giao diện. Kết quả này chứng tỏ khả năng tổng quát hóa cao của phương pháp đề xuất trước các biến thể về mặt thẩm mỹ của giao diện người dùng. Thêm vào đó, khi thay đổi DPR của thiết bị từ 1,25 xuống 1,0 thì kết quả không thay đổi nhờ thuật toán Multi-Scale Template Matching trong \gls{ImageProcessing}.
+
+
+
+
+\textbf{Ngoài ra phương pháp còn chứng minh sự vượt trội trong việc xử lý hình ảnh so với xử lý văn bản}.
+% Đối với phần tử ảnh, phương pháp chỉ thất bại khi phần tử đó nằm trên shadow-root bởi phần tử nằm trên shadow-root không có XPath trực tiếp trỏ tới nó mà chỉ có thể truy cập tới khu vực shahow-root. 
+Đối với phần tử mô tả bằng văn bản, việc tìm kiếm diễn ra nhanh hơn do chỉ cần thực hiện tìm kiếm trên DOM, không cần tới các thuật toán và \gls{ImageProcessing} như phần tử ảnh, nhưng nhược điểm là chưa có cơ chế đề đảm bảo phần tử mô tả đúng như kiểm thử viên đang muốn.  Phương pháp gặp khó khăn trong những tình huống phức tạp và mơ hồ. Khi xử lý văn bản, phương pháp thất bại do DOM quá phức tạp với nhiều phần tử mang ý nghĩa tương đồng gây nhầm lẫn. Ví dụ điển hình là khi yêu cầu ``Click on Search'', phương pháp phải đối mặt với hai lựa chọn ``Search'' (tìm kiếm chính) và ``Search for help'' (tìm trợ giúp), hoặc trường hợp ``Click on File button'' bị nhầm lẫn giữa ``File'' (menu) và ``Choose a file'' (button upload). Hạn chế này càng rõ ràng khi cơ chế fallback hiện tại chỉ kích hoạt khi hành động không thể thực hiện được, chưa đủ để xử lý các trường hợp chọn sai phần tử nhưng hành động vẫn được thực thi thành công. Do đó, khi DOM quá lớn và phức tạp như trong Draw.io và Lucidchart, việc thay thế tìm kiếm bằng văn bản bằng tìm kiếm bằng hình ảnh có thể khắc phục được phần lớn các trường hợp thất bại.
+
+
+
+Trong thực nghiệm, tìm kiếm bằng ảnh có tỉ lệ thành công cao và ổn định hơn. Tại Bảng \ref{tab:drawio} tỷ lệ thành công khi kịch bản có sự kết hợp giữa văn bản và hình ảnh có phần nhỉnh hơn, trong đó khi tính riêng tỷ lệ thành công khi tìm phần tử bằng hình ảnh trên Lucidchart là 100.00\%, Draw.io là 93.15\% và Visual Paradigm là 95.88\%. Tỉ lệ thành công khi xử lý bằng ảnh tỏ ra vượt trội hơn hẳn với tỉ lệ thành công khi kịch bản thuần văn bản. Thêm vào đó, với những hành động như kéo thả phần tử trên khu vực vẽ được xử lý bằng ảnh như trong Lucidchart mang tính ổn định hơn so với việc phân tích DOM do cấu trúc DOM của các trang rất đa dạng và ta không thể lường trước được tất cả trường hợp.
+
+
+
+
+
+
+
+
+
+\textbf{Mặc dù đạt hiệu quả cao trong nhiều kịch bản, phương pháp vẫn bộc lộ hạn chế đáng kể trong một số trường hợp nhất định, nguyên nhân liên quan đến cấu trúc DOM.} Cấu trúc DOM có ảnh hưởng đáng kể đến hiệu suất của phương pháp, trong đó các trang web có cấu trúc DOM đơn giản như Visual Paradigm cho kết quả kiểm thử ổn định hơn, đặc biệt với kịch bản thuần văn bản đạt tỷ lệ thành công 100\%. Tuy nhiên, shadow-root được xác định là điểm yếu chung của cả hai phương pháp xử lý văn bản và hình ảnh. Các phần tử nằm trong shadow-root không có XPath trực tiếp mà chỉ có thể truy cập tới khu vực shadow-root, dẫn đến thất bại trong việc tương tác. Thêm vào đó, các phần tử trên khu vực vẽ không xuất hiện trực tiếp trên DOM điển hình như Lucidchart đòi hỏi \gls{ImageProcessing} phức tạp hơn để xác định vị trí. Một thách thức khác đối với phương pháp xử lý hình ảnh là các phần tử có quá ít đặc trưng hoặc nhiều phần tử giống nhau đến mức khó phân biệt bằng mắt thường, vẫn gây khó khăn cho việc nhận diện chính xác.
+
+
+\textbf{Một trường hợp khác phát sinh trong quá trình thao tác trên flowchart như đã đề cập một phần trước đó là liên quan đến việc tương tác với các đường nối}. Hiện tại phương pháp mới chỉ xử lý tốt cho các trường hợp nối thẳng. Mặc dù phương pháp có thể xác định tương đối chính xác vị trí giữa các phần tử để thực hiện kết nối, nhưng các điểm nối trên giao diện thực tế không phải lúc nào cũng phản hồi như mong đợi. Điểm nối có thể bị lệch trong quá trình kéo–thả, hoặc ngay cả khi kết nối thành công, thao tác tiếp theo vẫn có thể thất bại: ví dụ, thay vì chọn phần tử nối giữa hai node, phương pháp lại điền văn bản lên phần tử khác hoặc khu vực bên ngoài do cơ chế tương tác luôn nhắm vào tâm của đối tượng (các phần tử có hình dạng bất đối xứng, chẳng hạn dạng chữ L), việc chọn tâm không còn đảm bảo tính chính xác, dẫn đến sai lệch logic hoặc không thể biểu đạt đúng ý đồ của~sơ~đồ, chi tiết có thể thấy ở Bảng \ref{fig:actual}, Bảng \ref{fig:actual_dark} và Bảng \ref{fig:actual3}. Trên Drawio, khi nối giữa node ``Wait for 30 mins'' và ``Lunch time'' - mục tiêu là nối từ trung tâm cạnh phải tới trung tâm cạnh trái của phần tử còn lại - nhưng trang web không nhận được vị trí của trung tâm cạnh trái dẫn đến đường nối chưa hoàn thiện; đường nối giữa ``Cook by your self'' và ``Restaurant~?'' thiếu từ ``No'' do đường nối có hình dạng đặc biệt nên trung tâm của đường nối lại không nằm trên khu vực của thẻ XPath chứa đường nối này, điều này xảy ra gần tương tự với Visual Paradigm, chỉ khác khi này trung tâm của XPath của phần tử DOM chứa đường nối lại rơi vào phần tử khác.
+
+
+\begin{tcolorbox}[
+    colback=gray!10,
+    colframe=gray!50!black,
+    title=Trả lời cho RQ1,
+    fonttitle=\bfseries,
+    coltitle=white,
+    colbacktitle=gray!50!black
+]
+Phương pháp đề xuất đạt hiệu quả tương đối cao trên ba nền tảng vẽ sơ đồ trực tuyến, trong đó tìm kiếm bằng hình ảnh cho kết quả vượt trội (93.15-100\%) so với văn bản và ổn định trước các thay đổi giao diện. Phương pháp xử lý tốt các kịch bản phức tạp nhưng vẫn gặp hạn chế với cấu trúc DOM phức tạp (shadow-root) và tương tác với các đường nối có hình dạng bất đối xứng.
+\end{tcolorbox}
+
+
+
+
+
+
+
+\begin{figure}[t]
+    \centering
+    % Cặp 1: drawio
+    \begin{minipage}[t]{0.41\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/expect.png}
+        \caption{Kết quả mong đợi trên Draw.io (giao diện sáng)}
+        \label{fig:expect}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/actual.png}
+        \caption{Kết quả thực tế trên Draw.io (giao diện sáng)}
+        \label{fig:actual}
+    \end{minipage}
+    
+    \vspace{1em}
+    
+    % 
+    \begin{minipage}[t]{0.41\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/expect_dark.png}
+        \caption{Kết quả mong đợi trên Draw.io (giao diện tối)}
+        \label{fig:expect_dark}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/actual_dark.png}
+        \caption{Kết quả thực tế trên Draw.io (giao diện tối)}
+        \label{fig:actual_dark}
+    \end{minipage}
+\end{figure}
+
+
+\begin{figure}[t]
+    \centering
+    % Cặp 2: Lucidchart
+    \begin{minipage}[t]{0.42\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/expect2.png}
+        \caption{Kết quả mong đợi trên Lucidchart}
+        \label{fig:expect2}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/actual2.png}
+        \caption{Kết quả thực tế trên Lucidchart}
+        \label{fig:actual2}
+    \end{minipage}
+    
+    \vspace{1em}
+    
+    % Cặp 3: Visual Paradigm
+    \begin{minipage}[t]{0.43\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/expect3.png}
+        \caption{Kết quả mong đợi trên Visual Paradigm}
+        \label{fig:expect3}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{image/actual3.png}
+        \caption{Kết quả thực tế trên Visual Paradigm}
+        \label{fig:actual3}
+    \end{minipage}
+\end{figure}
+
+\clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{RQ2 - Hiệu năng: Đánh giá thời gian thực thi trung bình, chi phí token và so sánh hiệu quả thực thi kịch bản phức tạp giữa kiểm thử tự động và kiểm thử thủ công}
+
+
+\begin{table}[h]
+\centering
+\caption{Thống kê thời gian thực thi trung bình trên mỗi bước}
+\label{tab:average_time}
+\begin{tabular}{|l|c|c|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Thời gian thực thi trung bình trên mỗi bước}} \\
+\hline
+ & Toàn bộ dữ liệu & Kịch bản flowchart \\
+\hline
+Draw.io & 5,44 & 5,18 \\
+\hline
+Lucidchart & 4,32 & 4,23 \\
+\hline
+Visual Paradigm & 4,5 & 4,22 \\
+\hline
+\end{tabular}
+\end{table}
+
+Ngoài khả năng thực thi thành công, một yếu tố khác không kém quan trọng cần xét đến đó là hiệu năng - yếu tố đảm bảo sự thân thiện với người dùng, chi tiết được trình bày ở Bảng \ref{tab:average_time}. Khóa luận này tập trung vào việc thực thi các kịch bản vẽ flowchart do đó tôi xét \textbf{thời gian thực thi vẽ các flowchart} trên draw.io là 5 kịch bản, trên Lucid và Visual Paradigm lần lượt là 12 và 8 với độ dài mỗi kịch bản từ 24 - 54 bước. Thời gian thực thi trên Draw.io có phần nhỉnh hơn do kịch bản chứa ảnh ở trang web này được tạo từ một màn hình có kích thước khác với màn hình thực thi kiểm thử, sự khác biệt về giao diện giữa hai màn hình dẫn đến việc \gls{ImageProcessing} kéo dài hơn so với việc sử dụng ảnh không có sự khác biệt khoảng 2 giây, từ đó thời gian thực thi trung bình nhỉnh hơn. Còn đối với Lucidchart và Visual Paradigm chứa ảnh không có sự khác biệt lớn. Việc tạo bộ kịch bản có sự khác biệt này không ảnh hưởng tới tính khách quan của kết quả do việc xử lý kịch bản flowchart gần như không có sự khác biệt giữa ba trang web được sử dụng trong thực nghiệm. Và kết quả này vẫn nằm trong phạm vi chấp nhận được và không ảnh hưởng tới trải nghiệm thực tế của người dùng. Nhìn chung phương pháp duy trì tốc độ đáp ứng ổn định và đủ nhanh cho việc tương tác liên tục trên giao diện web.
+
+
+
+\textbf{Trong khóa luận này, một phần đánh giá riêng được dành cho hiệu năng xử lý ảnh và khả năng nhận diện phần tử.} Phương pháp đề xuất tương tác trực tiếp với giao diện người dùng và có bao gồm thao tác cuộn để tìm kiếm phần tử cần nhận diện. Trên cơ sở đó, khóa luận so sánh hiệu năng của phương pháp đề xuất với phương pháp đối chứng (\hyperref[appendix:doichung]{Phụ lục B}), trong đó toàn bộ các phần tử SVG được tái dựng sẵn trên màn hình và không cần thực hiện thao tác cuộn (Bảng \ref{tab:comparison_render}). 
+
+Kết quả thực nghiệm cho thấy phương pháp đề xuất đạt hiệu năng vượt trội cả về độ hiệu quả lẫn thời gian thực thi. Nguyên nhân là do phương pháp này sử dụng trực tiếp ảnh chụp từ giao diện web làm đầu vào, qua đó bảo toàn đầy đủ các đặc trưng hình ảnh ban đầu. Ngược lại, việc tái dựng (render) lại các phần tử để phục vụ so sánh trong phương pháp đối chứng làm suy giảm các đặc trưng này, dẫn đến hiệu năng thấp hơn. Phương pháp đề xuất chỉ gặp thất bại trong trường hợp giao diện chứa nhiều phần tử có hình dạng giống hệt nhau. Hạn chế này có thể được khắc phục bằng cách cung cấp ảnh đầu vào bao gồm cả không gian xung quanh phần tử cần tìm, với điều kiện phần tử mục tiêu nằm ở vị trí trung tâm của ảnh.
+
+Đối với phương pháp đối chứng, mặc dù sử dụng cùng một ảnh đầu vào, kết quả nhận diện thường kém hơn khi ảnh chụp phần tử quá sát. Trong các trường hợp này, phương pháp đối chứng có xu hướng trả về một phần tử cha hoặc một phần tử khác bao chứa phần tử mục tiêu. Nguyên nhân là ngay từ bước tái dựng, hình ảnh của phần tử đã xuất hiện sự khác biệt nhất định so với giao diện web thực tế, mặc dù các thuộc tính CSS được giữ nguyên. Sự khác biệt này xuất phát từ việc giao diện thực tế chứa nhiều phần tử đồng thời, trong khi quá trình cắt và tái dựng riêng lẻ từng phần tử làm mất đi ngữ cảnh hiển thị ban đầu, từ đó ảnh hưởng đến kết quả so sánh.
+
+
+\begin{table}[H]
+\caption{Bảng so sánh kết quả phương pháp đề xuất (PPĐX) và phương pháp đối chứng (PPĐC)}
+\label{tab:comparison_render}
+\centering
+\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Tiêu chí đánh giá}} & \multicolumn{2}{c|}{\textbf{Draw.io}} & \multicolumn{2}{c|}{\textbf{Lucidchart}} & \multicolumn{2}{c|}{\textbf{Visual Paradigm}} \\ \cline{2-7}
+ & \textbf{PPĐX} & \textbf{PPĐC} & \textbf{PPĐX} & \textbf{PPĐC} & \textbf{PPĐX} & \textbf{PPĐC} \\ \hline
+Số lượng & \multicolumn{2}{c|}{32} & \multicolumn{2}{c|}{10} & \multicolumn{2}{c|}{10} \\ \hline
+Tỷ lệ thành công & 96.88\% & 65.63\% & 100.00\% & 30.00\% & 100.00\% & 60.00\% \\ \hline
+Thời gian trung bình & 6.79 & 14.13 & 5.76 & 18 & 4.45 & 8.78 \\ \hline
+\end{tabular}
+\end{table}
+
+
+
+
+\textbf{Với đầu vào là ảnh khi kịch bản là vẽ flowchart, một yếu tố quan trọng cần đánh giá là chi phí token khi sử dụng API Gemini.} Kết quả thu được từ 5 lần thực thi cho thấy số token đầu vào (prompt tokens) ổn định ở mức 1.600 token, con số có thể tăng lên hoặc giảm nhẹ do mỗi website có cách phản ứng khác nhau với người dùng vì vậy kịch bản vẽ flowchart cũng có đôi chút khác biệt, và số token đầu ra (candidates tokens) dao động từ 456 đến 647 token. Tổng số token tiêu thụ trung bình là khoảng 4.545 token mỗi~lần~gọi~API. 
+
+
+
+Sự ổn định của prompt tokens cho thấy kích thước ảnh đầu vào và prompt được giữ cố định trong các lần thực thi. Trong khi đó, sự biến thiên của candidates tokens phụ thuộc vào độ phức tạp của flowchart cần phân tích - flowchart có nhiều hình dạng và kết nối phức tạp hơn sẽ tạo ra chuỗi lệnh dài hơn. Với mức giá hiện tại của Gemini 2.5 Flash là \$0,3 cho 1 triệu input tokens và \$2,5 cho 1 triệu output tokens \cite{gemini_pricing}, chi phí ước tính cho mỗi lần phân tích flowchart là khoảng \$0,0019 (bao gồm \$0,00048 cho input và \$0,0014 cho output), một mức chi phí rất thấp và hoàn toàn khả thi cho việc triển khai thực tế.
+
+
+
+Bên cạnh chi phí token, API Gemini 2.5 Flash còn có các giới hạn về tốc độ sử dụng cần lưu ý \cite{gemini_rate_limit}: giới hạn số yêu cầu mỗi ngày (RPD - Requests Per Day) là khoảng 250~yêu cầu/ngày, giới hạn token mỗi phút (TPM - Tokens Per Minute) là khoảng 250.000 token/phút, và giới hạn số yêu cầu mỗi phút (RPM - Requests Per Minute) là khoảng 10 yêu cầu/phút. Với mức tiêu thụ trung bình 4.545 token mỗi lần gọi, hệ thống có thể xử lý tối đa khoảng 55 flowchart mỗi phút (dựa trên giới hạn TPM) hoặc 10 flowchart mỗi phút (dựa trên giới hạn RPM). Trong thực tế, giới hạn RPM là yếu tố quyết định, do đó hệ thống có thể phân tích tối đa 250 flowchart mỗi ngày, một con số hoàn toàn đủ cho nhu cầu sử dụng cá nhân và các ứng dụng quy mô nhỏ đến trung bình.
+
+
+
+\begin{tcolorbox}[
+    colback=gray!10,
+    colframe=gray!50!black,
+    title=Trả lời cho RQ2,
+    fonttitle=\bfseries,
+    coltitle=white,
+    colbacktitle=gray!50!black
+]
+Phương pháp duy trì hiệu năng ổn định với tốc độ đáp ứng tương đối và chi phí API thấp, phù hợp cho triển khai thực tế ở quy mô cá nhân và trung bình.
+\end{tcolorbox}
+
+
+
+
+
+\subsection{RQ3 - Tính hiệu quả của phương pháp trên các trang web phổ biến (như tin tức, tìm kiếm)}
+
+
+Để đánh giá hiệu quả của phương pháp đề xuất, thực nghiệm được tiến hành trên nhiều trang web với các kịch bản kiểm thử đa dạng, bao gồm cả xử lý văn bản và hình ảnh. Kết quả cho thấy phương pháp đạt tỷ lệ thành công cao (80 -- 100\%) trên các trường hợp thử nghiệm. So sánh với các công cụ phổ biến như Cypress và SikuliX cho thấy sự vượt trội rõ rệt của phương pháp, với Cypress chỉ đạt 10.53\% và SikuliX thất bại hoàn toàn trong nhiều tình huống.
+
+
+\begin{table}[H]
+\centering
+\caption{Thống kê kết quả thực nghiệm trên các trang web tin tức, tìm kiếm}
+\label{tab:thong_ke_1}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\multirow{2}{*}{\textbf{Website}} & \multicolumn{2}{c|}{\textbf{Văn bản}} & \multicolumn{2}{c|}{\textbf{Văn bản + Hình ảnh}} \\
+\cline{2-5}
+ & \textbf{Toàn bộ kịch bản} & \textbf{Bước} & \textbf{Toàn bộ kịch bản} & \textbf{Bước} \\
+\hline
+webtest.ranorex.org & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} \\
+\hline
+nhandan.vn & 95.45\% & 98.44\% & \textbf{100.00\%} & \textbf{100.00\%} \\
+\hline
+tuoitre.vn & 89.47\% & 95.92\% & 91.67\% & 95.83\% \\
+\hline
+bing.com & 80.00\% & 92.86\% & 85.71\% & 92.86\% \\
+\hline
+vnexpress.net & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} & \textbf{100.00\%} \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+Bảng \ref{tab:thong_ke_1} trình bày kết quả thực nghiệm kiểm thử tự động được phân tích theo từng bước thực thi (step) và toàn bộ kịch bản. Kết quả được phân loại theo hai phương thức đối với phần tử bằng văn bản và phần tử bằng hình ảnh. Bảng này giúp so sánh trực tiếp hiệu suất của các trang web ở cấp độ từng bước thực thi và cả kịch bản hoàn chỉnh.
+
+
+
+
+\textbf{Sự thành công của phương pháp chủ yếu đến từ khả năng khai thác hiệu quả cấu trúc DOM kết hợp với thuật toán Multi-Scale Template Matching.} Kết quả thực nghiệm (Bảng \ref{tab:thong_ke_1}) cho thấy phương pháp đạt tỷ lệ thành công tuyệt đối ở tất cả các bước trên webtest.ranorex.org và vnexpress.net. Tỉ lệ thành công với kịch bản thuần ngôn ngữ tự nhiên từ 80.00\%, điều này là nhờ cơ chế khai thác trực tiếp cấu trúc DOM, cho phép ánh xạ chính xác giữa văn bản trích xuất và nút DOM tương ứng. Phương pháp đã tận dụng hiệu quả thông tin ngữ nghĩa sẵn có của \gls{DOMTree}; bên cạnh đó, việc tích hợp \textit{Sentence Transformer} giúp tăng cường khả năng so khớp ngữ nghĩa giữa mô tả đầu vào và nội dung văn bản của phần tử, đảm bảo phương pháp vẫn hoạt động chính xác ngay cả khi có sự khác biệt về cách diễn đạt. Ở nhóm kiểm thử có chứa ảnh phần tử, tỷ lệ thành công cũng ở mức cao khi tỷ lệ thành công đạt từ 85.71\%. Các thuật toán MSTM và SIFT đã cho thấy khả năng định vị phần tử hiệu quả ngay cả khi có sự thay đổi nhỏ về kích thước, màu sắc hay bố cục (đã được đề cập tới ở RQ1).
+
+
+
+
+
+
+
+Từ kết quả thực nghiệm được trình bày trong các bảng trên, có thể thấy công cụ kiểm thử tự động đã đạt được hiệu suất khá tốt với tỉ lệ pass cao ở cả hai nhóm đối tượng kiểm thử. Kết quả này khẳng định tính khả thi và hiệu quả của công cụ trong việc tự động hóa kiểm thử ứng dụng web. Và để có cái nhìn khách quan và toàn diện tôi đã thực hiện trên các công cụ phổ biến hiện nay là Cypress và SikuliX. Cypress có hỗ trợ phương thức prompt() nhằm thực thi test scenario mô bản bằng văn bản một cách tự động, tuy vậy với tổng số 38 kịch bản trên các trang webtest.ranorex.org, nhandan.vn, tuoitre.vn, bing.com, vnexpress.net thì chỉ có 4 kịch bản thành công (chiếm tỉ lệ 10.53\%). Nguyên nhân thất bại là do đặc thù của Cypress vì nó chạy trong sandbox của trình duyệt, ta có thể đề cập tới một số trường hợp như cross-origin policy (các trang báo tại Việt Nam tải quảng cáo, phân tích từ domain khác), script tải vô hạn (load nhiều quảng cáo làm load event không kết thúc). Một nguyên nhân khác nữa là giao diện nằm trong Cypress có sự khác biệt tương đối với giao diện người dùng thực tế, dẫn tới một số phần tử cần kiểm thử lại không xuất hiện. Kết quả Cypress tương đối thấp càng khẳng định thêm tính hiệu quả của phương pháp đề xuất.
+
+
+
+Kế tiếp ta xét tới công cụ SikuliX. Với giao diện dễ hiểu, dễ sử dụng, SikuliX thành công với tất cả kịch bản đơn giản như thao tác với ứng dụng, thao tác chuột (move cursor, click, drag \& drop), keyboard input, tìm kiếm các khu vực tương tự, dò event cho khu vực được chỉ định,... Tuy vậy khi có sự thay đổi nhỏ về kích thước trong ảnh đầu vào hoặc phần tử không xuất hiện trực tiếp trên giao diện mà cần hành động khác như cuộn để tìm kiếm thì SikuliX lại thất bại hoàn toàn. Kèm theo đó SikuliX chưa có cơ chế theo dõi DOM như phương pháp đề xuất mà kiểm thử viên phải tự viết các logic đợi để đồng bộ trạng thái giao diện.
+
+
+
+\textbf{Phương pháp gặp hạn chế trong các tình huống liên quan đến sự mơ hồ của phần tử và cấu trúc DOM đặc biệt như shadow-root.} Cụ thể, với xử lý văn bản, thất bại xảy ra khi DOM chứa nhiều phần tử có nội dung tương đương nhau, hoặc khi thông tin đầu vào chưa mô tả rõ ngữ cảnh (chẳng hạn click vào tiêu đề bài báo nhưng chỉ cung cấp một phần quá ngắn về tiêu đề), dẫn đến việc so khớp không chính xác. Đối với xử lý hình ảnh, mặc dù việc xác định tọa độ hoàn toàn chính xác, nguyên nhân thất bại chủ yếu nằm ở bước xác định XPath: ảnh tham chiếu có ít đặc trưng khiến việc nhận diện dễ nhầm lẫn hoặc không chính xác. Điểm yếu chung của cả hai phương pháp là không thể xử lý các phần tử nằm trong shadow-root, vì các thành phần giao diện được đóng gói trong Shadow DOM không nằm trực tiếp trên cây DOM thông thường và Selenium không thể truy cập trực tiếp như với DOM thông thường.
+
+
+
+
+
+
+
+\begin{tcolorbox}[
+    colback=gray!10,
+    colframe=gray!50!black,
+    title=Trả lời cho RQ3,
+    fonttitle=\bfseries,
+    coltitle=white,
+    colbacktitle=gray!50!black
+]
+Kết quả thực nghiệm cho thấy phương pháp đề xuất hoạt động hiệu quả nhờ khả năng khai thác cấu trúc DOM kết hợp với thuật toán MSTM, vượt trội rõ rệt so với các công cụ phổ biến như Cypress và SikuliX, có khả năng duy trì kịch bản ở nhiều thiết bị và màn hình khác nhau. Tuy nhiên, phương pháp vẫn còn hạn chế khi xử lý các trường hợp phần tử mơ hồ và cấu trúc DOM đặc biệt như shadow-root.
+\end{tcolorbox}
+
+
+
+
+
+
+
+%=================== Nghiên cứu liên quan
+\chapter{Các nghiên cứu liên quan}
+
+
+Kiểm thử và điều khiển tự động giao diện đồ họa (GUI) từ ngôn ngữ tự nhiên và hình ảnh là một lĩnh vực nghiên cứu đang phát triển mạnh mẽ, nhằm xây dựng các tác tử thông minh có khả năng hiểu và thực thi chỉ dẫn của người dùng mà không cần truy cập mã nguồn hay cấu trúc DOM. Nghiên cứu tổng quan của Yu et al. \cite{yu2025visionbasedmobileappgui} đã phân tích 271 công trình về kiểm thử GUI cho ứng dụng di động, trong đó 92 nghiên cứu (34\%) sử dụng phương pháp dựa trên hình ảnh (vision-based). Các phương pháp này vượt trội hơn cách tiếp cận truyền thống nhờ không cần mã nguồn, thích ứng đa nền tảng, phát hiện được widget tùy chỉnh và mô phỏng hành động người dùng tự nhiên. Nghiên cứu chỉ ra rằng vision-based chiếm ưu thế tuyệt đối trong phát hiện phần tử GUI (36/39 nghiên~cứu), với xu hướng tăng mạnh từ 2016 nhờ CNN, OCR và deep learning. Tuy nhiên, các phương pháp này vẫn gặp thách thức như xử lý GUI động, chi phí tính toán cao và~thiếu~oracle~tự~động.
+
+Trong bối cảnh kiểm thử web, Wang et al. \cite{wang2024leveraginglargevisionlanguage} đề xuất VETL - hệ thống sử dụng mô hình thị giác-ngôn ngữ lớn (LVLM) để giải quyết hai thách thức chính: sinh input text hợp lệ và chọn đúng phần tử tương tác. VETL hoạt động bằng cách chụp ảnh màn hình, đánh dấu các ô nhập liệu, trích xuất ngữ cảnh (tiêu đề, văn bản xung quanh, ràng buộc HTML), sau đó yêu cầu LVLM sinh text phù hợp hoặc đề xuất phần tử để tương tác. Hệ thống kết hợp thuật toán Multi-Armed Bandit để cân bằng giữa khai thác gợi ý của LVLM và khám phá ngẫu nhiên. Kết quả cho thấy VETL khám phá được 25\% hành động độc đáo hơn WebExplor và phát hiện được lỗi thực tế trên các trang web lớn. Mặc dù hiệu quả, VETL vẫn hạn chế về chi phí tính toán cao và yêu cầu GPU mạnh khi triển khai LVLM.
+
+Nghiên cứu đột phá của Google DeepMind - Pix2Act \cite{shaw2023pixelsuiactionslearning} - đã chứng minh khả năng xây dựng agent thực thi hành động GUI hoàn toàn từ pixel và ngôn ngữ tự nhiên, không cần DOM hay HTML. Pix2Act sử dụng kiến trúc Transformer với input là screenshot và chỉ dẫn ngôn ngữ, output là chuỗi hành động GUI (click, type, scroll). Mô hình đạt hiệu suất vượt con người trên benchmark MiniWoB++ và có khả năng tổng quát hóa tốt sang giao diện mới. Pix2Act mở ra hướng tiếp cận mới cho tự động hóa GUI, đặc biệt phù hợp với các tác vụ như kiểm thử tự động, RPA và trợ lý ảo nơi việc truy cập cấu trúc nội bộ ứng dụng không khả thi.
+
+Mặc dù các nghiên cứu trên đã đạt nhiều thành tựu quan trọng, vẫn còn tồn tại khoảng trống nghiên cứu. Pix2Act chủ yếu tập trung vào tác vụ web đơn giản với các hành động cơ bản (click, type, scroll), chưa được đánh giá trên ứng dụng chuyên biệt như công cụ vẽ sơ đồ yêu cầu hành động phức tạp hơn (move, extend, scale, connect). VETL và các phương pháp LVLM gặp vấn đề về chi phí cao và yêu cầu tài nguyên lớn. Hơn nữa, việc xử lý kịch bản ngôn ngữ tự nhiên phức tạp với nhiều bước tuần tự và phụ thuộc lẫn nhau chưa được giải quyết đầy đủ. Khóa luận này đề xuất một phương pháp khắc phục các hạn chế trên, có khả năng thực thi tự động các kịch bản phức tạp từ ngôn ngữ tự nhiên và ảnh màn hình trên ứng dụng đồ họa, hỗ trợ đa dạng hành động, hiểu ngữ cảnh với các bước phụ thuộc lẫn nhau.
+
+
+
+% Trong bối cảnh các mô hình ngôn ngữ lớn phát triển như hiện tại thì việc ứng dụng chúng vào thực tế càng phổ biến bởi tính hiệu quả mà nó mang lại đặc biệt trong việc kiểm thử giao diện vốn là công việc tốn nhiều công sức và chi phí. Dưới đây là các nghiên cứu tiêu biểu gần đây trong lĩnh vực vốn nhận được nhiều sự quan tâm như kiểm~thử.
+% \section{Leveraging Large Vision-Language Model For
+% Better Automatic Web GUI Testing}
+% Nghiên cứu “Leveraging Large Vision-Language Model For
+% Better Automatic Web GUI Testing” \cite{wang2024leveraginglargevisionlanguage} đề xuất một phương pháp mới để kiểm thử tự động giao diện người dùng (GUI) trên ứng dụng web. Trong bối cảnh các ứng dụng web phổ biến trong đời sống như mua sắm, đặt vé máy bay hoặc đăng nhập mạng xã hội do đó để đảm bảo chúng hoạt động tốt (không lỗi, dễ dùng), người ta cần kiểm thử tự động: Một chương trình (gọi là "agent") sẽ tự động click, nhập chữ vào ô textbox, và khám phá website như người dùng thật. Một số thách thức có thể đề cập tới như nhập chữ - không thể nhập bừa là được, ví dụ trên trang đặt vé máy bay, bạn cần nhập địa điểm thực tế mới kích hoạt chức năng tìm chuyến bay, nếu nhập ngẫu nhiên, agent sẽ kẹt ở trang chủ, không khám phá sâu; hoặc tương tác với elements (như button), ví dụ sau khi nhập chữ, phải click đúng button liên quan (ví dụ: "Tìm kiếm" sau ô tìm kiếm) mà giao diện web thì phức tạp, nhiều elements, nên khó chọn đúng. Thêm vào đó các công cụ cũ lại không đạt được hiệu quả do chỉ dựa vào HTML song song với đó Web phức tạp hơn do màn hình lớn, nhiều yếu tố và thay đổi liên tục.
+% Bài báo lập luận rằng các mô hình AI lớn mới (Large Vision-Language Models - LVLMs, như GPT-4 kết hợp hình ảnh) có thể giải quyết vấn đề này, vì chúng hiểu cả hình ảnh và ngôn ngữ - giống như cách con người nhìn và suy nghĩ. Giải pháp đề xuất của bài báo là VETL - một hệ thống kiểm thử web tự động, sử dụng một LVLM duy nhất (như LLaVA-1.5 hoặc MiniGPT4) để làm hai việc chính: Tạo input text và chọn elements để click. VETL hoạt động theo vòng lặp: phát hiện ô nhập liệu, chụp ảnh màn hình, đánh dấu ô cần nhập bằng khung đỏ, trích xuất ngữ cảnh (tiêu đề trang, chữ gần ô, ràng buộc HTML), rồi hỏi LVLM tạo text hợp lệ. Sau khi điền hết ô, VETL tiếp tục hỏi LVLM chọn button liên quan (đánh dấu xanh + số), và dùng Multi-Armed Bandit để quyết định hành động: ưu tiên button do LVLM gợi ý (khai thác) hoặc thử ngẫu nhiên (khám phá). Kết quả là VETL khám phá được 25\% hành động độc đáo hơn WebExplor, tìm ra lỗi thực tế trên các web lớn, mở ra hướng dùng LVLM để kiểm thử web thông minh và hiệu quả hơn. Tuy vậy còn tồn tại hạn chế do chi phí LVLM cao, cần GPU mạnh. Bài báo là nghiên cứu LVLM cho kiểm thử web end-to-end và chứng minh rằng AI đa mode (visual + language) có thể làm tester web thông minh hơn, giúp phát hiện lỗi sớm, cải thiện chất lượng web.
+% \section{Vision-Based Mobile App GUI Testing: A Survey}
+% Nghiên cứu Vision-Based Mobile App GUI Testing: A Survey \cite{yu2025visionbasedmobileappgui} là một bài khảo sát toàn diện về kỹ thuật kiểm thử giao diện người dùng đồ họa (GUI) cho ứng dụng di động (mobile app), với trọng tâm vào các phương pháp dựa trên tầm nhìn (vision-based). Bài báo phân tích 271 bài nghiên cứu, trong đó 92 bài là dựa trên tầm nhìn, để làm rõ sự phát triển từ phương pháp truyền thống sang phương pháp dựa trên hình ảnh (screenshots) nhờ công nghệ thị giác máy tính. Bài báo nhấn mạnh vai trò quan trọng của GUI trong ứng dụng di động: GUI là cầu nối giữa người dùng và ứng dụng, ảnh hưởng trực tiếp đến trải nghiệm người dùng. Lỗi GUI có thể dẫn đến trải nghiệm kém, hành vi bất thường hoặc rủi ro bảo mật. Kiểm thử GUI nhằm xác nhận chức năng, giao diện và tương tác của các thành phần như nút bấm, hộp văn bản, menu. Phương pháp truyền thống dựa vào mã nguồn hoặc tệp bố cục gặp nhiều thách thức như: vấn đề phân mảnh (ứng dụng chạy trên nhiều môi trường), khoảng cách lớn giữa thông tin thu được từ các tệp bố cục (layout files) và những gì thực sự được hiển thị ở cấp độ giao diện người dùng (GUI). Do đó phương pháp đã sử dụng công nghệ thị giác máy tính (computer vision - CV) để khắc phục những vấn đề được nêu trên.
+% Bài báo phân loại nghiên cứu theo hai chiều: yêu cầu mã nguồn (black-box: 170, grey-box: 61, white-box: 40) và cơ sở phương pháp (code-based: 102, layout-based: 71, image-based: 83, kết hợp: 15), trong đó black-box và image-based chiếm ưu thế nhờ tính thực tiễn (dùng file .apk) và khả năng xử lý GUI phức tạp. Vision-based chiếm 34\% tổng số bài, đặc biệt thống trị chủ đề phát hiện phần tử GUI (ELE: 36/39), với xu hướng tăng mạnh từ năm 2016 nhờ CNN, OCR và deep learning. Nghiên cứu được tổ chức theo 8 chủ đề chính, chia thành ba nhóm: kiểm thử tự động (GEN – sinh test case: 62 bài, R\&R – record \& replay: 34 bài, FRM – framework: 56 bài), hỗ trợ kiểm thử thủ công (SRP – bảo trì script: 16 bài, RPT – phân tích báo cáo: 34 bài), và kỹ thuật cơ bản (ELE, U\&A – tính khả dụng \& tiếp cận: 11 bài, EVA – tiêu chí đánh giá: 19 bài). Trong đó, vision-based đặc biệt hiệu quả ở R\&R (13/34) – chuyển script giữa thiết bị/OS, RPT (14/34) – tự động mô tả ảnh lỗi, nhóm báo cáo, phát hiện trùng lặp bằng CV+NLP, và ELE – nền tảng cho toàn bộ kiểm thử hình ảnh.
+% So với phương pháp truyền thống, vision-based vượt trội ở không cần mã nguồn, thích ứng đa nền tảng, phát hiện widget tùy chỉnh, mô phỏng hành động tự nhiên, phù hợp black-box và crowdsourced testing. Tuy nhiên, vẫn tồn tại thách thức như xử lý GUI động (animation, dark mode), chi phí tính toán cao, thiếu oracle tự động. Bài báo đề xuất hướng tương lai: kết hợp CV + LLM để sinh mô tả hành động và oracle, knowledge graph để hiểu quan hệ phần tử, adaptive testing theo ngữ cảnh người dùng, và cải thiện accessibility testing cho người khuyết tật. Với phân loại đa chiều có độ tin cậy cao (Fleiss’ kappa = 0.95) và lần đầu hệ thống hóa 8 chủ đề dưới góc nhìn vision-based, nghiên cứu này là tài liệu tham khảo quan trọng nhất hiện nay cho nhà nghiên cứu AI \& kiểm thử, kỹ sư QA, và nhà phát triển công cụ kiểm thử tự động, khẳng định: vision-based không chỉ là xu hướng – mà là tương lai của kiểm thử GUI di động.
+% \section{Tóm tắt và định hướng}
+% Cả hai nghiên cứu trên đều chỉ ra vấn đề cấp thiết của kiểm thử giao diện trong quy trình phát triển phần mềm hiện đại đặc biệt kiểm thử dựa trên hình ảnh chứ không chỉ đơn thuần dựa theo cấu trúc DOM hoặc mã nguồn. Các nghiên cứu là cơ sở để quy trình kiểm thử tự động trở nên hiệu quả và tiết kiệm chi phí qua đó áp dụng rộng rãi hơn trong thực tiễn.
+
+
+
+
+
+%=================== Kết luận
+\chapter{Kết luận}
+Khóa luận này đã trình bày một phương pháp sinh mã kiểm thử từ
+ca kiểm thử mô tả bằng ngôn ngữ tự nhiên cho ứng dụng Web dựa trên hai dạng mô tả là ngôn ngữ tự nhiên và hình ảnh. Phương pháp đề xuất thể hiện nhiều điểm mạnh nổi bật. Thứ nhất, tính linh hoạt cao khi có thể xử lý cả hai loại đầu vào là văn bản và hình ảnh, giúp giải quyết được bài toán xác định các phần tử không có tên như icon trên các trang web động. Thứ hai, độ chính xác cao đặc biệt với ánh xạ văn bản chứng minh tính khả thi trong môi trường thực tế. Với những kết quả mà phương pháp đã chứng minh đem lại tính khả thi trong việc ứng dụng vào thực tế, tạo nền tảng cho việc kết kết hợp ngôn ngữ tự nhiên và hình ảnh vào kiểm thử những kịch bản dài, phức tạp từ đó tiết kiệm thời gian và chi phí.
+
+Mặc dù đạt được những kết quả tích cực, phương pháp vẫn tồn tại một số hạn chế cần được khắc phục trong tương lai. Độ chính xác đem lại kết quả khả quan nhưng chưa đạt mức hoàn hảo, đặc biệt trong các trường hợp nhiều phần tử giống nhau hoặc tương đồng cùng xuất hiện và phần tử nằm trên shadow-root. Khả năng xử lý hình ảnh hiện tại còn phụ thuộc nhiều vào chất lượng OCR và thuật toán Multi-Scale Template Matching, có thể gặp khó khăn với các phần tử có thiết kế đặc biệt, hiệu ứng thị giác phức tạp hoặc hình ảnh đầu vào ít đặc trưng/kém chất lượng. Để phát triển trong tương lai, nghiên cứu có thể tập trung vào việc tích hợp các mô hình ngôn ngữ lớn tiên tiến hơn để cải thiện độ chính xác ánh xạ văn bản, nâng cao khả năng nhận dạng hình ảnh thông qua các kỹ thuật deep learning hiện đại, và mở rộng khả năng tương tác với các framework JavaScript phức tạp. Đồng thời, cần tiến hành thực nghiệm trên quy mô lớn hơn với nhiều loại trang web khác nhau để đánh giá toàn diện tính ổn định và hiệu quả của phương pháp, từ đó hoàn thiện phương pháp sinh ca kiểm thử tự động hoàn toàn dựa trên ngôn ngữ tự nhiên.
+
+
+\printglossary[title={Danh mục thuật ngữ}]
+
+
+\bibliographystyle{elsarticle-num}
+\addcontentsline{toc}{chapter}{Tài liệu tham khảo}
+\renewcommand\refname{Tài liệu tham khảo}
+\bibliography{reference}
+
+
+% \appendix
+% % \renewcommand{\chaptername}{Phụ lục}
+% % \renewcommand{\thesection}{\arabic{section}}
+% % \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+% % \chapter*{Phụ lục}
+% \chapter{Kỹ thuật one -- shot learning}
+% \label{appendix:flowchart}
+
+
+\appendix
+\chapter{Kỹ thuật one -- shot learning}
+\label{appendix:flowchart}
+
+
+Phương pháp sử dụng mô hình Gemini 2.5 Flash \cite{google_gemini_2_5_flash} để phân tích hình ảnh flowchart và chuyển đổi thành chuỗi các lệnh kiểm thử Draw.io, Lucidchart, Visual Paradigm. Phương pháp áp dụng kỹ thuật one-shot learning với prompt được thiết kế cẩn~thận~bao~gồm:
+
+\section{Cấu trúc Prompt}
+Prompt one-shot bao gồm ba thành phần chính:
+\begin{itemize}
+\item \textbf{Tập lệnh khả dụng:} Định nghĩa các lệnh chuẩn như Click, Move, Fill, Connect, Delete, v.v.
+\item \textbf{Ví dụ mẫu:} Cung cấp ví dụ đầy đủ về cách chuyển đổi flowchart thành chuỗi lệnh.
+\item \textbf{Quy tắc định vị:} Các quy tắc về số lần Move dựa trên thứ tự Click và vị~trí~tương~đối.
+\end{itemize}
+
+\section{Thuật toán Định vị Phần tử}
+
+Mã nguồn phân tích flowchart có dạng như sau:
+{\footnotesize
+\begin{verbatim}
+    model = genai.GenerativeModel("gemini-2.5-flash")
+    def describe_flowchart_steps(image_path):
+        img = Image.open(image_path)
+        prompt = (
+            "You are an expert at analyzing flowcharts...\\n"
+            "[Drawing rules]\\n"
+        )
+        response = model.generate_content(
+            [prompt, img],
+            generation_config=genai.types.GenerationConfig(
+                temperature=0.1,
+                max_output_tokens=5000
+            )
+        )
+        return response.text
+\end{verbatim}
+}
+
+
+
+
+
+\begin{tcolorbox}[
+    colback=gray!10,
+    colframe=gray!50!black,
+    title=Nội dung prompt,
+    fonttitle=\bfseries,
+    coltitle=white,
+    colbacktitle=gray!50!black,
+    before skip=5pt,
+    after skip=5pt
+]
+\footnotesize % Giảm cỡ chữ từ \small xuống \footnotesize
+
+\textbf{System Instruction:}
+You are an expert at analyzing flowcharts and converting them actions.
+Given a flowchart image, output ONLY a sequence of commands to recreate it.
+
+\vspace{0.2cm}
+\textbf{Available Commands:}
+\begin{itemize}[nosep, leftmargin=*] % Giảm khoảng cách giữa các items
+    \item Open ``[URL]''
+    \item Click on [rectangle.png]/[ellipse.png]/[diamond.png]/[parallelogram.png]
+    \item Double click on the element created in step \{num\}
+    \item Fill ``text content'' into the element created in step \{num\}
+    \item Move the element created in step \{num\} to the right/left/up/down
+    \item Extend the right/left/top/bottom edge of the element created in step \{num\}
+    \item Shrink the right/left/top/bottom edge of the element created in step \{num\}
+    \item Delete the element created in step \{num\}
+    \item Connect the element created in step \{num\_X\} to the element created in step \{num\_Y\}
+    \item Double click on connector\_from\_step\{num\_X\}\_to\_step\{num\_Y\}
+    \item Fill ``text content''
+\end{itemize}
+
+\vspace{0.2cm}
+\textbf{Output structure (3 phases):}
+\begin{enumerate}[nosep, leftmargin=*]
+    \item Create all shapes and position them: Click and Move
+    \item Add text to all shapes: Double click and Fill
+    \item Connect all shapes
+\end{enumerate}
+
+\vspace{0.2cm}
+\textbf{Important Rules:}
+\begin{enumerate}[nosep, leftmargin=*]
+    % \item Start with: Open ``[URL]''
+    \item Number steps sequentially (step 2, step 3, etc.)
+    \item Use exact command syntax shown above
+    \item Include text content from the flowchart shapes
+    \item Output ONLY the commands, no explanations or markdown
+    \item Analyze the flowchart from top to bottom, left to right
+    \item \textbf{VERTICAL POSITIONING:} Follow the Click-order pattern for vertical moves
+    \item \textbf{ROW ALIGNMENT OVERRIDE:} If elements are in the same row, use same vertical moves
+    \item \textbf{HORIZONTAL/VERTICAL MOVE REDUCTION:} Use minimal moves for nearby elements
+\end{enumerate}
+
+\vspace{0.2cm}
+\textbf{Example:}
+
+\noindent\textit{Input flowchart:} [image.png]
+
+\noindent\textit{Expected output:} ...
+
+\end{tcolorbox}
+
+
+
+
+
+
+
+
+Thứ nhất, về việc thiết kế prompt, prompt bắt đầu bằng việc thiết lập vai trò cho mô hình AI, ví dụ trong Draw.io ta sử dụng câu ``You are an expert at analyzing flowcharts and converting them into draw.io actions''. Việc định nghĩa vai trò này không chỉ đơn thuần là một câu mở đầu mà còn có ý nghĩa quan trọng trong việc kích hoạt các khả năng chuyên biệt của mô hình ngôn ngữ lớn. Theo nghiên cứu về prompt engineering, việc gán vai trò cụ thể giúp mô hình tập trung vào kiến thức miền (domain knowledge) phù hợp và tạo ra câu trả lời có chất lượng cao hơn \cite{kong2024betterzeroshotreasoningroleplay}.
+
+
+Phần tiếp theo của prompt định nghĩa rõ ràng yêu cầu đầu ra với câu ``output ONLY a sequence of commands to recreate it in draw.io''. Sự rõ ràng này rất quan trọng vì mô hình AI thường có xu hướng tạo ra các câu trả lời dài dòng, kèm theo giải thích và phân tích. Do đó, việc nhấn mạnh từ ``ONLY'' giúp hạn chế các thông tin không cần thiết trong kết quả.
+
+
+Danh sách các lệnh có sẵn được thiết kế để cung cấp một bộ từ vựng chuẩn cho mô hình. Thay vì để mô hình tự do sáng tạo cú pháp lệnh, chúng ta định nghĩa trước một tập hợp các thao tác cơ bản bao gồm mở ứng dụng, tạo các hình dạng, di chuyển và điều chỉnh kích thước các phần tử, thêm nội dung text, và tạo các kết nối giữa các phần tử. Mỗi lệnh được định nghĩa với cú pháp chính xác, ví dụ ``Move the element created in step {num} to the right/left/up/down'' với placeholder {num} để chỉ định phần tử cụ thể. Cách tiếp cận này giúp đảm bảo tính nhất quán trong cú pháp.
+
+
+
+Phần ví dụ đầu ra đóng vai trò then chốt trong việc hướng dẫn mô hình. Đây là ứng dụng của kỹ thuật one-shot learning, trong đó chúng ta cung cấp một hoặc nhiều ví dụ cụ thể về đầu ra mong muốn. Ví dụ được thiết kế để minh họa quy trình hoàn chỉnh từ việc mở ứng dụng, tạo các hình, di chuyển chúng đến vị trí phù hợp, thêm text và cuối cùng là kết nối các phần tử. Mô hình AI học cách ánh xạ giữa đầu vào (hình ảnh flowchart) và đầu ra (chuỗi lệnh) thông qua việc quan sát pattern trong ví dụ này. Việc cung cấp ví dụ cụ thể giúp giảm thiểu sự mơ hồ và tăng khả năng mô hình tạo ra kết quả đúng~định~dạng.
+
+
+
+Cấu trúc đầu ra được chia thành ba giai đoạn rõ ràng. Giai đoạn đầu tiên là tạo tất cả các hình và định vị chúng bằng các lệnh Click và Move. Giai đoạn thứ hai là thêm nội dung văn bản vào tất cả các hình thông qua các lệnh Double click và Fill. Giai đoạn cuối cùng là kết nối các hình với nhau theo logic của flowchart. Sự phân chia này dựa trên nguyên tắc separation of concerns trong lập trình \cite{enwiki:1325643770}, giúp quá trình tạo flowchart trở nên có tổ chức và dễ debug. Nếu không có sự phân chia này, các lệnh tạo hình, di chuyển, điền text và kết nối sẽ xen kẽ nhau một cách lộn xộn, gây khó khăn cho việc kiểm tra và sửa lỗi.
+
+
+Phần cuối cùng và cũng là quan trọng nhất là quy tắc di chuyển phần tử về đúng vị trí mong muốn. Thông thường, các trang web có xu hướng đặt phần tử mới tạo vào vị trí trung tâm của khung làm việc. Vì vậy, ta có thể dựa vào vị trí trung tâm này để tính toán vector dịch chuyển và lưu lại vị trí của phần tử. Tuy nhiên, trong thực tế, không gian thao tác có thể thay đổi giữa các trang web; ngoài ra nếu con trỏ chuột đang nằm trên một phần tử khác trước khi tạo phần tử mới, thì vị trí xuất hiện của phần tử có thể không còn trùng với vị trí trung tâm mặc định. Do đó, cần xây dựng tập quy tắc riêng dựa trên đặc trưng bố cục và hành vi của từng trang web để xác định vị trí thực tế của phần tử và tính toán bước di chuyển chính xác.
+
+Thứ hai, về việc lựa chọn các tham số khi gọi tới mô hình. Tham số temperature trong các mô hình ngôn ngữ lớn kiểm soát mức độ ngẫu nhiên trong quá trình sinh văn bản \cite{du2025optimizingtemperaturelanguagemodels}. Temperature có giá trị từ 0 đến 2, trong đó giá trị càng thấp tạo ra đầu ra càng deterministic (có tính quyết định cao) và giá trị càng cao tạo ra đầu ra càng đa dạng và sáng tạo. Cụ thể, temperature hoạt động bằng cách điều chỉnh phân phối xác suất của các token tiếp theo trong quá trình sampling. Với temperature thấp, xác suất của token có likelihood cao nhất sẽ được tăng cường đáng kể so với các token khác, dẫn đến việc mô hình có xu hướng chọn token có xác suất cao nhất một cách nhất quán. Ngược lại, với temperature cao, phân phối xác suất trở nên phẳng hơn, các token có xác suất thấp hơn cũng có cơ hội được chọn, tạo ra sự đa dạng và bất ngờ trong đầu ra. Trong phương pháp này, temperature được thiết lập ở mức 0,1, một giá trị rất thấp, vì nhiều lý do quan trọng. Đầu tiên, bài toán chuyển đổi flowchart thành chuỗi lệnh là một bài toán có tính chất mang tính quyết định. Với một hình ảnh flowchart cụ thể, chỉ có một tập hợp hữu hạn các chuỗi lệnh chính xác có thể tái tạo flowchart đó. Không giống như các tác vụ sáng tạo như viết truyện hay làm thơ, nơi mà sự đa dạng và bất ngờ là mong muốn, tác vụ của chúng ta đòi hỏi tính chính xác và nhất quán tuyệt đối. Mỗi lần chạy với cùng một đầu vào, chúng ta mong muốn nhận được kết quả gần như giống hệt nhau để đảm bảo tính ổn định của phương pháp. Thứ hai, cú pháp của các lệnh phải tuân theo cấu trúc chặt chẽ đã được định nghĩa trong prompt. Bất kỳ sai lệch nhỏ nào trong cú pháp, ví dụ như thay ``Move the element created in step 2 up'' thành ``Move element at step 2 upward'' hoặc ``Shift step 2 element up'', đều khả năng phân tích sai ngữ nghĩa và dẫn đến lỗi thực thi. Temperature thấp giúp mô hình tuân thủ chặt chẽ các cú pháp đã được học từ ví dụ và định nghĩa trong prompt, giảm thiểu khả năng mô hình ``sáng tạo'' ra các biến thể cú pháp không mong muốn. Thứ ba, temperature thấp giúp mô hình áp dụng các quy tắc đặt ra một cách đáng tin cậy, có thể dự đoán được và giúp mô hình duy trì tính nhất quán trong việc tham chiếu giữa các bước một cách chính xác. Và cuối cùng, khi đặt temperature = 0.1, mô hình gần như trả lời rất chắc chắn, nhưng không hoàn toàn cứng nhắc như khi đặt bằng 0. Cụ thể như mô hình linh hoạt để mô hình xử lý các trường hợp lạ hoặc không rõ ràng, tránh bị “mắc kẹt” ở một lựa chọn sai; tránh lỗi kỹ thuật vì temperature = 0 tuyệt đối có thể gây vấn đề trong một số cách tính toán (như chia cho 0 hoặc softmax không ổn định).
+
+
+Tham số max\_output\_tokens giới hạn số lượng token tối đa mà mô hình có thể sinh ra trong một lần gọi API. Token trong ngữ cảnh của các mô hình ngôn ngữ lớn không hoàn toàn tương đương với từ (word) hoặc ký tự (character). Một token có thể là một từ hoàn chỉnh, một phần của từ, một ký tự đặc biệt, hoặc thậm chí một khoảng trắng. Một token xấp xỉ 0,75 từ. Vì vậy, 5000 tokens tương đương khoảng 3750 từ hoặc 15.000–20.000 ký tự, tùy nội dung. Giá trị 5000 được chọn dựa trên phân tích độ phức tạp của nhiều mức flowchart khác nhau. Với các flowchart đang xét hiện tai, thường chứa 10–15 phần tử, số lượng lệnh cần sinh ra thường rơi vào khoảng 40–55 lệnh, tương đương 1400–1925 ký tự (xấp xỉ 350–480 tokens). Con số hiện tại cần dùng và 5000 có khoảng cách lớn nhưng qua thực tế nó đủ để mô hình không bị cắt giữa chừng và hoàn thành chuỗi lệnh một cách nhanh chóng, ổn định. Mô hình Gemini 2.5 Flash có giới hạn output tokens là 65,535 \cite{google_gemini_2_5_flash}- một con số khá lớn. Vì vậy con số 5000 là một lựa chọn hợp lý.
+
+% \section{Ví dụ Đầu vào và Đầu ra}
+\begin{figure*}[!hbpt]
+	\centering 
+	\includegraphics[width=0.65\linewidth]{image/example_image.png}
+	\caption{Hình ảnh flowchart sử dụng làm đầu vào}
+	\label{fig:example_image}
+\end{figure*}
+
+Dưới đây là ví dụ về một trường hợp trong thực nghiệm trên Draw.io với đầu vào là Hình ảnh \ref{fig:example_image} và kết quả trả về như sau với số bước là 37:
+
+
+{\footnotesize{
+\begin{verbatim}
+    Click on [ellipse.png]
+    Move the element created in step 1 up
+    Move the element created in step 1 up
+    Move the element created in step 1 up
+    Click on [parallelogram.png]
+    Move the element created in step 5 up
+    Move the element created in step 5 up
+    Click on [diamond.png]
+    Move the element created in step 8 up
+    Click on [rectangle.png]
+    Move the element created in step 10 left
+    Click on [rectangle.png]
+    Move the element created in step 12 right
+    Click on [ellipse.png]
+    Move the element created in step 14 down
+    Double click on the element created in step 1
+    Fill "Leave home" into the element created in step 1
+    Double click on the element created in step 5
+    Fill "Check timeline" into the element created in step 5
+    Double click on the element created in step 8
+    Fill "Before 7 am ?" into the element created in step 8
+    Double click on the element created in step 10
+    Fill "Take bus" into the element created in step 10
+    Double click on the element created in step 12
+    Fill "Take subway" into the element created in step 12
+    Double click on the element created in step 14
+    Fill "Reach school" into the element created in step 14
+    Connect the element created in step 1 to the element created in step 5
+    Connect the element created in step 5 to the element created in step 8
+    Connect the element created in step 8 to the element created in step 10
+    Double click on connector_from_step8_to_step10
+    Fill "NO"
+    Connect the element created in step 8 to the element created in step 12
+    Double click on connector_from_step8_to_step12
+    Fill "YES"
+    Connect the element created in step 10 to the element created in step 14
+    Connect the element created in step 12 to the element created in step 14
+\end{verbatim}
+}}
+
+
+\section{Đánh giá hiệu quả}
+Kỹ thuật one -- shot learning được áp dụng nhằm giảm thời gian xây dựng kịch bản và đảm bảo độ chính xác do loại bỏ được yếu tố con người. Trong thực tế triển khai, mỗi nền tảng vẽ sơ đồ có cách thức xử lý và tương tác với người dùng khác nhau, dẫn đến các quy tắc định vị phần tử mới cũng khác biệt do đó nội dung prompt cũng có sự thay đổi cho phù hợp với từng trang web. Việc đặt ra quy tắc do kiểm thử viên quan sát và triển khai trong prompt. Ví dụ sự khác nhau trong Lucidchart và Draw.io: Trong Lucidchart, khi người dùng thêm một phần tử mới, phần tử mới thường nằm cạnh phần tử mới thêm trước đó; trong Draw.io, bất kể phần tử nào đang được chọn, phần tử mới luôn được đặt ở chính giữa màn hình hiển thị hiện tại. Điều này dẫn đến sự khác nhau trong khoảng cách/hướng di chuyển phần tử khi thực thi vẽ kịch bản flowchart.
+
+
+\chapter{Phương pháp đối chứng}
+\label{appendix:doichung}
+
+
+\begin{algorithm}[H]
+\caption{Tìm phần tử ảnh bằng phương pháp tái dựng các thẻ svg}
+\label{alg:findElementRender}
+\begin{algorithmic}[1]
+    \STATE \textbf{Input: } $template$ - Ảnh mẫu, $driver$ - WebDriver
+    \STATE \textbf{Output: } $xpath$ - XPath của phần tử khớp nhất
+    
+    \STATE $template \gets$ loadImage($template$) \label{line:load}
+    
+    \STATE $elements \gets$ querySelectorAll(SVG-containing elements) \label{line:query}
+    \STATE filter $elements$ (remove nested and duplicate)
+    
+    \STATE $overlay \gets$ createFlexGridOverlay($elements$) \label{line:overlay}
+    
+    \STATE $screenshots \gets \emptyset$
+    \FOR{$y \gets 0$ \TO $overlay.scrollHeight$ \textbf{step} $viewport.height$}
+        \STATE scroll $overlay$ to position $y$
+        \STATE $screenshots \gets screenshots \cup \{capture(overlay)\}$
+    \ENDFOR
+    \STATE $fullImage \gets$ stitchScreenshots($screenshots$) \label{line:stitch}
+    
+    \STATE $matches \gets \emptyset$
+    \FOR{\textbf{each} $item$ \textbf{in} $elements$}
+        \STATE $itemImage \gets$ crop($fullImage$, $item.position$)
+        \STATE $score \gets$ multiScaleTemplateMatch($template$, $itemImage$) \label{line:match}
+        \STATE $matches \gets matches \cup \{(score, item.index)\}$
+    \ENDFOR
+    
+    \STATE sort $matches$ by $score$ (descending)
+    \STATE $(bestScore, bestIndex) \gets matches[0]$
+    
+    \IF{$bestScore \geq threshold$}
+        \STATE $xpath \gets$ getUniqueXPath($elements[bestIndex]$) \label{line:xpath}
+        \STATE \textbf{return} $xpath$
+    \ELSE
+        \STATE \textbf{return} "//not-found"
+    \ENDIF
+\end{algorithmic}
+\end{algorithm}
+
+\clearpage
+
+Thuật toán tìm phần tử ảnh bằng phương pháp tái dựng các thẻ svg được thiết kế để định vị chính xác các phần tử giao diện người dùng dựa trên ảnh mẫu (template) (Thuật~toán~\ref{alg:findElementRender}). Quy trình bắt đầu bằng việc tải ảnh phần tử cần tìm (dòng \ref{line:load}), trong đó ảnh được giữ nguyên định dạng màu để đảm bảo chất lượng so khớp cao nhất. Sau khi có ảnh mẫu, phương pháp quét toàn bộ DOM và tìm kiếm các phần tử có chứa đồ họa SVG (dòng \ref{line:query}). Các phần tử này được lọc để loại bỏ những phần tử lồng nhau hoặc trùng lặp, đảm bảo mỗi phần tử chỉ được xử lý một lần, giúp giảm thiểu độ phức tạp tính toán và tránh kết quả sai lệch.
+
+Tiếp theo, một overlay toàn màn hình được tạo ra với bố cục Flexbox (dòng \ref{line:overlay}) để hiển thị tất cả các phần tử đã thu thập theo dạng lưới linh hoạt (flex grid), tự động xuống dòng khi hết không gian ngang. Mỗi phần tử được đặt trong một khung vuông có kích thước cố định và được đánh số thứ tự để dễ theo dõi, trong khi overlay chỉ cho phép cuộn theo chiều dọc mà không cuộn ngang. Do overlay có thể dài hơn chiều cao viewport, thuật toán thực hiện việc cuộn từng đoạn và chụp ảnh từng phần (dòng \ref{line:stitch}). Các ảnh chụp được sau đó được ghép lại thành một ảnh hoàn chỉnh chứa toàn bộ nội dung overlay.
+
+Với ảnh overlay đầy đủ đã được ghép, thuật toán tiến hành so khớp template với từng phần tử bằng cách xác định vị trí của mỗi phần tử trên overlay và cắt (crop) vùng tương ứng từ ảnh đã ghép. Phương pháp Multi-Scale Template Matching được áp dụng (dòng~\ref{line:match}), trong đó template được scale với các tỷ lệ khác nhau từ 0.5 đến 1.8 và so khớp với từng ảnh phần tử, sau đó điểm số cao nhất trong tất cả các tỷ lệ được ghi nhận cho mỗi phần tử. Cách tiếp cận này giúp thuật toán hoạt động tốt ngay cả khi kích thước của phần tử trong trang web khác với kích thước trong ảnh mẫu. Cuối cùng, phần tử có độ tương đồng cao nhất được chọn làm kết quả tốt nhất. Nếu điểm số này vượt qua ngưỡng threshold (mặc định 0.6), XPath duy nhất của phần tử tương ứng được xây dựng và trả về (dòng \ref{line:xpath}), ngược lại thuật toán trả về giá trị ``//not-found'' để báo hiệu không tìm thấy kết quả phù hợp.
+
+Điểm mạnh của thuật toán là khả năng xử lý chính xác các phần tử trong trang web có bố cục phức tạp, đặc biệt là các ứng dụng web hiện đại với nhiều thành phần động. Việc chụp từng phần tử riêng lẻ thay vì dựa vào tính toán tọa độ giúp tăng độ tin cậy và giảm sai số do viewport hoặc zoom level.
+
+
+
+\clearpage
+
+\end{document}
